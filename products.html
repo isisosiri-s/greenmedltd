@@ -575,8 +575,37 @@
       font-size: 0.8125rem; color: rgba(255,255,255,0.35);
     }
 
+    /* ── Mobile nav ────────────────────────────────────────── */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; background: none; border: none; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--c-black); transition: transform 0.2s, opacity 0.2s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-nav {
+      display: none;
+      position: fixed; top: 64px; left: 0; right: 0; z-index: 99;
+      background: rgba(247,248,242,0.98); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--c-rule);
+      padding: 1.75rem var(--px);
+      flex-direction: column; gap: 1.25rem;
+    }
+    .mobile-nav.open { display: flex; }
+
     /* ── Responsive ────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .nav-links-desktop { display: none !important; }
+      .btn-nav-desktop    { display: none !important; }
+      .hamburger          { display: flex; }
+    }
     @media (max-width: 768px) {
+      :root { --px: 1.5rem; }
       .search-input { width: 100%; }
       .search-wrap { width: 100%; }
       .controls-inner { flex-direction: column; align-items: flex-start; }
@@ -594,7 +623,7 @@
         <img src="brand_assets/GREENMED LOGO V1.svg" alt="Green Med Ltd." style="height:69px; width:auto;">
       </a>
 
-      <div style="display:flex; align-items:center; gap:2.5rem;">
+      <div class="nav-links-desktop" style="display:flex; align-items:center; gap:2.5rem;">
         <a href="index.html#about"    class="nav-link">ABOUT</a>
         <a href="index.html#services" class="nav-link">SERVICES</a>
         <a href="index.html#process"  class="nav-link">PROCESS</a>
@@ -602,9 +631,22 @@
         <a href="index.html#contact"  class="nav-link">CONTACT</a>
       </div>
 
-      <a href="index.html#contact" class="btn-nav" style="flex-shrink:0;">GET IN TOUCH</a>
+      <a href="index.html#contact" class="btn-nav btn-nav-desktop" style="flex-shrink:0;">GET IN TOUCH</a>
+
+      <button class="hamburger" id="ham" aria-label="Toggle menu" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+
+  <div class="mobile-nav" id="mob-nav">
+    <a href="index.html#about"    class="nav-link" onclick="toggleNav()">ABOUT</a>
+    <a href="index.html#services" class="nav-link" onclick="toggleNav()">SERVICES</a>
+    <a href="index.html#process"  class="nav-link" onclick="toggleNav()">PROCESS</a>
+    <a href="products.html"       class="nav-link active" onclick="toggleNav()">CATALOGUE</a>
+    <a href="index.html#contact"  class="nav-link" onclick="toggleNav()">CONTACT</a>
+    <a href="index.html#contact"  class="btn-nav" style="width:fit-content; margin-top:0.5rem;" onclick="toggleNav()">GET IN TOUCH</a>
+  </div>
 
   <!-- ── Page Header ────────────────────────────────────── -->
   <header class="page-header">
@@ -1140,6 +1182,13 @@
       const id = parseInt(params.get("id"));
       if (id) openPanel(id);
     })();
+
+    function toggleNav() {
+      const nav = document.getElementById('mob-nav');
+      const ham = document.getElementById('ham');
+      nav.classList.toggle('open');
+      ham.classList.toggle('open');
+    }
   </script>
 
 </body>
