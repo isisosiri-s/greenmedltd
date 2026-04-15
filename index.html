@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Med Ltd. — Turnkey Laboratory Solutions</title>
+  <meta name="description" content="Global Medical Systems Integrator. Turnkey laboratory infrastructure, delivered end-to-end. From Concept to Completion.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        fontFamily: {
+          barlow: ['Barlow Condensed', 'sans-serif'],
+          ibm:    ['IBM Plex Sans',    'sans-serif'],
+          mono:   ['IBM Plex Mono',    'monospace'],
+        },
+        extend: {
+          colors: {
+            'gm-50':  '#F4FBDF',
+            'gm-100': '#DCEEA8',
+            'gm-200': '#C3DF72',
+            'gm-300': '#A5CC48',
+            'gm-400': '#7EB828',
+            'gm-500': '#619A18',
+            'gm-600': '#487A10',
+            'gm-700': '#2F5A08',
+            'gm-800': '#193C04',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ── CSS Variables ──────────────────────────────────────── */
+    :root {
+      --c-black:  #1C1C1C;
+      --c-anthra: #2B2B2B;
+      --c-dark:   #4A4A4A;
+      --c-muted:  #8A8A8A;
+      --c-rule:   #E8E8E8;
+      --c-bg:     #F7F8F2;
+      --c-white:  #FFFFFF;
+      --c-footer: #111111;
+      --gm-300:   #A5CC48;
+      --gm-400:   #7EB828;
+      --gm-500:   #619A18;
+      --gm-600:   #487A10;
+      --gm-800:   #193C04;
+      --px: 7vw;
+      --py: 7rem;
+    }
+
+    /* ── Base ───────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 300;
+      background: var(--c-bg);
+      color: var(--c-dark);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Keyframes ──────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-content > * {
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards;
+    }
+    .hero-content > *:nth-child(1) { animation-delay: 0.06s; }
+    .hero-content > *:nth-child(2) { animation-delay: 0.16s; }
+    .hero-content > *:nth-child(3) { animation-delay: 0.26s; }
+    .hero-content > *:nth-child(4) { animation-delay: 0.36s; }
+    .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
+
+    .anim-in {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .anim-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Navigation ─────────────────────────────────────────── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 64px; z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(247, 248, 242, 0.96);
+      border-bottom: 1px solid rgba(232, 232, 232, 0.8);
+    }
+    .nav-inner {
+      max-width: 1440px; margin: 0 auto;
+      padding: 0 var(--px); height: 100%;
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 2rem;
+    }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-link {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 0.875rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--c-dark); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--gm-500); }
+    .nav-link:focus-visible { outline: 2px solid var(--gm-400); outline-offset: 3px; }
+
+    /* ── Buttons ─────────────────────────────────────────────── */
+    .btn {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 0.9375rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      display: inline-flex; align-items: center; gap: 0.625rem;
+      padding: 0.875rem 2rem; text-decoration: none;
+      cursor: pointer; border: none; line-height: 1;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .btn:focus-visible { outline: 2px solid var(--gm-400); outline-offset: 2px; }
+    .btn-primary { background: var(--gm-400); color: #fff; }
+    .btn-primary:hover  { background: var(--gm-600); color: #fff; }
+    .btn-primary:active { background: #2F5A08; }
+    .btn-outline {
+      background: transparent; color: var(--c-black);
+      border: 1px solid rgba(28, 28, 28, 0.28);
+    }
+    .btn-outline:hover { background: var(--gm-500); color: #fff; border-color: var(--gm-500); }
+    .btn-nav {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 0.875rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      background: var(--gm-400); color: #fff;
+      padding: 0.5rem 1.375rem; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-nav:hover { background: var(--gm-600); }
+    .btn-nav:focus-visible { outline: 2px solid var(--gm-400); outline-offset: 2px; }
+
+    /* ── Eyebrow labels ──────────────────────────────────────── */
+    .eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 0.8125rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gm-500);
+      display: flex; align-items: center; gap: 0.875rem;
+    }
+    .eyebrow::before {
+      content: ''; display: block;
+      width: 2rem; height: 2px;
+      background: var(--gm-400); flex-shrink: 0;
+    }
+    .eyebrow-light { color: var(--gm-300); }
+    .eyebrow-light::before { background: var(--gm-300); }
+
+    /* ── Container / Section ─────────────────────────────────── */
+    .container { max-width: 1440px; margin: 0 auto; }
+    .section { padding: var(--py) var(--px); }
+
+    /* ── Stats — dark surface ────────────────────────────────── */
+    .stats-section {
+      background: var(--c-anthra);
+      position: relative; overflow: hidden;
+    }
+    .stats-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(126,184,40,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(126,184,40,0.07) 1px, transparent 1px);
+      background-size: 52px 52px;
+      pointer-events: none;
+    }
+    .stats-grid {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      padding: var(--px);
+    }
+    .stat-cell {
+      padding: 2.75rem 2.5rem;
+      border-right: 1px solid rgba(255,255,255,0.07);
+    }
+    .stat-cell:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(3.5rem, 5vw, 5.25rem);
+      line-height: 1; color: var(--gm-300);
+    }
+    .stat-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6875rem; letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.42);
+      margin-top: 0.625rem;
+    }
+
+    /* ── Service cards ───────────────────────────────────────── */
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--c-rule);
+      border-left: 1px solid var(--c-rule);
+    }
+    .svc-card {
+      position: relative; overflow: hidden;
+      padding: 2.25rem 2rem;
+      background: var(--c-white);
+      border-right: 1px solid var(--c-rule);
+      border-bottom: 1px solid var(--c-rule);
+      transition: background 0.2s;
+    }
+    .svc-card::after {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 2px; background: var(--gm-400);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .svc-card:hover::after  { transform: scaleX(1); }
+    .svc-card:hover { background: #F4FBDF; }
+    .svc-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem; color: var(--gm-400);
+      margin-bottom: 1.25rem; display: block;
+    }
+    .svc-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1.25rem;
+      text-transform: uppercase; color: var(--c-black);
+      line-height: 1.15; margin-bottom: 0.75rem;
+    }
+    .svc-desc {
+      font-size: 0.9rem; color: var(--c-dark);
+      line-height: 1.75; margin-bottom: 1.5rem;
+    }
+    .svc-cta {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 0.75rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gm-400); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .svc-cta:hover { color: var(--gm-600); }
+
+    /* ── Process steps ───────────────────────────────────────── */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem 3.5rem;
+    }
+    .proc-step {
+      border-left: 2px solid var(--c-rule);
+      padding-left: 1.5rem;
+      transition: border-color 0.25s;
+    }
+    .proc-step:hover { border-color: var(--gm-400); }
+    .proc-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6875rem; letter-spacing: 0.08em;
+      color: var(--gm-400); margin-bottom: 0.625rem;
+      display: block;
+    }
+    .proc-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1.0625rem;
+      text-transform: uppercase; color: var(--c-black);
+      margin-bottom: 0.625rem; line-height: 1.2;
+    }
+    .proc-desc {
+      font-size: 0.875rem; color: var(--c-dark); line-height: 1.75;
+    }
+
+    /* ── Market rows ─────────────────────────────────────────── */
+    .mkt-row {
+      padding: 1.375rem 0;
+      border-bottom: 1px solid var(--c-rule);
+      display: flex; align-items: flex-start; gap: 1.25rem;
+    }
+    .mkt-row:last-child { border-bottom: none; }
+    .mkt-icon {
+      width: 2.625rem; height: 2.625rem; flex-shrink: 0;
+      background: #F4FBDF; border: 1px solid #C3DF72;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .mkt-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1.0625rem;
+      text-transform: uppercase; color: var(--c-black);
+      margin-bottom: 0.2rem; line-height: 1.2;
+    }
+    .mkt-desc { font-size: 0.8125rem; color: var(--c-muted); line-height: 1.6; }
+
+    /* ── Contact form ────────────────────────────────────────── */
+    .f-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6875rem; letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(247,248,242,0.42);
+      display: block; margin-bottom: 0.5rem;
+    }
+    .f-input {
+      width: 100%;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 300; font-size: 0.9375rem;
+      padding: 0.75rem 1rem;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #F7F8F2; outline: none;
+      transition: border-color 0.2s;
+    }
+    .f-input::placeholder { color: rgba(247,248,242,0.27); }
+    .f-input:focus { border-color: var(--gm-400); }
+
+    /* ── Contact info rows ───────────────────────────────────── */
+    .cinfo {
+      display: flex; align-items: flex-start; gap: 1rem;
+    }
+    .cinfo-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6875rem; letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(247,248,242,0.38); margin-bottom: 0.25rem;
+    }
+    .cinfo-val { font-size: 0.9375rem; color: rgba(247,248,242,0.8); line-height: 1.6; }
+
+    /* ── Footer links ────────────────────────────────────────── */
+    .fl {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 0.9375rem;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      color: rgba(--c-dark); text-decoration: none;
+      transition: color 0.2s; display: block; margin-bottom: 0.75rem;
+    }
+    .fl:last-child { margin-bottom: 0; }
+    .fl:hover { color: var(--gm-300); }
+
+    /* ── Mobile menu ─────────────────────────────────────────── */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; background: none; border: none; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--c-dark); transition: transform 0.2s, opacity 0.2s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-nav {
+      display: none;
+      position: fixed; top: 64px; left: 0; right: 0; z-index: 99;
+      background: rgba(247,248,242,0.98); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--c-rule);
+      padding: 1.75rem var(--px);
+      flex-direction: column; gap: 1.25rem;
+    }
+    .mobile-nav.open { display: flex; }
+
+    /* ── Responsive ──────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-cell:nth-child(2) { border-right: none; }
+      .stat-cell:nth-child(3) { border-right: 1px solid rgba(255,255,255,0.07); }
+      .stat-cell:nth-child(3),
+      .stat-cell:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.07); }
+    }
+    @media (max-width: 768px) {
+      :root { --px: 1.5rem; --py: 4rem; }
+      .hero-grid   { grid-template-columns: 1fr !important; min-height: auto !important; }
+      .hero-right  { display: none !important; }
+      .about-grid  { grid-template-columns: 1fr !important; }
+      .contact-grid{ grid-template-columns: 1fr !important; }
+      .services-grid{ grid-template-columns: 1fr !important; }
+      .process-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+      .footer-inner { flex-direction: column !important; gap: 3rem !important; }
+      .nav-links   { display: none; }
+      .hamburger   { display: flex; }
+      .stats-grid  { grid-template-columns: repeat(2, 1fr); }
+      .stat-cell   { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.07); }
+      .stat-cell:last-child { border-bottom: none; }
+    }
+
+    /* ── Scrollbar ───────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--c-bg); }
+    ::-webkit-scrollbar-thumb { background: #C3DF72; }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       NAV
+  ════════════════════════════════════════════════════════════ -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" aria-label="Green Med Ltd." style="flex-shrink:0; display:flex; align-items:center;">
+        <img src="brand_assets/GREENMED LOGO V1.svg" alt="Green Med Ltd." style="height:69px; width:auto;">
+      </a>
+
+      <div class="nav-links">
+        <a href="#about"       class="nav-link">ABOUT</a>
+        <a href="#services"    class="nav-link">SERVICES</a>
+        <a href="#process"     class="nav-link">PROCESS</a>
+        <a href="products.html" class="nav-link">PRODUCTS</a>
+        <a href="#contact"     class="nav-link">CONTACT</a>
+      </div>
+
+      <a href="#contact" class="btn-nav" style="flex-shrink:0;">GET IN TOUCH</a>
+
+      <button class="hamburger" id="ham" aria-label="Toggle menu" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mob-nav">
+    <a href="#about"        class="nav-link" onclick="toggleNav()">ABOUT</a>
+    <a href="#services"     class="nav-link" onclick="toggleNav()">SERVICES</a>
+    <a href="#process"      class="nav-link" onclick="toggleNav()">PROCESS</a>
+    <a href="products.html" class="nav-link" onclick="toggleNav()">PRODUCTS</a>
+    <a href="#contact"      class="nav-link" onclick="toggleNav()">CONTACT</a>
+    <a href="#contact"      class="btn btn-primary" style="width:fit-content; margin-top:0.5rem;" onclick="toggleNav()">GET IN TOUCH</a>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════════════════════ -->
+  <section style="padding-top:64px; background:var(--c-bg); display:grid; grid-template-columns:55fr 45fr; min-height:100vh;" class="hero-grid">
+
+    <!-- Left: Content -->
+    <div style="padding:var(--py) 4rem var(--py) var(--px); display:flex; flex-direction:column; justify-content:center; gap:2.25rem;" class="hero-content">
+
+      <div class="eyebrow">TURNKEY LABORATORY SOLUTIONS</div>
+
+      <h1 style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:clamp(4rem,6.5vw,7.5rem); text-transform:uppercase; color:var(--c-black); line-height:0.93; letter-spacing:-0.01em;">
+        FROM<br>CONCEPT<br>
+        <span style="color:var(--gm-500);">TO COMPLETION.</span>
+      </h1>
+
+      <p style="font-size:1.0625rem; color:var(--c-dark); max-width:500px; line-height:1.8;">
+        Global Medical Systems Integrator delivering complete laboratory infrastructure — from initial feasibility and system specification through to installation, calibration and long-term technical support.
+      </p>
+
+      <div style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center;">
+        <a href="#contact" class="btn btn-primary">
+          REQUEST A PROPOSAL
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="#services" class="btn btn-outline">EXPLORE SERVICES</a>
+      </div>
+
+      <!-- Mini stats -->
+      <div style="display:flex; gap:2.75rem; padding-top:1.5rem; border-top:1px solid var(--c-rule); flex-wrap:wrap;">
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.625rem; color:var(--gm-500); line-height:1;">200+</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--c-muted); margin-top:0.25rem;">PROJECTS DELIVERED</div>
+        </div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.625rem; color:var(--gm-500); line-height:1;">18+</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--c-muted); margin-top:0.25rem;">COUNTRIES SERVED</div>
+        </div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.625rem; color:var(--gm-500); line-height:1;">15+</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--c-muted); margin-top:0.25rem;">YEARS EXPERIENCE</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right: Visual panel -->
+    <div class="hero-right" style="position:relative; overflow:hidden;">
+      <img src="Photos/Header Lab.png" alt="Laboratory infrastructure" style="width:100%; height:100%; object-fit:cover; display:block;">
+      <!-- Anthra overlay -->
+      <div style="position:absolute; inset:0; background:rgba(43,43,43,0.45);"></div>
+      <!-- gm-800 tint layer -->
+      <div style="position:absolute; inset:0; background:rgba(25,60,4,0.15);"></div>
+      <!-- Bottom accent bar -->
+      <div style="position:absolute; bottom:0; left:0; right:0; height:3px; background:var(--gm-400);"></div>
+      <!-- Vertical label -->
+      <div style="position:absolute; bottom:3.5rem; right:1.75rem; writing-mode:vertical-rl; font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.2em; color:rgba(255,255,255,0.38); text-transform:uppercase;">GREEN MED LTD. · LABORATORY SYSTEMS INTEGRATOR</div>
+      <!-- Top-right eyebrow card -->
+      <div style="position:absolute; top:2.5rem; right:2.5rem; background:rgba(247,248,242,0.1); border:1px solid rgba(255,255,255,0.12); padding:1rem 1.5rem;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:0.375rem;">GLOBAL COVERAGE</div>
+        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.25rem; text-transform:uppercase; color:#fff;">18+ COUNTRIES</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       STATS — DARK SURFACE
+  ════════════════════════════════════════════════════════════ -->
+  <section class="stats-section">
+    <div class="stats-grid container">
+      <div class="stat-cell anim-in">
+        <div class="stat-num">200+</div>
+        <div class="stat-label">PROJECTS DELIVERED</div>
+      </div>
+      <div class="stat-cell anim-in" style="transition-delay:0.1s;">
+        <div class="stat-num">18+</div>
+        <div class="stat-label">COUNTRIES SERVED</div>
+      </div>
+      <div class="stat-cell anim-in" style="transition-delay:0.2s;">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">INSTRUMENTS INSTALLED</div>
+      </div>
+      <div class="stat-cell anim-in" style="transition-delay:0.3s;">
+        <div class="stat-num">15+</div>
+        <div class="stat-label">YEARS EXPERIENCE</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       ABOUT
+  ════════════════════════════════════════════════════════════ -->
+  <section id="about" class="section" style="background:var(--c-bg); border-top:1px solid var(--c-rule);">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start;" class="about-grid">
+
+        <!-- Left: description -->
+        <div class="anim-in">
+          <div class="eyebrow" style="margin-bottom:1.5rem;">WHO WE ARE</div>
+          <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2.25rem,4vw,3.5rem); text-transform:uppercase; color:var(--c-black); line-height:1; margin-bottom:2rem;">
+            GLOBAL MEDICAL<br>SYSTEMS INTEGRATOR
+          </h2>
+          <p style="font-size:1.0625rem; color:var(--c-dark); line-height:1.8; margin-bottom:1.375rem;">
+            Green Med Ltd. is a specialist in turnkey laboratory infrastructure — delivering complete solutions from concept and design through to installation, commissioning, and long-term technical support.
+          </p>
+          <p style="font-size:1.0625rem; color:var(--c-dark); line-height:1.8; margin-bottom:2.25rem;">
+            We work with healthcare institutions, government ministries, research institutes and international organisations including FAO, WHO and the UN — managing every phase of your laboratory investment across 18+ countries worldwide.
+          </p>
+          <a href="#contact" class="btn btn-primary">
+            DISCUSS YOUR PROJECT
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Right: markets -->
+        <div class="anim-in" style="transition-delay:0.15s;">
+          <div class="eyebrow" style="margin-bottom:1.5rem;">MARKETS WE SERVE</div>
+          <div>
+            <div class="mkt-row">
+              <div class="mkt-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M10 3a4 4 0 1 1 0 8 4 4 0 0 1 0-8z" stroke="#619A18" stroke-width="1.5"/>
+                  <path d="M3.5 17a6.5 6.5 0 0 1 13 0" stroke="#619A18" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <div class="mkt-name">Healthcare Systems</div>
+                <div class="mkt-desc">Hospitals, clinical laboratories and diagnostic centres</div>
+              </div>
+            </div>
+
+            <div class="mkt-row">
+              <div class="mkt-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <rect x="2" y="7" width="16" height="10" rx="1" stroke="#619A18" stroke-width="1.5"/>
+                  <path d="M6 7V5a4 4 0 0 1 8 0v2" stroke="#619A18" stroke-width="1.5" stroke-linecap="round"/>
+                  <circle cx="10" cy="12" r="1.5" fill="#619A18"/>
+                </svg>
+              </div>
+              <div>
+                <div class="mkt-name">Government Ministries</div>
+                <div class="mkt-desc">Public health departments and national regulatory bodies</div>
+              </div>
+            </div>
+
+            <div class="mkt-row">
+              <div class="mkt-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M3 17h14M5 17V8l5-5 5 5v9" stroke="#619A18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="8" y="12" width="4" height="5" stroke="#619A18" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <div>
+                <div class="mkt-name">Research Institutes</div>
+                <div class="mkt-desc">Universities, biomedical and scientific research facilities</div>
+              </div>
+            </div>
+
+            <div class="mkt-row">
+              <div class="mkt-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <circle cx="10" cy="10" r="7.5" stroke="#619A18" stroke-width="1.5"/>
+                  <path d="M10 2.5c0 0-4 3.5-4 7.5s4 7.5 4 7.5M2.5 10h15" stroke="#619A18" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <div class="mkt-name">International Organisations</div>
+                <div class="mkt-desc">FAO, WHO, UN and international partner agencies</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SERVICES
+  ════════════════════════════════════════════════════════════ -->
+  <section id="services" style="background:var(--c-white); border-top:1px solid var(--c-rule);">
+    <div class="section container" style="padding-bottom:3rem;">
+      <div style="margin-bottom:3.5rem;" class="anim-in">
+        <div class="eyebrow" style="margin-bottom:1.375rem;">WHAT WE DELIVER</div>
+        <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2.25rem,4vw,3.5rem); text-transform:uppercase; color:var(--c-black); line-height:1;">OUR SERVICES</h2>
+      </div>
+    </div>
+
+    <div class="services-grid">
+      <div class="svc-card anim-in">
+        <span class="svc-num">01</span>
+        <div class="svc-title">Turnkey Laboratory Setup</div>
+        <p class="svc-desc">End-to-end laboratory infrastructure design and commissioning, from initial feasibility study through to final handover and staff training.</p>
+        <a href="#contact" class="svc-cta">FULL SCOPE →</a>
+      </div>
+
+      <div class="svc-card anim-in" style="transition-delay:0.08s;">
+        <span class="svc-num">02</span>
+        <div class="svc-title">Analytical Instrumentation</div>
+        <p class="svc-desc">Supply and calibration of precision analytical equipment from world-leading manufacturers, including installation and performance validation.</p>
+        <a href="#contact" class="svc-cta">EQUIPMENT →</a>
+      </div>
+
+      <div class="svc-card anim-in" style="transition-delay:0.16s;">
+        <span class="svc-num">03</span>
+        <div class="svc-title">Quality &amp; Compliance</div>
+        <p class="svc-desc">ISO-compliant laboratory setup, quality management documentation systems, SOP development, and regulatory framework implementation.</p>
+        <a href="#contact" class="svc-cta">STANDARDS →</a>
+      </div>
+
+      <div class="svc-card anim-in" style="transition-delay:0.24s;">
+        <span class="svc-num">04</span>
+        <div class="svc-title">Cold Chain &amp; Biosafety</div>
+        <p class="svc-desc">Temperature-controlled storage infrastructure, biosafety cabinet installation, and containment systems for sensitive biological materials.</p>
+        <a href="#contact" class="svc-cta">SYSTEMS →</a>
+      </div>
+
+      <div class="svc-card anim-in" style="transition-delay:0.32s;">
+        <span class="svc-num">05</span>
+        <div class="svc-title">Technical Support</div>
+        <p class="svc-desc">Preventive maintenance contracts, emergency repair services, original spare parts supply, and remote technical assistance programmes.</p>
+        <a href="#contact" class="svc-cta">SUPPORT →</a>
+      </div>
+
+      <div class="svc-card anim-in" style="transition-delay:0.40s;">
+        <span class="svc-num">06</span>
+        <div class="svc-title">Training &amp; Capacity Building</div>
+        <p class="svc-desc">On-site and remote training programmes for laboratory staff, biomedical technicians, and laboratory management teams.</p>
+        <a href="#contact" class="svc-cta">TRAINING →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       PROCESS
+  ════════════════════════════════════════════════════════════ -->
+  <section id="process" class="section" style="background:var(--c-bg); border-top:1px solid var(--c-rule);">
+    <div class="container">
+      <div style="margin-bottom:4rem;" class="anim-in">
+        <div class="eyebrow" style="margin-bottom:1.375rem;">OUR APPROACH</div>
+        <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2.25rem,4vw,3.5rem); text-transform:uppercase; color:var(--c-black); line-height:1; max-width:600px;">
+          FROM CONCEPT<br>TO COMPLETION
+        </h2>
+      </div>
+
+      <div class="process-grid">
+        <div class="proc-step anim-in">
+          <span class="proc-num">01 — FEASIBILITY</span>
+          <div class="proc-title">Feasibility &amp; Specification</div>
+          <p class="proc-desc">Site assessment, needs analysis, regulatory mapping, and detailed system specification aligned to your objectives and budget framework.</p>
+        </div>
+
+        <div class="proc-step anim-in" style="transition-delay:0.09s;">
+          <span class="proc-num">02 — DESIGN</span>
+          <div class="proc-title">Design &amp; Engineering</div>
+          <p class="proc-desc">Laboratory layout, workflow optimisation, MEP coordination, biosafety zoning, and equipment placement drawings.</p>
+        </div>
+
+        <div class="proc-step anim-in" style="transition-delay:0.18s;">
+          <span class="proc-num">03 — PROCUREMENT</span>
+          <div class="proc-title">Procurement &amp; Logistics</div>
+          <p class="proc-desc">International sourcing from accredited manufacturers, customs clearance, freight management, and in-country delivery.</p>
+        </div>
+
+        <div class="proc-step anim-in" style="transition-delay:0.27s;">
+          <span class="proc-num">04 — INSTALLATION</span>
+          <div class="proc-title">Installation &amp; Commissioning</div>
+          <p class="proc-desc">Professional installation by certified engineers, equipment calibration, IQ/OQ/PQ validation, and performance verification.</p>
+        </div>
+
+        <div class="proc-step anim-in" style="transition-delay:0.36s;">
+          <span class="proc-num">05 — HANDOVER</span>
+          <div class="proc-title">Training &amp; Handover</div>
+          <p class="proc-desc">Structured operator and maintenance training, SOP documentation, as-built drawings, and formal project handover.</p>
+        </div>
+
+        <div class="proc-step anim-in" style="transition-delay:0.45s;">
+          <span class="proc-num">06 — SUPPORT</span>
+          <div class="proc-title">Long-term Technical Support</div>
+          <p class="proc-desc">Preventive maintenance schedules, rapid-response repair, spares inventory management, and remote monitoring services.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       BLOCKQUOTE — DARK STRIP
+  ════════════════════════════════════════════════════════════ -->
+  <section style="background:var(--c-anthra); padding:5.5rem var(--px); position:relative; overflow:hidden;">
+    <!-- Grid background -->
+    <div style="position:absolute; inset:0; background-image:linear-gradient(rgba(126,184,40,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(126,184,40,0.06) 1px, transparent 1px); background-size:52px 52px; pointer-events:none;"></div>
+    <div style="position:relative; z-index:1; max-width:960px; margin:0 auto; padding-left:3rem; border-left:2px solid var(--gm-400);" class="anim-in">
+      <blockquote style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(1.75rem,3vw,2.625rem); text-transform:uppercase; color:#F7F8F2; line-height:1.1; margin-bottom:1.75rem;">
+        "We don't just supply equipment —<br>we deliver functional laboratories<br>that work from day one."
+      </blockquote>
+      <p style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.38);">GREEN MED LTD. · GLOBAL MEDICAL SYSTEMS INTEGRATOR</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CONTACT
+  ════════════════════════════════════════════════════════════ -->
+  <section id="contact" style="background:var(--gm-800); padding:var(--py) var(--px);">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start;" class="contact-grid">
+
+        <!-- Left: info -->
+        <div class="anim-in">
+          <div class="eyebrow eyebrow-light" style="margin-bottom:1.5rem;">GET IN TOUCH</div>
+          <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2.25rem,4vw,3.5rem); text-transform:uppercase; color:#F7F8F2; line-height:1; margin-bottom:2rem;">
+            START YOUR<br>LABORATORY PROJECT
+          </h2>
+          <p style="font-size:1.0625rem; color:rgba(247,248,242,0.68); line-height:1.8; margin-bottom:2.5rem;">
+            Tell us about your requirements. Our specialists respond within one business day to discuss your project scope, timeline, and budget.
+          </p>
+
+          <div style="display:flex; flex-direction:column; gap:1.5rem;">
+            <div class="cinfo">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink:0; margin-top:3px;" aria-hidden="true">
+                <path d="M10 2a5 5 0 0 1 5 5c0 4-5 11-5 11S5 11 5 7a5 5 0 0 1 5-5z" stroke="#A5CC48" stroke-width="1.5"/>
+                <circle cx="10" cy="7" r="2" stroke="#A5CC48" stroke-width="1.5"/>
+              </svg>
+              <div>
+                <div class="cinfo-label">HEADQUARTERS</div>
+                <div class="cinfo-val">Green Med Ltd. — 60 Millmead Business Centre, Mill Mead Road, London,
+United Kingdom, N17 9QU</div>
+              </div>
+            </div>
+
+            <div class="cinfo">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink:0; margin-top:3px;" aria-hidden="true">
+                <rect x="2" y="5" width="16" height="10" rx="1.5" stroke="#A5CC48" stroke-width="1.5"/>
+                <path d="M2 7l8 5 8-5" stroke="#A5CC48" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              <div>
+                <div class="cinfo-label">EMAIL</div>
+                <div class="cinfo-val" style="color:var(--gm-300);">support@greenmed.ltd</div>
+              </div>
+            </div>
+
+            <div class="cinfo">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink:0; margin-top:3px;" aria-hidden="true">
+                <path d="M4 3.5h3.5L9 7 7 8.5a9 9 0 0 0 4.5 4.5L13 11l3.5 1.5V16a1 1 0 0 1-1 1A14.5 14.5 0 0 1 3 3.5z" stroke="#A5CC48" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div>
+                <div class="cinfo-label">PHONE</div>
+                <div class="cinfo-val">+44 (750) 751-6818 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <div class="anim-in" style="transition-delay:0.15s;">
+          <form style="display:flex; flex-direction:column; gap:1.125rem;" onsubmit="return false;">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+              <div>
+                <label class="f-label">FIRST NAME</label>
+                <input type="text" class="f-input" placeholder="John">
+              </div>
+              <div>
+                <label class="f-label">LAST NAME</label>
+                <input type="text" class="f-input" placeholder="Smith">
+              </div>
+            </div>
+
+            <div>
+              <label class="f-label">ORGANISATION</label>
+              <input type="text" class="f-input" placeholder="Ministry of Health">
+            </div>
+
+            <div>
+              <label class="f-label">EMAIL ADDRESS</label>
+              <input type="email" class="f-input" placeholder="name@organisation.com">
+            </div>
+
+            <div>
+              <label class="f-label">COUNTRY / REGION</label>
+              <input type="text" class="f-input" placeholder="Country or region">
+            </div>
+
+            <div>
+              <label class="f-label">PROJECT BRIEF</label>
+              <textarea rows="4" class="f-input" placeholder="Describe your laboratory requirements, location, and timeline..." style="resize:vertical; font-family:'IBM Plex Sans',sans-serif; font-weight:300;"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="justify-content:center; margin-top:0.5rem;">
+              SUBMIT ENQUIRY
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:3rem; margin-bottom:3rem;" class="footer-inner">
+
+        <!-- Brand -->
+        <div style="max-width:300px;">
+          <img src="brand_assets/GREENMED LOGO.svg" alt="Green Med Ltd." style="height:100px; width:auto; margin-bottom:1.25rem; display:block;">
+          <p style="font-size:0.875rem; color:rgba(255,255,255,0.38); line-height:1.75;">Global Medical Systems Integrator. Turnkey laboratory infrastructure, delivered end-to-end.</p>
+        </div>
+
+        <!-- Links -->
+        <div style="display:flex; gap:4rem; flex-wrap:wrap;">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.25); margin-bottom:1.25rem;">COMPANY</div>
+            <a href="#about"    class="fl">ABOUT</a>
+            <a href="#services" class="fl">SERVICES</a>
+            <a href="#process"  class="fl">PROCESS</a>
+            <a href="#contact"  class="fl">CONTACT</a>
+          </div>
+
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.25); margin-bottom:1.25rem;">SECTORS</div>
+            <span class="fl" style="cursor:default;">HEALTHCARE</span>
+            <span class="fl" style="cursor:default;">GOVERNMENT</span>
+            <span class="fl" style="cursor:default;">RESEARCH</span>
+            <span class="fl" style="cursor:default;">INT'L ORGS</span>
+          </div>
+
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.25); margin-bottom:1.25rem;">SERVICES</div>
+            <span class="fl" style="cursor:default;">LABORATORY SETUP</span>
+            <span class="fl" style="cursor:default;">INSTRUMENTATION</span>
+            <span class="fl" style="cursor:default;">COMPLIANCE</span>
+            <span class="fl" style="cursor:default;">TECHNICAL SUPPORT</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div style="padding-top:2rem; border-top:1px solid rgba(255,255,255,0.07); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+        <p style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; color:rgba(255,255,255,0.28);">© 2025 Green Med Ltd. · All rights reserved.</p>
+        <p style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; color:rgba(255,255,255,0.18); font-style:italic;">"From Concept to Completion."</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* Mobile nav toggle */
+    function toggleNav() {
+      const nav = document.getElementById('mob-nav');
+      const ham = document.getElementById('ham');
+      nav.classList.toggle('open');
+      ham.classList.toggle('open');
+    }
+
+    /* Scroll-triggered fade-in via IntersectionObserver */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.anim-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

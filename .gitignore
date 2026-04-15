@@ -1,0 +1,11 @@
+# Claude Code local settings
+.claude/settings.local.json
+
+# Excel temp files
+~$*
+
+# Screenshots (temporary)
+temporary screenshots/
+
+# Node modules (if ever added)
+node_modules/
