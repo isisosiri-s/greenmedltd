@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request a Proposal — Green Med Ltd.</title>
+  <meta name="description" content="Tell us about your laboratory project. Green Med Ltd. will respond within one business day.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --c-black:  #1C1C1C;
+      --c-anthra: #2B2B2B;
+      --c-dark:   #4A4A4A;
+      --c-muted:  #8A8A8A;
+      --c-rule:   #E8E8E8;
+      --c-bg:     #F7F8F2;
+      --c-white:  #FFFFFF;
+      --c-footer: #111111;
+      --gm-50:    #F4FBDF;
+      --gm-300:   #A5CC48;
+      --gm-400:   #7EB828;
+      --gm-500:   #619A18;
+      --gm-600:   #487A10;
+      --gm-800:   #193C04;
+      --px: 7vw;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 300;
+      background: var(--c-bg);
+      color: var(--c-dark);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Nav ───────────────────────────────────────────────── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 64px; z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(247,248,242,0.96);
+      border-bottom: 1px solid rgba(232,232,232,0.8);
+    }
+    .nav-inner {
+      max-width: 1440px; margin: 0 auto;
+      padding: 0 var(--px); height: 100%;
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 2rem;
+    }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-link {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 0.875rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--c-dark); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--gm-500); }
+    .btn-nav {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 0.875rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      background: var(--gm-400); color: #fff;
+      padding: 0.5rem 1.375rem; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-nav:hover { background: var(--gm-600); }
+    .hamburger {
+      display: none; flex-direction: column;
+      gap: 5px; cursor: pointer; background: none;
+      border: none; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--c-black);
+      transition: transform 0.25s, opacity 0.25s;
+    }
+    .mobile-nav {
+      display: none; flex-direction: column;
+      position: fixed; top: 64px; left: 0; right: 0;
+      background: var(--c-bg); z-index: 99;
+      padding: 1.5rem var(--px) 2rem;
+      border-bottom: 1px solid var(--c-rule);
+      gap: 1.25rem;
+    }
+    .mobile-nav.open { display: flex; }
+
+    /* ── Page Hero ─────────────────────────────────────────── */
+    .page-hero {
+      padding-top: 64px;
+      background: var(--c-anthra);
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(126,184,40,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(126,184,40,0.06) 1px, transparent 1px);
+      background-size: 52px 52px;
+      pointer-events: none;
+    }
+    .page-hero-inner {
+      position: relative; z-index: 1;
+      max-width: 1440px; margin: 0 auto;
+      padding: 5rem var(--px) 4.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 3rem;
+    }
+    .eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 0.8125rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gm-300);
+      display: flex; align-items: center; gap: 0.875rem;
+      margin-bottom: 1.25rem;
+    }
+    .eyebrow::before {
+      content: ''; display: block;
+      width: 2rem; height: 2px;
+      background: var(--gm-400); flex-shrink: 0;
+    }
+
+    /* ── Form layout ───────────────────────────────────────── */
+    .form-wrap {
+      max-width: 1440px; margin: 0 auto;
+      padding: 5rem var(--px) 7rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    /* ── Section headers ───────────────────────────────────── */
+    .section-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6875rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gm-500);
+      display: block; margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1.5rem;
+      text-transform: uppercase; color: var(--c-black);
+      line-height: 1.1; margin-bottom: 1.75rem;
+    }
+    .form-section {
+      padding-bottom: 3rem;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid var(--c-rule);
+    }
+    .form-section:last-of-type { border-bottom: none; margin-bottom: 0; }
+
+    /* ── Checkbox / Radio cards ────────────────────────────── */
+    .check-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+    .check-card { position: relative; }
+    .check-card input {
+      position: absolute; opacity: 0; width: 0; height: 0;
+    }
+    .check-card label {
+      display: flex; align-items: center; gap: 0.875rem;
+      padding: 0.875rem 1rem;
+      border: 1px solid var(--c-rule);
+      background: var(--c-white);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      font-size: 0.9rem; color: var(--c-dark);
+      line-height: 1.4;
+    }
+    .check-card label::before {
+      content: '';
+      flex-shrink: 0;
+      width: 16px; height: 16px;
+      border: 1.5px solid var(--c-rule);
+      background: var(--c-bg);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .check-card input:checked + label {
+      border-color: var(--gm-400);
+      background: var(--gm-50);
+    }
+    .check-card input:checked + label::before {
+      background: var(--gm-400);
+      border-color: var(--gm-400);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l3 3 5-6' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .check-card label:hover { border-color: var(--gm-400); }
+
+    .radio-card label::before { border-radius: 50%; }
+    .radio-card input:checked + label::before {
+      background: var(--gm-400);
+      border-color: var(--gm-400);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 6 6'%3E%3Ccircle cx='3' cy='3' r='3' fill='%23fff'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    /* ── Text inputs ───────────────────────────────────────── */
+    .f-group { margin-bottom: 1.25rem; }
+    .f-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6875rem; letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-muted);
+      display: block; margin-bottom: 0.5rem;
+    }
+    .f-input {
+      width: 100%;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 300; font-size: 0.9375rem;
+      padding: 0.75rem 1rem;
+      background: var(--c-white);
+      border: 1px solid var(--c-rule);
+      color: var(--c-black); outline: none;
+      transition: border-color 0.2s;
+      appearance: none;
+    }
+    .f-input::placeholder { color: rgba(74,74,74,0.38); }
+    .f-input:focus { border-color: var(--gm-400); }
+
+    .input-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .scope-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    select.f-input {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(74,74,74,0.5)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+
+    /* ── Step bar ──────────────────────────────────────────── */
+    .progress-bar {
+      display: flex; margin-bottom: 2.5rem;
+    }
+    .progress-step {
+      flex: 1; padding: 0.75rem 1rem;
+      background: var(--c-white); border: 1px solid var(--c-rule);
+      border-right: none;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.625rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--c-muted);
+      display: flex; align-items: center; gap: 0.625rem;
+    }
+    .progress-step:last-child { border-right: 1px solid var(--c-rule); }
+    .step-num {
+      width: 18px; height: 18px;
+      border: 1px solid currentColor;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.625rem; flex-shrink: 0;
+    }
+
+    /* ── Submit ────────────────────────────────────────────── */
+    .btn-submit {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+      padding: 1rem 2.5rem;
+      background: var(--gm-400); color: #fff;
+      border: none; cursor: pointer; width: 100%;
+      margin-top: 0.5rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-submit:hover  { background: var(--gm-600); }
+    .btn-submit:active { transform: scale(0.99); }
+    .btn-submit:focus-visible { outline: 2px solid var(--gm-400); outline-offset: 3px; }
+
+    .disclaimer {
+      font-size: 0.75rem; color: var(--c-muted);
+      line-height: 1.6; text-align: center;
+      margin-top: 1.25rem;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    /* ── Sidebar ───────────────────────────────────────────── */
+    .sidebar { position: sticky; top: 88px; }
+    .sidebar-card {
+      background: var(--c-white);
+      border: 1px solid var(--c-rule);
+      padding: 2rem; margin-bottom: 1.5rem;
+    }
+    .sidebar-card:last-child { margin-bottom: 0; }
+    .sidebar-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1rem;
+      text-transform: uppercase; color: var(--c-black);
+      margin-bottom: 1.25rem; letter-spacing: 0.04em;
+    }
+    .trust-item {
+      display: flex; align-items: flex-start;
+      gap: 0.875rem; margin-bottom: 1.1rem;
+    }
+    .trust-item:last-child { margin-bottom: 0; }
+    .trust-icon {
+      width: 32px; height: 32px; flex-shrink: 0;
+      background: var(--gm-50); border: 1px solid #C3DF72;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .trust-text { font-size: 0.8125rem; color: var(--c-dark); line-height: 1.6; }
+    .trust-text strong { display: block; font-weight: 400; color: var(--c-black); margin-bottom: 0.1rem; }
+
+    /* ── Footer ────────────────────────────────────────────── */
+    .footer { background: var(--c-footer); padding: 4rem var(--px) 2.5rem; }
+    .fl {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 0.9375rem;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); text-decoration: none;
+      transition: color 0.2s; display: block; margin-bottom: 0.75rem;
+    }
+    .fl:hover { color: var(--gm-300); }
+
+    /* ── Responsive ────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .form-wrap { grid-template-columns: 1fr; gap: 3rem; }
+      .sidebar { position: static; }
+      .page-hero-inner { grid-template-columns: 1fr; }
+      .scope-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+      .btn-nav-desktop { display: none !important; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 640px) {
+      .check-grid { grid-template-columns: 1fr; }
+      .input-row  { grid-template-columns: 1fr; }
+      .scope-grid { grid-template-columns: 1fr; }
+      .progress-bar { flex-direction: column; gap: 2px; }
+      .progress-step { border-right: 1px solid var(--c-rule); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ──────────────────────────────────────────────────── -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" style="flex-shrink:0; display:flex; align-items:center; text-decoration:none;">
+        <img src="brand_assets/GREENMED LOGO Horz.svg" alt="Green Med Ltd." style="height:69px; width:auto;">
+      </a>
+      <div class="nav-links">
+        <a href="index.html#about"    class="nav-link">ABOUT</a>
+        <a href="index.html#services" class="nav-link">SERVICES</a>
+        <a href="index.html#process"  class="nav-link">PROCESS</a>
+        <a href="products.html"       class="nav-link">PRODUCTS</a>
+        <a href="index.html#contact"  class="nav-link">CONTACT</a>
+      </div>
+      <a href="proposal.html" class="btn-nav btn-nav-desktop" style="flex-shrink:0;">REQUEST A PROPOSAL</a>
+      <button class="hamburger" id="ham" aria-label="Toggle menu" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mob-nav">
+    <a href="index.html#about"    class="nav-link" onclick="toggleNav()">ABOUT</a>
+    <a href="index.html#services" class="nav-link" onclick="toggleNav()">SERVICES</a>
+    <a href="index.html#process"  class="nav-link" onclick="toggleNav()">PROCESS</a>
+    <a href="products.html"       class="nav-link" onclick="toggleNav()">PRODUCTS</a>
+    <a href="index.html#contact"  class="nav-link" onclick="toggleNav()">CONTACT</a>
+    <a href="proposal.html" class="btn-nav" style="width:fit-content; margin-top:0.5rem;" onclick="toggleNav()">REQUEST A PROPOSAL</a>
+  </div>
+
+  <!-- ── Page Hero ─────────────────────────────────────────────── -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div>
+        <div class="eyebrow">Project Enquiry</div>
+        <h1 style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:clamp(2.75rem,5.5vw,5rem); color:#fff; line-height:1.0; letter-spacing:-0.02em; margin-bottom:1.25rem; text-transform:uppercase;">
+          Request a<br><span style="color:var(--gm-300);">Proposal</span>
+        </h1>
+        <p style="font-size:1.0625rem; color:rgba(255,255,255,0.55); max-width:520px; line-height:1.75;">
+          Tell us about your project. A Green Med specialist will review your enquiry and respond within one business day.
+        </p>
+      </div>
+
+      <!-- Hero badges -->
+      <div style="display:flex; flex-direction:column; gap:0.75rem; flex-shrink:0;">
+        <div style="display:flex; align-items:center; gap:0.875rem; padding:1rem 1.25rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08);">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;">
+            <circle cx="10" cy="10" r="8" stroke="#7EB828" stroke-width="1.5"/>
+            <path d="M6.5 10.5l2.5 2.5 4.5-5" stroke="#7EB828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.08em; color:rgba(255,255,255,0.55); text-transform:uppercase;">Response within 1 business day</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.875rem; padding:1rem 1.25rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08);">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;">
+            <rect x="3" y="6" width="14" height="11" rx="1" stroke="#7EB828" stroke-width="1.5"/>
+            <path d="M7 6V5a3 3 0 0 1 6 0v1" stroke="#7EB828" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.08em; color:rgba(255,255,255,0.55); text-transform:uppercase;">All enquiries strictly confidential</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.875rem; padding:1rem 1.25rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08);">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;">
+            <path d="M10 3a4 4 0 1 1 0 8 4 4 0 0 1 0-8z" stroke="#7EB828" stroke-width="1.5"/>
+            <path d="M3.5 17a6.5 6.5 0 0 1 13 0" stroke="#7EB828" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.08em; color:rgba(255,255,255,0.55); text-transform:uppercase;">No obligation, free consultation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Main ──────────────────────────────────────────────────── -->
+  <div style="background:var(--c-bg);">
+    <div class="form-wrap">
+
+      <!-- Left: Form -->
+      <div>
+        <div class="progress-bar">
+          <div class="progress-step">
+            <span class="step-num">1</span> Services
+          </div>
+          <div class="progress-step">
+            <span class="step-num">2</span> Project Scope
+          </div>
+          <div class="progress-step">
+            <span class="step-num">3</span> About You
+          </div>
+        </div>
+
+        <form id="proposal-form" novalidate>
+
+          <!-- Section 1 — Services ───────────────────────────── -->
+          <div class="form-section">
+            <span class="section-num">Section 01</span>
+            <div class="section-title">What are you looking for?</div>
+            <p style="font-size:0.875rem; color:var(--c-muted); margin-bottom:1.5rem;">Select all that apply to your project.</p>
+            <div class="check-grid">
+              <div class="check-card">
+                <input type="checkbox" id="s1" name="services" value="Turnkey Laboratory Setup">
+                <label for="s1">Turnkey Laboratory Setup</label>
+              </div>
+              <div class="check-card">
+                <input type="checkbox" id="s2" name="services" value="Analytical Instrumentation">
+                <label for="s2">Analytical Instrumentation</label>
+              </div>
+              <div class="check-card">
+                <input type="checkbox" id="s3" name="services" value="Quality & Compliance (ISO 15189)">
+                <label for="s3">Quality &amp; Compliance (ISO 15189)</label>
+              </div>
+              <div class="check-card">
+                <input type="checkbox" id="s4" name="services" value="Cold Chain & Biosafety Infrastructure">
+                <label for="s4">Cold Chain &amp; Biosafety Infrastructure</label>
+              </div>
+              <div class="check-card">
+                <input type="checkbox" id="s5" name="services" value="Technical Support & Maintenance">
+                <label for="s5">Technical Support &amp; Maintenance</label>
+              </div>
+              <div class="check-card">
+                <input type="checkbox" id="s6" name="services" value="Training & Capacity Building">
+                <label for="s6">Training &amp; Capacity Building</label>
+              </div>
+              <div class="check-card" style="grid-column:1/-1;">
+                <input type="checkbox" id="s7" name="services" value="Not sure yet">
+                <label for="s7">Not sure yet — I need guidance</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2 — Project Scope ──────────────────────── -->
+          <div class="form-section">
+            <span class="section-num">Section 02</span>
+            <div class="section-title">Project Scope</div>
+
+            <div class="f-group">
+              <label class="f-label">Project Location</label>
+              <div class="input-row">
+                <select class="f-input" name="country">
+                  <option value="" disabled selected>Country</option>
+                  <option>Afghanistan</option><option>Albania</option><option>Algeria</option><option>Angola</option><option>Argentina</option><option>Armenia</option><option>Australia</option><option>Austria</option><option>Azerbaijan</option>
+                  <option>Bahrain</option><option>Bangladesh</option><option>Belarus</option><option>Belgium</option><option>Bolivia</option><option>Bosnia and Herzegovina</option><option>Brazil</option><option>Bulgaria</option>
+                  <option>Cambodia</option><option>Cameroon</option><option>Canada</option><option>Chile</option><option>China</option><option>Colombia</option><option>Croatia</option><option>Cyprus</option><option>Czech Republic</option>
+                  <option>Denmark</option><option>Dominican Republic</option>
+                  <option>Ecuador</option><option>Egypt</option><option>Ethiopia</option>
+                  <option>Finland</option><option>France</option>
+                  <option>Georgia</option><option>Germany</option><option>Ghana</option><option>Greece</option><option>Guatemala</option>
+                  <option>Honduras</option><option>Hungary</option>
+                  <option>India</option><option>Indonesia</option><option>Iran</option><option>Iraq</option><option>Ireland</option><option>Israel</option><option>Italy</option>
+                  <option>Japan</option><option>Jordan</option>
+                  <option>Kazakhstan</option><option>Kenya</option><option>Kuwait</option><option>Kyrgyzstan</option>
+                  <option>Lebanon</option><option>Libya</option><option>Lithuania</option>
+                  <option>Malaysia</option><option>Mexico</option><option>Moldova</option><option>Morocco</option><option>Mozambique</option>
+                  <option>Netherlands</option><option>New Zealand</option><option>Nigeria</option><option>North Macedonia</option><option>Norway</option>
+                  <option>Oman</option>
+                  <option>Pakistan</option><option>Palestine</option><option>Panama</option><option>Peru</option><option>Philippines</option><option>Poland</option><option>Portugal</option>
+                  <option>Qatar</option>
+                  <option>Romania</option><option>Russia</option><option>Rwanda</option>
+                  <option>Saudi Arabia</option><option>Senegal</option><option>Serbia</option><option>Singapore</option><option>Slovakia</option><option>Slovenia</option><option>South Africa</option><option>South Korea</option><option>Spain</option><option>Sudan</option><option>Sweden</option><option>Switzerland</option><option>Syria</option>
+                  <option>Taiwan</option><option>Tajikistan</option><option>Tanzania</option><option>Thailand</option><option>Tunisia</option><option>Turkey</option><option>Turkmenistan</option>
+                  <option>Uganda</option><option>Ukraine</option><option>United Arab Emirates</option><option>United Kingdom</option><option>United States</option><option>Uzbekistan</option>
+                  <option>Venezuela</option><option>Vietnam</option>
+                  <option>Yemen</option><option>Zimbabwe</option><option>Other</option>
+                </select>
+                <input type="text" class="f-input" name="city" placeholder="City / Region">
+              </div>
+            </div>
+
+            <div class="f-group" style="margin-top:2rem;">
+              <label class="f-label">Type of Organisation</label>
+              <div class="check-grid" style="margin-top:0.5rem;">
+                <div class="check-card radio-card">
+                  <input type="radio" id="o1" name="org_type" value="Hospital / Clinical Laboratory">
+                  <label for="o1">Hospital / Clinical Laboratory</label>
+                </div>
+                <div class="check-card radio-card">
+                  <input type="radio" id="o2" name="org_type" value="Government Ministry">
+                  <label for="o2">Government Ministry</label>
+                </div>
+                <div class="check-card radio-card">
+                  <input type="radio" id="o3" name="org_type" value="Research Institute / University">
+                  <label for="o3">Research Institute / University</label>
+                </div>
+                <div class="check-card radio-card">
+                  <input type="radio" id="o4" name="org_type" value="International Organisation">
+                  <label for="o4">International Organisation (UN, NGO, etc.)</label>
+                </div>
+                <div class="check-card radio-card">
+                  <input type="radio" id="o5" name="org_type" value="Private Sector">
+                  <label for="o5">Private Sector</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="scope-grid" style="margin-top:2rem;">
+              <div>
+                <label class="f-label" for="timeline">Estimated Timeline</label>
+                <select class="f-input" id="timeline" name="timeline">
+                  <option value="" disabled selected>Select timeline</option>
+                  <option>Immediate (0–3 months)</option>
+                  <option>Short-term (3–6 months)</option>
+                  <option>Medium-term (6–12 months)</option>
+                  <option>Planning stage (12+ months)</option>
+                </select>
+              </div>
+              <div>
+                <label class="f-label" for="scale">Project Scale</label>
+                <select class="f-input" id="scale" name="scale">
+                  <option value="" disabled selected>Select scale</option>
+                  <option>Small — single lab / department</option>
+                  <option>Medium — multi-department / facility</option>
+                  <option>Large — national / multi-site programme</option>
+                </select>
+              </div>
+              <div>
+                <label class="f-label" for="budget">Indicative Budget</label>
+                <select class="f-input" id="budget" name="budget">
+                  <option value="" disabled selected>Select range</option>
+                  <option>Under $50,000</option>
+                  <option>$50,000 – $200,000</option>
+                  <option>$200,000 – $1,000,000</option>
+                  <option>Over $1,000,000</option>
+                  <option>Not yet determined</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 3 — About You ───────────────────────────── -->
+          <div class="form-section">
+            <span class="section-num">Section 03</span>
+            <div class="section-title">About You</div>
+
+            <div class="input-row">
+              <div class="f-group">
+                <label class="f-label" for="fname">Full Name *</label>
+                <input type="text" id="fname" name="name" class="f-input" placeholder="Dr. Jane Smith" required>
+              </div>
+              <div class="f-group">
+                <label class="f-label" for="ftitle">Job Title</label>
+                <input type="text" id="ftitle" name="title" class="f-input" placeholder="Laboratory Director">
+              </div>
+            </div>
+            <div class="f-group">
+              <label class="f-label" for="forg">Organisation *</label>
+              <input type="text" id="forg" name="organisation" class="f-input" placeholder="Ministry of Health / University / Hospital" required>
+            </div>
+            <div class="input-row">
+              <div class="f-group">
+                <label class="f-label" for="femail">Email Address *</label>
+                <input type="email" id="femail" name="email" class="f-input" placeholder="name@organisation.com" required>
+              </div>
+              <div class="f-group">
+                <label class="f-label" for="fphone">Phone Number (optional)</label>
+                <input type="tel" id="fphone" name="phone" class="f-input" placeholder="+1 234 567 8900">
+              </div>
+            </div>
+            <div class="f-group">
+              <label class="f-label" for="fbrief">Project Brief *</label>
+              <textarea id="fbrief" name="brief" class="f-input" rows="5" placeholder="Describe your laboratory requirements, existing infrastructure, specific challenges, or any other context that would help us understand your project..." style="resize:vertical; font-family:'IBM Plex Sans',sans-serif; font-weight:300;" required></textarea>
+            </div>
+          </div>
+
+          <!-- Submit ─────────────────────────────────────────── -->
+          <button type="submit" class="btn-submit">
+            SUBMIT YOUR ENQUIRY
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <p class="disclaimer">
+            All enquiries are treated in strict confidence.<br>
+            A Green Med specialist will contact you within one business day.
+          </p>
+
+        </form>
+
+        <!-- Success state -->
+        <div id="success-msg" style="display:none; padding:3.5rem 2rem; background:var(--c-white); border:1px solid var(--c-rule); text-align:center;">
+          <div style="width:56px; height:56px; background:var(--gm-50); border:1px solid #C3DF72; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M5 13l4 4L19 7" stroke="#619A18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.75rem; text-transform:uppercase; color:var(--c-black); margin-bottom:0.75rem;">Enquiry Received</div>
+          <p style="font-size:0.9375rem; color:var(--c-dark); max-width:400px; margin:0 auto 2rem; line-height:1.75;">Thank you. A Green Med specialist will review your proposal and be in touch within one business day.</p>
+          <a href="index.html" style="font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:0.875rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gm-500); text-decoration:none;">← Return to Homepage</a>
+        </div>
+
+      </div>
+
+      <!-- Right: Sidebar ────────────────────────────────────── -->
+      <aside class="sidebar">
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Why Green Med?</div>
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="7.5" stroke="#619A18" stroke-width="1.5"/>
+                <path d="M10 6v4l2.5 2.5" stroke="#619A18" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="trust-text">
+              <strong>18+ Countries</strong>
+              Active projects across Africa, the Middle East, Central Asia and Europe.
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
+                <path d="M10 3a4 4 0 1 1 0 8 4 4 0 0 1 0-8z" stroke="#619A18" stroke-width="1.5"/>
+                <path d="M3.5 17a6.5 6.5 0 0 1 13 0" stroke="#619A18" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="trust-text">
+              <strong>UN / WHO / FAO Trusted Partner</strong>
+              Endorsed by leading international health and development organisations.
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
+                <path d="M3 17h14M5 17V8l5-5 5 5v9" stroke="#619A18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="8" y="12" width="4" height="5" stroke="#619A18" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div class="trust-text">
+              <strong>End-to-End Delivery</strong>
+              Design, procurement, installation, commissioning and ongoing support.
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
+                <rect x="3" y="7" width="14" height="10" rx="1" stroke="#619A18" stroke-width="1.5"/>
+                <path d="M6 7V5a4 4 0 0 1 8 0v2" stroke="#619A18" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="trust-text">
+              <strong>ISO 15189 Compliance</strong>
+              Quality systems aligned to international laboratory accreditation standards.
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Direct Contact</div>
+          <p style="font-size:0.875rem; color:var(--c-dark); line-height:1.7; margin-bottom:1rem;">Prefer to reach us directly? Contact our team by email:</p>
+          <a href="mailto:info@greenmedltd.com" style="font-family:'IBM Plex Mono',monospace; font-size:0.8125rem; color:var(--gm-500); text-decoration:none; word-break:break-all;">info@greenmedltd.com</a>
+        </div>
+
+        <div class="sidebar-card" style="background:var(--c-anthra); border-color:transparent;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:1rem;">International Partners</div>
+          <div style="display:flex; align-items:center; gap:1.25rem; flex-wrap:wrap;">
+            <img src="Photos/UN LOGO/UN_Logo.svg"     alt="UN"     style="height:30px; width:auto; filter:grayscale(1) brightness(2); opacity:0.4;">
+            <img src="Photos/UN LOGO/WHO_Logo.svg"    alt="WHO"    style="height:30px; width:auto; filter:grayscale(1) brightness(2); opacity:0.4;">
+            <img src="Photos/UN LOGO/FAO_Logo.svg"    alt="FAO"    style="height:30px; width:auto; filter:grayscale(1) brightness(2); opacity:0.4;">
+            <img src="Photos/UN LOGO/Unicef_Logo.svg" alt="UNICEF" style="height:30px; width:auto; filter:grayscale(1) brightness(2); opacity:0.4;">
+            <img src="Photos/UN LOGO/UNDP_Logo.svg"   alt="UNDP"   style="height:30px; width:auto; filter:grayscale(1) brightness(2); opacity:0.4;">
+            <img src="Photos/UN LOGO/UNOPS_Logo.svg"  alt="UNOPS"  style="height:30px; width:auto; filter:grayscale(1) brightness(2); opacity:0.4;">
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- ── Footer ────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div style="max-width:1440px; margin:0 auto;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:3rem; margin-bottom:3rem;">
+        <div style="max-width:300px;">
+          <img src="brand_assets/GREENMED LOGO Vert.svg" alt="Green Med Ltd." style="height:100px; width:auto; margin-bottom:1.25rem; display:block;">
+          <p style="font-size:0.875rem; color:rgba(255,255,255,0.38); line-height:1.75;">Global Medical Systems Integrator. Turnkey laboratory infrastructure, delivered end-to-end.</p>
+        </div>
+        <div style="display:flex; gap:4rem; flex-wrap:wrap;">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.25); margin-bottom:1.25rem;">COMPANY</div>
+            <a href="index.html#about"    class="fl">ABOUT</a>
+            <a href="index.html#services" class="fl">SERVICES</a>
+            <a href="index.html#process"  class="fl">PROCESS</a>
+            <a href="index.html#contact"  class="fl">CONTACT</a>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.25); margin-bottom:1.25rem;">SECTORS</div>
+            <span class="fl" style="cursor:default;">HEALTHCARE</span>
+            <span class="fl" style="cursor:default;">GOVERNMENT</span>
+            <span class="fl" style="cursor:default;">RESEARCH</span>
+            <span class="fl" style="cursor:default;">INT'L ORGS</span>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.25); margin-bottom:1.25rem;">SERVICES</div>
+            <span class="fl" style="cursor:default;">LABORATORY SETUP</span>
+            <span class="fl" style="cursor:default;">INSTRUMENTATION</span>
+            <span class="fl" style="cursor:default;">COMPLIANCE</span>
+            <span class="fl" style="cursor:default;">TECHNICAL SUPPORT</span>
+          </div>
+        </div>
+      </div>
+      <div style="padding-top:2rem; border-top:1px solid rgba(255,255,255,0.07); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+        <p style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; color:rgba(255,255,255,0.28);">© 2025 Green Med Ltd. · All rights reserved.</p>
+        <p style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; color:rgba(255,255,255,0.18); font-style:italic;">"From Concept to Completion."</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('mob-nav').classList.toggle('open');
+    }
+
+    document.getElementById('proposal-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name  = document.getElementById('fname').value.trim();
+      const org   = document.getElementById('forg').value.trim();
+      const email = document.getElementById('femail').value.trim();
+      const brief = document.getElementById('fbrief').value.trim();
+
+      const missing = [];
+      if (!name)  missing.push('Full Name');
+      if (!org)   missing.push('Organisation');
+      if (!email) missing.push('Email Address');
+      if (!brief) missing.push('Project Brief');
+
+      if (missing.length) {
+        alert('Please complete the following required fields:\n\n• ' + missing.join('\n• '));
+        return;
+      }
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+
+      this.style.display = 'none';
+      const success = document.getElementById('success-msg');
+      success.style.display = 'block';
+      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  </script>
+
+</body>
+</html>
