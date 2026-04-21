@@ -284,7 +284,11 @@
       padding: 1.375rem 0;
       border-bottom: 1px solid var(--c-rule);
       display: flex; align-items: flex-start; gap: 1.25rem;
+      transform: translateX(0);
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      cursor: default;
     }
+    .mkt-row:hover { transform: translateX(-8px); }
     .mkt-row:last-child { border-bottom: none; }
     .mkt-icon {
       width: 2.625rem; height: 2.625rem; flex-shrink: 0;
