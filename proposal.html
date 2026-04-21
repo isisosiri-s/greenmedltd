@@ -404,7 +404,7 @@
             <circle cx="10" cy="10" r="8" stroke="#7EB828" stroke-width="1.5"/>
             <path d="M6.5 10.5l2.5 2.5 4.5-5" stroke="#7EB828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.08em; color:rgba(255,255,255,0.55); text-transform:uppercase;">Response within 1 business day</span>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.08em; color:rgba(255,255,255,0.55); text-transform:uppercase;">Response within 1 business day <span style="opacity:0.55;">(GMT)</span></span>
         </div>
         <div style="display:flex; align-items:center; gap:0.875rem; padding:1rem 1.25rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08);">
           <svg width="18" height="18" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;">
@@ -535,12 +535,12 @@
                   <label for="o3">Research Institute / University</label>
                 </div>
                 <div class="check-card radio-card">
-                  <input type="radio" id="o4" name="org_type" value="International Organisation">
-                  <label for="o4">International Organisation (UN, NGO, etc.)</label>
-                </div>
-                <div class="check-card radio-card">
                   <input type="radio" id="o5" name="org_type" value="Private Sector">
                   <label for="o5">Private Sector</label>
+                </div>
+                <div class="check-card radio-card">
+                  <input type="radio" id="o4" name="org_type" value="International Organisation">
+                  <label for="o4">International Organisation (UN, NGO, etc.)</label>
                 </div>
               </div>
             </div>
@@ -566,7 +566,7 @@
                 </select>
               </div>
               <div>
-                <label class="f-label" for="budget">Indicative Budget</label>
+                <label class="f-label" for="budget">Indicative Budget <span style="font-size:0.6rem; letter-spacing:0.08em; color:var(--c-muted); text-transform:uppercase; font-family:'IBM Plex Mono',monospace;">— Optional</span></label>
                 <select class="f-input" id="budget" name="budget">
                   <option value="" disabled selected>Select range</option>
                   <option>Under $50,000</option>
@@ -667,8 +667,8 @@
               </svg>
             </div>
             <div class="trust-text">
-              <strong>UN / WHO / FAO Trusted Partner</strong>
-              Endorsed by leading international health and development organisations.
+              <strong>Trusted Partner</strong>
+              Delivering projects alongside UN, WHO, FAO and partner agencies.
             </div>
           </div>
           <div class="trust-item">
@@ -700,18 +700,18 @@
         <div class="sidebar-card">
           <div class="sidebar-title">Direct Contact</div>
           <p style="font-size:0.875rem; color:var(--c-dark); line-height:1.7; margin-bottom:1rem;">Prefer to reach us directly? Contact our team by email:</p>
-          <a href="mailto:info@greenmedltd.com" style="font-family:'IBM Plex Mono',monospace; font-size:0.8125rem; color:var(--gm-500); text-decoration:none; word-break:break-all;">info@greenmedltd.com</a>
+          <a href="mailto:support@greenmed.ltd" style="font-family:'IBM Plex Mono',monospace; font-size:0.8125rem; color:var(--gm-500); text-decoration:none; word-break:break-all;">support@greenmed.ltd</a>
         </div>
 
         <div class="sidebar-card" style="background:var(--c-anthra); border-color:transparent;">
           <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:1rem;">International Partners</div>
           <div style="display:flex; align-items:center; gap:1.25rem; flex-wrap:wrap;">
-            <img src="Photos/UN LOGO/UN_Logo.svg"     alt="UN"     style="height:30px; width:auto; filter:grayscale(1) brightness(2); opacity:0.4;">
-            <img src="Photos/UN LOGO/WHO_Logo.svg"    alt="WHO"    style="height:30px; width:auto; filter:grayscale(1) brightness(2); opacity:0.4;">
-            <img src="Photos/UN LOGO/FAO_Logo.svg"    alt="FAO"    style="height:30px; width:auto; filter:grayscale(1) brightness(2); opacity:0.4;">
-            <img src="Photos/UN LOGO/Unicef_Logo.svg" alt="UNICEF" style="height:30px; width:auto; filter:grayscale(1) brightness(2); opacity:0.4;">
-            <img src="Photos/UN LOGO/UNDP_Logo.svg"   alt="UNDP"   style="height:30px; width:auto; filter:grayscale(1) brightness(2); opacity:0.4;">
-            <img src="Photos/UN LOGO/UNOPS_Logo.svg"  alt="UNOPS"  style="height:30px; width:auto; filter:grayscale(1) brightness(2); opacity:0.4;">
+            <img src="Photos/UN LOGO/UN_Logo.svg"     alt="UN"     style="height:40px; width:auto; filter:grayscale(1) brightness(2); opacity:0.4;">
+            <img src="Photos/UN LOGO/WHO_Logo.svg"    alt="WHO"    style="height:40px; width:auto; filter:grayscale(1) brightness(2); opacity:0.4;">
+            <img src="Photos/UN LOGO/FAO_Logo.svg"    alt="FAO"    style="height:40px; width:auto; filter:grayscale(1) brightness(2); opacity:0.4;">
+            <img src="Photos/UN LOGO/Unicef_Logo.svg" alt="UNICEF" style="height:40px; width:auto; filter:grayscale(1) brightness(2); opacity:0.4;">
+            <img src="Photos/UN LOGO/UNDP_Logo.svg"   alt="UNDP"   style="height:40px; width:auto; filter:grayscale(1) brightness(2); opacity:0.4;">
+            <img src="Photos/UN LOGO/UNOPS_Logo.svg"  alt="UNOPS"  style="height:40px; width:auto; filter:grayscale(1) brightness(2); opacity:0.4;">
           </div>
         </div>
 
