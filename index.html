@@ -319,6 +319,8 @@
     }
     .f-input::placeholder { color: rgba(247,248,242,0.27); }
     .f-input:focus { border-color: var(--gm-400); }
+    select.f-input { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(247,248,242,0.42)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; cursor: pointer; }
+    select.f-input option { background: #1a2010; color: #F7F8F2; }
 
     /* ── Contact info rows ───────────────────────────────────── */
     .cinfo {
@@ -813,7 +815,34 @@ United Kingdom, N17 9QU</div>
 
             <div>
               <label class="f-label">COUNTRY / REGION</label>
-              <input type="text" class="f-input" placeholder="Country or region">
+              <select class="f-input">
+                <option value="" disabled selected>Select country or region</option>
+                <option>Afghanistan</option><option>Albania</option><option>Algeria</option><option>Angola</option><option>Argentina</option><option>Armenia</option><option>Australia</option><option>Austria</option><option>Azerbaijan</option>
+                <option>Bahrain</option><option>Bangladesh</option><option>Belarus</option><option>Belgium</option><option>Bolivia</option><option>Bosnia and Herzegovina</option><option>Brazil</option><option>Bulgaria</option>
+                <option>Cambodia</option><option>Cameroon</option><option>Canada</option><option>Chile</option><option>China</option><option>Colombia</option><option>Croatia</option><option>Cyprus</option><option>Czech Republic</option>
+                <option>Denmark</option><option>Dominican Republic</option>
+                <option>Ecuador</option><option>Egypt</option><option>Ethiopia</option>
+                <option>Finland</option><option>France</option>
+                <option>Georgia</option><option>Germany</option><option>Ghana</option><option>Greece</option><option>Guatemala</option>
+                <option>Honduras</option><option>Hungary</option>
+                <option>India</option><option>Indonesia</option><option>Iran</option><option>Iraq</option><option>Ireland</option><option>Israel</option><option>Italy</option>
+                <option>Japan</option><option>Jordan</option>
+                <option>Kazakhstan</option><option>Kenya</option><option>Kuwait</option><option>Kyrgyzstan</option>
+                <option>Lebanon</option><option>Libya</option><option>Lithuania</option>
+                <option>Malaysia</option><option>Mexico</option><option>Moldova</option><option>Morocco</option><option>Mozambique</option>
+                <option>Netherlands</option><option>New Zealand</option><option>Nigeria</option><option>North Macedonia</option><option>Norway</option>
+                <option>Oman</option>
+                <option>Pakistan</option><option>Palestine</option><option>Panama</option><option>Peru</option><option>Philippines</option><option>Poland</option><option>Portugal</option>
+                <option>Qatar</option>
+                <option>Romania</option><option>Russia</option><option>Rwanda</option>
+                <option>Saudi Arabia</option><option>Senegal</option><option>Serbia</option><option>Singapore</option><option>Slovakia</option><option>Slovenia</option><option>South Africa</option><option>South Korea</option><option>Spain</option><option>Sudan</option><option>Sweden</option><option>Switzerland</option><option>Syria</option>
+                <option>Taiwan</option><option>Tajikistan</option><option>Tanzania</option><option>Thailand</option><option>Tunisia</option><option>Turkey</option><option>Turkmenistan</option>
+                <option>Uganda</option><option>Ukraine</option><option>United Arab Emirates</option><option>United Kingdom</option><option>United States</option><option>Uzbekistan</option>
+                <option>Venezuela</option><option>Vietnam</option>
+                <option>Yemen</option>
+                <option>Zimbabwe</option>
+                <option>Other</option>
+              </select>
             </div>
 
             <div>
