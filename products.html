@@ -79,6 +79,7 @@
       display: flex; align-items: center;
       justify-content: space-between; gap: 2rem;
     }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
     .nav-link {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 600; font-size: 0.875rem;
@@ -98,6 +99,7 @@
       transition: background 0.2s;
     }
     .btn-nav:hover { background: var(--gm-600); }
+    .btn-nav:focus-visible { outline: 2px solid var(--gm-400); outline-offset: 2px; }
 
     /* ── Page header ───────────────────────────────────────── */
     .page-header {
@@ -600,9 +602,9 @@
 
     /* ── Responsive ────────────────────────────────────────── */
     @media (max-width: 1024px) {
-      .nav-links-desktop { display: none !important; }
-      .btn-nav-desktop    { display: none !important; }
-      .hamburger          { display: flex; }
+      .nav-links { display: none; }
+      .btn-nav   { display: none; }
+      .hamburger { display: flex; }
     }
     @media (max-width: 768px) {
       :root { --px: 1.5rem; }
@@ -623,7 +625,7 @@
         <img src="brand_assets/GREENMED LOGO Horz.svg" alt="Green Med Ltd." style="height:69px; width:auto;">
       </a>
 
-      <div class="nav-links-desktop" style="display:flex; align-items:center; gap:2.5rem;">
+      <div class="nav-links">
         <a href="index.html#about"    class="nav-link">ABOUT</a>
         <a href="index.html#services" class="nav-link">SERVICES</a>
         <a href="index.html#process"  class="nav-link">PROCESS</a>
@@ -631,7 +633,7 @@
         <a href="index.html#contact"  class="nav-link">CONTACT</a>
       </div>
 
-      <a href="index.html#contact" class="btn-nav btn-nav-desktop" style="flex-shrink:0;">GET IN TOUCH</a>
+      <a href="index.html#contact" class="btn-nav" style="flex-shrink:0;">GET IN TOUCH</a>
 
       <button class="hamburger" id="ham" aria-label="Toggle menu" onclick="toggleNav()">
         <span></span><span></span><span></span>

@@ -40,13 +40,13 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Nav ───────────────────────────────────────────────── */
+    /* ── Navigation ─────────────────────────────────────────── */
     .nav {
       position: fixed; top: 0; left: 0; right: 0;
       height: 64px; z-index: 100;
       backdrop-filter: blur(16px);
-      background: rgba(247,248,242,0.96);
-      border-bottom: 1px solid rgba(232,232,232,0.8);
+      background: rgba(247, 248, 242, 0.96);
+      border-bottom: 1px solid rgba(232, 232, 232, 0.8);
     }
     .nav-inner {
       max-width: 1440px; margin: 0 auto;
@@ -63,6 +63,7 @@
       transition: color 0.2s;
     }
     .nav-link:hover { color: var(--gm-500); }
+    .nav-link:focus-visible { outline: 2px solid var(--gm-400); outline-offset: 3px; }
     .btn-nav {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 600; font-size: 0.875rem;
@@ -72,6 +73,7 @@
       transition: background 0.2s;
     }
     .btn-nav:hover { background: var(--gm-600); }
+    .btn-nav:focus-visible { outline: 2px solid var(--gm-400); outline-offset: 2px; }
     .hamburger {
       display: none; flex-direction: column;
       gap: 5px; cursor: pointer; background: none;
@@ -79,16 +81,19 @@
     }
     .hamburger span {
       display: block; width: 22px; height: 2px;
-      background: var(--c-black);
-      transition: transform 0.25s, opacity 0.25s;
+      background: var(--c-dark);
+      transition: transform 0.2s, opacity 0.2s;
     }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     .mobile-nav {
-      display: none; flex-direction: column;
-      position: fixed; top: 64px; left: 0; right: 0;
-      background: var(--c-bg); z-index: 99;
-      padding: 1.5rem var(--px) 2rem;
+      display: none;
+      position: fixed; top: 64px; left: 0; right: 0; z-index: 99;
+      background: rgba(247,248,242,0.98); backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--c-rule);
-      gap: 1.25rem;
+      padding: 1.75rem var(--px);
+      flex-direction: column; gap: 1.25rem;
     }
     .mobile-nav.open { display: flex; }
 
@@ -213,7 +218,7 @@
         <a href="../index.html#contact"  class="nav-link">CONTACT</a>
       </div>
       <a href="../index.html#contact" class="btn-nav">GET IN TOUCH</a>
-      <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
+      <button class="hamburger" id="ham" onclick="toggleNav()" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -390,6 +395,7 @@
   <script>
     function toggleNav() {
       document.getElementById('mob-nav').classList.toggle('open');
+      document.getElementById('ham').classList.toggle('open');
     }
   </script>
 
