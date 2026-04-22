@@ -405,6 +405,116 @@
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: var(--c-bg); }
     ::-webkit-scrollbar-thumb { background: #C3DF72; }
+
+    /* ── Service Modals ──────────────────────────────────────── */
+    .svc-modal-overlay {
+      position: fixed; inset: 0; z-index: 500;
+      background: rgba(28, 28, 28, 0.54);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 1.5rem var(--px);
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.28s ease;
+    }
+    .svc-modal-overlay.active {
+      opacity: 1; pointer-events: auto;
+    }
+    .svc-modal-panel {
+      background: var(--c-white);
+      width: 100%; max-width: 660px;
+      max-height: 88vh; overflow-y: auto;
+      position: relative;
+      transform: translateY(28px);
+      transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      overscroll-behavior: contain;
+    }
+    .svc-modal-panel::-webkit-scrollbar { width: 4px; }
+    .svc-modal-panel::-webkit-scrollbar-track { background: var(--c-bg); }
+    .svc-modal-panel::-webkit-scrollbar-thumb { background: #C3DF72; }
+    .svc-modal-overlay.active .svc-modal-panel {
+      transform: translateY(0);
+    }
+    .svc-modal-accent { height: 3px; background: var(--gm-400); }
+    .svc-modal-header {
+      padding: 2rem 2.25rem 1.5rem;
+      border-bottom: 1px solid var(--c-rule);
+      display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;
+    }
+    .svc-modal-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6875rem; color: var(--gm-400);
+      letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block;
+    }
+    .svc-modal-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: clamp(1.5rem, 3vw, 2rem);
+      text-transform: uppercase; color: var(--c-black); line-height: 1.1;
+    }
+    .svc-modal-close {
+      flex-shrink: 0; width: 36px; height: 36px;
+      background: none; border: 1px solid var(--c-rule); cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--c-muted);
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      margin-top: 2px;
+    }
+    .svc-modal-close:hover { border-color: var(--c-dark); color: var(--c-black); background: var(--c-bg); }
+    .svc-modal-close:focus-visible { outline: 2px solid var(--gm-400); outline-offset: 2px; }
+    .svc-modal-body { padding: 2rem 2.25rem; }
+    .svc-modal-section { margin-bottom: 2rem; }
+    .svc-modal-section:last-child { margin-bottom: 0; }
+    .svc-modal-section-title {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6875rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gm-500);
+      margin-bottom: 1rem; padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--c-rule);
+    }
+    .svc-modal-list {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; flex-direction: column; gap: 0.55rem;
+    }
+    .svc-modal-list li {
+      font-size: 0.9rem; color: var(--c-dark);
+      line-height: 1.65; padding-left: 1.125rem; position: relative;
+    }
+    .svc-modal-list li::before {
+      content: '';
+      position: absolute; left: 0; top: 0.55em;
+      width: 5px; height: 5px;
+      background: var(--gm-400); border-radius: 50%;
+    }
+    .svc-modal-intro {
+      font-size: 0.9375rem; color: var(--c-dark);
+      line-height: 1.8; margin-bottom: 1.75rem;
+    }
+    .svc-modal-footer {
+      padding: 1.5rem 2.25rem;
+      border-top: 1px solid var(--c-rule);
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+      background: var(--c-bg);
+    }
+    .svc-modal-footer-note {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6875rem; color: var(--c-muted); letter-spacing: 0.06em;
+    }
+    .svc-modal-cta {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.12em;
+      text-transform: uppercase; text-decoration: none;
+      color: var(--c-white); background: var(--gm-400);
+      padding: 0.625rem 1.25rem;
+      transition: background 0.2s;
+    }
+    .svc-modal-cta:hover { background: var(--gm-500); }
+    .svc-modal-cta:focus-visible { outline: 2px solid var(--gm-400); outline-offset: 3px; }
+    @media (max-width: 480px) {
+      .svc-modal-header { padding: 1.5rem 1.25rem 1.25rem; }
+      .svc-modal-body   { padding: 1.5rem 1.25rem; }
+      .svc-modal-footer { padding: 1.25rem 1.25rem; }
+    }
   </style>
 </head>
 <body>
@@ -656,42 +766,42 @@
         <span class="svc-num">01</span>
         <div class="svc-title">Turnkey Laboratory Setup</div>
         <p class="svc-desc">End-to-end laboratory infrastructure design and commissioning, from initial feasibility study through to final handover and staff training.</p>
-        <a href="#contact" class="svc-cta">FULL SCOPE →</a>
+        <a href="#" class="svc-cta" onclick="openServiceModal('svc-01');return false;">FULL SCOPE →</a>
       </div>
 
       <div class="svc-card anim-in" style="transition-delay:0.08s;">
         <span class="svc-num">02</span>
         <div class="svc-title">Analytical Instrumentation</div>
         <p class="svc-desc">Supply and calibration of precision analytical equipment from world-leading manufacturers, including installation and performance validation.</p>
-        <a href="#contact" class="svc-cta">EQUIPMENT →</a>
+        <a href="#" class="svc-cta" onclick="openServiceModal('svc-02');return false;">EQUIPMENT →</a>
       </div>
 
       <div class="svc-card anim-in" style="transition-delay:0.16s;">
         <span class="svc-num">03</span>
         <div class="svc-title">Quality &amp; Compliance</div>
         <p class="svc-desc">ISO-compliant laboratory setup, quality management documentation systems, SOP development, and regulatory framework implementation.</p>
-        <a href="#contact" class="svc-cta">STANDARDS →</a>
+        <a href="#" class="svc-cta" onclick="openServiceModal('svc-03');return false;">STANDARDS →</a>
       </div>
 
       <div class="svc-card anim-in" style="transition-delay:0.24s;">
         <span class="svc-num">04</span>
         <div class="svc-title">Cold Chain &amp; Biosafety</div>
         <p class="svc-desc">Temperature-controlled storage infrastructure, biosafety cabinet installation, and containment systems for sensitive biological materials.</p>
-        <a href="#contact" class="svc-cta">SYSTEMS →</a>
+        <a href="#" class="svc-cta" onclick="openServiceModal('svc-04');return false;">SYSTEMS →</a>
       </div>
 
       <div class="svc-card anim-in" style="transition-delay:0.32s;">
         <span class="svc-num">05</span>
         <div class="svc-title">Technical Support</div>
         <p class="svc-desc">Preventive maintenance contracts, emergency repair services, original spare parts supply, and remote technical assistance programmes.</p>
-        <a href="#contact" class="svc-cta">SUPPORT →</a>
+        <a href="#" class="svc-cta" onclick="openServiceModal('svc-05');return false;">SUPPORT →</a>
       </div>
 
       <div class="svc-card anim-in" style="transition-delay:0.40s;">
         <span class="svc-num">06</span>
         <div class="svc-title">Training &amp; Capacity Building</div>
         <p class="svc-desc">On-site and remote training programmes for laboratory staff, biomedical technicians, and laboratory management teams.</p>
-        <a href="#contact" class="svc-cta">TRAINING →</a>
+        <a href="#" class="svc-cta" onclick="openServiceModal('svc-06');return false;">TRAINING →</a>
       </div>
     </div>
   </section>
@@ -952,7 +1062,338 @@ United Kingdom, N17 9QU</div>
     </div>
   </footer>
 
+  <!-- ═══════════════════════════════════════════════════════════
+       SERVICE MODALS
+  ════════════════════════════════════════════════════════════ -->
+
+  <!-- 01 Turnkey Laboratory Setup -->
+  <div class="svc-modal-overlay" id="svc-01" role="dialog" aria-modal="true" aria-labelledby="svc-01-title">
+    <div class="svc-modal-panel">
+      <div class="svc-modal-accent"></div>
+      <div class="svc-modal-header">
+        <div>
+          <span class="svc-modal-num">SERVICE 01</span>
+          <div class="svc-modal-title" id="svc-01-title">Turnkey Laboratory Setup</div>
+        </div>
+        <button class="svc-modal-close" onclick="closeServiceModal('svc-01')" aria-label="Close">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="svc-modal-body">
+        <p class="svc-modal-intro">We manage the complete lifecycle of your laboratory — from the first site visit through to handover of a fully operational, validated facility. One contract, one point of accountability.</p>
+        <div class="svc-modal-section">
+          <div class="svc-modal-section-title">Scope of Delivery</div>
+          <ul class="svc-modal-list">
+            <li>Feasibility study, site assessment &amp; regulatory mapping</li>
+            <li>Laboratory layout design &amp; MEP coordination</li>
+            <li>Biosafety zoning &amp; workflow optimisation</li>
+            <li>Procurement from accredited international manufacturers</li>
+            <li>Import logistics, customs clearance &amp; in-country delivery</li>
+            <li>Professional installation by certified field engineers</li>
+            <li>IQ / OQ / PQ validation &amp; performance verification</li>
+            <li>Staff operator training &amp; SOP documentation</li>
+            <li>Formal project handover &amp; as-built drawings</li>
+          </ul>
+        </div>
+        <div class="svc-modal-section">
+          <div class="svc-modal-section-title">Deliverables</div>
+          <ul class="svc-modal-list">
+            <li>Fully operational, commission-ready laboratory from day one</li>
+            <li>Complete equipment inventory with warranties &amp; calibration records</li>
+            <li>Quality management documentation &amp; standard operating procedures</li>
+            <li>As-built architectural &amp; MEP drawings</li>
+          </ul>
+        </div>
+        <div class="svc-modal-section">
+          <div class="svc-modal-section-title">Who It's For</div>
+          <ul class="svc-modal-list">
+            <li>Ministries of Health &amp; national public health agencies</li>
+            <li>Hospital networks establishing new diagnostic capacity</li>
+            <li>Research institutes &amp; universities</li>
+            <li>International development programmes &amp; NGOs</li>
+          </ul>
+        </div>
+      </div>
+      <div class="svc-modal-footer">
+        <span class="svc-modal-footer-note">BESPOKE SCOPE · REQUEST A CONSULTATION</span>
+        <a href="#contact" class="svc-modal-cta" onclick="closeServiceModal('svc-01')">
+          Request Quote
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 Analytical Instrumentation -->
+  <div class="svc-modal-overlay" id="svc-02" role="dialog" aria-modal="true" aria-labelledby="svc-02-title">
+    <div class="svc-modal-panel">
+      <div class="svc-modal-accent"></div>
+      <div class="svc-modal-header">
+        <div>
+          <span class="svc-modal-num">SERVICE 02</span>
+          <div class="svc-modal-title" id="svc-02-title">Analytical Instrumentation</div>
+        </div>
+        <button class="svc-modal-close" onclick="closeServiceModal('svc-02')" aria-label="Close">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="svc-modal-body">
+        <p class="svc-modal-intro">We supply, install, and validate precision analytical instruments sourced exclusively from accredited, world-leading manufacturers — backed by full after-sales support.</p>
+        <div class="svc-modal-section">
+          <div class="svc-modal-section-title">Equipment Categories</div>
+          <ul class="svc-modal-list">
+            <li>Clinical chemistry &amp; immunoassay analysers</li>
+            <li>Molecular diagnostics — PCR, qPCR &amp; NGS platforms</li>
+            <li>Haematology &amp; coagulation analysers</li>
+            <li>Microbiology &amp; automated culture systems</li>
+            <li>Spectrophotometers, centrifuges &amp; balance equipment</li>
+            <li>Point-of-care &amp; rapid diagnostic platforms</li>
+            <li>Biosafety cabinets &amp; laminar flow workstations</li>
+          </ul>
+        </div>
+        <div class="svc-modal-section">
+          <div class="svc-modal-section-title">Services Included</div>
+          <ul class="svc-modal-list">
+            <li>International sourcing &amp; import clearance</li>
+            <li>Installation by OEM-certified field engineers</li>
+            <li>Calibration, IQ / OQ / PQ validation</li>
+            <li>Operator &amp; maintenance training</li>
+            <li>Warranty management &amp; genuine spare parts supply</li>
+          </ul>
+        </div>
+      </div>
+      <div class="svc-modal-footer">
+        <span class="svc-modal-footer-note">OEM-CERTIFIED · VALIDATED ON-SITE</span>
+        <a href="#contact" class="svc-modal-cta" onclick="closeServiceModal('svc-02')">
+          Request Quote
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 Quality & Compliance -->
+  <div class="svc-modal-overlay" id="svc-03" role="dialog" aria-modal="true" aria-labelledby="svc-03-title">
+    <div class="svc-modal-panel">
+      <div class="svc-modal-accent"></div>
+      <div class="svc-modal-header">
+        <div>
+          <span class="svc-modal-num">SERVICE 03</span>
+          <div class="svc-modal-title" id="svc-03-title">Quality &amp; Compliance</div>
+        </div>
+        <button class="svc-modal-close" onclick="closeServiceModal('svc-03')" aria-label="Close">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="svc-modal-body">
+        <p class="svc-modal-intro">We build the quality infrastructure your laboratory needs to meet international accreditation standards — from QMS documentation and SOP development through to audit readiness.</p>
+        <div class="svc-modal-section">
+          <div class="svc-modal-section-title">Standards Supported</div>
+          <ul class="svc-modal-list">
+            <li>ISO 15189 — Medical laboratories quality &amp; competence</li>
+            <li>ISO 17025 — Testing &amp; calibration laboratory accreditation</li>
+            <li>WHO AFRO SLIPTA framework</li>
+            <li>Good Laboratory Practice (GLP) &amp; GMP principles</li>
+            <li>National regulatory authority requirements</li>
+          </ul>
+        </div>
+        <div class="svc-modal-section">
+          <div class="svc-modal-section-title">Deliverables</div>
+          <ul class="svc-modal-list">
+            <li>Quality Management System (QMS) documentation suite</li>
+            <li>Standard Operating Procedures (SOPs) — instrument &amp; process-level</li>
+            <li>Internal audit checklists &amp; gap analysis reports</li>
+            <li>Staff competency assessment frameworks</li>
+            <li>Regulatory submission support &amp; corrective action planning</li>
+          </ul>
+        </div>
+      </div>
+      <div class="svc-modal-footer">
+        <span class="svc-modal-footer-note">ISO 15189 · ISO 17025 · WHO SLIPTA</span>
+        <a href="#contact" class="svc-modal-cta" onclick="closeServiceModal('svc-03')">
+          Request Quote
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 Cold Chain & Biosafety -->
+  <div class="svc-modal-overlay" id="svc-04" role="dialog" aria-modal="true" aria-labelledby="svc-04-title">
+    <div class="svc-modal-panel">
+      <div class="svc-modal-accent"></div>
+      <div class="svc-modal-header">
+        <div>
+          <span class="svc-modal-num">SERVICE 04</span>
+          <div class="svc-modal-title" id="svc-04-title">Cold Chain &amp; Biosafety</div>
+        </div>
+        <button class="svc-modal-close" onclick="closeServiceModal('svc-04')" aria-label="Close">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="svc-modal-body">
+        <p class="svc-modal-intro">We design and install the temperature-controlled and containment infrastructure required for safe handling of biological materials, vaccines, reagents, and diagnostic samples.</p>
+        <div class="svc-modal-section">
+          <div class="svc-modal-section-title">Cold Chain Systems</div>
+          <ul class="svc-modal-list">
+            <li>+2°C to +8°C pharmaceutical-grade refrigerators</li>
+            <li>−20°C standard freezers &amp; ultra-low −80°C ULT freezers</li>
+            <li>Liquid nitrogen storage &amp; cryo-tank systems</li>
+            <li>Automated temperature monitoring &amp; real-time alarm systems</li>
+            <li>Vaccine storage compliant with WHO PQS standards</li>
+          </ul>
+        </div>
+        <div class="svc-modal-section">
+          <div class="svc-modal-section-title">Biosafety Infrastructure</div>
+          <ul class="svc-modal-list">
+            <li>Class I, II A2 &amp; II B2 biosafety cabinets</li>
+            <li>Biosafety Level (BSL-1 to BSL-3) zoning design</li>
+            <li>Autoclave &amp; decontamination equipment supply</li>
+            <li>HEPA filtration systems &amp; negative pressure room design</li>
+            <li>Containment solutions for hazardous pathogen work</li>
+          </ul>
+        </div>
+      </div>
+      <div class="svc-modal-footer">
+        <span class="svc-modal-footer-note">WHO PQS · BSL-1 TO BSL-3 CAPABILITY</span>
+        <a href="#contact" class="svc-modal-cta" onclick="closeServiceModal('svc-04')">
+          Request Quote
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 Technical Support -->
+  <div class="svc-modal-overlay" id="svc-05" role="dialog" aria-modal="true" aria-labelledby="svc-05-title">
+    <div class="svc-modal-panel">
+      <div class="svc-modal-accent"></div>
+      <div class="svc-modal-header">
+        <div>
+          <span class="svc-modal-num">SERVICE 05</span>
+          <div class="svc-modal-title" id="svc-05-title">Technical Support</div>
+        </div>
+        <button class="svc-modal-close" onclick="closeServiceModal('svc-05')" aria-label="Close">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="svc-modal-body">
+        <p class="svc-modal-intro">We keep your laboratory running at full capacity through structured maintenance contracts, rapid emergency response, genuine OEM spare parts, and remote technical assistance.</p>
+        <div class="svc-modal-section">
+          <div class="svc-modal-section-title">Service Tiers</div>
+          <ul class="svc-modal-list">
+            <li><strong style="color:var(--c-black);font-weight:400;">Essential</strong> — Annual preventive maintenance visit &amp; performance check</li>
+            <li><strong style="color:var(--c-black);font-weight:400;">Standard</strong> — PM visits + emergency repair + genuine spare parts supply</li>
+            <li><strong style="color:var(--c-black);font-weight:400;">Premium</strong> — Unlimited visits + 4-hour remote / 48-hour on-site SLA</li>
+          </ul>
+        </div>
+        <div class="svc-modal-section">
+          <div class="svc-modal-section-title">What's Covered</div>
+          <ul class="svc-modal-list">
+            <li>Preventive maintenance to manufacturer specifications</li>
+            <li>Emergency fault diagnosis &amp; repair</li>
+            <li>Genuine OEM spare parts supply &amp; warranty management</li>
+            <li>Remote technical assistance — video &amp; secure remote access</li>
+            <li>On-site engineer dispatch across supported regions</li>
+            <li>Annual performance verification &amp; calibration</li>
+          </ul>
+        </div>
+      </div>
+      <div class="svc-modal-footer">
+        <span class="svc-modal-footer-note">MULTI-REGION COVERAGE · OEM PARTS</span>
+        <a href="#contact" class="svc-modal-cta" onclick="closeServiceModal('svc-05')">
+          Request Quote
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 06 Training & Capacity Building -->
+  <div class="svc-modal-overlay" id="svc-06" role="dialog" aria-modal="true" aria-labelledby="svc-06-title">
+    <div class="svc-modal-panel">
+      <div class="svc-modal-accent"></div>
+      <div class="svc-modal-header">
+        <div>
+          <span class="svc-modal-num">SERVICE 06</span>
+          <div class="svc-modal-title" id="svc-06-title">Training &amp; Capacity Building</div>
+        </div>
+        <button class="svc-modal-close" onclick="closeServiceModal('svc-06')" aria-label="Close">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="svc-modal-body">
+        <p class="svc-modal-intro">We build lasting in-house capability through structured, role-specific training programmes — delivered on-site, remotely, or as blended programmes tailored to your team.</p>
+        <div class="svc-modal-section">
+          <div class="svc-modal-section-title">Training Programmes</div>
+          <ul class="svc-modal-list">
+            <li>Instrument-specific operator training (all supplied platforms)</li>
+            <li>Laboratory management &amp; leadership development</li>
+            <li>Biomedical technician certification courses</li>
+            <li>Quality Management System (QMS) &amp; ISO awareness training</li>
+            <li>Biosafety &amp; infection control practices</li>
+            <li>Train-the-Trainer (T3) programmes for in-house sustainability</li>
+          </ul>
+        </div>
+        <div class="svc-modal-section">
+          <div class="svc-modal-section-title">Delivery Modes</div>
+          <ul class="svc-modal-list">
+            <li>On-site at your facility — hands-on, equipment-specific</li>
+            <li>Remote — live instructor-led sessions via video conference</li>
+            <li>Blended — structured on-site foundations with digital resources</li>
+          </ul>
+        </div>
+        <div class="svc-modal-section">
+          <div class="svc-modal-section-title">Outcomes</div>
+          <ul class="svc-modal-list">
+            <li>Green Med certificate of competence for each participant</li>
+            <li>Competency assessment records for regulatory compliance</li>
+            <li>Ongoing CPD support materials &amp; refresher access</li>
+          </ul>
+        </div>
+      </div>
+      <div class="svc-modal-footer">
+        <span class="svc-modal-footer-note">ON-SITE · REMOTE · CERTIFIED</span>
+        <a href="#contact" class="svc-modal-cta" onclick="closeServiceModal('svc-06')">
+          Request Quote
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <script>
+    /* Service modals */
+    function openServiceModal(id) {
+      const overlay = document.getElementById(id);
+      if (!overlay) return;
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      overlay.querySelector('.svc-modal-close').focus();
+    }
+    function closeServiceModal(id) {
+      const overlay = document.getElementById(id);
+      if (!overlay) return;
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.svc-modal-overlay.active').forEach(el => {
+          el.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      }
+    });
+    document.querySelectorAll('.svc-modal-overlay').forEach(overlay => {
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+          overlay.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+
     /* Mobile nav toggle */
     function toggleNav() {
       const nav = document.getElementById('mob-nav');
