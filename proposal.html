@@ -614,6 +614,17 @@
             </div>
           </div>
 
+          <!-- Consent ────────────────────────────────────────── -->
+          <div style="display:flex; align-items:flex-start; gap:0.75rem; margin-bottom:1.5rem;">
+            <input type="checkbox" id="gdpr-consent" name="gdpr_consent" required
+              style="margin-top:3px; width:16px; height:16px; accent-color:var(--gm-500); flex-shrink:0; cursor:pointer;">
+            <label for="gdpr-consent" style="font-size:0.8125rem; color:var(--c-muted); line-height:1.6; cursor:pointer;">
+              I agree to be contacted by Green Med Ltd. and for my personal data to be processed in accordance with the
+              <a href="privacy_policy/privacy-policy.html" target="_blank" style="color:var(--gm-500); text-decoration:underline;">Privacy Policy</a>.
+              I understand I may withdraw this consent at any time. *
+            </label>
+          </div>
+
           <!-- Submit ─────────────────────────────────────────── -->
           <button type="submit" class="btn-submit">
             SUBMIT YOUR ENQUIRY
@@ -750,6 +761,10 @@
             <span class="fl" style="cursor:default;">COMPLIANCE</span>
             <span class="fl" style="cursor:default;">TECHNICAL SUPPORT</span>
           </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.25); margin-bottom:1.25rem;">LEGAL</div>
+            <a href="privacy_policy/privacy-policy.html" class="fl">PRIVACY POLICY</a>
+          </div>
         </div>
       </div>
       <div style="padding-top:2rem; border-top:1px solid rgba(255,255,255,0.07); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
@@ -767,16 +782,18 @@
     document.getElementById('proposal-form').addEventListener('submit', function(e) {
       e.preventDefault();
 
-      const name  = document.getElementById('fname').value.trim();
-      const org   = document.getElementById('forg').value.trim();
-      const email = document.getElementById('femail').value.trim();
-      const brief = document.getElementById('fbrief').value.trim();
+      const name    = document.getElementById('fname').value.trim();
+      const org     = document.getElementById('forg').value.trim();
+      const email   = document.getElementById('femail').value.trim();
+      const brief   = document.getElementById('fbrief').value.trim();
+      const consent = document.getElementById('gdpr-consent').checked;
 
       const missing = [];
-      if (!name)  missing.push('Full Name');
-      if (!org)   missing.push('Organisation');
-      if (!email) missing.push('Email Address');
-      if (!brief) missing.push('Project Brief');
+      if (!name)    missing.push('Full Name');
+      if (!org)     missing.push('Organisation');
+      if (!email)   missing.push('Email Address');
+      if (!brief)   missing.push('Project Brief');
+      if (!consent) missing.push('Privacy Policy consent');
 
       if (missing.length) {
         alert('Please complete the following required fields:\n\n• ' + missing.join('\n• '));
