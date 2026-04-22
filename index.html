@@ -474,15 +474,15 @@
       <!-- Mini stats -->
       <div style="display:flex; gap:2.75rem; padding-top:1.5rem; border-top:1px solid var(--c-rule); flex-wrap:wrap;">
         <div>
-          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.625rem; color:var(--gm-500); line-height:1;">200+</div>
+          <div class="hero-counter" data-counter="200" data-suffix="+" style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.625rem; color:var(--gm-500); line-height:1;">200+</div>
           <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--c-muted); margin-top:0.25rem;">PROJECTS DELIVERED</div>
         </div>
         <div>
-          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.625rem; color:var(--gm-500); line-height:1;">18+</div>
+          <div class="hero-counter" data-counter="18" data-suffix="+" style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.625rem; color:var(--gm-500); line-height:1;">18+</div>
           <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--c-muted); margin-top:0.25rem;">COUNTRIES SERVED</div>
         </div>
         <div>
-          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.625rem; color:var(--gm-500); line-height:1;">15+</div>
+          <div class="hero-counter" data-counter="15" data-suffix="+" style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.625rem; color:var(--gm-500); line-height:1;">15+</div>
           <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--c-muted); margin-top:0.25rem;">YEARS EXPERIENCE</div>
         </div>
       </div>
@@ -517,19 +517,19 @@
   <section class="stats-section">
     <div class="stats-grid container">
       <div class="stat-cell anim-in">
-        <div class="stat-num">200+</div>
+        <div class="stat-num" data-counter="200" data-suffix="+">200+</div>
         <div class="stat-label">PROJECTS DELIVERED</div>
       </div>
       <div class="stat-cell anim-in" style="transition-delay:0.1s;">
-        <div class="stat-num">18+</div>
+        <div class="stat-num" data-counter="18" data-suffix="+">18+</div>
         <div class="stat-label">COUNTRIES SERVED</div>
       </div>
       <div class="stat-cell anim-in" style="transition-delay:0.2s;">
-        <div class="stat-num">500+</div>
+        <div class="stat-num" data-counter="500" data-suffix="+">500+</div>
         <div class="stat-label">INSTRUMENTS INSTALLED</div>
       </div>
       <div class="stat-cell anim-in" style="transition-delay:0.3s;">
-        <div class="stat-num">15+</div>
+        <div class="stat-num" data-counter="15" data-suffix="+">15+</div>
         <div class="stat-label">YEARS EXPERIENCE</div>
       </div>
     </div>
@@ -971,6 +971,37 @@ United Kingdom, N17 9QU</div>
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.anim-in').forEach(el => observer.observe(el));
+
+    /* Animated counters — easeOutCubic, fires once on scroll-into-view */
+    function animateCounter(el, target, suffix, duration) {
+      const start = performance.now();
+      (function tick(now) {
+        const t = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = Math.round(eased * target) + suffix;
+        if (t < 1) requestAnimationFrame(tick);
+      })(start);
+    }
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        statsObserver.unobserve(e.target);
+        e.target.querySelectorAll('[data-counter]').forEach((el, i) => {
+          setTimeout(() => animateCounter(el, +el.dataset.counter, el.dataset.suffix || '', 1800), i * 120);
+        });
+      });
+    }, { threshold: 0.35 });
+
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) statsObserver.observe(statsSection);
+
+    /* Hero mini-counters — fire shortly after page load */
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.hero-counter').forEach((el, i) => {
+        setTimeout(() => animateCounter(el, +el.dataset.counter, el.dataset.suffix || '', 1600), 700 + i * 150);
+      });
+    });
   </script>
 </body>
 </html>
