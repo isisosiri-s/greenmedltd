@@ -239,6 +239,214 @@
     }
     .proj-rule { height: 1px; background: var(--c-rule); }
 
+    /* ── Consultancy intro ───────────────────────────────────── */
+    .consult-intro {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+    }
+    .service-list { display: flex; flex-direction: column; gap: 0; }
+    .service-item {
+      display: flex; align-items: flex-start; gap: 1.25rem;
+      padding: 1.1rem 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .service-item:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
+    .service-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--gm-400); flex-shrink: 0; margin-top: 0.55rem;
+    }
+    .service-text {
+      font-size: 0.9375rem; color: rgba(255,255,255,0.5); line-height: 1.6;
+    }
+
+    /* ── Partner rows ────────────────────────────────────────── */
+    .partner-row {
+      display: grid; grid-template-columns: 3.5rem 1fr auto;
+      gap: 0 2.5rem; align-items: center;
+      padding: 2rem 0; border-bottom: 1px solid var(--c-rule);
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  opacity 0.3s ease;
+      cursor: default;
+    }
+    .partner-row:first-child { border-top: 1px solid var(--c-rule); }
+    .partner-row:hover { transform: translateX(10px); opacity: 0.85; }
+    .partner-num {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6875rem;
+      letter-spacing: 0.12em; color: var(--gm-400); align-self: start;
+      padding-top: 0.2rem;
+    }
+    .partner-info { display: flex; flex-direction: column; gap: 0.3rem; }
+    .partner-dept {
+      font-family: 'IBM Plex Sans', sans-serif; font-weight: 300;
+      font-size: 0.875rem; color: var(--c-muted); line-height: 1.4;
+    }
+    .partner-institution {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+      font-size: 1.375rem; text-transform: uppercase; color: var(--c-black);
+      line-height: 1.05; letter-spacing: 0.01em;
+    }
+    .partner-location {
+      display: flex; flex-direction: column; align-items: flex-end;
+      gap: 0.2rem; flex-shrink: 0;
+    }
+    .partner-city {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+      font-size: 1rem; text-transform: uppercase; color: var(--c-dark);
+      letter-spacing: 0.05em;
+    }
+    .partner-country {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-muted);
+    }
+
+    /* ── Tall card (photo top, content below) ────────────────── */
+    .proj-card-tall {
+      background: var(--c-white); border: 1px solid var(--c-rule); overflow: hidden;
+      transition: box-shadow 0.3s, transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .proj-card-tall:hover {
+      box-shadow: 0 20px 56px rgba(0,0,0,0.09), 0 4px 12px rgba(0,0,0,0.05);
+      transform: translateY(-4px);
+    }
+    .proj-photo-top {
+      position: relative; overflow: hidden; height: 380px;
+    }
+    .proj-photo-top img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      filter: grayscale(1);
+      transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.6s ease;
+    }
+    .proj-card-tall:hover .proj-photo-top img { transform: scale(1.04); filter: grayscale(0); }
+    .proj-photo-top::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(25,60,4,0.65) 0%, transparent 55%),
+                  linear-gradient(to right, rgba(0,0,0,0.2) 0%, transparent 60%);
+    }
+    .proj-photo-top .proj-photo-num    { position: absolute; top: 1.25rem; left: 1.25rem; z-index: 2; }
+    .proj-photo-top .proj-photo-location { position: absolute; bottom: 1.25rem; left: 1.25rem; z-index: 2; }
+    .proj-card-tall .proj-body {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 3rem;
+      padding: 2.5rem;
+    }
+    .proj-card-tall .proj-body-main { display: flex; flex-direction: column; gap: 1rem; }
+    .proj-card-tall .proj-body-subs  { display: flex; flex-direction: column; gap: 1rem; }
+    @media (max-width: 768px) {
+      .proj-photo-top { height: 260px; }
+      .proj-card-tall .proj-body { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.75rem 1.25rem; }
+    }
+
+    /* ── Dual side-by-side images inside card ────────────────── */
+    .dp-side { position: relative; overflow: hidden; }
+    .dp-side img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      filter: grayscale(1);
+      transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.6s ease;
+    }
+    .dp-side:hover img { transform: scale(1.06); filter: grayscale(0); }
+    .dp-side::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(25,60,4,0.65) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    /* ── Card subsections ────────────────────────────────────── */
+    .proj-sub { padding-top: 0.875rem; border-top: 1px solid var(--c-rule); }
+    .proj-sub-title {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.575rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gm-500); margin-bottom: 0.4rem;
+    }
+    .proj-sub-text {
+      font-size: 0.875rem; color: var(--c-dark); line-height: 1.78;
+    }
+
+    /* ── Side-by-side photo + content-below featured ────────── */
+    .feat-over { background: var(--c-footer); overflow: hidden; }
+    .feat-over-photos {
+      display: grid; grid-template-columns: 1fr 1fr; height: 420px;
+    }
+    .feat-over-photo {
+      position: relative; overflow: hidden;
+    }
+    .feat-over-photo img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      filter: grayscale(1);
+      transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.6s ease;
+    }
+    .feat-over-photo:hover img { transform: scale(1.04); filter: grayscale(0); }
+    .feat-over-photo::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.08) 0%, rgba(25,60,4,0.6) 100%);
+    }
+    .feat-over-photo-badge {
+      position: absolute; top: 1.25rem; left: 1.25rem; z-index: 2;
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.8);
+      background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15);
+      padding: 0.35rem 0.8rem; backdrop-filter: blur(4px);
+    }
+    .feat-over-photo-loc {
+      position: absolute; bottom: 1.25rem; left: 1.25rem; z-index: 2;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+      font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.85);
+    }
+    .feat-over-photo-loc span {
+      display: block; font-family: 'IBM Plex Mono', monospace; font-weight: 400;
+      font-size: 0.6rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.5); margin-top: 0.2rem;
+    }
+    .feat-over-sep { width: 2px; background: rgba(0,0,0,0.45); flex-shrink: 0; }
+    .feat-over-content {
+      padding: 3rem 3.5rem; position: relative;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+    }
+    .feat-over-content::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 55% 70% at 100% 0%, rgba(97,154,24,0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* ── Dual-photo featured ─────────────────────────────────── */
+    .feat-dual-photo {
+      position: relative; overflow: hidden;
+      display: grid; grid-template-rows: 1fr 1fr; min-height: 560px;
+    }
+    .feat-dual-photo .dp-img {
+      position: relative; overflow: hidden;
+    }
+    .feat-dual-photo .dp-img img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      filter: grayscale(1);
+      transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.6s ease;
+    }
+    .feat-dual-photo .dp-img:hover img { transform: scale(1.05); filter: grayscale(0); }
+    .feat-dual-photo .dp-img::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(10,20,5,0.45) 0%, rgba(10,20,5,0.05) 80%),
+                  linear-gradient(to top,   rgba(25,60,4,0.5) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .feat-dual-photo .dp-divider {
+      height: 2px; background: rgba(0,0,0,0.5); position: relative; z-index: 2; flex-shrink: 0;
+    }
+    .feat-dual-photo .dp-num {
+      position: absolute; top: 1rem; left: 1.25rem; z-index: 3;
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.7);
+      background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.14);
+      padding: 0.3rem 0.75rem; backdrop-filter: blur(4px);
+    }
+
+    /* Subsection within featured content */
+    .feat-sub {
+      padding-top: 1.125rem; border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .feat-sub-title {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gm-400); margin-bottom: 0.5rem;
+    }
+    .feat-sub-text {
+      font-size: 0.875rem; color: rgba(255,255,255,0.48); line-height: 1.8;
+    }
+
     /* ── Buttons ─────────────────────────────────────────────── */
     .btn {
       display: inline-flex; align-items: center; gap: 0.625rem;
@@ -275,6 +483,12 @@
       .proj-card { grid-template-columns: 1fr; }
       .proj-card.reverse { direction: ltr; }
       .proj-photo { min-height: 280px; }
+      .consult-intro { grid-template-columns: 1fr !important; gap: 3rem !important; }
+      .partner-row { grid-template-columns: 2.5rem 1fr; }
+      .partner-location { display: none; }
+      .feat-over-photos { grid-template-columns: 1fr; height: auto; }
+      .feat-over-photo { height: 280px; }
+      .feat-over-content { grid-template-columns: 1fr !important; padding: 2rem 1.5rem; gap: 1.5rem; }
       .footer-inner { flex-direction: column !important; gap: 3rem !important; }
       .cta-inner { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
     }
@@ -339,10 +553,10 @@
       <div class="feat anim-in">
         <!-- Photo -->
         <div class="feat-photo">
-          <img src="Photos/Pojects-Photo/Ankara_Vet_Facult.webp"
-               alt="Veterinary Faculty, Ankara University"
+          <img src="Photos/Pojects-Photo/Hannover_Vet.webp"
+               alt="University of Veterinary Medicine Hannover"
                loading="eager">
-          <div class="feat-location-badge">Ankara · Turkey</div>
+          <div class="feat-location-badge">Hannover · Germany</div>
           <div class="feat-overlay-num">01</div>
         </div>
 
@@ -351,20 +565,18 @@
           <div class="feat-num">PROJECT 01</div>
           <div class="tags">
             <span class="tag-dark">Veterinary</span>
-            <span class="tag-dark">Microbiology</span>
-            <span class="tag-dark">Pharmacology</span>
-            <span class="tag-dark">Parasitology</span>
+            <span class="tag-dark">Reproductive Biotechnology</span>
+            <span class="tag-dark">Animal Husbandry</span>
           </div>
           <div class="feat-title">
-            Veterinary Faculty —<br><em>Ankara University</em>
+            University of Veterinary Medicine Hannover —<br><em>Sperm Laboratory</em>
           </div>
           <div class="feat-institution">
-            Ankara University · Faculty of Veterinary Medicine<br>
-            Faculty of Natural Sciences · Faculty of Pharmacy
+            University of Veterinary Medicine Hannover<br>Hannover, Germany
           </div>
           <div class="feat-divider"></div>
           <p class="feat-desc">
-            In collaboration with the Veterinary Faculty, the Department of Biology of the Faculty of Natural Sciences, and the Faculty of Pharmacy of Ankara University, joint scientific projects were carried out. The work covers the fields of microbiology, parasitology and pharmacology, and includes comprehensive research and development activities. The primary focus is on developing new forms of veterinary medicines, conducting biological trials, and designing field application protocols. These projects make a significant contribution to the development of innovative treatment methods, the improvement of biosafety, and the advancement of sustainable livestock farming.
+            At the sperm laboratory of the University of Veterinary Medicine Hannover, one of Germany's leading academic centres, cutting-edge scientific research dedicated to bovine semen was conducted. Within the scope of the project, semen quality analyses were successfully performed, along with optimisation of freezing conditions and long-term storage protocols. The results obtained have become an important international reference point in the fields of animal husbandry and reproductive biotechnology.
           </p>
         </div>
       </div>
@@ -385,28 +597,30 @@
         <!-- PROJECT 02 -->
         <div class="proj-card anim-in">
           <div class="proj-photo">
-            <img src="Photos/Pojects-Photo/Hannover_Vet.webp"
-                 alt="University of Veterinary Medicine Hannover" loading="lazy">
+            <img src="Photos/Pojects-Photo/Ankara_Vet_Facult.webp"
+                 alt="Veterinary Faculty, Ankara University" loading="lazy">
             <div class="proj-photo-num">PROJECT 02</div>
             <div class="proj-photo-location">
-              <div>Hannover</div>
-              <div class="proj-photo-country">Germany</div>
+              <div>Ankara</div>
+              <div class="proj-photo-country">Turkey</div>
             </div>
           </div>
           <div class="proj-body">
             <div class="proj-num">PROJECT 02</div>
             <div class="tags" style="margin-bottom:0.25rem;">
               <span class="tag">Veterinary</span>
-              <span class="tag">Reproductive Biotechnology</span>
-              <span class="tag">Animal Husbandry</span>
+              <span class="tag">Microbiology</span>
+              <span class="tag">Pharmacology</span>
+              <span class="tag">Parasitology</span>
             </div>
-            <div class="proj-title">University of Veterinary Medicine Hannover — Sperm Laboratory</div>
+            <div class="proj-title">Veterinary Faculty — Ankara University</div>
             <div class="proj-institution">
-              University of Veterinary Medicine Hannover<br>Hannover, Germany
+              Ankara University · Faculty of Veterinary Medicine<br>
+              Faculty of Natural Sciences · Faculty of Pharmacy
             </div>
             <div class="proj-rule"></div>
             <p class="proj-desc">
-              At the sperm laboratory of the University of Veterinary Medicine Hannover, one of Germany's leading academic centres, cutting-edge scientific research dedicated to bovine semen was conducted. Within the scope of the project, semen quality analyses were successfully performed, along with optimisation of freezing conditions and long-term storage protocols. The results obtained have become an important international reference point in the fields of animal husbandry and reproductive biotechnology.
+              In collaboration with the Veterinary Faculty, the Department of Biology of the Faculty of Natural Sciences, and the Faculty of Pharmacy of Ankara University, joint scientific projects were carried out. The work covers the fields of microbiology, parasitology and pharmacology, and includes comprehensive research and development activities. The primary focus is on developing new forms of veterinary medicines, conducting biological trials, and designing field application protocols. These projects make a significant contribution to the development of innovative treatment methods, the improvement of biosafety, and the advancement of sustainable livestock farming.
             </p>
           </div>
         </div>
@@ -470,6 +684,330 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONSULTANCY — INTRO ════════════════════════════════════ -->
+  <section style="background:var(--c-footer); padding:var(--py) var(--px); position:relative; overflow:hidden;">
+    <div style="position:absolute; inset:0; background:radial-gradient(ellipse 50% 60% at 100% 100%, rgba(97,154,24,0.12) 0%, transparent 65%); pointer-events:none;"></div>
+
+    <!-- Category separator -->
+    <div style="max-width:1200px; margin:0 auto; position:relative; z-index:1;">
+      <div style="display:flex; align-items:center; gap:2rem; margin-bottom:4rem;" class="anim-in">
+        <div style="height:1px; flex:1; background:rgba(255,255,255,0.08);"></div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.25);">CATEGORY 02</div>
+        <div style="height:1px; flex:1; background:rgba(255,255,255,0.08);"></div>
+      </div>
+
+      <div class="consult-intro">
+        <!-- Left: heading + description -->
+        <div class="anim-in">
+          <div style="width:2.75rem; height:3px; background:var(--gm-400); margin-bottom:2rem;"></div>
+          <div class="eyebrow" style="color:rgba(165,204,72,0.65); margin-bottom:1.25rem;">CONSULTANCY</div>
+          <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:clamp(2.25rem,4vw,3.75rem); text-transform:uppercase; color:#fff; line-height:0.95; letter-spacing:-0.01em; margin-bottom:2rem;">
+            EXPERT ADVISORY<br><span style="color:var(--gm-400);">SERVICES</span>
+          </h2>
+          <p style="font-size:1rem; color:rgba(255,255,255,0.5); line-height:1.85; margin-bottom:1.25rem;">
+            Our company provides comprehensive and professional consultancy services for medical institutions and research laboratories. With a highly qualified team of specialists in medical equipment, laboratory instruments and international quality standards, we deliver solutions tailored to the specific needs of each organisation.
+          </p>
+          <p style="font-size:1rem; color:rgba(255,255,255,0.5); line-height:1.85;">
+            To enhance the operational efficiency and performance of institutions, we provide strategic consulting in areas such as accreditation process management, equipment selection and operation, technical service organisation and user training. Furthermore, in the fields of agriculture, food industry and industrial manufacturing, we develop field biotechnical and custom formulation solutions aimed at eliminating quality losses and improving productivity. Drawing on our experience in healthcare and our commitment to international quality standards, we build reliable and long-term partnerships.
+          </p>
+        </div>
+
+        <!-- Right: service list -->
+        <div class="anim-in" style="transition-delay:0.12s;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.25); margin-bottom:1.5rem;">KEY SERVICE AREAS</div>
+          <div class="service-list">
+            <div class="service-item">
+              <div class="service-dot"></div>
+              <div class="service-text">Accreditation process management &amp; compliance</div>
+            </div>
+            <div class="service-item">
+              <div class="service-dot"></div>
+              <div class="service-text">Laboratory equipment selection &amp; procurement</div>
+            </div>
+            <div class="service-item">
+              <div class="service-dot"></div>
+              <div class="service-text">Technical service organisation &amp; maintenance planning</div>
+            </div>
+            <div class="service-item">
+              <div class="service-dot"></div>
+              <div class="service-text">User training &amp; standard operating procedures</div>
+            </div>
+            <div class="service-item">
+              <div class="service-dot"></div>
+              <div class="service-text">Field biotechnical &amp; custom formulation solutions</div>
+            </div>
+            <div class="service-item">
+              <div class="service-dot"></div>
+              <div class="service-text">Agriculture, food &amp; industrial manufacturing advisory</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONSULTANCY — PARTNER PROJECTS ══════════════════════════ -->
+  <section style="background:var(--c-bg); border-top:1px solid var(--c-rule); padding:var(--py) var(--px);">
+    <div style="max-width:1200px; margin:0 auto;">
+
+      <div style="margin-bottom:3.5rem;" class="anim-in">
+        <div class="eyebrow" style="margin-bottom:1.25rem;">INTERNATIONAL COLLABORATIONS</div>
+        <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2rem,3.5vw,3rem); text-transform:uppercase; color:var(--c-black); line-height:1.02; margin-bottom:1rem;">SELECTED PARTNER PROJECTS</h2>
+        <p style="font-size:1rem; color:var(--c-muted); max-width:560px; line-height:1.8;">International projects carried out in collaboration with leading academic medical centres and research institutions.</p>
+      </div>
+
+      <div>
+
+        <div class="partner-row anim-in">
+          <div class="partner-num">01</div>
+          <div class="partner-info">
+            <div class="partner-dept">Department of Molecular Genetics and Pathology</div>
+            <div class="partner-institution">University of Basel</div>
+            <div class="tags" style="margin-top:0.625rem;">
+              <span class="tag">Molecular Genetics</span>
+              <span class="tag">Pathology</span>
+            </div>
+          </div>
+          <div class="partner-location">
+            <div class="partner-city">Basel</div>
+            <div class="partner-country">Switzerland</div>
+          </div>
+        </div>
+
+        <div class="partner-row anim-in" style="transition-delay:0.07s;">
+          <div class="partner-num">02</div>
+          <div class="partner-info">
+            <div class="partner-dept">National Cancer Institute</div>
+            <div class="partner-institution">Vilnius, Lithuania</div>
+            <div class="tags" style="margin-top:0.625rem;">
+              <span class="tag">Oncology</span>
+              <span class="tag">Cancer Research</span>
+            </div>
+          </div>
+          <div class="partner-location">
+            <div class="partner-city">Vilnius</div>
+            <div class="partner-country">Lithuania</div>
+          </div>
+        </div>
+
+        <div class="partner-row anim-in" style="transition-delay:0.14s;">
+          <div class="partner-num">03</div>
+          <div class="partner-info">
+            <div class="partner-dept">Department of Oncology, Pathology and Haematology</div>
+            <div class="partner-institution">University of Liverpool</div>
+            <div class="tags" style="margin-top:0.625rem;">
+              <span class="tag">Oncology</span>
+              <span class="tag">Pathology</span>
+              <span class="tag">Haematology</span>
+            </div>
+          </div>
+          <div class="partner-location">
+            <div class="partner-city">Liverpool</div>
+            <div class="partner-country">United Kingdom</div>
+          </div>
+        </div>
+
+        <div class="partner-row anim-in" style="transition-delay:0.21s;">
+          <div class="partner-num">04</div>
+          <div class="partner-info">
+            <div class="partner-dept">National Cancer Institute</div>
+            <div class="partner-institution">London, United Kingdom</div>
+            <div class="tags" style="margin-top:0.625rem;">
+              <span class="tag">Oncology</span>
+              <span class="tag">Cancer Research</span>
+            </div>
+          </div>
+          <div class="partner-location">
+            <div class="partner-city">London</div>
+            <div class="partner-country">United Kingdom</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TURKMENISTAN — FEATURED ════════════════════════════════ -->
+  <section style="background:var(--c-bg); padding:var(--py) var(--px); border-top:1px solid var(--c-rule);">
+    <div style="max-width:1200px; margin:0 auto;">
+
+      <!-- Category separator -->
+      <div style="display:flex; align-items:center; gap:2rem; margin-bottom:4rem;" class="anim-in">
+        <div style="height:1px; flex:1; background:var(--c-rule);"></div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--c-muted);">CATEGORY 03</div>
+        <div style="height:1px; flex:1; background:var(--c-rule);"></div>
+      </div>
+
+      <div style="margin-bottom:2rem;" class="anim-in">
+        <div class="eyebrow" style="margin-bottom:0.75rem;">TURKMENISTAN</div>
+        <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2rem,3.5vw,3rem); text-transform:uppercase; color:var(--c-black); line-height:1.02;">PROJECTS IN TURKMENISTAN</h2>
+      </div>
+
+      <!-- FEATURED: Science & Technology Park — single photo full-width, content below -->
+      <div class="feat-over anim-in">
+
+        <!-- Single full-width photo -->
+        <div class="feat-over-photos" style="grid-template-columns:1fr; height:380px;">
+          <div class="feat-over-photo">
+            <img src="Photos/Pojects-Photo/Tekno_Park.webp"
+                 alt="International Science and Technology Park, Ashgabat" loading="eager">
+            <div class="feat-over-photo-badge">PROJECT 01</div>
+            <div class="feat-over-photo-loc">
+              Ashgabat
+              <span>Turkmenistan</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content below — two columns -->
+        <div class="feat-over-content">
+          <!-- Left -->
+          <div style="position:relative; z-index:1; display:flex; flex-direction:column; gap:1.125rem;">
+            <div>
+              <div class="feat-num" style="margin-bottom:0.875rem;">FEATURED PROJECT</div>
+              <div class="tags" style="margin-bottom:1rem;">
+                <span class="tag-dark">Turnkey</span>
+                <span class="tag-dark">Nanotechnology</span>
+                <span class="tag-dark">Biotechnology</span>
+                <span class="tag-dark">Chromatography</span>
+              </div>
+              <div class="feat-title" style="margin-bottom:0.875rem;">
+                International Science<br>&amp; <em>Technology Park</em>
+              </div>
+              <div class="feat-institution">Academy of Sciences of Turkmenistan<br>Ashgabat, Turkmenistan</div>
+            </div>
+            <div class="feat-divider"></div>
+            <p class="feat-desc">Recognised as a leading scientific centre contributing to innovation in nanotechnology, biotechnology, ecology and energy, the Technology Park was equipped by Green Med as principal partner — delivering high-technology laboratory equipment in full compliance with international standards on a turnkey basis.</p>
+            <div class="feat-sub">
+              <div class="feat-sub-title">Comprehensive Project Management</div>
+              <p class="feat-sub-text">Supply chain management alongside architectural and functional design of laboratory premises. Optimal floor plans, process automation, access control systems, equipment monitoring and digital document management. All devices underwent rigorous testing and calibration, enabling immediate commencement of scientific activities.</p>
+            </div>
+          </div>
+          <!-- Right -->
+          <div style="position:relative; z-index:1; display:flex; flex-direction:column; gap:1.125rem; padding-top:0;">
+            <div class="feat-sub" style="border-top:none; padding-top:0;">
+              <div class="feat-sub-title">Technical Equipment &amp; Installation</div>
+              <p class="feat-sub-text">Full project cycle from design and procurement through to supply, installation and commissioning. The package included GC and LC systems for high-precision chemical analysis in ecology, pharmaceutics and biotechnology, alongside high-precision spectrometers, analytical balances and incubators — all sourced from leading global manufacturers with full calibration and infrastructure compatibility verification.</p>
+            </div>
+            <div class="feat-sub">
+              <div class="feat-sub-title">Staff Training &amp; Long-Term Support</div>
+              <p class="feat-sub-text">Training programmes covering analytical instrument operation, routine technical maintenance and advanced laboratory analysis methods. A dedicated technical team was established for ongoing maintenance, fault resolution and equipment optimisation — providing prompt operational support for any technical issues within the research complex.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TURKMENISTAN — AVAZA CARD ════════════════════════════════ -->
+  <section style="background:var(--c-white); border-top:1px solid var(--c-rule); padding:var(--py) var(--px);">
+    <div style="max-width:1200px; margin:0 auto;">
+
+      <div class="proj-card-tall anim-in">
+
+        <div class="proj-photo-top">
+          <img src="Photos/Pojects-Photo/Avaza_Shypahanasy.webp"
+               alt="Avaza Sanatorium Complex, Turkmenbashi" loading="lazy">
+          <div class="proj-photo-num">PROJECT 02</div>
+          <div class="proj-photo-location">
+            <div>Avaza</div>
+            <div class="proj-photo-country">Turkmenistan</div>
+          </div>
+        </div>
+
+        <div class="proj-body">
+          <div class="proj-body-main">
+            <div class="proj-num">PROJECT 02</div>
+            <div class="tags" style="margin-bottom:0.25rem;">
+              <span class="tag">Sanatorium</span>
+              <span class="tag">Medical Equipment</span>
+              <span class="tag">Wellness</span>
+              <span class="tag">Full Cycle</span>
+            </div>
+            <div class="proj-title">Avaza Sanatorium Complex</div>
+            <div class="proj-institution">Avaza National Tourist Zone · Turkmenbashi, Turkmenistan</div>
+            <div class="proj-rule"></div>
+            <p class="proj-desc">
+              The Avaza Sanatorium Complex is one of the largest and most technologically advanced wellness centres in Turkmenistan, located on the shores of the Caspian Sea. Designed for 200 patients, the complex combines natural therapy with modern medical technologies. Green Med carried out the full project cycle — from design through to commissioning — in compliance with international resort medicine standards.
+            </p>
+          </div>
+          <div class="proj-body-subs">
+            <div class="proj-sub" style="border-top:none; padding-top:0;">
+              <div class="proj-sub-title">Equipment &amp; Infrastructure</div>
+              <p class="proj-sub-text">The sanatorium is equipped with cryotherapy chambers, hydrotherapy systems, baro- and halo-therapy chambers, infrared saunas, ultrasound diagnostic units, ECG machines and laboratory analysers — all supplied by leading global manufacturers. Infrastructure includes automated climate control, digital procedure registration, isolated infection zones and rapid diagnostics units.</p>
+            </div>
+            <div class="proj-sub">
+              <div class="proj-sub-title">Training &amp; Technical Support</div>
+              <p class="proj-sub-text">Green Med organised targeted training programmes for medical and technical personnel covering equipment operation, emergency response protocols and electronic documentation management. A round-the-clock technical support system was established, encompassing calibration, preventive maintenance and remote assistance to ensure uninterrupted operation.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ TURKMENISTAN — OLYMPIC COMPLEX ═════════════════════════ -->
+  <section style="background:var(--c-bg); border-top:1px solid var(--c-rule); padding:var(--py) var(--px);">
+    <div style="max-width:1200px; margin:0 auto;">
+
+      <div class="proj-card-tall anim-in">
+
+        <!-- Two photos side by side at top -->
+        <div style="display:grid; grid-template-columns:1fr 2px 1fr; height:380px; overflow:hidden;">
+          <div class="dp-side">
+            <img src="Photos/Pojects-Photo/Aziyada_1.webp"
+                 alt="Olympic Complex Doping Control Centre, Ashgabat" loading="lazy">
+            <div class="proj-photo-num" style="z-index:2;">PROJECT 03</div>
+            <div style="position:absolute; bottom:1.25rem; left:1.25rem; z-index:2;">
+              <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1rem; text-transform:uppercase; letter-spacing:0.05em; color:rgba(255,255,255,0.85);">Ashgabat</div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-top:0.2rem;">Turkmenistan</div>
+            </div>
+          </div>
+          <div style="background:rgba(0,0,0,0.4); flex-shrink:0;"></div>
+          <div class="dp-side">
+            <img src="Photos/Pojects-Photo/Aziyada_2.webp"
+                 alt="Olympic Complex — interior" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Two-column content below -->
+        <div class="proj-body">
+          <div class="proj-body-main">
+            <div class="proj-num">PROJECT 03</div>
+            <div class="tags" style="margin-bottom:0.25rem;">
+              <span class="tag">Doping Control</span>
+              <span class="tag">WADA Certified</span>
+              <span class="tag">Analytical Systems</span>
+            </div>
+            <div class="proj-title">Olympic Complex Doping Control Centre</div>
+            <div class="proj-institution">Olympic Complex · Ashgabat, Turkmenistan</div>
+            <div class="proj-rule"></div>
+            <p class="proj-desc">The Olympic Complex in Ashgabat is a modern facility symbolising Turkmenistan's commitment to fair and clean sport. A key element is the Doping Control Centre, built in full compliance with international standards.</p>
+            <div class="proj-sub">
+              <div class="proj-sub-title">Technical Equipment &amp; Installation</div>
+              <p class="proj-sub-text">Green Med carried out the procurement, supply and installation of advanced diagnostic and analytical systems for accurate and reliable doping control. All processes were organised in strict accordance with the requirements of the World Anti-Doping Agency (WADA).</p>
+            </div>
+          </div>
+          <div class="proj-body-subs">
+            <div class="proj-sub" style="border-top:none; padding-top:0;">
+              <div class="proj-sub-title">Project Management &amp; Technical Integration</div>
+              <p class="proj-sub-text">From initial planning through to commissioning, Green Med maintained full oversight of project implementation — with particular attention to quality assurance, coordination of technical solutions and strict adherence to international norms and standards.</p>
+            </div>
+            <div class="proj-sub">
+              <div class="proj-sub-title">Staff Training &amp; Long-Term Support</div>
+              <p class="proj-sub-text">Targeted training programmes for Centre specialists covering all aspects of equipment operation and doping control procedures. Green Med also provides ongoing technical and operational support, ensuring the stability and high performance of the Centre.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </section>
 
