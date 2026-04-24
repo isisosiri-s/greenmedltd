@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found · Green Med Ltd.</title>
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --c-dark:   #4A4A4A;
+      --c-bg:     #F7F8F2;
+      --c-footer: #111111;
+      --gm-300:   #A5CC48;
+      --gm-400:   #7EB828;
+      --gm-500:   #619A18;
+      --gm-600:   #487A10;
+      --gm-800:   #193C04;
+      --px: 7vw;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 300;
+      background: var(--c-footer);
+      color: #fff;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 64px; z-index: 100;
+      background: rgba(17,17,17,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .nav-inner {
+      max-width: 1440px; margin: 0 auto;
+      padding: 0 var(--px); height: 100%;
+      display: flex; align-items: center;
+      justify-content: space-between;
+    }
+    .nav-link {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 0.875rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--gm-400); }
+
+    /* Main content */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 64px var(--px) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Radial glow */
+    main::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 55% 60% at 50% 50%, rgba(97,154,24,0.14) 0%, transparent 70%),
+        radial-gradient(ellipse 30% 40% at 15% 80%, rgba(97,154,24,0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Giant 404 background text */
+    .bg-404 {
+      position: absolute;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(18rem, 40vw, 42rem);
+      color: rgba(255,255,255,0.025);
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      letter-spacing: -0.04em;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 640px;
+    }
+
+    .eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6875rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: rgba(165,204,72,0.65);
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(5rem, 14vw, 12rem);
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 0.88;
+      letter-spacing: -0.02em;
+      margin: 0 0 1.5rem;
+    }
+    h1 span { color: var(--gm-400); }
+
+    .message {
+      font-size: 1.0625rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.8;
+      margin-bottom: 3rem;
+    }
+
+    .actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.625rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 0.9375rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.8125rem 1.75rem;
+      text-decoration: none; cursor: pointer;
+      transition: background 0.2s, transform 0.15s, border-color 0.2s;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--gm-500); color: #fff; border: none; }
+    .btn-primary:hover { background: var(--gm-600); }
+    .btn-ghost {
+      background: transparent; color: rgba(255,255,255,0.65);
+      border: 1.5px solid rgba(255,255,255,0.18);
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+
+    /* Divider line */
+    .rule {
+      width: 2.75rem; height: 3px;
+      background: var(--gm-400);
+      margin: 0 auto 2.5rem;
+    }
+
+    /* Quick links */
+    .quick-links {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      gap: 2.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .quick-link {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6875rem; letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.28);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .quick-link:hover { color: var(--gm-400); }
+
+    /* Footer strip */
+    footer {
+      padding: 1.5rem var(--px);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    footer p {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.625rem;
+      color: rgba(255,255,255,0.2);
+      margin: 0;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .content > * {
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+    }
+    .content > *:nth-child(1) { animation-delay: 0.05s; }
+    .content > *:nth-child(2) { animation-delay: 0.15s; }
+    .content > *:nth-child(3) { animation-delay: 0.22s; }
+    .content > *:nth-child(4) { animation-delay: 0.30s; }
+    .content > *:nth-child(5) { animation-delay: 0.38s; }
+    .content > *:nth-child(6) { animation-delay: 0.46s; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" aria-label="Green Med Ltd.">
+        <img src="brand_assets/GREENMED LOGO Horz.svg" alt="Green Med Ltd." style="height:69px; width:auto;" loading="eager">
+      </a>
+      <a href="index.html" class="nav-link">← Back to Home</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="bg-404" aria-hidden="true">404</div>
+
+    <div class="content">
+      <div class="eyebrow">ERROR 404</div>
+      <h1>PAGE<br><span>NOT FOUND</span></h1>
+      <div class="rule"></div>
+      <p class="message">
+        The page you're looking for doesn't exist or has been moved.<br>
+        Let's get you back on track.
+      </p>
+      <div class="actions">
+        <a href="index.html" class="btn btn-primary">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          BACK TO HOME
+        </a>
+        <a href="index.html#contact" class="btn btn-ghost">GET IN TOUCH</a>
+      </div>
+      <div class="quick-links">
+        <a href="about.html"          class="quick-link">ABOUT</a>
+        <a href="index.html#services" class="quick-link">SERVICES</a>
+        <a href="products.html"       class="quick-link">PRODUCTS</a>
+        <a href="index.html#contact"  class="quick-link">CONTACT</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Green Med Ltd. · Registered in England &amp; Wales No. 13350293</p>
+    <p>"From Concept to Completion."</p>
+  </footer>
+
+</body>
+</html>
