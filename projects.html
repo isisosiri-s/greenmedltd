@@ -117,9 +117,10 @@
     }
     .feat-photo img {
       width: 100%; height: 100%; object-fit: cover; display: block;
-      transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
+      filter: grayscale(1);
+      transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.6s ease;
     }
-    .feat:hover .feat-photo img { transform: scale(1.04); }
+    .feat:hover .feat-photo img { transform: scale(1.04); filter: grayscale(0); }
     .feat-photo::after {
       content: ''; position: absolute; inset: 0;
       background: linear-gradient(to right, rgba(10,20,5,0.5) 0%, rgba(10,20,5,0.05) 80%),
@@ -187,9 +188,10 @@
     }
     .proj-photo img {
       width: 100%; height: 100%; object-fit: cover; display: block;
-      transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94);
+      filter: grayscale(1);
+      transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.6s ease;
     }
-    .proj-card:hover .proj-photo img { transform: scale(1.06); }
+    .proj-card:hover .proj-photo img { transform: scale(1.06); filter: grayscale(0); }
     .proj-photo::after {
       content: ''; position: absolute; inset: 0;
       background: linear-gradient(to top, rgba(25,60,4,0.6) 0%, transparent 50%),
