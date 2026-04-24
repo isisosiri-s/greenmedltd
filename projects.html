@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects — Green Med Ltd.</title>
-  <meta name="description" content="Delivered laboratory infrastructure projects across 18+ countries — from national reference laboratories to hospital networks and research facilities.">
+  <meta name="description" content="Delivered veterinary research and laboratory infrastructure projects across Turkey, Germany, and South Korea.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,31 +41,25 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Animations */
     .anim-in {
       opacity: 0; transform: translateY(22px);
       transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94);
     }
     .anim-in.visible { opacity: 1; transform: translateY(0); }
 
-    /* Nav */
+    /* ── Nav ─────────────────────────────────────────────────── */
     .nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      height: 64px; z-index: 100;
-      background: rgba(247,248,242,0.95);
-      backdrop-filter: blur(12px);
+      position: fixed; top: 0; left: 0; right: 0; height: 64px; z-index: 100;
+      background: rgba(247,248,242,0.95); backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(232,232,232,0.8);
     }
     .nav-inner {
-      max-width: 1440px; margin: 0 auto;
-      padding: 0 var(--px); height: 100%;
-      display: flex; align-items: center;
-      justify-content: space-between; gap: 2rem;
+      max-width: 1440px; margin: 0 auto; padding: 0 var(--px); height: 100%;
+      display: flex; align-items: center; justify-content: space-between; gap: 2rem;
     }
     .nav-links { display: flex; align-items: center; gap: 2.5rem; }
     .nav-link {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 600; font-size: 0.875rem;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 0.875rem;
       letter-spacing: 0.08em; text-transform: uppercase;
       color: var(--c-dark); text-decoration: none; transition: color 0.2s;
     }
@@ -73,15 +67,12 @@
     .nav-link.active { color: var(--gm-500); }
     .nav-link:focus-visible { outline: 2px solid var(--gm-400); outline-offset: 3px; }
     .btn-nav {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 600; font-size: 0.875rem;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 0.875rem;
       letter-spacing: 0.08em; text-transform: uppercase;
-      background: var(--gm-500); color: #fff;
-      padding: 0.5rem 1.25rem; text-decoration: none; transition: background 0.2s;
+      background: var(--gm-500); color: #fff; padding: 0.5rem 1.25rem;
+      text-decoration: none; transition: background 0.2s;
     }
     .btn-nav:hover { background: var(--gm-600); }
-
-    /* Hamburger */
     .hamburger {
       display: none; flex-direction: column; justify-content: space-between;
       width: 26px; height: 18px; background: none; border: none; cursor: pointer; padding: 0;
@@ -97,20 +88,160 @@
     }
     .mobile-nav.open { display: flex; }
 
-    /* Eyebrow */
+    /* ── Eyebrow ─────────────────────────────────────────────── */
     .eyebrow {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.6875rem; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--gm-500);
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6875rem;
+      letter-spacing: 0.15em; text-transform: uppercase; color: var(--gm-500);
     }
 
-    /* Buttons */
+    /* ── Tags ────────────────────────────────────────────────── */
+    .tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .tag {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.1em; text-transform: uppercase; padding: 0.28rem 0.75rem;
+      border: 1px solid rgba(97,154,24,0.35); color: var(--gm-600); background: var(--gm-50);
+    }
+    .tag-dark {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.1em; text-transform: uppercase; padding: 0.28rem 0.75rem;
+      border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.65);
+    }
+
+    /* ── Featured project ────────────────────────────────────── */
+    .feat {
+      display: grid; grid-template-columns: 1fr 1fr;
+      overflow: hidden; background: var(--c-footer);
+    }
+    .feat-photo {
+      position: relative; overflow: hidden; min-height: 560px;
+    }
+    .feat-photo img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .feat:hover .feat-photo img { transform: scale(1.04); }
+    .feat-photo::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(10,20,5,0.5) 0%, rgba(10,20,5,0.05) 80%),
+                  linear-gradient(to top,   rgba(25,60,4,0.65) 0%, transparent 55%);
+    }
+    .feat-overlay-num {
+      position: absolute; bottom: 2rem; left: 2rem; z-index: 2;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+      font-size: 7rem; color: rgba(255,255,255,0.07); line-height: 1;
+      user-select: none; pointer-events: none; letter-spacing: -0.03em;
+    }
+    .feat-location-badge {
+      position: absolute; top: 2rem; left: 2rem; z-index: 2;
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      background: rgba(0,0,0,0.32); border: 1px solid rgba(255,255,255,0.14);
+      padding: 0.4rem 1rem; backdrop-filter: blur(4px);
+    }
+
+    .feat-content {
+      padding: 3.5rem; display: flex; flex-direction: column;
+      justify-content: center; gap: 1.75rem; position: relative;
+    }
+    .feat-content::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 100% 0%, rgba(97,154,24,0.13) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .feat-num {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--gm-400);
+    }
+    .feat-title {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+      font-size: clamp(1.875rem, 2.8vw, 2.75rem); text-transform: uppercase;
+      color: #fff; line-height: 1.02; letter-spacing: -0.01em;
+    }
+    .feat-title em { color: var(--gm-400); font-style: normal; }
+    .feat-institution {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6875rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(255,255,255,0.35); line-height: 1.9;
+    }
+    .feat-desc {
+      font-size: 0.9375rem; color: rgba(255,255,255,0.52); line-height: 1.85;
+    }
+    .feat-divider { width: 2.5rem; height: 2px; background: var(--gm-500); }
+
+    /* ── Project card ────────────────────────────────────────── */
+    .proj-card {
+      display: grid; grid-template-columns: 420px 1fr;
+      background: var(--c-white); border: 1px solid var(--c-rule); overflow: hidden;
+      transition: box-shadow 0.3s, transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .proj-card:hover {
+      box-shadow: 0 20px 56px rgba(0,0,0,0.09), 0 4px 12px rgba(0,0,0,0.05);
+      transform: translateY(-4px);
+    }
+    .proj-card.reverse { direction: rtl; }
+    .proj-card.reverse > * { direction: ltr; }
+
+    .proj-photo {
+      position: relative; overflow: hidden; min-height: 340px;
+    }
+    .proj-photo img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .proj-card:hover .proj-photo img { transform: scale(1.06); }
+    .proj-photo::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(25,60,4,0.6) 0%, transparent 50%),
+                  linear-gradient(to right, rgba(0,0,0,0.2) 0%, transparent 60%);
+    }
+    .proj-photo-num {
+      position: absolute; top: 1.25rem; left: 1.25rem; z-index: 2;
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.8);
+      background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.16);
+      padding: 0.35rem 0.8rem; backdrop-filter: blur(4px);
+    }
+    .proj-photo-location {
+      position: absolute; bottom: 1.25rem; left: 1.25rem; z-index: 2;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+      font-size: 1rem; color: rgba(255,255,255,0.85); text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .proj-photo-country {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); margin-top: 0.2rem;
+    }
+
+    .proj-body {
+      padding: 2.75rem; display: flex; flex-direction: column;
+      gap: 1.125rem; justify-content: center;
+    }
+    .proj-num {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--gm-400);
+    }
+    .proj-title {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+      font-size: clamp(1.25rem, 1.8vw, 1.625rem); text-transform: uppercase;
+      color: var(--c-black); line-height: 1.05; letter-spacing: 0.01em;
+    }
+    .proj-institution {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6875rem;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      color: var(--c-muted); line-height: 1.8;
+    }
+    .proj-desc {
+      font-size: 0.9rem; color: var(--c-dark); line-height: 1.82;
+    }
+    .proj-rule { height: 1px; background: var(--c-rule); }
+
+    /* ── Buttons ─────────────────────────────────────────────── */
     .btn {
       display: inline-flex; align-items: center; gap: 0.625rem;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 600; font-size: 0.9375rem;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      padding: 0.8125rem 1.75rem;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 0.9375rem;
+      letter-spacing: 0.1em; text-transform: uppercase; padding: 0.8125rem 1.75rem;
       text-decoration: none; border: none; cursor: pointer;
       transition: background 0.2s, transform 0.15s;
     }
@@ -118,174 +249,35 @@
     .btn-primary { background: var(--gm-500); color: #fff; }
     .btn-primary:hover { background: var(--gm-600); }
     .btn-outline-white {
-      background: transparent; color: #fff;
-      border: 1.5px solid rgba(255,255,255,0.28);
+      background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.28);
     }
     .btn-outline-white:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.55); }
 
-    /* ── Featured project card ────────────────────────────────── */
-    .feat-card {
-      background: var(--c-footer);
-      position: relative; overflow: hidden;
-      display: grid; grid-template-columns: 1fr 1fr;
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-    .feat-card::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 60% 70% at 100% 50%, rgba(97,154,24,0.18) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .feat-card-left { padding: 3.5rem; position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 2.5rem; }
-    .feat-card-right { padding: 3.5rem; border-left: 1px solid rgba(255,255,255,0.07); position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: space-between; }
-
-    .feat-num {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.625rem; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--gm-400);
-    }
-    .feat-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 800; font-size: clamp(2rem, 3.5vw, 3.25rem);
-      text-transform: uppercase; color: #fff; line-height: 1; letter-spacing: -0.01em;
-    }
-    .feat-title span { color: var(--gm-400); }
-    .feat-meta {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.6875rem; letter-spacing: 0.1em;
-      text-transform: uppercase; color: rgba(255,255,255,0.35);
-      display: flex; flex-direction: column; gap: 0.375rem;
-    }
-    .feat-desc {
-      font-size: 0.9375rem; color: rgba(255,255,255,0.55);
-      line-height: 1.85;
-    }
-
-    /* Sector tags */
-    .tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-    .tag {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.625rem; letter-spacing: 0.1em; text-transform: uppercase;
-      padding: 0.3rem 0.75rem;
-      border: 1px solid rgba(255,255,255,0.15);
-      color: rgba(255,255,255,0.5);
-    }
-    .tag-light {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.625rem; letter-spacing: 0.1em; text-transform: uppercase;
-      padding: 0.3rem 0.75rem;
-      border: 1px solid rgba(97,154,24,0.35);
-      color: var(--gm-500);
-      background: var(--gm-50);
-    }
-
-    /* Stats row in featured */
-    .feat-stats { display: flex; flex-direction: column; gap: 0; margin-top: auto; }
-    .feat-stat {
-      display: flex; justify-content: space-between; align-items: baseline;
-      padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-    .feat-stat:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
-    .feat-stat-label {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.625rem; letter-spacing: 0.12em; text-transform: uppercase;
-      color: rgba(255,255,255,0.3);
-    }
-    .feat-stat-val {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700; font-size: 1.125rem;
-      color: #fff; letter-spacing: 0.02em;
-    }
-
-    /* ── Project list rows ───────────────────────────────────── */
-    .proj-list { }
-    .proj-row {
-      display: grid;
-      grid-template-columns: 5rem 1fr 14rem;
-      gap: 0 3rem;
-      padding: 2.5rem 0;
-      border-bottom: 1px solid var(--c-rule);
-      align-items: start;
-      cursor: default;
-      transition: background 0.25s;
-    }
-    .proj-row:first-child { border-top: 1px solid var(--c-rule); }
-    .proj-row:hover { background: rgba(97,154,24,0.04); margin: 0 -2rem; padding-left: 2rem; padding-right: 2rem; }
-
-    .proj-index {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.6875rem; letter-spacing: 0.1em;
-      color: var(--gm-400); padding-top: 0.25rem;
-    }
-    .proj-year {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.625rem; letter-spacing: 0.1em;
-      color: var(--c-muted); margin-top: 0.375rem;
-      text-transform: uppercase;
-    }
-    .proj-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700; font-size: 1.5rem;
-      text-transform: uppercase; color: var(--c-black);
-      line-height: 1.05; letter-spacing: 0.01em;
-      margin-bottom: 0.625rem;
-    }
-    .proj-location {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.6875rem; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--c-muted);
-      margin-bottom: 0.875rem;
-    }
-    .proj-desc {
-      font-size: 0.9rem; color: var(--c-dark); line-height: 1.75;
-      margin-bottom: 1rem;
-    }
-    .proj-stats {
-      display: flex; flex-direction: column; gap: 0; align-self: start;
-    }
-    .proj-stat {
-      padding: 0.75rem 0;
-      border-bottom: 1px solid var(--c-rule);
-    }
-    .proj-stat:first-child { border-top: 1px solid var(--c-rule); padding-top: 0; border-top: none; }
-    .proj-stat-lbl {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.5625rem; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--c-muted);
-      margin-bottom: 0.2rem;
-    }
-    .proj-stat-val {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700; font-size: 1.0625rem;
-      color: var(--c-black); letter-spacing: 0.01em;
-    }
-
-    /* ── Footer ─────────────────────────────────────────────── */
+    /* ── Footer ──────────────────────────────────────────────── */
     .footer { background: var(--c-footer); padding: 4rem var(--px) 2.5rem; }
     .fl {
-      display: block; font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.75rem; letter-spacing: 0.08em;
-      text-transform: uppercase; color: rgba(255,255,255,0.38);
+      display: block; font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem;
+      letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.38);
       text-decoration: none; margin-bottom: 0.875rem; transition: color 0.2s;
     }
     .fl:hover { color: var(--gm-300); }
 
-    /* Responsive */
+    /* ── Responsive ──────────────────────────────────────────── */
     @media (max-width: 1024px) {
       .nav-links { display: none; }
       .btn-nav   { display: none; }
       .hamburger { display: flex; }
-      .feat-card { grid-template-columns: 1fr; }
-      .feat-card-right { border-left: none; border-top: 1px solid rgba(255,255,255,0.07); }
-      .proj-row { grid-template-columns: 4rem 1fr; }
-      .proj-stats { display: none; }
+      .feat      { grid-template-columns: 1fr; }
+      .feat-photo { min-height: 320px; }
+      .feat-content { padding: 2.5rem 2rem; }
+      .proj-card { grid-template-columns: 1fr; }
+      .proj-card.reverse { direction: ltr; }
+      .proj-photo { min-height: 280px; }
       .footer-inner { flex-direction: column !important; gap: 3rem !important; }
       .cta-inner { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
     }
     @media (max-width: 640px) {
-      .feat-card-left, .feat-card-right { padding: 2rem 1.5rem; }
-      .proj-row { grid-template-columns: 1fr; gap: 0.5rem; }
-      .proj-index { display: flex; gap: 1rem; align-items: center; }
+      .proj-body { padding: 1.75rem 1.25rem; }
     }
   </style>
 </head>
@@ -321,229 +313,157 @@
   </div>
 
   <!-- HERO -->
-  <section style="padding-top:64px; background:var(--c-footer); position:relative; overflow:hidden; min-height:52vh; display:flex; align-items:center;">
-    <div style="position:absolute; inset:0; background:radial-gradient(ellipse 60% 70% at 90% 50%, rgba(97,154,24,0.2) 0%, transparent 65%), radial-gradient(ellipse 35% 50% at 5% 100%, rgba(97,154,24,0.07) 0%, transparent 55%); pointer-events:none;"></div>
-
+  <section style="padding-top:64px; background:var(--c-footer); position:relative; overflow:hidden; min-height:48vh; display:flex; align-items:center;">
+    <div style="position:absolute; inset:0; background:radial-gradient(ellipse 55% 70% at 90% 50%, rgba(97,154,24,0.2) 0%, transparent 65%), radial-gradient(ellipse 35% 50% at 5% 100%, rgba(97,154,24,0.07) 0%, transparent 55%); pointer-events:none;"></div>
     <div style="position:relative; z-index:1; padding:var(--py) var(--px); width:100%; max-width:1440px; margin:0 auto;">
       <div style="width:2.75rem; height:3px; background:var(--gm-400); margin-bottom:2.25rem;" class="anim-in"></div>
-      <div class="eyebrow anim-in" style="color:rgba(165,204,72,0.65); margin-bottom:1.25rem;">DELIVERED PROJECTS</div>
+      <div class="eyebrow anim-in" style="color:rgba(165,204,72,0.65); margin-bottom:1.25rem;">DELIVERED PROJECTS · VETERINARY</div>
       <h1 class="anim-in" style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:clamp(3.5rem,7.5vw,8rem); text-transform:uppercase; color:#fff; line-height:0.9; letter-spacing:-0.01em; margin-bottom:2rem;">
         FROM CONCEPT<br><span style="color:var(--gm-400);">TO COMPLETION.</span>
       </h1>
-      <p class="anim-in" style="font-size:1.0625rem; color:rgba(255,255,255,0.48); max-width:520px; line-height:1.8;">
-        A selection of laboratory infrastructure projects delivered across healthcare, government, research, and international development sectors.
+      <p class="anim-in" style="font-size:1.0625rem; color:rgba(255,255,255,0.48); max-width:540px; line-height:1.8;">
+        Scientific research and laboratory infrastructure projects delivered in collaboration with leading veterinary and academic institutions across three continents.
       </p>
     </div>
   </section>
 
-  <!-- FEATURED PROJECT -->
+  <!-- ═══ FEATURED — PROJECT 01 ════════════════════════════════════ -->
   <section style="background:var(--c-bg); padding:var(--py) var(--px);">
     <div style="max-width:1200px; margin:0 auto;">
-
-      <div style="margin-bottom:2.5rem;" class="anim-in">
-        <div class="eyebrow" style="margin-bottom:0;">FEATURED PROJECT</div>
+      <div style="margin-bottom:2rem;" class="anim-in">
+        <div class="eyebrow">FEATURED PROJECT</div>
       </div>
 
-      <div class="feat-card anim-in">
-        <div class="feat-card-left">
-          <div>
-            <div class="feat-num" style="margin-bottom:1.5rem;">PROJECT 01 · 2023</div>
-            <div class="tags" style="margin-bottom:1.75rem;">
-              <span class="tag">Government</span>
-              <span class="tag">Int'l Org</span>
-              <span class="tag">BSL-2/3</span>
-            </div>
-            <div class="feat-title" style="margin-bottom:1.25rem;">
-              National Reference<br>Laboratory —<br><span>West Africa</span>
-            </div>
-            <div class="feat-meta">
-              <span>Accra, Ghana</span>
-              <span>Client: Ministry of Health / UNDP</span>
-            </div>
-          </div>
-          <div style="width:2rem; height:2px; background:var(--gm-400);"></div>
+      <div class="feat anim-in">
+        <!-- Photo -->
+        <div class="feat-photo">
+          <img src="Photos/Pojects-Photo/Ankara_Vet_Facult.webp"
+               alt="Veterinary Faculty, Ankara University"
+               loading="eager">
+          <div class="feat-location-badge">Ankara · Turkey</div>
+          <div class="feat-overlay-num">01</div>
         </div>
 
-        <div class="feat-card-right">
+        <!-- Content -->
+        <div class="feat-content">
+          <div class="feat-num">PROJECT 01</div>
+          <div class="tags">
+            <span class="tag-dark">Veterinary</span>
+            <span class="tag-dark">Microbiology</span>
+            <span class="tag-dark">Pharmacology</span>
+            <span class="tag-dark">Parasitology</span>
+          </div>
+          <div class="feat-title">
+            Veterinary Faculty —<br><em>Ankara University</em>
+          </div>
+          <div class="feat-institution">
+            Ankara University · Faculty of Veterinary Medicine<br>
+            Faculty of Natural Sciences · Faculty of Pharmacy
+          </div>
+          <div class="feat-divider"></div>
           <p class="feat-desc">
-            Complete turnkey delivery of a new national reference laboratory for communicable and non-communicable disease diagnosis. The scope encompassed BSL-2/3 laboratory design, international procurement of analytical instruments, full MEP coordination, biosafety zoning, staff training, and formal WHO-compliant handover. The facility now serves as the primary national hub for disease surveillance and outbreak response.
+            In collaboration with the Veterinary Faculty, the Department of Biology of the Faculty of Natural Sciences, and the Faculty of Pharmacy of Ankara University, joint scientific projects were carried out. The work covers the fields of microbiology, parasitology and pharmacology, and includes comprehensive research and development activities. The primary focus is on developing new forms of veterinary medicines, conducting biological trials, and designing field application protocols. These projects make a significant contribution to the development of innovative treatment methods, the improvement of biosafety, and the advancement of sustainable livestock farming.
           </p>
-          <div class="feat-stats">
-            <div class="feat-stat">
-              <span class="feat-stat-label">Total Area</span>
-              <span class="feat-stat-val">4,200 m²</span>
-            </div>
-            <div class="feat-stat">
-              <span class="feat-stat-label">Instruments Installed</span>
-              <span class="feat-stat-val">180+</span>
-            </div>
-            <div class="feat-stat">
-              <span class="feat-stat-label">Lab Departments</span>
-              <span class="feat-stat-val">6 Departments</span>
-            </div>
-            <div class="feat-stat">
-              <span class="feat-stat-label">Compliance</span>
-              <span class="feat-stat-val">WHO Accredited</span>
-            </div>
-          </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- PROJECT LIST -->
+  <!-- ═══ PROJECT CARDS ════════════════════════════════════════════ -->
   <section style="background:var(--c-white); border-top:1px solid var(--c-rule); padding:var(--py) var(--px);">
     <div style="max-width:1200px; margin:0 auto;">
 
-      <div style="margin-bottom:3rem;" class="anim-in">
+      <div style="margin-bottom:3.5rem;" class="anim-in">
         <div class="eyebrow" style="margin-bottom:1.25rem;">ALL PROJECTS</div>
         <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2rem,3.5vw,3rem); text-transform:uppercase; color:var(--c-black); line-height:1.02;">SELECTED CASE STUDIES</h2>
       </div>
 
-      <div class="proj-list">
+      <div style="display:flex; flex-direction:column; gap:1.75rem;">
 
-        <!-- Project 02 -->
-        <div class="proj-row anim-in">
-          <div>
-            <div class="proj-index">02</div>
-            <div class="proj-year">2022</div>
-          </div>
-          <div>
-            <div class="tags" style="margin-bottom:0.875rem;">
-              <span class="tag-light">Healthcare</span>
-              <span class="tag-light">Int'l Org</span>
-            </div>
-            <div class="proj-title">Regional Clinical Laboratory Network</div>
-            <div class="proj-location">Sarajevo, Bosnia &amp; Herzegovina · Client: World Health Organization</div>
-            <p class="proj-desc">Establishment of an interconnected network of eight regional clinical laboratories, standardised around a common instrumentation and IT infrastructure platform. Included full IQ/OQ/PQ validation and ISO 15189 accreditation support across all sites. A centralised LIMS was deployed to enable cross-site data sharing and quality monitoring.</p>
-            <div class="tags">
-              <span class="tag-light">ISO 15189</span>
-              <span class="tag-light">LIMS Integration</span>
-              <span class="tag-light">IQ/OQ/PQ</span>
+        <!-- PROJECT 02 -->
+        <div class="proj-card anim-in">
+          <div class="proj-photo">
+            <img src="Photos/Pojects-Photo/Hannover_Vet.webp"
+                 alt="University of Veterinary Medicine Hannover" loading="lazy">
+            <div class="proj-photo-num">PROJECT 02</div>
+            <div class="proj-photo-location">
+              <div>Hannover</div>
+              <div class="proj-photo-country">Germany</div>
             </div>
           </div>
-          <div class="proj-stats">
-            <div class="proj-stat">
-              <div class="proj-stat-lbl">Laboratories</div>
-              <div class="proj-stat-val">8 Sites</div>
+          <div class="proj-body">
+            <div class="proj-num">PROJECT 02</div>
+            <div class="tags" style="margin-bottom:0.25rem;">
+              <span class="tag">Veterinary</span>
+              <span class="tag">Reproductive Biotechnology</span>
+              <span class="tag">Animal Husbandry</span>
             </div>
-            <div class="proj-stat">
-              <div class="proj-stat-lbl">Instruments</div>
-              <div class="proj-stat-val">340+</div>
+            <div class="proj-title">University of Veterinary Medicine Hannover — Sperm Laboratory</div>
+            <div class="proj-institution">
+              University of Veterinary Medicine Hannover<br>Hannover, Germany
             </div>
-            <div class="proj-stat">
-              <div class="proj-stat-lbl">Delivery</div>
-              <div class="proj-stat-val">14 Months</div>
-            </div>
+            <div class="proj-rule"></div>
+            <p class="proj-desc">
+              At the sperm laboratory of the University of Veterinary Medicine Hannover, one of Germany's leading academic centres, cutting-edge scientific research dedicated to bovine semen was conducted. Within the scope of the project, semen quality analyses were successfully performed, along with optimisation of freezing conditions and long-term storage protocols. The results obtained have become an important international reference point in the fields of animal husbandry and reproductive biotechnology.
+            </p>
           </div>
         </div>
 
-        <!-- Project 03 -->
-        <div class="proj-row anim-in" style="transition-delay:0.07s;">
-          <div>
-            <div class="proj-index">03</div>
-            <div class="proj-year">2023</div>
-          </div>
-          <div>
-            <div class="tags" style="margin-bottom:0.875rem;">
-              <span class="tag-light">Research</span>
-              <span class="tag-light">Int'l Org</span>
-            </div>
-            <div class="proj-title">Veterinary &amp; Food Safety Research Facility</div>
-            <div class="proj-location">Almaty, Kazakhstan · Client: State University / FAO</div>
-            <p class="proj-desc">Full fit-out of a new veterinary diagnostic and food safety research facility, including specialist containment areas, genomics and microbiology laboratories, and complete LIMS integration. Delivered to FAO laboratory quality assurance standards, with staff training and SOP documentation included in the handover package.</p>
-            <div class="tags">
-              <span class="tag-light">FAO Standards</span>
-              <span class="tag-light">Genomics Lab</span>
-              <span class="tag-light">ISO 17025</span>
+        <!-- PROJECT 03 — reversed -->
+        <div class="proj-card reverse anim-in" style="transition-delay:0.07s;">
+          <div class="proj-photo">
+            <img src="Photos/Pojects-Photo/LALAHAN_Vet.webp"
+                 alt="Central Research Institute of Animal Husbandry Lalahan" loading="lazy">
+            <div class="proj-photo-num">PROJECT 03</div>
+            <div class="proj-photo-location">
+              <div>Ankara</div>
+              <div class="proj-photo-country">Turkey</div>
             </div>
           </div>
-          <div class="proj-stats">
-            <div class="proj-stat">
-              <div class="proj-stat-lbl">Total Area</div>
-              <div class="proj-stat-val">2,800 m²</div>
+          <div class="proj-body">
+            <div class="proj-num">PROJECT 03</div>
+            <div class="tags" style="margin-bottom:0.25rem;">
+              <span class="tag">Veterinary</span>
+              <span class="tag">Toxicology</span>
+              <span class="tag">Reproductive Research</span>
             </div>
-            <div class="proj-stat">
-              <div class="proj-stat-lbl">Instruments</div>
-              <div class="proj-stat-val">220+</div>
+            <div class="proj-title">Central Research Institute of Animal Husbandry "Lalahan"</div>
+            <div class="proj-institution">
+              Lalahan Central Research Institute<br>Ankara, Turkey
             </div>
-            <div class="proj-stat">
-              <div class="proj-stat-lbl">Accreditation</div>
-              <div class="proj-stat-val">ISO 17025</div>
-            </div>
+            <div class="proj-rule"></div>
+            <p class="proj-desc">
+              The aim of the project was to study the effects of pesticides on sperm quality and the reproductive system of male animals. During the study, biochemical changes induced by various groups of pesticides were evaluated, including analysis of sperm morphology, motility, viability and DNA integrity. In addition, biological protective agents were investigated to reduce the negative consequences of toxic exposure. The results obtained are of significant importance for preventing fertility losses in livestock farming and for developing safe standards for the use of agrochemicals, serving as a scientific basis for further research in veterinary toxicology and reproductive biotechnology.
+            </p>
           </div>
         </div>
 
-        <!-- Project 04 -->
-        <div class="proj-row anim-in" style="transition-delay:0.14s;">
-          <div>
-            <div class="proj-index">04</div>
-            <div class="proj-year">2022</div>
-          </div>
-          <div>
-            <div class="tags" style="margin-bottom:0.875rem;">
-              <span class="tag-light">Healthcare</span>
-              <span class="tag-light">Government</span>
-            </div>
-            <div class="proj-title">Hospital Network Instrumentation Upgrade</div>
-            <div class="proj-location">Amman, Jordan · Client: National Healthcare Authority</div>
-            <p class="proj-desc">Comprehensive instrumentation refresh and GLP compliance upgrade across a network of twelve hospital-based clinical laboratories. The project included decommissioning of legacy equipment, new instrument installation, updated SOPs, and a structured staff retraining programme. All sites were operational with zero service disruption throughout the transition.</p>
-            <div class="tags">
-              <span class="tag-light">GLP Compliant</span>
-              <span class="tag-light">Zero Downtime</span>
-              <span class="tag-light">SOP Rewrite</span>
+        <!-- PROJECT 04 -->
+        <div class="proj-card anim-in" style="transition-delay:0.14s;">
+          <div class="proj-photo">
+            <img src="Photos/Pojects-Photo/ANDONG_Vet_Faclt.webp"
+                 alt="Andong National University, South Korea" loading="lazy">
+            <div class="proj-photo-num">PROJECT 04</div>
+            <div class="proj-photo-location">
+              <div>Daegu</div>
+              <div class="proj-photo-country">South Korea</div>
             </div>
           </div>
-          <div class="proj-stats">
-            <div class="proj-stat">
-              <div class="proj-stat-lbl">Hospital Sites</div>
-              <div class="proj-stat-val">12</div>
+          <div class="proj-body">
+            <div class="proj-num">PROJECT 04</div>
+            <div class="tags" style="margin-bottom:0.25rem;">
+              <span class="tag">Veterinary</span>
+              <span class="tag">Microbiology</span>
+              <span class="tag">Biosafety</span>
             </div>
-            <div class="proj-stat">
-              <div class="proj-stat-lbl">Instruments</div>
-              <div class="proj-stat-val">150+</div>
+            <div class="proj-title">Andong National University</div>
+            <div class="proj-institution">
+              Andong National University<br>Daegu, South Korea
             </div>
-            <div class="proj-stat">
-              <div class="proj-stat-lbl">Compliance</div>
-              <div class="proj-stat-val">GLP Certified</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 05 -->
-        <div class="proj-row anim-in" style="transition-delay:0.21s;">
-          <div>
-            <div class="proj-index">05</div>
-            <div class="proj-year">2024</div>
-          </div>
-          <div>
-            <div class="tags" style="margin-bottom:0.875rem;">
-              <span class="tag-light">Government</span>
-              <span class="tag-light">Int'l Org</span>
-            </div>
-            <div class="proj-title">BSL-3 Infectious Disease Containment Laboratory</div>
-            <div class="proj-location">Nairobi, Kenya · Client: UNICEF / Africa CDC</div>
-            <p class="proj-desc">Design and turnkey delivery of a dedicated Biosafety Level 3 containment laboratory for infectious disease surveillance and outbreak response research. The facility features negative pressure HVAC systems, multi-stage HEPA filtration, pass-through autoclaves, and a comprehensive biosafety monitoring and alarm infrastructure — fully validated to CDC and WHO BSL-3 requirements.</p>
-            <div class="tags">
-              <span class="tag-light">BSL-3</span>
-              <span class="tag-light">Negative Pressure</span>
-              <span class="tag-light">CDC Validated</span>
-            </div>
-          </div>
-          <div class="proj-stats">
-            <div class="proj-stat">
-              <div class="proj-stat-lbl">Containment Area</div>
-              <div class="proj-stat-val">1,400 m²</div>
-            </div>
-            <div class="proj-stat">
-              <div class="proj-stat-lbl">Biosafety Level</div>
-              <div class="proj-stat-val">BSL-3</div>
-            </div>
-            <div class="proj-stat">
-              <div class="proj-stat-lbl">Certification</div>
-              <div class="proj-stat-val">CDC / WHO</div>
-            </div>
+            <div class="proj-rule"></div>
+            <p class="proj-desc">
+              A scientific project in the field of veterinary microbiology and biotechnology was implemented at Andong National University, aimed at developing biological agents to reduce the toxic effects of pesticides on animals and the environment. The research includes studying the interactions of microorganisms with toxic compounds and creating probiotic formulas that enhance animal resilience to external stress factors. The results obtained contribute to the development of environmentally safe methods of protecting animal health and support the concept of sustainable agriculture and biosafety.
+            </p>
           </div>
         </div>
 
@@ -626,7 +546,6 @@
       document.getElementById('mob-nav').classList.toggle('open');
       document.getElementById('ham').classList.toggle('open');
     }
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -636,10 +555,7 @@
         }
       });
     }, { threshold: 0.08 });
-
     document.querySelectorAll('.anim-in').forEach(el => observer.observe(el));
-
-    // Hero reveals on load
     document.querySelectorAll('section:first-of-type .anim-in').forEach((el, i) => {
       setTimeout(() => el.classList.add('visible'), 100 + i * 160);
     });
