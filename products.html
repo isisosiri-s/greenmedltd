@@ -984,6 +984,28 @@
         specs:"BIOSENS® 900 — portable trace detection analyser for narcotics and explosives.\n\n• Detection technology: Immunoassay on S.A.W. sensor\n• Start-up time: 10 min | Analysis time: 30–60 sec per sample\n• Display: 10.1″ colour TFT touchscreen | Built-in thermal printer\n• Dimensions: 280×306×289 mm | Weight: 11.5 kg | Built-in handgrip\n• Connectivity: Ethernet + USB | Data storage: M2 SSD 120 GB\n• Operating: 10–40°C | Storage: 0–60°C | Humidity: 95% non-condensing\n\nSubstances detected: Amphetamines, Methamphetamine, MDA, MDMA, Ephedrine, Cocaine, Ecstasy, Opiates, THC, Buprenorphine, PCP, Fentanyl, Ketamine, TNT, DNT, Tetryl, RDX, PETN, NG (up to 12 groups)\n\nConsumables: Sensor cartridge (30–60 days), Activator cartridge (50 runs), Re-usable collection pad, Annual maintenance kit." },
     ];
 
+    // ── Slug helpers (mirrors generate-pages logic) ──────────────────────
+    function slugify(name) {
+      return name
+        .toLocaleLowerCase('en-US')
+        .replace(/[^\w\s-]/g, '')
+        .replace(/[\s_]+/g, '-')
+        .replace(/-{2,}/g, '-')
+        .replace(/^-+|-+$/g, '')
+        .substring(0, 80);
+    }
+
+    // Precompute slugs with duplicate-collision handling
+    (function() {
+      const seen = {};
+      PRODUCTS.forEach(p => {
+        let s = slugify(p.name);
+        if (seen[s]) { seen[s]++; s = s + '-' + seen[s]; }
+        else { seen[s] = 1; }
+        p.slug = s;
+      });
+    })();
+
     const BADGE_CLASS = {
       "Genomik & Sekanslama": "badge-genomics",
       "Biyokimya":            "badge-biochem",
@@ -1033,10 +1055,7 @@
       count.textContent = filtered.length + " product" + (filtered.length !== 1 ? "s" : "");
 
       grid.innerHTML = filtered.map(p => `
-        <article class="product-card" role="button" tabindex="0"
-                 onclick="openPanel(${p.no})"
-                 onkeydown="if(event.key==='Enter'||event.key===' ')openPanel(${p.no})"
-                 style="cursor:pointer;">
+        <a class="product-card" href="products/${p.slug}.html" style="text-decoration:none; display:flex; flex-direction:column;">
           <div class="card-top">
             <span class="card-num">#${String(p.no).padStart(2,"0")}</span>
             <span class="card-badge ${BADGE_CLASS[p.cat]}">${CAT_LABEL[p.cat]}</span>
@@ -1055,7 +1074,7 @@
               </svg>
             </div>
           </div>
-        </article>
+        </a>
       `).join("");
 
       const noResults = filtered.length === 0;
