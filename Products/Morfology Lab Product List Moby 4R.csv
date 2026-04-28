@@ -1,0 +1,641 @@
+;;;;;;;;;;;;;;;;
+LABORATUVAR SARF MALZEMELERÝ — ÜRÜN GÝRÝÞ ÞABLONU;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;
+NO;ÜRÜN KÝMLÝÐÝ;;;;TEKNÝK ÖZELLÝKLER;;;;;PAKETLEME;;;TEDARÝKÇÝ;WEB / NOTLAR;;
+No;Ürün Adý (TR);Ürün Adý (EN);Katalog No;Marka / Üretici;Kategori;Alt Kategori;Birim / Miktar;Teknik Notlar;;Ambalaj Birimi;Adet / Paket;Yeni Ambalaj Birimi;Tedarikçi;Ürün URL;Ek Notlar;Note
+Oto;Türkçe tam adý girin;Ýngilizce / orijinal ad;Ör: 4393927;Ör: Thermo Fisher;? seçin;Ör: Steril filtreli uç;Ör: 10 ?L / 96 adet;Spesifikasyon, saflýk, sýcaklýk vb.;;Ör: Kutu / Kit / Þiþe;Ör: 96 / 1000;;Yerel / global tedarikçi;Üretici katalog linki;Depolama koþulu, özel not vb.;
+1; POP-4 Polymer for 3500 analyzer; POP-4 Polymer for 3500 analyzer;4393715;Thermo Fisher Scientific, USA;Genomik & Sekanslama;Capillary electrophoresis polymer;24 ????/ pack;POP-4, POP-6, and POP-7 are conveniently offered in easy to use pouch packages. The POP-4 separation matrix is optimized for HID/forensic applications.;"POP-4, POP-6, and POP-7 are conveniently offered in easy to use pouch packages, POP-4 separation matrix is optimized for HID/forensic applications. POP polymers dynamically coat the capillary wall to control electro-osmotic flow. Their definite quality and uniform consistency eliminate guesswork and help to ensure reproducibility. POP Polymers are specifically formulated to separate DNA fragments of a known size range at a desired resolution and run time.
+POP-4, POP-6, and POP-7 are conveniently offered in easy to use pouch packages with multiple sample size formats. The POP-4 separation matrix is optimized for HID/forensic applications. 
+
+• Easy to use: Pre-formulated and in a single use pouch, which not only saves time but also ensures reliability and consistency
+• Include radio frequency identification (RFID) label: easy to track important information such as part/lot number, samples remaining, and expiry dates (displayed on software dashboard)
+• Robust formulation: formulated for sequencing and fragment analysis applications
+• Replenishable: alow capillaries to be used multiple times
+
+Reproducible Results
+POP polymers dynamically coat the capillary wall to control electro-osmotic flow. Their definite quality and uniform consistency eliminate guesswork and help to ensure reproducibility. POP Polymers are specifically formulated to separate DNA fragments of a known size range at a desired resolution and run time.
+
+Many Choices
+POP-7 polymers are very versatile and designed for a wide range of short read to long read sequencing applications as well as fragment analysis. POP-4 polymers are designed specifically for HID/Forensic applications, while POP-6 polymers are the choice for certain sequencing applications (and fragment analysis).
+
+For partially used pouches that need to be stored, a cap (4412619) that plugs into the pouch fitment opening is recommended.
+
+For Research Use Only. Not for use in diagnostic procedures.";Pack;384 samples;pack;Thermo Fisher Scientific;https://www.thermofisher.com/order/catalog/product/4393715;"Store at 2–8°C; on-instrument limit 14 days at ?25°C";
+2;Anode Buffer Container for 3500 analyzer;Anode Buffer Container for 3500 analyzer;4393927;Life Technologies Corporation;Genomik & Sekanslama;Capillary electrophoresis buffer;6 ????/ pack;The Anode Buffer Container (ABC) contains 1X running buffer to support all electrophoresis applications on the Applied Biosystems 3500 and SeqStudio Flex series genetic analyzers.;"The Anode Buffer Container (ABC) contains 1X running buffer to support all electrophoresis applications on the Applied Biosystems 3500 and SeqStudio Flex series genetic analyzers. It is made in a ready-to-use, disposable container with a radio frequency identification (RFID) tag incorporated into the label. The top of the ABC is heat sealed with a plastic film, which should be removed prior to direct installation on the instrument. Each package includes four individual containers.
+For Research Use Only. Not for use in diagnostic procedures.";Pack;4;pack;Thermo Fisher Scientific;https://www.thermofisher.com/order/catalog/product/4393927;"Replace every 14 days or before each run; store at 2–8°C";
+3;Cathode Buffer Container for 3500 analyzer;Cathode Buffer Container for 3500 analyzer;4408256;Life Technologies Corporation;Genomik & Sekanslama;Capillary electrophoresis buffer;6 ????/ pack;The cathode buffer container (CBC) contains 1X running buffer to support all electrophoresis applications on Applied Biosystems 3500 and SeqStudio Flex series genetic analyzers.;"The cathode buffer container (CBC) contains 1X running buffer to support all electrophoresis applications on Applied Biosystems 3500 and SeqStudio Flex series genetic analyzers. The container has two separate compartments, the left side provides the cathode buffer for electrophoresis and the right side provides for a capillary wash and spent polymer waste ejection functionality between injections.
+
+The CBC is made in a ready-to-use, disposable container with a radio frequency identification (RFID) tag incorporated into the label. The top of the CBC is heat sealed with a plastic film, which should be removed prior to direct installation on to the instrument. Each package includes four individual containers.
+
+For Research Use Only. Not for use in diagnostic procedures.";Pack;4;pack;Thermo Fisher Scientific;https://www.thermofisher.com/order/catalog/product/4408256;"Replace every 14 days or before each run; store at 2–8°C";
+4;Hi-Di™ Formamide reagent, 5 ml;Hi-Di™ Formamide reagent, 5 ml;4401457;Life Technologies Corporation;Genomik & Sekanslama;Formamide denaturation reagent;5 ????/ pack;"Hi-Di Formamide; deionized formamide for sample denaturation prior to CE; 5 mL bottle";"Highly deionized (Hi-Di) formamide is used to resuspend samples before electrokinetic injection in capillary electrophoresis systems. This smaller configuration (5 mL) minimizes the number of freeze/thaw cycles compared to larger volumes and may be a better choice when running a smaller number of samples.
+For research use only";Bottle;5 mL;pack;Thermo Fisher Scientific;https://www.thermofisher.com/order/catalog/product/4401457;"Store at -20°C; protect from light";
+5; Conditioning Reagent for 3500 Genetic Analyzer; Conditioning Reagent for 3500 Genetic Analyzer;4393718;Life Technologies Corporation;Genomik & Sekanslama;Instrument conditioning reagent;24 ????/ pack;Conditioning reagent for washing capillary channels on 3500 Genetic Analyzer;"Conditioning Reagent is offered here as ready-to-use pouch compatible with 3500 and SeqStudio Flex series genetic analyzers. It is designed to be used for priming the polymer pump, washing the polymer pump between polymer type changes, and during instrument shut down. The pouch has adequate volume for a one-time use. Incorporated into the label is a radio frequency identification (RFID) tag. The top part of the pouch fitment is sealed with a plastic film, which should be removed prior to installation on the instrument.
+For Research Use Only. Not for use in diagnostic procedures.";Pack;1;pack;Thermo Fisher Scientific;https://www.thermofisher.com/order/catalog/product/4393718;"Store at RT; use before each polymer change";
+6; GeneScan - 600 LIZ laboratory reagent for 3500 analyzer; GeneScan - 600 LIZ laboratory reagent for 3500 analyzer;4408399;Thermo Fisher Scientific, USA;Genomik & Sekanslama;Size standard;2 ????/ pack;"GeneScan 600 LIZ Size Standard; 600 bp dye-labeled size standard for CE fragment analysis";"The GeneScan™ 600 LIZ™ Size Standard v2.0 is a fifth dye-labeled high density size standard for the reproducible sizing of fragment analysis data. This updated version incorporates manufacturing process enhancements for improved lot to lot consistency and peak height balance compared to the existing GeneScan™ 600 LIZ™ Size Standard. This product is required for normalization on the 3500 Series Genetic Analyzers, and can also be used as a traditional size standard on all of the Applied Biosystems™ capillary electrophoresis systems. Use this size standard for fragments between 20 and 600 bp. The standard contains 36 LIZ™ dye-labeled, single-stranded DNA fragments. Since the standard is labeled with the fifth dye, users can genotype a greater number of markers in a given lane, compared to the four-dye system.
+
+Size Fragments in the 20-600 Nucleotides Range
+GeneScan™ 600 LIZ™ Size Standard v2.0 is designed for sizing DNA fragments in the 20-600 nucleotides range and provides 36 single-stranded labeled fragments of: 20, 40, 60, 80, 100, 114, 120, 140, 160, 180, 200, 214, 220, 240, 250, 260, 280, 300, 314, 320, 340, 360, 380, 400, 414, 420, 440, 460, 480, 500, 514, 520, 540, 560, 580 and 600. The sizing curve generated from fragments make the GeneScan™ 600 LIZ™ Size Standard v2.0 ideal for use for a variety of fragment analysis applications such as Microsatellites, Fragment Length Polymorphisms and Relative Fluorescent Quantitation. Each of the DNA fragments is labeled with the LIZ™ fluorophore which results in a single peak when run under denaturing conditions. With the 5th dye LIZ™ your marker fragments can be labeled with the dyes FAM™, VIC™ , NED™ or PET™.
+
+For Research Use Only. Not for use in diagnostics procedures.
+For Research Use Only. Not for use in diagnostic procedures.";Pack;2;pack;Thermo Fisher Scientific;https://www.thermofisher.com/order/catalog/product/4408399;"Store at -20°C; protect from light";
+7;Quantifiler™ Trio DNA Quantification Kit;Quantifiler™ Trio DNA Quantification Kit;4482910;Thermo Fisher Scientific, USA;Genomik & Sekanslama;DNA quantification kit;3 ?????/ kit;"Simultaneous quantification of human total & male DNA via real-time PCR; sensitivity 5 pg/?L–100 ng/?L; ISO 18385 compliant";"The Quantifiler Trio DNA Quantification Kit is a robust kit that enables forensic laboratories to simultaneously obtain a quantitative and qualitative assessment of total human and human male DNA in a single, highly sensitive real-time PCR reaction. This guides selection of the optimal short tandem repeat (STR) analysis chemistry (autosomal, Y-STR, or miniSTR) and streamlines the workflow while increasing downstream analysis success rates. The kit includes enhanced quantity and quality indicators that help deliver accurate, sensitive, and specific results that work together with the HID Real Time PCR Analysis Software v1.2 to enable informative and integrated workflow decisions. The Quantifiler Trio kit and the HID v1.2 software are designed for use with the Applied Biosystems 7500 Real-Time PCR System.
+
+Highly Accurate
+• Determines the ratio of human male to female DNA, even with minute male and excess female DNA (1:4000 or greater)
+
+Highly Sensitive
+• <1 pg/?L limit of detection. Quantifies DNA concentrations from 0.005 ng/uL to >50 ng/uL, enabling the use of a broad range of concentrations, with flexible protocols for higher concentration samples.
+
+Highly Specific
+• Detects human and higher primate DNA
+
+Highly Informative
+• Quantifies DNA from a wide variety of sources, including buccal swabs, blood, semen, tissue, and other human DNA sources, making this kit suitable for casework sample screening, databasing, and paternity labs
+• Guides selection of the optimal AmpFLSTR PCR Amplification Kit (autosomal, Y-STR, or miniSTR)
+• Quality Index helps improve prediction of STR amplification performance and estimation of DNA quantity in degraded samples, especially in the presence of inhibitors.
+• Enhanced inhibition detects the presence of PCR inhibitors (suggesting additional purification of extract and/or whether a mini STR kit like the MiniFiler, NGM SElect, or GlobalFiler kit may be necessary).
+
+Highly Reliable
+• Uses gold standard TaqMan real-time PCR technology already widely adopted in forensic laboratories. Real-time PCR has the widest dynamic range of any DNA detection technology, allowing for more accurate quantification of low level samples.
+
+Highly Efficient
+• Dual quantification system minimizes sample consumption and streamlines workflow, with results in ?1 hour.
+• Optimized and validated as part of a complete DNA testing system with the Applied Biosystems 7500 Real-Time PCR System, AmpFLSTR PCR Amplification kits, and HID Real Time PCR Analysis Software v 1.2 to enable high quality STR profiling results.
+
+A Highly Informative Workflow Tool
+The Quantifiler Trio DNA Quantification Kit has been optimized and validated as part of a complete DNA testing system with the AmpFLSTR PCR Amplification kits. The chemistry is compatible with commonly used extraction technologies for easy integration into current lab workflows. This enables the Quantifiler Trio kit to function as a critical component of an improved and integrated workflow for more effective processing of forensic casework samples. Both the kit and the software are fully automatable with most liquid handling robotic platforms.
+
+Comparison to Quantifiler Duo Kits
+There are several specific differences between the Quantifiler Trio DNA Quantification Kit and the Quantifiler Duo DNA Quantification Kit, including:
+Target Loci: The Quantifiler Trio kit uses multiple-copy target loci for improved detection sensitivity. There are three human-specific target loci: Small Autosomal, Large Autosomal, and a Y-chromosome target. Each consists of multiple copies dispersed on various autosomal chromosomes (Small Autosomal and Large Autosomal) or multiple copies on the Y-chromosome.
+Optimized Chemistry: The assay chemistry has been optimized for more efficient multiplexing, faster PCR cycle times (?1 hour), and better inhibitor tolerance. The overall performance improvements allow the Quantifiler Trio kit to better match the enhanced performance of newer STR kits that are designed to accommodate more challenging samples, like the Identifiler Plus, NGM SElect, or GlobalFiler PCR Amplification kits.
+DNA Standard: The Quantifiler Trio DNA Standard is a pooled, human genomic, smaller molecular weight DNA for improved stability, homogeneity, and correlation with forensic samples. There is a five point standard curve protocol that helps improve efficiency with up to 6% more samples on a plate.
+Packaging Features: To help laboratories control for and minimize the potential of reagent contamination, as well as to better accommodate automated platforms, the Quantifiler Trio DNA Quantification Kit has some key packaging features:
+    --Four 100-reaction individual-use screw cap tubes (1 tube will process a 96 well plate)
+    --The DNA standard is packaged in a separate box.
+    --Both the reagent and DNA standard box are shipped together in an STR-style sleeve with peel & stick reagent lot barcode labels. This allows customers to separate out the reagents easily for special storage upon arrival at the laboratory.";Kit;400 rxn;kit;Thermo Fisher Scientific;https://www.thermofisher.com/order/catalog/product/4482910;"Store at -20°C; for forensic/paternity use only";
+8;GlobalFiler™ Express PCR Amplification Kit;GlobalFiler™ Express PCR Amplification Kit;4476609;Thermo Fisher Scientific, USA;Genomik & Sekanslama;STR PCR amplification kit;4 ?????/ kit;"6-dye, 24-locus STR kit for database/single-source samples; ~40 min amplification; CODIS/ENFSI compatible";"The GlobalFiler Express PCR Amplification Kit is the first 6-dye, 24-locus STR kit that combines maximum compatibility with global databasing loci standards, with dramatically reduced amplification time and superior discrimination power, to enable forensic DNA labs worldwide to maximize information recovery and improve overall efficiency. The GlobalFiler Express kit is part of a fully integrated and validated forensic DNA workflow backed by best-in-class global training, service, and support. This kit is optimized for database and single-source samples; for casework samples, please see our GlobalFiler PCR Amplification Kit.
+
+Key Features:
+
+• Up to 5-times faster amplification time than previous-generation kits
+• DNA results in <2 hours—using current CE platforms
+• Optimized protocols for blood and buccal samples deposited on swab or paper substrates
+• The only kit with all markers recommended for inclusion by the CODIS Core Loci Working Group, including all markers commonly used in Europe, for maximum global database compatibility
+
+The GlobalFiler Express kit is a robust and reliable single-amplification STR multiplex kit optimized for use with database and single-source samples. The kit leverages new dyes for the incorporation of additional markers, generating the most discriminating kit available to the forensic community. The kit contains all of the markers included in the major global databases and utilizes optimized reagents, thermal cycling parameters, and the latest advances in oligo synthesis and purification to enable the highest quality results specific to the sample type being processed. Maintenance of the NGM SElect and Identifiler primer sequences helps to ensure maximum concordance with previously typed samples. In addition, multiple gender markers have been added to the multiplex to enable accurate typing of male samples, even highly degraded or Y-negative samples, while increased genotyping accuracy is obtained with the expansion of the allelic ladder allele ranges to include all rare alleles as described in the literature (STRbase).
+
+Experience Matters
+We are the only company in the world that designs and validates its reagents, instruments, and data analysis software together as an integrated system for DNA testing. Technical service scientists and field application specialists are available to answer your technical questions, review data, and make recommendations on how to perform assays and troubleshoot results. All of these resources help ensure success when using Applied Biosystems human identification solutions in your laboratory.";Kit;200 rxn;kit;Thermo Fisher Scientific;https://www.thermofisher.com/order/catalog/product/4474566;"Store at -15°C to -25°C; after opening store at 2–8°C for up to 6 months";"4474566 is not available; web evidence for this product line points to 4476609/4474665, not 4474566."
+9;GlobalFiler™ PCR Amplification Kit;GlobalFiler™ PCR Amplification Kit;4476135;Thermo Fisher Scientific, USA;Genomik & Sekanslama;STR PCR amplification kit;4 ?????/ kit;"6-dye, 24-locus STR kit for casework samples; ~80 min amplification; CODIS/ENFSI compatible; 10 mini-STRs included";"The GlobalFiler PCR Amplification Kit is the first 6-dye, 24-locus STR kit that combines maximum compatibility with global databasing loci standards, with dramatically reduced amplification time and superior discrimination power, helping to enable forensic DNA labs worldwide to maximize information recovery and improve overall efficiency. The GlobalFiler kit is part of a fully integrated and validated forensic DNA workflow backed by best-in-class global training, service, and support. This kit is optimized for casework samples and is also available in a format containing an internal quality control (IQC) system (Cat. No. A43565), helping forensic DNA labs worldwide maximize information recovery and improve overall efficiency. For database and single-source samples, please see our GlobalFiler Express PCR Amplification Kit (Cat. No. 4476609).
+
+Key Features:
+
+Efficient protocols minimize amplification time compared to previous-generation kits
+An optimized buffer system and expanded DNA input volume delivers maximum sensitivity for trace/low level DNA samples
+Enhanced intracolor balance simplifies interpretation of mixture samples
+The inclusion of 10 mini-STRs maximizes results from degraded samples
+The only kit with all markers recommended for inclusion by the CODIS Core Loci Working Group, including all markers commonly used in Europe, for maximum global database compatibility
+The GlobalFiler kit is a robust and reliable single-amplification STR multiplex kit optimized for use with the most challenging casework samples. The kit leverages new dyes for the incorporation of additional markers, generating the most discriminating kit available to the forensic community. The kit contains all of the markers included in the major global databases, including 10 mini-STRs, designed to deliver optimized results with even highly degraded samples.
+
+Developed specifically for casework applications, the GlobalFiler kit contains a buffer system that delivers greater sensitivity for enhanced performance with inhibited and low-concentration DNA samples. The GlobalFiler kit utilizes the latest advances in oligo synthesis and purification, which provide a clean baseline and a balanced profile, resulting in simplified data analysis. Maintenance of the NGM SElect and Identifiler primer sequences helps ensure maximum concordance with previously typed samples. In addition, multiple gender markers have been added to the multiplex to enable accurate typing of male samples, even highly degraded or Y-negative samples, while increased genotyping accuracy is obtained with the expansion of the allelic ladder allele ranges to include all rare alleles as described in the literature (STRbase).
+
+Experience Matters
+
+We are the only company in the world that designs and validates its reagents, instruments, and data analysis software together as an integrated system for DNA testing. Technical service scientists and field application specialists are available to answer your technical questions, review data, and make recommendations on how to perform assays and troubleshoot results. All of these resources help ensure success when using Applied Biosystems human identification solutions in your laboratory.
+
+For licensing and limited use restrictions visit thermofisher.com/HIDlicensing.
+";Kit;200 rxn;kit;Thermo Fisher Scientific;https://www.thermofisher.com/order/catalog/product/4476135;"Store at -15°C to -25°C; after opening store at 2–8°C for up to 6 months";
+10;Prep-n-Go™ Buffer (for buccal swabs);Prep-n-Go™ Buffer (for buccal swabs);4471406;Life Technologies Corporation;Genomik & Sekanslama;Direct PCR buffer;4 ????/ pack;"Buffer enabling direct PCR amplification from buccal swabs without extraction; 200 rxn";"Prep-n-Go™ Buffer (for buccal swabs) is a best-in-class buffer designed to enable high-quality direct PCR amplification of single source samples collected on buccal swabs and amplified using the AmpFLSTR™ Identifiler™ Direct PCR Amplification Kit or other Applied Biosystems™ STR direct chemistries. This product expands direct PCR amplification capabilities to laboratories that use a wide variety of substrates, and is readily adaptable to both manual and automated workflows. No purification, extraction, or quantification is required, thus enabling laboratories to significantly expand their throughput capabilities, while also maximizing sample integrity and data quality.
+
+Key Features:
+
+• Designed to provide consistent, interpretable peaks above the detection threshold, and high quality, well-balanced STR profiles
+• Helps simplify automation requirements and expand throughput capabilities
+• Helps maximize sample integrity and data quality
+• Developed according to stringent performance standards to enable higher data reproducibility, reduced artifacts, and increased success rates with Applied Biosystems™ STR direct amplification solutions";Pack;200 rxn;pack;Thermo Fisher Scientific;https://www.thermofisher.com/order/catalog/product/4471406;Store at -20°C;
+11;Forensic DNA Extraction Kit, PrepFiler Express™;Forensic DNA Extraction Kit, PrepFiler Express™;4441352;Life Technologies Corporation;Genomik & Sekanslama;DNA extraction kit;7 ?????/ kit;"Forensic DNA extraction kit for casework samples using magnetic bead technology; 52 tests/kit";"This kit is for use with the AutoMate Express Forensic DNA Extraction System. It is suitable for the majority of standard sample types encountered in forensic laboratories such as bodily fluids on different substrates including FTA paper, cotton swabs, cotton cloth, denim and many others. We have designed the PrepFiler chemistry specifically to improve the quantity and quality of DNA isolated from forensic samples, thereby increasing the potential to obtain maximum information from downstream Short Tandem Repeat (STR) analysis.
+
+Key Product Features:
+• Designed to improve the yield and overall purity of DNA isolated from both routine and challenging forensic samples.
+• Provides high quality DNA, free of PCR inhibitors and suitable for downstream applications such as quantitative real-time PCR and short tandem repeat (STR) analysis
+• Simple and fast separation of substrate from lysate with the unique PrepFiler LySep Column
+• Quick and easy run setup with ready-to-use pre-filled cartridges
+• Closed system that minimizes the risk of contamination and transposition errors
+• Processes 1 to 13 samples in a single run
+• Rapid implementation with pre-validated, pre-programmed instrument protocols
+• Integrated solution including novel reagents, consumables and automation to provide time saving, cost effective and reliable DNA extraction
+• Improves downstream genotyping (STR) success rate and profile quality
+
+Streamlined Off-Line Lysis
+The PrepFiler Express Kits include the innovative PrepFiler LySep Column, which dramatically streamlines the off-line lysis portion of the extraction method. PrepFiler Lysis buffer or PrepFiler BTA Lysis buffer is added directly into the PrepFiler LySep Column along with the sample for incubation. Next, the PrepFiler LySep Column is quickly centrifuged which permits lysate flow through the burstable membrane while the substrate remains behind in the column. The sample tube is then simply ready to be placed on the AutoMate Express instrument. This eliminates the manual lysate and substrate transfer steps, saving time and minimizing cross contamination and sample transposition events.
+
+For Research, Forensic, or Paternity Use Only. Not intended for any animal or human therapeutic or diagnostic use.";Kit;52 tests;kit;Thermo Fisher Scientific;https://www.thermofisher.com/order/catalog/product/4441352;"Store at RT; ISO 18385 compliant";
+12;Forensic DNA Extraction Kit, PrepFiler Express BTA™;Forensic DNA Extraction Kit, PrepFiler Express BTA™;4441351;Life Technologies Corporation;Genomik & Sekanslama;DNA extraction kit;7 ?????/ kit;"Forensic DNA extraction kit with BTA reagents for challenging matrices; 52 tests/kit";"This kit is for use with the AutoMate Express Forensic DNA Extraction System. It was designed specifically for challenging samples such as bones, teeth and adhesive based samples such as cigarette butts and tape lifts. We have designed the PrepFiler chemistry specifically to improve the quantity and quality of DNA isolated from forensic samples, thereby increasing the potential to obtain maximum information from downstream Short Tandem Repeat (STR) analysis.
+
+Key Product Features:
+• Designed to improve the yield and overall purity of DNA isolated from both routine and challenging forensic samples.
+• Provides high quality DNA, free of PCR inhibitors and suitable for downstream applications such as quantitative real-time PCR and short tandem repeat (STR) analysis
+• Simple and fast separation of substrate from lysate with the unique PrepFiler LySep Column
+• Quick and easy run setup with ready-to-use pre-filled cartridges
+• Closed system that minimizes the risk of contamination and transposition errors
+• Processes 1 to 13 samples in a single run
+• Rapid implementation with pre-validated, pre-programmed instrument protocols
+• Integrated solution including novel reagents, consumables and automation to provide time saving, cost effective and reliable DNA extraction
+• Improves downstream genotyping (STR) success rate and profile quality
+
+Streamlined Off-Line Lysis
+The PrepFiler Express Kits include the innovative PrepFiler LySep Column, which dramatically streamlines the off-line lysis portion of the extraction method. PrepFiler Lysis buffer or PrepFiler BTA Lysis buffer is added directly into the PrepFiler LySep Column along with the sample for incubation. Next, the PrepFiler LySep Column is quickly centrifuged which permits lysate flow through the burstable membrane while the substrate remains behind in the column. The sample tube is then simply ready to be placed on the AutoMate Express instrument. This eliminates the manual lysate and substrate transfer steps, saving time and minimizing cross contamination and sample transposition events.
+
+For Research, Forensic, or Paternity Use Only. Not intended for any animal or human therapeutic or diagnostic use.";Kit;52 tests;kit;Thermo Fisher Scientific;https://www.thermofisher.com/order/catalog/product/4441351;"Store at RT; ISO 18385 compliant";
+13;PMB test for blood stain identification;PMB test for blood stain identification;LOT 240032;Seratec GmbH, Germany;Biyokimya;Blood stain identification test;50 ????/ pack;Test detects the presence of human hemoglobin and D-dimer (a degradation protein found in menstrual blood). This monoclonal antibody test is robust and easy to use in both the laboratory and the field. ;"Benefits
+
+30 individually sealed cassettes and 30 tubes with 1.5mL each of dilution buffer;
+Fast and reliable: results in only 10 minutes;
+Sensitive: detects as little as 20ng/mL of human hemoglobin and 400 ng/mL of D-dimer;
+Simple: easy to use, no special training necessary; and
+Compatible with DNA extraction and typing.";Pack;30 tests;pack;Seratec GmbH;;;
+14;Antiserum against human serum proteins;Antiserum against human serum proteins;20.59.52.199;Gematolog, Russia;Biyokimya;Antiserum / immunodiffusion reagent;160 ml / ??;;???????? ???????? ??? ??????????? ??????? ???????????? ?????? ???????? ? ???????-??????????? ?????????. ??????? – ?????????? ?????? ?? 1-2 ??.;Bottle;160 mL;mL;Gematolog, Russia;;;
+15;Antiserum against porcine serum proteins;Antiserum against porcine serum proteins;20.59.52.199;Gematolog, Russia;Biyokimya;Antiserum / immunodiffusion reagent;10 ml / ??;;???????? ???????? ??? ??????????? ??????? ???????????? ?????? ?????? ? ???????-??????????? ?????????. ??????? – ?????????? ?????? ?? 1-2 ??;Bottle;10 mL;mL;Gematolog, Russia;;;
+16;Antiserum against cattle serum proteins;Antiserum against cattle serum proteins;20.59.52.199;Gematolog, Russia;Biyokimya;Antiserum / immunodiffusion reagent;20 ml / ??;;???????? ???????? ??? ??????????? ??????? ???????????? ?????? ???????? ???????? ????? ? ???????-??????????? ?????????. ??????? – ?????????? ?????? ?? 1-2 ??;Bottle;20 mL;mL;Gematolog, Russia;;;
+17;Antiserum against equine serum proteins;Antiserum against equine serum proteins;20.59.52.199;Gematolog, Russia;Biyokimya;Antiserum / immunodiffusion reagent;10 ml / ??;;???????? ???????? ??? ??????????? ??????? ???????????? ?????? ?????? ? ???????-??????????? ?????????. ??????? – ?????????? ?????? ?? 1-2 ??;Bottle;10 mL;mL;Gematolog, Russia;;;
+18;Antiserum against avian serum proteins;Antiserum against avian serum proteins;20.59.52.199;Gematolog, Russia;Biyokimya;Antiserum / immunodiffusion reagent;15 ml / ??;;???????? ???????? ??? ??????????? ??????? ???????????? ?????? ????? ? ???????-??????????? ?????????. ??????? – ?????????? ?????? ?? 1-2 ??;Bottle;15 mL;mL;Gematolog, Russia;;;
+19;Antiserum against dog serum proteins;Antiserum against dog serum proteins;20.59.52.199;Gematolog, Russia;Biyokimya;Antiserum / immunodiffusion reagent;5 ml / ??;;???????? ???????? ??? ??????????? ??????? ???????????? ?????? ?????? ? ???????-??????????? ?????????. ??????? – ?????????? ?????? ?? 1-2 ??;Bottle;5 mL;mL;Gematolog, Russia;;;
+20;Antiserum against cat serum proteins;Antiserum against cat serum proteins;20.59.52.199;Gematolog, Russia;Biyokimya;Antiserum / immunodiffusion reagent;5 ml / ??;;???????? ???????? ??? ??????????? ??????? ???????????? ?????? ????? ? ???????-??????????? ?????????. ??????? – ?????????? ?????? ?? 1-2 ??.;Bottle;5 mL;mL;Gematolog, Russia;;;
+21;Antiserum against rabbit serum proteins;Antiserum against rabbit serum proteins;;Gematolog, Russia;Biyokimya;Antiserum / immunodiffusion reagent;5 ml / ??;;;Bottle;5 mL;mL;Gematolog, Russia;;;
+22;Anti-M hemagglutinating serum;Anti-M hemagglutinating serum;;Gematolog, Russia;Biyokimya;Hemagglutinating serum;30 ml / ??;;;Bottle;30 mL;mL;Gematolog, Russia;;;
+23;Anti-N hemagglutinating serum;Anti-N hemagglutinating serum;;Gematolog, Russia;Biyokimya;Hemagglutinating serum;30 ml / ??;;;Bottle;30 mL;mL;Gematolog, Russia;;;
+24;Anti-P hemagglutinating serum;Anti-P hemagglutinating serum;;Gematolog, Russia;Biyokimya;Hemagglutinating serum;30 ml / ??;;;Bottle;30 mL;mL;Gematolog, Russia;;;
+25;Kell hemagglutinating serum;Kell hemagglutinating serum;;Gematolog, Russia;Biyokimya;Hemagglutinating serum;30 ml / ??;;;Bottle;30 mL;mL;Gematolog, Russia;;;
+26;Anti-A Monoclonal Antibodies for Blood Typing;Anti-A Monoclonal Antibodies for Blood Typing;???? 2008/04007 — ??????????????? ????????????? ?? ??????????? ??????? «????????? ????-?, ????-? ? ????-??» (???????? ?????????????? ????-?, ????-?, ????-??) ?? ?? 9398-001-27575295-2004;Gematolog, Russia;Biyokimya;Monoclonal blood grouping reagent;500 ml / ??;;;Bottle;500 mL;mL;Gematolog, Russia;;;
+27;Anti-B Monoclonal Antibodies for Blood Typing;Anti-B Monoclonal Antibodies for Blood Typing;???? 2008/04007 — ??????????????? ????????????? ?? ??????????? ??????? «????????? ????-?, ????-? ? ????-??» (???????? ?????????????? ????-?, ????-?, ????-??) ?? ?? 9398-001-27575295-2004;Gematolog, Russia;Biyokimya;Monoclonal blood grouping reagent;500 ml / ??;;;Bottle;500 mL;mL;Gematolog, Russia;;;
+28;Anti-H Monoclonal Antibodies for Blood Typing;Anti-H Monoclonal Antibodies for Blood Typing;;Gematolog, Russia;Biyokimya;Monoclonal blood grouping reagent;100 ml / ??;;;Bottle;100 mL;mL;Gematolog, Russia;;;
+29; Anti-D monoclonal blood grouping reagent; Anti-D monoclonal blood grouping reagent;;Gematolog, Russia;Biyokimya;Monoclonal blood grouping reagent;30 ml / ??;;;Bottle;30 mL;mL;Gematolog, Russia;;;
+30;Microtome blades (50pcs/pack);Microtome blades (50pcs/pack);28407004;Plasma Blade LPH;Genel Sarf;Histology blade;100 ????/ pack;;"Disposable blades (plasma coated)
+Low profile plasma LPH for hard specimens";Pack;100;pack;Plasma Blade LPH;;;
+31; Mayer's Hematoxylin 1 L.; Mayer's Hematoxylin 1 L.;H?-G0-DL01;BioWitrum, Russia;Biyokimya;Histological staining reagent;10 ?????/ liter;;;Bottle;1 L;liter;BioWitrum, Russia;;;
+32;Eosin water-alcoholic concentrated;Eosin water-alcoholic concentrated;H?-EK-A500;BioWitrum, Russia;Biyokimya;Histological staining reagent;20 ?????/ liter;;;Bottle;500 mL;liter;BioWitrum, Russia;;;
+33;Reverse Osmosis cartridge for PURELAB Option-R 7/15;Reverse Osmosis cartridge for PURELAB Option-R 7/15;LC143 Purelab Option 7/15 Reverse Osmosis;ELGA VEOLIA;Su Arýtma;Reverse osmosis membrane cartridge;33 pcs;"RO membrane cartridge for PURELAB Option-R 7/15 / Medica; removes inorganic & organic compounds; lifespan ~24 months";;Cartridge;1;pcs;ELGA LabWater (Veolia);https://www.elgalabwater.com/sites/default/files/Consumables%20Datasheets/Pulse.pdf;Replace every 24 months or when flow rate drops;
+34;UV Lamp for PURELAB Option-R;UV Lamp for PURELAB Option-R;LC105 Purelab Option 7/15;ELGA VEOLIA;Su Arýtma;UV lamp for water purifier;33 pcs;"UV lamp (LC105) for PURELAB Option-R / Pulse; 254 nm germicidal UV; lifespan ~18 months";;Lamp;1;pcs;ELGA LabWater (Veolia);https://www.elgalabwater.com/sites/default/files/Consumables%20Datasheets/Pulse.pdf;Replace every 12 months;
+35;Purification Pack for PURELAB Option-R;Purification Pack for PURELAB Option-R;LC214 Purelab flex 3&4 Purification pack;ELGA VEOLIA;Su Arýtma;Purification cartridge pack;30 pcs;"LC214 DI purification pack for PURELAB flex 3/4; mixed-bed ion exchange resin; lifespan ~6 months";;Pack;1;pcs;ELGA LabWater (Veolia);https://www.elgalabwater.com/sites/default/files/Consumables%20Datasheets/Flex_3.pdf;Replace every 6 months;
+36;UV Lamp, 185/254 nm;UV Lamp, 185/254 nm;LC210-02 Purelab flex 3&4 UV lamp;ELGA VEOLIA;Su Arýtma;UV lamp for water purifier;30 pcs;"UV lamp 185/254 nm (LC210-02) for PURELAB flex 3/4; destroys organics and bacteria; lifespan ~18 months";;Lamp;1;pcs;ELGA LabWater (Veolia);https://www.elgalabwater.com/sites/default/files/Consumables%20Datasheets/Flex_3.pdf;Replace every 12-18 months;
+37;Glycerin;Glycerin;??? VKTN-138 ??? 2632140072;Siemens Healthcare Diagnostics, USA;Genel Sarf;Glycerol / sample mounting medium;5 ??./ pcs;"Glycerin (Glycerol) ?99.5% purity; pharmaceutical grade; used as mounting medium and preservative";;Bottle;1;pcs;Siemens Healthcare Diagnostics;https://www.labor.com.tr/urun/gliserin-99-5-farma-kalite-pur-gr-1-lt;Store at RT;
+38;Ethyl Alcohol Reagent;Ethyl Alcohol Reagent;Art 10445452 REF 9K309;Siemens Healthcare Diagnostics, USA;Biyokimya;EMIT ethanol assay reagent;60 ????/ pack;"EMIT II Plus Ethyl Alcohol reagent for quantitative ethanol determination in serum/plasma; 115 mL; for use with Viva/Dimension analyzer";"Application	Toxicology Reagent
+For Use With	For Chemistry Analyzers
+Specialty	Toxicology
+Test Category	Drugs of Abuse
+Test Name	Ethanol
+Test Type	Single Drug
+Volume	115 mL";Bottle;115 mL;pack;Siemens Healthcare Diagnostics;https://mms.mckesson.com/product/1033981/Siemens-10445452;"Store at 2–8°C; REF 9K309";
+39;Alcohol High Control;Alcohol High Control;Art 10445449 REF 9K079;Siemens Healthcare Diagnostics, USA;Biyokimya;EMIT ethanol control;4 ????/ pack;"EMIT Alcohol High Control 300 mg/dL; 1×3 mL; for QC of ethanol assay on clinical analyzers";"Application	Calibrator
+For Use With	For Syva Emit Ethyl Alcohol Assays
+Form	Liquid
+Levels	High Level
+Specialty	Toxicology
+Storage Requirements	Keep Frozen
+Test Category	Drugs of Abuse
+Test Name	Ethanol
+Volume	3 mL";Vial;1×3 mL;pack;Siemens Healthcare Diagnostics;https://www.fishersci.com/shop/products/alcohol-high-control/01818110;"Store at 2–8°C; REF 9K079";
+40;Ethyl Alcohol Low Control;Ethyl Alcohol Low Control;ART 10445447  REF 9K049;Siemens Healthcare Diagnostics, USA;Biyokimya;EMIT ethanol control;4 ????/ pack;"EMIT Ethyl Alcohol Low Control 40 mg/dL; 1×3 mL; for QC of ethanol assay";"Application	Control
+Levels	Low Level
+Test Category	Drugs of Abuse
+Test Name	Ethanol
+Test Type	Drugs of Abuse
+Volume	3 mL";Vial;1×3 mL;pack;Siemens Healthcare Diagnostics;https://www.fishersci.com/shop/products/alcohol-low-control/01818114;"Store at 2–8°C; REF 9K049";
+41;Alcohol Negative Calibrator;Alcohol Negative Calibrator;ART 10445445  REF 9K029;Siemens Healthcare Diagnostics, USA;Biyokimya;EMIT ethanol calibrator;4 ????/ pack;"EMIT Alcohol Negative Calibrator; 1×3 mL; zero-level calibrator for ethanol assay";"Application	Calibrator
+For Use With	For Syva Emit Ethyl Alcohol Assays
+Form	Liquid
+Levels	Negative Level
+Specialty	Toxicology
+Storage Requirements	Keep Frozen
+Test Category	Drugs of Abuse
+Test Name	Ethanol
+Volume	3 mL";Vial;1×3 mL;pack;Siemens Healthcare Diagnostics;https://www.fishersci.com/shop/products/alcohol-negative-calibrator/21280115;"Store at 2–8°C; REF 9K029";
+42;Alcohol Calibrator;Alcohol Calibrator;ART 10445448 REF 9K059;Elitech Clinical Systems, France;Biyokimya;EMIT ethanol calibrator;4 ????/ pack;"EMIT Alcohol Calibrator 100 mg/dL; 1×3 mL; mid-level calibrator for ethanol assay";"Application	Calibrator
+For Use With	For Syva Emit Ethyl Alcohol Assays
+Form	Liquid
+Levels	100 mg / dL
+Specialty	Toxicology
+Storage Requirements	Keep Frozen
+Test Category	Drugs of Abuse
+Test Name	Ethanol
+Volume	3 mL";Vial;1×3 mL;pack;Elitech Clinical Systems, France;https://www.fishersci.com/shop/products/alcohol-calibrator/21280114;"Store at 2–8°C; REF 9K059";
+43;Ribbon Cartridge (for EPSON ERC-09);Ribbon Cartridge (for EPSON ERC-09);EPSON Ribbon Cartridge ERC-09 CHINA PAT.P.;Epson, China;Genel Sarf;Printer ribbon cartridge;10 ????/ pack;;Epson ERC09B: Ribbon Cartridge HX-20, M-160/M-180/M-190 series, black;Cartridge;1;pack;Epson;;;
+44;Pipette Tips, Filtered, 1000 µL;Pipette Tips, Filtered, 1000 µL;REF 94420713;Thermo Fisher Scientific, USA;Pipetleme;Filtered pipette tip;3 ????/ pack;"ClipTip filtered pipette tip 1000 µL; sterile; with clip-in rack; 8×96 tips/pack; compatible with ClipTip pipettes";"Ensure a secure seal for every sample. A unique, innovative interlocking technology ensures a complete seal on every channel with minimal tip attachment and ejection force.
+
+Ensure a secure seal for every sample. Thermo Scientific™ ClipTip™ Pipette Tips provide a secure seal for every sample with a unique and innovative interlocking technology that ensures a complete seal on every channel with minimal tip attachment and ejection force. Achieve newfound confidence knowing that once attached, your tips are locked firmly in place, and will not loosen or fall off regardless of application pressure. The innovative three interlocking clip design ensures the tip is held securely on the F1-ClipTip and E1-ClipTip pipettes until — and only until — it is released.
+
+Key Features:
+
+ClipTip pipette tips feature 'clips' that lock tips in place and form a complete seal
+Each time ClipTip pipette tips are on, they are sealed and will not loosen regardless of application pressure
+ClipTip pipette tips are clipped securely on the F1-ClipTip and E1-ClipTip pipettes with a light touch eliminating the frustration of banging tips on your pipette
+Filtered ClipTip pipette tips are ideal for sensitive assays, such as PCR, and with critical samples to prevent cross-contaminations
+Low retention
+
+Low retention technology minimizes liquid retention, and enable maximium sample recovery. Available in ClipTip 20-1250 96-format tips.
+
+Proven quality
+
+Certified free of RNase, DNase, DNA, ATP and endotoxin contamination
+
+Environmentally responsible
+
+ClipTip reload system uses recycled components and 30% less plastic
+
+Versatile Tip Range
+
+96-format volumes: 12.5, 20, 50, 200, 300, 1000 and 1250?L
+384-format volumes: 12.5, 30 and 125?L
+Extended length tips available for volumes 12.5 and 300 ?l allowing for better reach with specific labware consumables
+
+Immediate traceability
+
+Each tip insert has ink-jetted lot and volume information; the convenient color key makes it easy to match the color code of the F1-ClipTip and E1-ClipTip pipette with the corresponding ClipTip pipette tip rack insert";Pack;768 tips (8×96);pack;Thermo Fisher Scientific;https://www.thermofisher.com/order/catalog/product/94420713;"Store at RT; DNase/RNase-free";
+45;Pipette Tips, Non-Filtered, 1000 µL;Pipette Tips, Non-Filtered, 1000 µL;REF 94410713;Thermo Fisher Scientific, USA;Pipetleme;Filtered pipette tip;17 pack;"ClipTip filtered pipette tip; sterile; rack format; compatible with ClipTip pipettes";"Ensure a secure seal for every sample, with these pipette tips. A unique, innovative interlocking technology ensures a complete seal on every channel with minimal tip attachment and ejection force.
+
+Ensure a secure seal for every sample. Thermo Scientific™ ClipTip™ Pipette Tips provide a secure seal for every sample with a unique and innovative interlocking technology that ensures a complete seal on every channel with minimal tip attachment and ejection force. Achieve newfound confidence knowing that once attached, your tips are locked firmly in place, and will not loosen or fall off regardless of application pressure. The innovative three interlocking clip design ensures the tip is held securely on the F1-ClipTip and E1-ClipTip pipettes until — and only until — it is released.
+
+Key Features:
+
+ClipTip pipette tips feature 'clips' that lock tips in place and form a complete seal
+Each time ClipTip pipette tips are on, they are sealed and will not loosen regardless of application pressure
+ClipTip pipette tips are clipped securely on the F1-ClipTip and E1-ClipTip pipettes with a light touch eliminating the frustration of banging tips on your pipette
+
+Low retention
+
+Low retention technology minimizes liquid retention, and enable maximium sample recovery. Available in ClipTip 20-1250 96-format tips.
+
+Proven quality
+
+Certified free of RNase, DNase, DNA, ATP and endotoxin contamination
+
+Environmentally responsible
+
+ClipTip reload system uses recycled components and 30% less plastic
+
+Versatile Tip Range
+
+96-format volumes: 12.5, 20, 50, 200, 300, 1000 and 1250?L
+384-format volumes: 12.5, 30 and 125?L
+Extended lenght tips available for volumes 12.5 and 300 ?l allowing for better reach with specific labware consumables
+
+Immediate traceability
+
+Each tip insert has ink-jetted lot and volume information; the convenient color key makes it easy to match the color code of the F1-ClipTip and E1-ClipTip pipette with the corresponding ClipTip pipette tip rack insert";Pack;1;pack;Thermo Fisher Scientific;https://www.thermofisher.com/order/catalog/product/94410713;"Store at RT; DNase/RNase-free";
+46;Helium Gas, 50 L  (for Gas Chromatography) ;Helium Gas, 50 L  (for Gas Chromatography) ;"99,9999%, 50 Litr
+CAS ?: 7440-59-7
+EC ?: 231-168-5";Asalgaz, Turkey;Genel Sarf;Laboratory gas - Helium;50 pcs;;;Cylinder;50 L;pcs;Asalgaz, Turkey;;;
+47;Argon Gas, 50 L  (for Gas Chromatography) ;Argon Gas, 50 L  (for Gas Chromatography) ;"99,999%, 50 Litr
+CAS ?: 7440-37-1
+EC ?: 231-147-0";Asalgaz, Turkey;Genel Sarf;Laboratory gas - Argon;10 ??./ pcs;;;Cylinder;50 L;pcs;Asalgaz, Turkey;;;
+48;Sodium Chloride, ?99.5%, 1 kg;Sodium Chloride, ?99.5%, 1 kg;art ? 3957.1;Carl Roth, Germany;Biyokimya;Inorganic salt;50 ????/ pack;"Sodium chloride ?99.5% purity; analytical grade; 1 kg; Art. 3957.1";"Common salt
+Empirical formula NaCl
+Molar mass (M) 58,44 g/mol
+Density (D) 2,17 g/cm³
+Boiling point (bp) >1450 °C
+Melting point (mp) 801 °C
+WGK 1
+CAS No. 7647-14-5
+EG-Nr. 231-598-3
+
+Without anti-caking agent, caking possible
+For cell culture and biochemistry.";Bottle;1 kg;pack;Carl Roth, Germany;https://www.carlroth.com/en-gb/catalogue/sodium-chloride/p/3957.1;Store at RT in dry conditions;
+49;Ammonium Formate, 100g;Ammonium Formate, 100g;17843-50mg;Carl Roth, Germany;Biyokimya;LC-MS reagent;1 ????/ pack;"Ammonium formate 97%, HPLC grade; 100 g; Art. 17843; for LC-MS mobile phase preparation";"Quantity 50 g
+Linear Formula HCO2NH4
+UN Number NONH for all modes of transport
+Beilstein 3625095
+Solubility Information Soluble in water 0.1g/mL at 25°C
+Formula Weight 63.06g/mol
+Percent Purity ?99%
+Density 1.26g/mL at 25°C
+Chemical Name or Material Ammonium Formate";Bottle;100 g;pack;Carl Roth, Germany;https://www.carlroth.com/com/en/starting-material-for-eluent-mixtures/ammonium-formate/p/1ntk.2;Store at RT;
+50;Formic acid, 99%, 50 ml;Formic acid, 99%, 50 ml;85049-051;Carl Roth, Germany;Biyokimya;LC-MS reagent;1 ????/ pack;"Formic acid Rotipuran ?99%, p.a.; 50 mL; Art. 4724; for LC-MS mobile phase preparation";"Formylic acid, Methanoic acid, Hydrogen carboxylic acid
+Empirical formula CH2O2
+Molar mass (M) 46,02 g/mol
+Density (D) 1,22 g/cm³
+Boiling point (bp) 101 °C
+Flash point (flp) 49 °C
+Melting point (mp) 4 °C
+ADR 8 II
+WGK 1
+CAS No. 64-18-6
+EG-Nr. 200-579-1
+UN-Nr. 1779";Bottle;50 mL;pack;Carl Roth, Germany;https://www.carlroth.com/com/en/starting-material-for-eluent-mixtures/formic-acid/p/1ehk.1;"Corrosive; store at RT in fume hood area";
+51;Buffer Solution, pH 4, 500 mL;Buffer Solution, pH 4, 500 mL;???????: P712.3     VWR 32095.184;Carl Roth, Germany;Biyokimya;pH buffer solution;1 ????/ pack;"ROTI buffer pH 4.00 ±0.02; certified reference material; 500 mL; Art. P712.3";"Density (D) 1,007 g/cm³
+Boiling point (bp) 100 °C
+WGK 1
+
+Citric acid, caustic soda lye, sodium chloride";Bottle;500 mL;pack;Carl Roth, Germany;https://www.carlroth.com/com/en/rotistar-ph-buffer-solutions/buffer-solution-ph-4-00-%C2%B10-01-%2820-%C2%B0c%29/p/9974.1;Store at RT;
+52;Buffer solution, pH 10, 500 ml;Buffer solution, pH 10, 500 ml;???????: P716.2 VWR 32040.185;Carl Roth, Germany;Biyokimya;pH buffer solution;1 ????/ pack;"ROTI buffer pH 10.00 ±0.02; certified reference material; 500 mL; Art. P716.2";"Density (D) 1,008 g/cm³
+Boiling point (bp) ~100 °C
+
+Boric acid, caustic soda lye, potassium chloride";Bottle;500 mL;pack;Carl Roth, Germany;https://www.carlroth.com/com/en/rotistar-ph-buffer-solutions/buffer-solution-ph-10-00-%C2%B10-01-%2820-%C2%B0c%29/p/9983.1;Store at RT;
+53;Electrolytic Cell Block (for Hydrogen Trace Generator);Electrolytic Cell Block (for Hydrogen Trace Generator);"08-9412
+08-3609
+08-3644
+08-3609
+08-3543";Peak Scientific, UK;Genel Sarf;Hydrogen generator electrolytic cell;1 ??./ pcs;"Electrolytic cell block / cell stack for Peak Hydrogen Trace generator; spare part; Art. 08-9412/08-3609/08-3644/08-3543";;Pack;1;pcs;Peak Scientific, UK;https://www.peakscientific.com/products/hydrogen/precision-hydrogen-trace-250/?utm_source=chatgpt.com;"Handle carefully; high-purity electrolyte";
+54;Electrolytic Cell Block (for Precision Hydrogen Trace Generator);Electrolytic Cell Block (for Precision Hydrogen Trace Generator);05-1007;Peak Scientific, UK;Genel Sarf;Hydrogen generator electrolytic cell;1 ??./ pcs;"Electrolytic cell block for Precision Hydrogen Trace generator; Art. 05-1007";;Pack;1;pcs;Peak Scientific, UK;https://www.peakscientific.com/products/hydrogen/precision-hydrogen-trace-250/?utm_source=chatgpt.com;;
+55;Service Kit (for Precision Hydrogen Trace);Service Kit (for Precision Hydrogen Trace);08-3609;Peak Scientific, UK;Genel Sarf;Hydrogen generator service kit;2 ?????/ kit;"Annual service kit for Precision Hydrogen Trace generator; includes valve (02-6051) ×2 and double cylinder assembly (05-1047) ×2; Art. 08-3609";;Kit;1;kit;Peak Scientific, UK;https://www.peakscientific.com/products/hydrogen/precision-hydrogen-trace-250/?utm_source=chatgpt.com;Annual maintenance;
+56;Service Kit II (for Precision Hydrogen Trace);Service Kit II (for Precision Hydrogen Trace);art ? 08-9412   ???????? ??? ?????????? ??????? Precision Hydrogen Trace (08-9412)  ? ???????? ??????: ?????? (???. ?02-6051)- 2 ??., ??????? ??????? ? ????? (???. ?05-1047)-2 ??.;Peak Scientific, UK;Genel Sarf;Hydrogen generator service kit;2 ?????/ kit;"Annual service kit for Precision Hydrogen Trace generator; includes valves and cylinder assembly; Art. 08-9412";;Kit;1;kit;Peak Scientific, UK;https://www.peakscientific.com/products/hydrogen/precision-hydrogen-trace-250/?utm_source=chatgpt.com;"Annual maintenance; Art. 08-9412";
+57;Blood Alcohol Standard sample, 10 ml;Blood Alcohol Standard sample, 10 ml;;LGC Limited, USA;Biyokimya;Blood alcohol standard;2 ????/ pack;;;Bottle;10 mL;pack;LGC Standards / Cerilliant;;;
+58;Ethanol calibration Solution, 10 x 1.2 mL;Ethanol calibration Solution, 10 x 1.2 mL;CERE-034;LGC Limited, USA;Biyokimya;Ethanol calibration kit;4 ????/ pack;"Cerilliant ethanol calibration kit; 10×1.2 mL ampules; for GC headspace blood alcohol analysis; CERE-034";"Storage Temperature +4°C
+
+Shipping Temperature No freezing
+
+Tariff Code 38220000
+
+Product Format Single Solution
+
+Matrix Water
+";Kit;10×1.2 mL;pack;LGC Standards / Cerilliant;https://www.lgcstandards.com/DE/en/Ethanol-calibration-kit/p/CERE-034;Store at +4°C;
+59;Ethanol calibration Solution;Ethanol calibration Solution;E-034-1KIT,  CAS Number 64-17-5;LGC Limited, USA;Biyokimya;Ethanol calibration kit;4 ????/ pack;"Cerilliant ethanol calibration kit; 10×1.2 mL; CAS 64-17-5; E-034-1KIT";"Storage Temperature +4°C
+
+Shipping Temperature No freezing
+
+Tariff Code 38220000
+
+Product Format Single Solution
+
+Matrix Water
+";Kit;10×1.2 mL;pack;LGC Standards / Cerilliant;https://www.cerilliant.com/products/catalog/items/details?itemNo=c6505bee-b8bb-4198-a08e-eb5d9479a800&item=E-034;1.2 mL/ampoule, 2 ampoules of each concentration, 10 ampoules/kit;
+60;Urine Containers, 100 mL, 500 pcs/pack;Urine Containers, 100 mL, 500 pcs/pack;Order number 75.1354.001;Kabe Labortechnik, ???????? / Germany;Genel Sarf;Sample collection container;10 ????/ pack;"Polypropylene urine sample container with screw cap; 100 mL; 500 pcs/pack; sterile";"Container with screw cap, collection and storage of urine,
+max. working volume: 100 ml, Ø opening: 58 mm,
+transparent, graduated, material: PP, screw cap,";Pack;500;pack;Kabe Labortechnik, Germany;https://www.trendyol.com/genel-markalar/idrar-numune-kabi-kirmizi-250-adet-100-ml-p-88729811;"Single use; sterile";
+61; Vacuum tubes, 4 ml, 1200 pcs; Vacuum tubes, 4 ml, 1200 pcs;234704;Disera,  / Turkey;Genel Sarf;Vacuum blood collection tube;6 ????/ pack;;"???????? VACUSERA Na ?????? + ?3 ???? — ??????????? ????????? ???????? ???
+?????? ?????.
+???????????: ?????? ?????? + ?3 ????.
+??????????: ????? ???????????? ? ??????? 48 ????? ??? ??????? ???????. 
+?????????????: 8–10 ???.
+?????????????????: 1300 g, 10 ???.
+???? ????????: 18 ???????.
+? ????????: 100 / 1200 ??. ";;;pack;Disera, Turkey;;;
+62;Service Kit for LC System;Service Kit for LC System;G2571-67001  G1964-20402;Agilent;Genel Sarf;HPLC maintenance kit;2 ?????/ kit;"Agilent LC annual service kit with Jet Clean; includes seals, pistons and wash kit; G2571-67001 / G1964-20402";"Canted coil spring, 8.9 mm OD. Classified as a consumable part for Liquid
+Chromatograph-Mass Spectrometer and related instrument repair and
+maintenance. Intended as a replacement spring component for instrument
+assemblies requiring a canted coil spring of 8.9 mm outer diameter.
+Key Features:
+Part number: G2571-67001
+Product type: Canted coil spring
+Outer Diameter (OD): 8.9 mm
+UNSPSC Code: 41115717";Kit;1;kit;Agilent Technologies;https://www.agilent.com/store/productDetail.jsp?catalogId=G2571-67001;Annual preventive maintenance;
+63;Service kit (including Jet Clean);Service kit (including Jet Clean);G2571-67001 Canted Coil Spring, 8.9mm OD | ChromTech    .;Agilent;Genel Sarf;HPLC maintenance kit;2 ?????/ kit;"Agilent LC annual service kit with Jet Clean; G2571-67001";"QuickPick PM kit, for split inlet and vent. The kit is a manufacturer-specified
+preventive-maintenance (PM) kit for Agilent split inlets and split vent assemblies and
+lists the included replacement components. It is provided to support routine inlet
+and split-vent maintenance by supplying the parts called out by Agilent on the
+product page.
+Key Features:
+Includes one split liner (part 5183-4647)
+Includes five Non-Stick BTO septa (from part 5183-4757)
+Includes one Non-Stick inlet liner O-ring (from part 5188-5365)
+Includes one Gold Seal and washer kit (part 5188-5367)
+Includes one split vent cartridge
+Includes two O-rings for the split vent (part 5188-6495)";Kit;1;kit;Agilent Technologies;https://www.agilent.com/store/productDetail.jsp?catalogId=G2571-67001;Annual preventive maintenance;
+64;Service Kit (for Agilent GC);Service Kit (for Agilent GC);Part Number: 5188-6496;Agilent;Genel Sarf;GC maintenance kit;2 ?????/ kit;"Agilent GC 7890 annual service kit; Part 5188-6496; includes septa, liners, ferrules and O-rings";"QuickPick PM kit, for split inlet and vent. The kit is a manufacturer-specified
+preventive-maintenance (PM) kit for Agilent split inlets and split vent assemblies and
+lists the included replacement components. It is provided to support routine inlet
+and split-vent maintenance by supplying the parts called out by Agilent on the
+product page.
+Key Features:
+Includes one split liner (part 5183-4647)
+Includes five Non-Stick BTO septa (from part 5183-4757)
+Includes one Non-Stick inlet liner O-ring (from part 5188-5365)
+Includes one Gold Seal and washer kit (part 5188-5367)
+Includes one split vent cartridge
+Includes two O-rings for the split vent (part 5188-6495)";Kit;1;kit;Agilent Technologies;https://www.agilent.com/store/en_US/Prod-5188-6496/5188-6496;Annual preventive maintenance;
+65;Filament Assembly (for GC/MS 7890);Filament Assembly (for GC/MS 7890);Part ? G7005-60061;Agilent;Genel Sarf;GC spare part - filament;4 ????/ pack;"Filament assembly for Agilent GC 7890 detector; Part G7005-60061";"The Agilent high temperature EI filament (G7005-60061) is a replacement electron
+ionization (EI) filament for Agilent GC/MS systems. Filaments provide a stream of
+electrons that ionize compounds as they enter the EI source, and this hightemperature filament is supplied for use in EI sources (including Stainless, Inert, and
+Extractor source types). The product page and Agilent knowledge articles identify it
+as the single high-temperature EI filament that replaced earlier EI filament part
+numbers to serve the required EI and EI RIS dimensional requirements.
+Key Features:
+Instrument compatibility: 5973, 5975, 5977, 7000A, 7000B, 7000C, 7200
+Product type / sub-model: High temperature EI filament
+Filament functional element: four-coil rhenium wire (functional component
+unchanged)
+Base material: alumina base (newer design)
+Design features: chamfered tips on posts to ease insertion";Pack;1;pack;Agilent Technologies;https://www.agilent.com/store/en_US/Prod-G7005-60061/G7005-60061;"Fragile; handle with care";
+66;Vial Inserts with Polymer Feet, 100 pcs;Vial Inserts with Polymer Feet, 100 pcs;5181-1270;Agilent;Genel Sarf;GC vial insert;10 ????/ pack;"Deactivated vial inserts with polymer feet for Agilent LC/GC autosampler; 100 pcs; Art. 5181-1270";"Agilent 250 µL conical vial inserts with polymer feet are glass inserts sized 5.6 x 30
+mm designed for use in wide-opening vials. They provide a 250 µL sample
+containment volume and are intended to concentrate and present small sample
+volumes for GC and LC analysis, improving recovery and handling of low-volume
+samples. Agilent lists compatibility with major vial manufacturers and specifies GC
+and LC techniques for use.
+Key Features:
+?
+?
+Volume: 250 µL.
+Material: Glass insert with polymer feet.
+Insert dimensions: 5.6 x 30 mm.
+Pack quantity: 100 inserts per pack.
+Insert type: Conical with polymer feet, for wide-opening vials.
+Technique compatibility: Listed for GC and LC use.";Pack;100;pack;Agilent Technologies;https://www.agilent.com/store/en_US/Prod-5181-1270/5181-1270;;
+67;AP Board (for Agilent GC 7890 );AP Board (for Agilent GC 7890 );G3430-60151;Agilent;Genel Sarf;GC spare part - circuit board;2 ????/ pack;"Agilent 7890 Analog & Power Printed Circuit Board (AP Board); G3430-60151; refurbished";"Obsolete. No replacement recommendation. FP Analog And Power PCA
+";Pack;1;pack;Agilent Technologies;https://www.agilent.com/store/productDetail.jsp?catalogId=G3430-60151;Obsolete. No replacement recommendation. FP Analog And Power PCA;
+68;Mainboard (for Agilent GC 7890);Mainboard (for Agilent GC 7890);OEM Reference Number: G1099-65010;Agilent;Genel Sarf;GC spare part - mainboard;1 ????/ pack;"Mainboard for Agilent GC 7890 system; OEM Ref G1099-65010";"Mainboard PCA, for gas chromatography/mass spectrometry printed circuit boards, used with series 5973
+";Pack;1;pack;Agilent Technologies;https://www.agilent.com/store/productDetail.jsp?catalogId=G1099-65010;ESD sensitive;
+69;Service Kit (for 1290 Infinity II autosampler);Service Kit (for 1290 Infinity II autosampler);G7161-68740;Agilent;Genel Sarf;HPLC autosampler service kit;2 ????/ pack;"Service kit for Agilent 1290 Infinity II autosampler; G7161-68740; includes needle, seals, rotor";"Preventive Maintenance Kit for
+1290 Infinity II Preparative Binary Pump
+(G7161B), with 200 mL/min Pump Heads";Kit;1;pack;Agilent Technologies;https://www.agilent.com/store/productDetail.jsp?catalogId=G7161-68740;Annual maintenance;
+70;Service Kit (for 1260 Infinity II autosampler);Service Kit (for 1260 Infinity II autosampler);G1329B;Agilent;Genel Sarf;HPLC autosampler service kit;2 ????/ pack;"Service kit for Agilent 1260 Infinity II autosampler; G1329B; includes needle seat and seals";"This kit contains all the parts necessary to keep
+Agilent® 1100, 1120, 1200, 1220, 1260, G1313A, and G1329A/B HPLC systems working at peak performance. It is comparable to Agilent® part number G1313-68719.
+
+ Seal, Pump (CTS-10621)
+1 Needle Assembly (CTS-10835)
+1 2 Position/6 Port Rotor Seal,
+Vespel® (600 bar) (CTS-12012)
+1 Needle Seat, Std., PEE";Kit;1;pack;Agilent Technologies;https://www.agilent.com/store/productDetail.jsp?catalogId=G1329-60008;Annual maintenance;
+71;Service Kit (for Agilent 1290 Infinity II Pump);Service Kit (for Agilent 1290 Infinity II Pump);G1310-68741;Agilent;Genel Sarf;HPLC pump service kit;2 ????/ pack;"Service kit for Agilent 1290 Infinity II pump; G1310-68741; includes pistons, seals, check valves";"This PM kit contains all the parts necessary to keep Agilent® 1220 and 1260 HPLC systems working at peak performance. It is comparable to Agilent® part number G1310-68741.
+
+1 Black Piston Seals, 2/pk
+(CTS-10417)
+1 Seal Cap Assembly
+(CTS-A11454)
+1 PTFE Frits, 5/pk (CTS-10683)";Kit;1;pack;Agilent Technologies;https://www.agilent.com/store/en_US/Prod-G1310-68741/G1310-68741;Annual maintenance;
+72;PM Kit (for 1290 Infinity II Autosampler);PM Kit (for 1290 Infinity II Autosampler);G1313-68719;Agilent;Genel Sarf;HPLC autosampler PM kit;2 ????/ pack;"Preventive maintenance kit for Agilent 1290 Infinity II autosampler; G1313-68719";"This kit contains all the parts necessary to keep
+Agilent® 1100, 1120, 1200, 1220, 1260, G1313A, and G1329A/B HPLC systems working at peak performance. It is comparable to Agilent® part number G1313-68719.
+
+1 Seal, Pump (CTS-10621)
+1 Needle Assembly (CTS-10835)
+1 2 Position/6 Port Rotor Seal,
+Vespel® (600 bar) (CTS-12012)
+1 Needle Seat, Std., PE";Kit;1;pack;Agilent Technologies;https://www.agilent.com/store/en_US/Prod-G1313-68719/G1313-68719;Annual maintenance;
+73;Neutral Density Glass Filter Set (for Cary 60);Neutral Density Glass Filter Set (for Cary 60);???????: 218006500;Agilent;Genel Sarf;UV-Vis spectrophotometer filter;1 ????/ pack;"Certified neutral density glass filters for Agilent Cary 60 UV-Vis spectrophotometer; Art. 218006500";Neutral density screen, tested, 1/pk;Pack;1;pack;Agilent Technologies;https://www.agilent.com/store/productDetail.jsp?catalogId=218006500;;
+74;Deactivated FS column, 0.53mm (for GC Headspace);Deactivated FS column, 0.53mm (for GC Headspace);Part Number:160-2535-5;Agilent;Genel Sarf;GC column;4 ????/ pack;"Deactivated fused silica (FS) transfer line/column for GC headspace; 0.53 mm ID; Part 160-2535-5";"Fused silica tubing, deactivated, 5 m, 0.53 mm, 0.67 mm od
+
+Length: 5 m
+Capillary Tubing: Fused Silica
+Inner Diameter (ID): 0.53 mm
+Product_Sub_Model: 0.53 mm x 5 m
+Outer Diameter (OD): 0.67 mm";Pack;1;pack;Agilent Technologies;https://www.agilent.com/store/en_US/Prod-160-2535-5/160-2535-5;;
+75;Ferrules, 0.53mm (for Agilent Headspace Sampler);Ferrules, 0.53mm (for Agilent Headspace Sampler);0100-2595;Agilent;Genel Sarf;GC ferrule;10 ????/ pack;"Graphite/vespel ferrules for Agilent headspace sampler; 0.53 mm; 5/pack; Art. 0100-2595";"Ferrule, polyamide, graphite 1/32 inch, 5/pk
+Material(s)ofConstruction: Graphite";Pack;5;pack;Agilent Technologies;https://www.agilent.com/store/en_US/Prod-0100-2595/0100-2595;;
+76;Ferrules, 0.53 mm (for Headspace);Ferrules, 0.53 mm (for Headspace);Part ? 8002-0217;Agilent;Genel Sarf;GC ferrule;10 pack;"Ferrules for GC headspace sampler; 0.53 mm; Art. 8002-0217; 10 pcs/pack";"Agilent ferrule for Thermo, 0.8 mm, graphite, 0.53 mm id or smaller columns, 10/pk
+
+Technique: GC
+GC Component Type: Ferrule
+Inner Diameter (ID): 0.8 mm
+Compatible Column ID: 0.53 mm
+Ferrule Material: Graphite
+Ferrule Type: Straight
+Maximum Temperature: 350 C";Pack;10;pack;ELGA LabWater (Veolia);https://www.scientificlabs.co.uk/product/chromatography-accessories/8002-0217;;
+77;Cartridge LC-140 (for Elga Deionizer);Cartridge LC-140 (for Elga Deionizer);TR-LC140 Preteatment purelab    Medica &Option7/15;ELGA VEOLIA;Su Arýtma;Water purifier pre-treatment cartridge;3 pack;"LC-140 pre-treatment cartridge for ELGA Medica/Option-R deionizer; removes chlorine and organics; lifespan ~6 months";"Item Consumable Microns 5 µm
+Feed Water Source Tap Water Product Type Pre-Treatment Cartridge
+Impurities Removed Chlorine, Particles Removes Chlorine, Particles, Organic Compounds
+Material Activated Carbon Service Life 6 Months";Cartridge;1;pack;ELGA LabWater (Veolia);https://www.elgalabwater.com/sites/default/files/Consumables%20Datasheets/Option%20R.pdf;Replace every 6 months;
+78;Cartridge LC-214 (for Purelab Deionizer);Cartridge LC-214 (for Purelab Deionizer);LC-214 ELGA 2-06620;ELGA VEOLIA;Su Arýtma;Water purifier DI cartridge;3 pack;"LC-214 mixed-bed DI purification cartridge for PURELAB flex/Deionizer; lifespan ~6 months";"Item Consumable
+Feed Water Source Tap Water
+Impurities Removed lons
+
+Material Mixed Bed Resin
+Product Type Di Cartridge";Cartridge;1;pack;ELGA LabWater (Veolia);https://www.elgalabwater.com/sites/default/files/Consumables%20Datasheets/Flex_3.pdf;Replace every 6 months;
+79;UV Lamp, 185/254nm LC-210-02 (for Purelab);UV Lamp, 185/254nm LC-210-02 (for Purelab);UV lamp 185/254nm LC-210-02;ELGA VEOLIA;Su Arýtma;UV lamp for water purifier;3 pack;"UV lamp 185/254 nm (LC-210-02) for PURELAB system; destroys organics and microorganisms; lifespan 12–18 months";"Item	UV Lamp";Lamp;1;pack;ELGA LabWater (Veolia);https://www.elgalabwater.com/sites/default/files/Consumables%20Datasheets/Flex_4.pdf;Replace every 12–18 months;
+80;Composite Air Filter LC 136 M2 (for Purelab);Composite Air Filter LC 136 M2 (for Purelab);LC 136 M2  REF: INST36651;ELGA VEOLIA;Su Arýtma;Composite air vent filter;3 pack;"LC 136 M2 composite vent filter for PURELAB system; prevents recontamination; REF INST36651; lifespan 12 months";"Item Consumable
+Compatible Mfr. Model No. Air
+Microns
+Product Details
+0.2 um
+Product Type Consumable
+Removes Disolved Gases";Filter;1;pack;ELGA LabWater (Veolia);https://www.elgalabwater.com/medica-7-15;Replace every 12 months;
+81;DI Cartridge Pack LC-141 (for Purelab);DI Cartridge Pack LC-141 (for Purelab);TR-LC141 PURELAB & Medica DI Pack;ELGA VEOLIA;Su Arýtma;Water purifier DI cartridge pack;3 ????/ pack;"LC-141 DI cartridge pack for PURELAB Medica/Option systems; twin-bed ion exchange; lifespan ~6 months";"Item Consumable
+Feed Water Source Tap Water
+Impurities Removed lons
+Material Mixed Bed Resin
+Product Type Di Cartridge";Cartridge;1;pack;ELGA LabWater (Veolia);https://www.elgalabwater.com/sites/default/files/Consumables%20Datasheets/Option%20R.pdf;Replace every 6 months;
+82;Centrifuge tubes, 15 ml, 500 pcs;Centrifuge tubes, 15 ml, 500 pcs;SKU 02-502-8001;Nerbe Plus, Germany;Genel Sarf;Centrifuge tube;10 ????/ pack;;"Centrifuge tube PP with screw cap PE, 15ml, Ø17x120mm, con. bottom, tube transp., cap
+green, grad., writ. area, np pcr ready, sterile , max. RCF 17.000g, Autocl. up to 121°C (no
+cap), CE/IVD
+
+Material Characteristics tube: polypropylene (PP)
+cap: polyethylene (PE)
+
+Dimensions diameter: 17,00 mm (+/- 0,2 mm)
+height: 120,00 mm (+/- 0,2 mm)";Pack;500;pack;Nerbe Plus, Germany;;;
+83;Immunochromatographic Test Strips (COC, mAMP, BZO);Immunochromatographic Test Strips (COC, mAMP, BZO);???????: 00065752;T&D Innovationen GmbH;Biyokimya;Immunochromatographic drug test strips;100 ????/ pack;;;Pack;100 tests;pack;T&D Innovationen GmbH;;;
+84;Immunochromatographic Test Strips  (BAR, MDMA, MTD);Immunochromatographic Test Strips  (BAR, MDMA, MTD);???????: 96694;T&D Innovationen GmbH;Biyokimya;Immunochromatographic drug test strips;10 ????/ pack;;;Pack;10 tests;pack;T&D Innovationen GmbH;;;
+85;Immunochromatographic Test Strips (Synthetic cannabinoids);Immunochromatographic Test Strips (Synthetic cannabinoids);???????: 100299;T&D Innovationen GmbH;Biyokimya;Immunochromatographic drug test strips;10 ????/ pack;;;Pack;10 tests;pack;T&D Innovationen GmbH;;;
+86; Immunochromatographic Test Strips (Ethanol / ETG); Immunochromatographic Test Strips (Ethanol / ETG);;T&D Innovationen GmbH;Biyokimya;Immunochromatographic drug test strips;10 ????/ pack;;;Pack;10 tests;pack;T&D Innovationen GmbH;;;
+87;Roll thermal paper;Roll thermal paper;;T&D Innovationen GmbH;Genel Sarf;Thermal paper roll;20 ????/ pack;"Thermal paper roll 57 mm × 10 m; core 12 mm; for R1-IK-200609-19 analyzer printer; 20 rolls/pack";;Roll;20 rolls;pack;T&D Innovationen GmbH;https://www.rulomerkezi.com/56x12-metre-yazar-kasa-pos-rolosu-10lu-paket-kagit-3060-fiyati-30-60;;
+88;Immunochromatographic Test Strips (COC, mAMP, BZO);Immunochromatographic Test Strips (COC, mAMP, BZO);;T&D Innovationen GmbH;Biyokimya;Immunochromatographic drug test strips;100 ????/ pack;;;Pack;100 tests;pack;T&D Innovationen GmbH;;;
+89;Immunochromatographic Test Strips (BAR, MDMA, MTD);Immunochromatographic Test Strips (BAR, MDMA, MTD);;T&D Innovationen GmbH;Biyokimya;Immunochromatographic drug test strips;20 ????/ pack;;;Pack;20 tests;pack;T&D Innovationen GmbH;;;
+90;Optical Filter D-K-18752-01-00;Optical Filter D-K-18752-01-00;D-K-18752-01-00;Hellma Analytics;Genel Sarf;Optical filter;1 ????. / pack;"Certified neutral density optical filter; 0.5 Abs; for Hellma cuvette systems and spectrophotometer calibration";;Pack;1;pack;Hellma Analytics;https://shop.hellmausa.com/products/666-f3-0-5-abs;;
+91;Paraffin (for histology);Paraffin (for histology);X881;Leica Biosystems;Biyokimya;;50 ????. / pack;;"Paraffin in droplets
+Density (D) 0,8 g/cm³
+Melting point (mp) 56 °C
+
+Paraffin in pellets
+Tissue embedding medium composed of highly purified paraffin containing complex elastomers with regulated molecular weights and an addition of DMSO for large and difficult-to-infiltrate tissue samples.
+
+Melting point: 56 °C
+
+Paraplast® is recommended for general tissue embedding. It is composed of a refined mixture of highly purified paraffin containing plastic polymers of regulated molecular weights. This provides improved tissue infiltration and superior quality sections with minimal compression.";Pack;1 kg;kg;Carl Roth, Germany;https://www.carlroth.com/com/en/paraplast-paraffins/paraplast-plus/p/x881.1;;
+92;Formalin ?37% (non-acidic, for histology);Formalin ?37% (non-acidic, for histology);P733;Carl Roth, Germany;Biyokimya;;200 ????. / pack;;"Empirical formula CH2O
+Molar mass (M) 30,03 g/mol
+Density (D) 1,09 g/cm³
+Boiling point (bp) 96 °C
+Flash point (flp) 62 °C
+Melting point (mp) <-15 °C
+Storage temp. +15 to +25 °C
+ADR 8 III
+WGK 3
+CAS No. 50-00-0
+EG-Nr. 200-001-8
+UN-Nr. 2209
+
+If required, filter out solids before use.
+Fixative
+
+Stabilised with calcium carbonate (acid-binding solids) and methanol (8-12 %). Do not store solution below 15 °C.";Bottle;30 liter;liter;Carl Roth, Germany;https://www.carlroth.com/com/en/fixation/formaldehyde-solution/p/p733.3;;
+93;ABBOTT IMMTOX 270 Kimya Analizörü (510K onaylý), tüm gerekli reaktifler, kitler, kalibratörler ve kontroller dahil komple sistem;ABBOTT IMMTOX 270 Chemistry Analyser (510K cleared) to be provided as a complete system, including all original Abbott brand reagents, kit sets, calibrators, and controls required to perform the following tests: 6-AM (347UR), AMP (309UR), BAR (310UR), BZO (314UR), COC (306UR), BUP (336UR), THC (305UR), EDDP (349UR), ETH (504), EtG (341UR), FEN (618UR), KET (340UR), MEP (303), MAMP (311UR), OPI (307UR), SYN-JWH (344), SYN-UR144 (346), SYN-ABP (350), TRA (304UR), Specimen Validity Tests (SUP-5 );6-AM (347UR), AMP (309UR), BAR (310UR), BZO (314UR), COC (306UR), BUP (336UR), THC (305UR), EDDP (349UR), ETH (504), EtG (341UR), FEN (618UR), KET (340UR), MEP (303), MAMP (311UR), OPI (307UR), SYN-JWH (344), SYN-UR144 (346), SYN-ABP (350), TRA (304UR), Specimen Validity Tests (SUP-5 );Abbott;Biyokimya;Clinical chemistry analyzer system;1 ?????/ set;"Abbott IMMTOX 270 Chemistry Analyzer with reagents for 20 drug/metabolite panels including ETH, EtG, OPI, COC, THC, BZO, AMP, BAR etc.; 510K cleared";"ImmTox™ 270, doktor muayenehaneleri, tedavi merkezleri, baðýmlýlýk klinikleri, baðýmsýz ve hastane laboratuvarlarý için basitleþtirilmiþ test sipariþi, hasta yönetimi, sonuç raporlama ve kalite kontrol kayýtlarý saðlamak amacýyla bir laboratuvar bilgi sistemiyle çift yönlü iletiþim için arayüz oluþturmaya açýktýr.
+Ayda 150-1200 hasta örneði için ideal boyutta.
+Saatte 270'e kadar test yapabilme ve 3 saat boyunca otomatik olarak çalýþmaya devam edebilme özelliði.
+Reaktif Kapasitesi: 24 adede kadar farklý test için dahili depolama alaný, geniþletilmiþ bir toksikoloji taramasýna olanak tanýr.
+Numune Kapasitesi: Yeterli toplu iþlem kapasitesi saðlayacak þekilde, ayný anda 30 hasta numunesini taþýyabilir .
+Destek: Kurulum ve devreye alma süreçlerinden CLIA sertifikasyonuna kadar, sorunsuz CLIA dosyalama, laboratuvar uyumluluk kýlavuzlarýnýn uygulanmasý, doðrulama protokolü ve devreye alma sonrasýnda destek saðlamak üzere Uygulama ve Teknik Danýþman desteði sunuyoruz.";Kit;1 set;set;Abbott;https://www.toxicology.abbott/us/en/products/immtox--270-benchtop-analyzer.html;Consult Abbott service for installation and maintenance;
+94;1 adet SoToxa Mobil Test Sistemi, 250 adet test kiti, 25 adet Quantisal oral sývý toplama cihazý;1pcs -SoToxa Mobile Test System , 250pcs -Test Kits, 25pcs -Quantisal Oral Fluid Collection Device (QSI-NINT);;Abbott;;;1 ?????/ set;;"SAÐLAM TASARIM
+SoToxa™ Aðýz Sývýsý Mobil Test Sistemi, kolluk kuvvetlerinin yüksek performans taleplerini karþýlamak üzere geliþtirilmiþtir.
+
+GÜVENÝLÝR SONUÇLAR
+SoToxa™ Aðýz Sývýsý Mobil Test Sistemi, hýzlý ilaç taramasý ve doðru sonuç yorumlamasýný bir araya getirir. Sistem analiz çýktýlarýnýn yerinde verilmesiyle, sistem öznelliði ve test sonuçlarýnýn yanlýþ yorumlanmasýný ortadan kaldýrarak daha yüksek güvenilirlik saðlar.
+
+KULLANIMI KOLAY
+Sezgisel bir test süreciyle SoToxa™ Aðýz Sývýsý Mobil Test Sistemi, her ortamda inanýlmaz derecede kolay kullaným sunar. Sistem hafif, taþýnabilir ve kompakttýr; tam renkli ekraný sayesinde gece gündüz okunabilir.
+
+BASÝT TOPLAMA SÜRECÝ
+Hýzlý aðýz içi sývý örnekleri, saha çalýþmasý sýrasýnda kolayca alýnabilir ve idrar veya kan örneklemesine göre daha az invazivdir. Gözlem altýnda gerçekleþtirilen toplama iþlemi, taðþiþ ve manipülasyon endiþelerini sýnýrlandýrýr.
+
+SONUÇLARI YÖNETÝN
+Analiz cihazý, testin sonunda yazdýrýlabilen veya hafýza kartýndan yeniden yazdýrýlabilen 10.000'den fazla sonucu saklayabilir.
+
+Ýlaç Sýnýfý
+
+Kesme deðeri (ng/mL)
+
+Amfetamin
+
+50
+
+Benzodiazepinler
+
+20
+
+Esrar (THC)
+
+25
+
+Kokain
+
+30
+
+Fentanil
+
+4
+
+Metamfetamin
+
+50
+
+Afyon türevleri
+
+40
+";;;set;;https://www.toxicology.abbott/us/en/products/sotoxa-mobile-test-system.html;;
+95;BIOSENS 900 iz tespit analizörü (tüm sarf malzemeleri dahil);BIOSENS 900 Treace Detecting Analyzer (with all consumables);;Biosensor;Biyokimya;Oral fluid drug testing system;1 ?????/ set;;"Description: Equipment for trace detection of narcotics and explosives.
+Model: BIOSENS®900
+Detection technology: Immunoassay reaction on S.A.W-sensor
+Start-up time: 10 minutes from cold start at room temperature
+Analysis time: 30–60 seconds
+Result presentation: Real time graphs, including presentation of detected substances
+Printer: Built in thermal printer
+Dimensions: 280 x 306 x 289 mm
+Weight: 11,5 kg
+Portability: Built in handgrip
+Display: 10.1” Color TFT with touch screen
+Alarm: Audible & visual
+Languages: Localized to any language
+Data transmission: Ethernet, export of results and service reports. 1 USB port
+Detection modes: Trace
+Comments to runs: Free text via on screen keyboard or external keyboard and barcode
+Data storage: M2 SSD, 120 GB
+Consumable status: Time & run indicator
+Consumable replacement: Barcode identified
+Operating: 10 to 40 °C Storage: ±0 to 60 °C
+Humidity: 95%, non-condensing
+SUBSTANCES DETECTED*
+Substance groups: Amphetamines, Meth-amphetamine, MDA, MDMA, Ephedrine, Cocaine,
+Ecstasy, Opiates, THC, Buprenorphine, PCP, Fentanyl, Ketamine, TNT, DNT,
+Tetryl, RDX, PETN and NG.
+*Can be combined for up to 12 substance groups
+CONSUMABLES
+Sensor Cartridge: 30–60 days operational time depending on configuration
+Activator cartridge: 50 runs (in standard configuration)
+Collection pad: Re-usable
+Cleaning: Cleaning cartridge, heater cleaner, alcohol wipes
+Maintenance: Annual maintenance kit
+POWER REQUIREMENTS
+Power supply: Input: 100–240 V 50–60 Hz Output 24 V DC 7.5 A
+Battery: 33 Wh, up to 40 minutes operational, 2 h standby mode
+Power consumption: Average 40 W";Kit;1 set;set;Abbott;;;
+TOPLAM KAYIT;;;;;;;;;;;;;;;;
