@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Green Med Ltd.</title>
+  <meta name="description" content="Get in touch with Green Med Ltd. For laboratory project enquiries, submit a proposal. For general questions, reach us directly by email or phone.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --c-black:  #1C1C1C;
+      --c-anthra: #2B2B2B;
+      --c-dark:   #4A4A4A;
+      --c-muted:  #8A8A8A;
+      --c-rule:   #E8E8E8;
+      --c-bg:     #F7F8F2;
+      --c-white:  #FFFFFF;
+      --c-footer: #111111;
+      --gm-50:    #F4FBDF;
+      --gm-300:   #A5CC48;
+      --gm-400:   #7EB828;
+      --gm-500:   #619A18;
+      --gm-600:   #487A10;
+      --gm-800:   #193C04;
+      --px: 7vw;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 300;
+      background: var(--c-bg);
+      color: var(--c-dark);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Navigation ─────────────────────────────────────────── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 64px; z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(247, 248, 242, 0.96);
+      border-bottom: 1px solid rgba(232, 232, 232, 0.8);
+    }
+    .nav-inner {
+      max-width: 1440px; margin: 0 auto;
+      padding: 0 var(--px); height: 100%;
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 2rem;
+    }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-link {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 0.875rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--c-dark); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--gm-500); }
+    .nav-link:focus-visible { outline: 2px solid var(--gm-400); outline-offset: 3px; }
+    .btn-nav {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 0.875rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      background: var(--gm-400); color: #fff;
+      padding: 0.5rem 1.375rem; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-nav:hover { background: var(--gm-600); }
+    .btn-nav:focus-visible { outline: 2px solid var(--gm-400); outline-offset: 2px; }
+    .hamburger {
+      display: none; flex-direction: column;
+      gap: 5px; cursor: pointer; background: none;
+      border: none; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--c-dark);
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav {
+      display: none;
+      position: fixed; top: 64px; left: 0; right: 0; z-index: 99;
+      background: rgba(247,248,242,0.98); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--c-rule);
+      padding: 1.75rem var(--px);
+      flex-direction: column; gap: 1.25rem;
+    }
+    .mobile-nav.open { display: flex; }
+
+    /* ── Page Hero ─────────────────────────────────────────── */
+    .page-hero {
+      padding-top: 64px;
+      background: var(--c-anthra);
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(126,184,40,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(126,184,40,0.06) 1px, transparent 1px);
+      background-size: 52px 52px;
+      pointer-events: none;
+    }
+    .page-hero-inner {
+      position: relative; z-index: 1;
+      max-width: 1440px; margin: 0 auto;
+      padding: 5rem var(--px) 4.5rem;
+    }
+    .eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 0.8125rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gm-300);
+      display: flex; align-items: center; gap: 0.875rem;
+      margin-bottom: 1.25rem;
+    }
+    .eyebrow::before {
+      content: ''; display: block;
+      width: 2rem; height: 2px;
+      background: var(--gm-400); flex-shrink: 0;
+    }
+
+    /* ── Main content ───────────────────────────────────────── */
+    .main-wrap {
+      max-width: 1440px; margin: 0 auto;
+      padding: 5rem var(--px) 7rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    /* ── Contact info ───────────────────────────────────────── */
+    .section-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6875rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--gm-500);
+      display: block; margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1.5rem;
+      text-transform: uppercase; color: var(--c-black);
+      line-height: 1.1; margin-bottom: 2rem;
+    }
+
+    .contact-item {
+      display: flex; align-items: flex-start;
+      gap: 1.25rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--c-rule);
+    }
+    .contact-item:first-of-type { border-top: 1px solid var(--c-rule); }
+    .contact-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: var(--gm-50); border: 1px solid #C3DF72;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 2px;
+    }
+    .contact-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.625rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--c-muted);
+      display: block; margin-bottom: 0.35rem;
+    }
+    .contact-val {
+      font-size: 0.9375rem; color: var(--c-black);
+      line-height: 1.6;
+    }
+    .contact-val a {
+      color: var(--gm-500); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-val a:hover { color: var(--gm-600); }
+
+    /* ── Proposal CTA ───────────────────────────────────────── */
+    .proposal-cta {
+      background: var(--c-anthra);
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .proposal-cta::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(126,184,40,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(126,184,40,0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+    .proposal-cta-inner { position: relative; z-index: 1; }
+    .cta-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.625rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--gm-300);
+      display: block; margin-bottom: 1rem;
+    }
+    .cta-heading {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-size: clamp(1.75rem, 3vw, 2.5rem);
+      text-transform: uppercase; color: #fff;
+      line-height: 1.0; letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .cta-heading span { color: var(--gm-300); }
+    .cta-body {
+      font-size: 0.9375rem; color: rgba(255,255,255,0.5);
+      line-height: 1.75; margin-bottom: 2rem;
+      max-width: 420px;
+    }
+    .btn-cta {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 0.9375rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      padding: 0.875rem 2rem;
+      background: var(--gm-400); color: #fff;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-cta:hover  { background: var(--gm-600); }
+    .btn-cta:active { transform: scale(0.99); }
+    .btn-cta:focus-visible { outline: 2px solid var(--gm-400); outline-offset: 3px; }
+
+    .cta-divider {
+      display: flex; align-items: center; gap: 1rem;
+      margin: 2rem 0;
+    }
+    .cta-divider::before, .cta-divider::after {
+      content: ''; flex: 1; height: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+    .cta-divider span {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.625rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(255,255,255,0.25);
+    }
+
+    .cta-checklist {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .cta-checklist li {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-size: 0.8125rem; color: rgba(255,255,255,0.45);
+    }
+    .cta-checklist li::before {
+      content: '';
+      width: 16px; height: 16px; flex-shrink: 0;
+      background: rgba(126,184,40,0.15);
+      border: 1px solid rgba(126,184,40,0.35);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='6' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l3 3 5-6' stroke='%237EB828' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    /* ── Footer ────────────────────────────────────────────── */
+    .footer { background: var(--c-footer); padding: 4rem var(--px) 2.5rem; }
+    .fl {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 0.9375rem;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); text-decoration: none;
+      transition: color 0.2s; display: block; margin-bottom: 0.75rem;
+    }
+    .fl:hover { color: var(--gm-300); }
+
+    /* ── Responsive ────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .main-wrap { grid-template-columns: 1fr; gap: 3rem; }
+      .nav-links { display: none; }
+      .btn-nav   { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 640px) {
+      .proposal-cta { padding: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ──────────────────────────────────────────────────── -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" style="flex-shrink:0; display:flex; align-items:center; text-decoration:none;">
+        <img src="brand_assets/GREENMED LOGO Horz.svg" alt="Green Med Ltd." style="height:69px; width:auto;" loading="eager">
+      </a>
+      <div class="nav-links">
+        <a href="/#about"    class="nav-link">ABOUT</a>
+        <a href="/#services" class="nav-link">SERVICES</a>
+        <a href="/#process"  class="nav-link">PROCESS</a>
+        <a href="/products.html" class="nav-link">PRODUCTS</a>
+        <a href="/contact.html" class="nav-link" style="color:var(--gm-500);">CONTACT</a>
+      </div>
+      <a href="/proposal.html" class="btn-nav" style="flex-shrink:0;">GET IN TOUCH</a>
+      <button class="hamburger" id="ham" aria-label="Toggle menu" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mob-nav">
+    <a href="/#about"    class="nav-link" onclick="toggleNav()">ABOUT</a>
+    <a href="/#services" class="nav-link" onclick="toggleNav()">SERVICES</a>
+    <a href="/#process"  class="nav-link" onclick="toggleNav()">PROCESS</a>
+    <a href="/products.html" class="nav-link" onclick="toggleNav()">PRODUCTS</a>
+    <a href="/contact.html"  class="nav-link" onclick="toggleNav()">CONTACT</a>
+    <a href="/proposal.html" class="btn-nav" style="width:fit-content; margin-top:0.5rem;" onclick="toggleNav()">GET IN TOUCH</a>
+  </div>
+
+  <!-- ── Page Hero ─────────────────────────────────────────────── -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="eyebrow">Get In Touch</div>
+      <h1 style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:clamp(2.75rem,5.5vw,5rem); color:#fff; line-height:1.0; letter-spacing:-0.02em; margin-bottom:1.25rem; text-transform:uppercase;">
+        Contact<br><span style="color:var(--gm-300);">Green Med</span>
+      </h1>
+      <p style="font-size:1.0625rem; color:rgba(255,255,255,0.55); max-width:520px; line-height:1.75;">
+        Reach us directly for general enquiries, or submit a detailed proposal if you have a laboratory project in mind.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Main ──────────────────────────────────────────────────── -->
+  <div style="background:var(--c-bg);">
+    <div class="main-wrap">
+
+      <!-- Left: Contact info -->
+      <div>
+        <span class="section-label">Direct Contact</span>
+        <div class="section-title">Reach Us Directly</div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <rect x="2" y="5" width="16" height="10" rx="1.5" stroke="#619A18" stroke-width="1.5"/>
+              <path d="M2 7l8 5 8-5" stroke="#619A18" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <span class="contact-label">Email</span>
+            <div class="contact-val"><a href="mailto:support@greenmed.ltd">support@greenmed.ltd</a></div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M4 3.5h3.5L9 7 7 8.5a9 9 0 0 0 4.5 4.5L13 11l3.5 1.5V16a1 1 0 0 1-1 1A14.5 14.5 0 0 1 3 3.5z" stroke="#619A18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <span class="contact-label">Phone</span>
+            <div class="contact-val"><a href="tel:+447507516818">+44 7507 516818</a></div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M10 2a6 6 0 0 1 6 6c0 4-6 10-6 10S4 12 4 8a6 6 0 0 1 6-6z" stroke="#619A18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="10" cy="8" r="2" stroke="#619A18" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div>
+            <span class="contact-label">Office</span>
+            <div class="contact-val">60 Millmead Business Centre<br>Mill Mead Road, London<br>United Kingdom, N17 9QU</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <circle cx="10" cy="10" r="7.5" stroke="#619A18" stroke-width="1.5"/>
+              <path d="M10 6v4l2.5 2.5" stroke="#619A18" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <span class="contact-label">Response Time</span>
+            <div class="contact-val">Within one business day <span style="color:var(--c-muted); font-size:0.875rem;">(GMT)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Proposal CTA -->
+      <div>
+        <div class="proposal-cta">
+          <div class="proposal-cta-inner">
+            <span class="cta-tag">Laboratory Project Enquiry</span>
+            <div class="cta-heading">Planning a<br><span>Lab Project?</span></div>
+            <p class="cta-body">
+              If you're looking to set up or upgrade a laboratory, request equipment, or need end-to-end project support — fill in our proposal form and a Green Med specialist will be in touch.
+            </p>
+            <a href="/proposal.html" class="btn-cta">
+              Submit a Proposal
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+
+            <div class="cta-divider"><span>What to expect</span></div>
+
+            <ul class="cta-checklist">
+              <li>No obligation — free initial consultation</li>
+              <li>Response within one business day</li>
+              <li>All enquiries strictly confidential</li>
+              <li>Specialist assigned to your project</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── Footer ────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div style="max-width:1440px; margin:0 auto;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:3rem; margin-bottom:3rem;">
+        <div style="max-width:300px;">
+          <img src="brand_assets/GREENMED LOGO Vert.svg" alt="Green Med Ltd." style="height:100px; width:auto; margin-bottom:1.25rem; display:block;" loading="lazy">
+          <p style="font-size:0.875rem; color:rgba(255,255,255,0.38); line-height:1.75;">Global Medical Systems Integrator. Turnkey laboratory infrastructure, delivered end-to-end.</p>
+        </div>
+        <div style="display:flex; gap:4rem; flex-wrap:wrap;">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.25); margin-bottom:1.25rem;">COMPANY</div>
+            <a href="/#about"    class="fl">ABOUT</a>
+            <a href="/#services" class="fl">SERVICES</a>
+            <a href="/#process"  class="fl">PROCESS</a>
+            <a href="/contact.html" class="fl">CONTACT</a>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.25); margin-bottom:1.25rem;">SECTORS</div>
+            <span class="fl" style="cursor:default;">HEALTHCARE</span>
+            <span class="fl" style="cursor:default;">GOVERNMENT</span>
+            <span class="fl" style="cursor:default;">RESEARCH</span>
+            <span class="fl" style="cursor:default;">INT'L ORGS</span>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.25); margin-bottom:1.25rem;">SERVICES</div>
+            <span class="fl" style="cursor:default;">LABORATORY SETUP</span>
+            <span class="fl" style="cursor:default;">INSTRUMENTATION</span>
+            <span class="fl" style="cursor:default;">COMPLIANCE</span>
+            <span class="fl" style="cursor:default;">TECHNICAL SUPPORT</span>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.25); margin-bottom:1.25rem;">LEGAL</div>
+            <a href="/privacy_policy/privacy-policy.html" class="fl">PRIVACY POLICY</a>
+          </div>
+        </div>
+      </div>
+      <div style="padding-top:2rem; border-top:1px solid rgba(255,255,255,0.07); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+        <p style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; color:rgba(255,255,255,0.28);">© 2025 Green Med Ltd. · Registered in England &amp; Wales No. 13350293 · All rights reserved.</p>
+        <p style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; color:rgba(255,255,255,0.18); font-style:italic;">"From Concept to Completion."</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('mob-nav').classList.toggle('open');
+      document.getElementById('ham').classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
