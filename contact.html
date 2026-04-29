@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Green Med Ltd.</title>
-  <meta name="description" content="Get in touch with Green Med Ltd. For laboratory project enquiries, submit a proposal. For general questions, reach us directly by email or phone.">
+  <meta name="description" content="Get in touch with Green Med Ltd. Send us a message or submit a proposal for your laboratory project.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -115,7 +115,7 @@
     .page-hero-inner {
       position: relative; z-index: 1;
       max-width: 1440px; margin: 0 auto;
-      padding: 5rem var(--px) 4.5rem;
+      padding: 4.5rem var(--px) 4rem;
     }
     .eyebrow {
       font-family: 'Barlow Condensed', sans-serif;
@@ -131,139 +131,184 @@
       background: var(--gm-400); flex-shrink: 0;
     }
 
-    /* ── Main content ───────────────────────────────────────── */
+    /* ── Main layout ────────────────────────────────────────── */
     .main-wrap {
       max-width: 1440px; margin: 0 auto;
       padding: 5rem var(--px) 7rem;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 2fr 1fr;
       gap: 5rem;
       align-items: start;
     }
 
-    /* ── Contact info ───────────────────────────────────────── */
-    .section-label {
+    /* ── Form ───────────────────────────────────────────────── */
+    .form-heading {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 0.6875rem; letter-spacing: 0.14em;
       text-transform: uppercase; color: var(--gm-500);
       display: block; margin-bottom: 0.5rem;
     }
-    .section-title {
+    .form-title {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 700; font-size: 1.5rem;
       text-transform: uppercase; color: var(--c-black);
-      line-height: 1.1; margin-bottom: 2rem;
+      line-height: 1.1; margin-bottom: 0.75rem;
+    }
+    .form-subtitle {
+      font-size: 0.9rem; color: var(--c-muted);
+      margin-bottom: 2.5rem; line-height: 1.6;
     }
 
-    .contact-item {
-      display: flex; align-items: flex-start;
-      gap: 1.25rem;
-      padding: 1.5rem 0;
-      border-bottom: 1px solid var(--c-rule);
+    .f-group { margin-bottom: 1.25rem; }
+    .f-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6875rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--c-muted);
+      display: block; margin-bottom: 0.5rem;
     }
-    .contact-item:first-of-type { border-top: 1px solid var(--c-rule); }
-    .contact-icon {
-      width: 40px; height: 40px; flex-shrink: 0;
+    .f-input {
+      width: 100%;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 300; font-size: 0.9375rem;
+      padding: 0.75rem 1rem;
+      background: var(--c-white);
+      border: 1px solid var(--c-rule);
+      color: var(--c-black); outline: none;
+      transition: border-color 0.2s;
+      appearance: none;
+    }
+    .f-input::placeholder { color: rgba(74,74,74,0.38); }
+    .f-input:focus { border-color: var(--gm-400); }
+
+    .input-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    select.f-input {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(74,74,74,0.5)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+
+    .btn-submit {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+      padding: 1rem 2.5rem;
+      background: var(--gm-400); color: #fff;
+      border: none; cursor: pointer; width: 100%;
+      margin-top: 0.5rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-submit:hover  { background: var(--gm-600); }
+    .btn-submit:active { transform: scale(0.99); }
+    .btn-submit:focus-visible { outline: 2px solid var(--gm-400); outline-offset: 3px; }
+
+    .disclaimer {
+      font-size: 0.75rem; color: var(--c-muted);
+      line-height: 1.6; text-align: center;
+      margin-top: 1.25rem;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    /* ── Sidebar ────────────────────────────────────────────── */
+    .sidebar { position: sticky; top: 88px; }
+    .sidebar-card {
+      background: var(--c-white);
+      border: 1px solid var(--c-rule);
+      padding: 2rem; margin-bottom: 1.5rem;
+    }
+    .sidebar-card:last-child { margin-bottom: 0; }
+    .sidebar-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1rem;
+      text-transform: uppercase; color: var(--c-black);
+      margin-bottom: 1.5rem; letter-spacing: 0.04em;
+    }
+
+    .cinfo {
+      display: flex; align-items: flex-start;
+      gap: 0.875rem; margin-bottom: 1.25rem;
+    }
+    .cinfo:last-child { margin-bottom: 0; }
+    .cinfo-icon {
+      width: 32px; height: 32px; flex-shrink: 0;
       background: var(--gm-50); border: 1px solid #C3DF72;
       display: flex; align-items: center; justify-content: center;
       margin-top: 2px;
     }
-    .contact-label {
+    .cinfo-label {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.625rem; letter-spacing: 0.12em;
+      font-size: 0.5625rem; letter-spacing: 0.12em;
       text-transform: uppercase; color: var(--c-muted);
-      display: block; margin-bottom: 0.35rem;
+      display: block; margin-bottom: 0.2rem;
     }
-    .contact-val {
-      font-size: 0.9375rem; color: var(--c-black);
-      line-height: 1.6;
+    .cinfo-val {
+      font-size: 0.875rem; color: var(--c-black); line-height: 1.6;
     }
-    .contact-val a {
+    .cinfo-val a {
       color: var(--gm-500); text-decoration: none;
       transition: color 0.2s;
     }
-    .contact-val a:hover { color: var(--gm-600); }
+    .cinfo-val a:hover { color: var(--gm-600); }
 
-    /* ── Proposal CTA ───────────────────────────────────────── */
-    .proposal-cta {
+    /* Proposal CTA card */
+    .sidebar-cta {
       background: var(--c-anthra);
-      padding: 3rem;
-      position: relative;
-      overflow: hidden;
+      padding: 2rem; margin-bottom: 0;
+      position: relative; overflow: hidden;
     }
-    .proposal-cta::before {
+    .sidebar-cta::before {
       content: '';
       position: absolute; inset: 0;
       background-image:
         linear-gradient(rgba(126,184,40,0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(126,184,40,0.05) 1px, transparent 1px);
-      background-size: 40px 40px;
+      background-size: 36px 36px;
       pointer-events: none;
     }
-    .proposal-cta-inner { position: relative; z-index: 1; }
+    .sidebar-cta-inner { position: relative; z-index: 1; }
     .cta-tag {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.625rem; letter-spacing: 0.14em;
+      font-size: 0.5625rem; letter-spacing: 0.14em;
       text-transform: uppercase; color: var(--gm-300);
-      display: block; margin-bottom: 1rem;
+      display: block; margin-bottom: 0.75rem;
     }
     .cta-heading {
       font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 800; font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 800; font-size: 1.5rem;
       text-transform: uppercase; color: #fff;
-      line-height: 1.0; letter-spacing: -0.02em;
-      margin-bottom: 1rem;
+      line-height: 1.0; letter-spacing: -0.01em;
+      margin-bottom: 0.75rem;
     }
     .cta-heading span { color: var(--gm-300); }
     .cta-body {
-      font-size: 0.9375rem; color: rgba(255,255,255,0.5);
-      line-height: 1.75; margin-bottom: 2rem;
-      max-width: 420px;
+      font-size: 0.8125rem; color: rgba(255,255,255,0.45);
+      line-height: 1.75; margin-bottom: 1.5rem;
     }
     .btn-cta {
       font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700; font-size: 0.9375rem;
+      font-weight: 700; font-size: 0.875rem;
       letter-spacing: 0.1em; text-transform: uppercase;
-      display: inline-flex; align-items: center; gap: 0.75rem;
-      padding: 0.875rem 2rem;
+      display: flex; align-items: center; justify-content: center; gap: 0.625rem;
+      padding: 0.75rem 1.5rem;
       background: var(--gm-400); color: #fff;
-      text-decoration: none;
+      text-decoration: none; width: 100%;
       transition: background 0.2s, transform 0.15s;
     }
     .btn-cta:hover  { background: var(--gm-600); }
     .btn-cta:active { transform: scale(0.99); }
-    .btn-cta:focus-visible { outline: 2px solid var(--gm-400); outline-offset: 3px; }
 
-    .cta-divider {
-      display: flex; align-items: center; gap: 1rem;
-      margin: 2rem 0;
-    }
-    .cta-divider::before, .cta-divider::after {
-      content: ''; flex: 1; height: 1px;
-      background: rgba(255,255,255,0.1);
-    }
-    .cta-divider span {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.625rem; letter-spacing: 0.1em;
-      text-transform: uppercase; color: rgba(255,255,255,0.25);
-    }
-
-    .cta-checklist {
-      list-style: none;
-      display: flex; flex-direction: column; gap: 0.75rem;
-    }
-    .cta-checklist li {
-      display: flex; align-items: center; gap: 0.75rem;
-      font-size: 0.8125rem; color: rgba(255,255,255,0.45);
-    }
-    .cta-checklist li::before {
-      content: '';
-      width: 16px; height: 16px; flex-shrink: 0;
-      background: rgba(126,184,40,0.15);
-      border: 1px solid rgba(126,184,40,0.35);
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='6' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l3 3 5-6' stroke='%237EB828' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: center;
+    /* ── Success state ──────────────────────────────────────── */
+    #success-msg {
+      display: none; padding: 3.5rem 2rem;
+      background: var(--c-white); border: 1px solid var(--c-rule);
+      text-align: center;
     }
 
     /* ── Footer ────────────────────────────────────────────── */
@@ -280,12 +325,13 @@
     /* ── Responsive ────────────────────────────────────────── */
     @media (max-width: 1024px) {
       .main-wrap { grid-template-columns: 1fr; gap: 3rem; }
+      .sidebar { position: static; }
       .nav-links { display: none; }
       .btn-nav   { display: none; }
       .hamburger { display: flex; }
     }
     @media (max-width: 640px) {
-      .proposal-cta { padding: 2rem; }
+      .input-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -298,11 +344,11 @@
         <img src="brand_assets/GREENMED LOGO Horz.svg" alt="Green Med Ltd." style="height:69px; width:auto;" loading="eager">
       </a>
       <div class="nav-links">
-        <a href="/#about"    class="nav-link">ABOUT</a>
-        <a href="/#services" class="nav-link">SERVICES</a>
-        <a href="/#process"  class="nav-link">PROCESS</a>
+        <a href="/#about"        class="nav-link">ABOUT</a>
+        <a href="/#services"     class="nav-link">SERVICES</a>
+        <a href="/#process"      class="nav-link">PROCESS</a>
         <a href="/products.html" class="nav-link">PRODUCTS</a>
-        <a href="/contact.html" class="nav-link" style="color:var(--gm-500);">CONTACT</a>
+        <a href="/contact.html"  class="nav-link" style="color:var(--gm-500);">CONTACT</a>
       </div>
       <a href="/proposal.html" class="btn-nav" style="flex-shrink:0;">GET IN TOUCH</a>
       <button class="hamburger" id="ham" aria-label="Toggle menu" onclick="toggleNav()">
@@ -312,9 +358,9 @@
   </nav>
 
   <div class="mobile-nav" id="mob-nav">
-    <a href="/#about"    class="nav-link" onclick="toggleNav()">ABOUT</a>
-    <a href="/#services" class="nav-link" onclick="toggleNav()">SERVICES</a>
-    <a href="/#process"  class="nav-link" onclick="toggleNav()">PROCESS</a>
+    <a href="/#about"        class="nav-link" onclick="toggleNav()">ABOUT</a>
+    <a href="/#services"     class="nav-link" onclick="toggleNav()">SERVICES</a>
+    <a href="/#process"      class="nav-link" onclick="toggleNav()">PROCESS</a>
     <a href="/products.html" class="nav-link" onclick="toggleNav()">PRODUCTS</a>
     <a href="/contact.html"  class="nav-link" onclick="toggleNav()">CONTACT</a>
     <a href="/proposal.html" class="btn-nav" style="width:fit-content; margin-top:0.5rem;" onclick="toggleNav()">GET IN TOUCH</a>
@@ -328,7 +374,7 @@
         Contact<br><span style="color:var(--gm-300);">Green Med</span>
       </h1>
       <p style="font-size:1.0625rem; color:rgba(255,255,255,0.55); max-width:520px; line-height:1.75;">
-        Reach us directly for general enquiries, or submit a detailed proposal if you have a laboratory project in mind.
+        Fill in the form and our team will get back to you within one business day.
       </p>
     </div>
   </div>
@@ -337,91 +383,174 @@
   <div style="background:var(--c-bg);">
     <div class="main-wrap">
 
-      <!-- Left: Contact info -->
+      <!-- Left: Contact form -->
       <div>
-        <span class="section-label">Direct Contact</span>
-        <div class="section-title">Reach Us Directly</div>
+        <span class="form-heading">Send a Message</span>
+        <div class="form-title">We'd Love to Hear From You</div>
+        <p class="form-subtitle">Fill in your details below and tell us how we can help.</p>
 
-        <div class="contact-item">
-          <div class="contact-icon">
-            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <rect x="2" y="5" width="16" height="10" rx="1.5" stroke="#619A18" stroke-width="1.5"/>
-              <path d="M2 7l8 5 8-5" stroke="#619A18" stroke-width="1.5" stroke-linecap="round"/>
+        <form id="contact-form" novalidate>
+
+          <div class="input-row">
+            <div class="f-group">
+              <label class="f-label" for="fname">Full Name *</label>
+              <input type="text" id="fname" name="name" class="f-input" placeholder="Dr. Jane Smith" required>
+            </div>
+            <div class="f-group">
+              <label class="f-label" for="ftitle">Job Title</label>
+              <input type="text" id="ftitle" name="title" class="f-input" placeholder="Laboratory Director">
+            </div>
+          </div>
+
+          <div class="f-group">
+            <label class="f-label" for="forg">Organisation</label>
+            <input type="text" id="forg" name="organisation" class="f-input" placeholder="Ministry of Health / Hospital / University">
+          </div>
+
+          <div class="input-row">
+            <div class="f-group">
+              <label class="f-label" for="femail">Email Address *</label>
+              <input type="email" id="femail" name="email" class="f-input" placeholder="name@organisation.com" required>
+            </div>
+            <div class="f-group">
+              <label class="f-label" for="fphone">Phone Number</label>
+              <input type="tel" id="fphone" name="phone" class="f-input" placeholder="+1 234 567 8900">
+            </div>
+          </div>
+
+          <div class="f-group">
+            <label class="f-label" for="fsubject">Subject *</label>
+            <select id="fsubject" name="subject" class="f-input" required>
+              <option value="" disabled selected>Select a topic</option>
+              <option>General Enquiry</option>
+              <option>Product Information</option>
+              <option>Technical Support</option>
+              <option>Partnership / Distribution</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="f-group">
+            <label class="f-label" for="fmessage">Message *</label>
+            <textarea id="fmessage" name="message" class="f-input" rows="6"
+              placeholder="Tell us how we can help you..."
+              style="resize:vertical; font-family:'IBM Plex Sans',sans-serif; font-weight:300;"
+              required></textarea>
+          </div>
+
+          <!-- Consent -->
+          <div style="display:flex; align-items:flex-start; gap:0.75rem; margin-bottom:1.5rem;">
+            <input type="checkbox" id="gdpr-consent" name="gdpr_consent" required
+              style="margin-top:3px; width:16px; height:16px; accent-color:var(--gm-500); flex-shrink:0; cursor:pointer;">
+            <label for="gdpr-consent" style="font-size:0.8125rem; color:var(--c-muted); line-height:1.6; cursor:pointer;">
+              I agree to be contacted by Green Med Ltd. and for my personal data to be processed in accordance with the
+              <a href="/privacy_policy/privacy-policy.html" target="_blank" style="color:var(--gm-500); text-decoration:underline;">Privacy Policy</a>. *
+            </label>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            SEND MESSAGE
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <p class="disclaimer">
+            All enquiries are treated in strict confidence.<br>
+            We will respond within one business day.
+          </p>
+
+        </form>
+
+        <!-- Success state -->
+        <div id="success-msg">
+          <div style="width:56px; height:56px; background:var(--gm-50); border:1px solid #C3DF72; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M5 13l4 4L19 7" stroke="#619A18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <div>
-            <span class="contact-label">Email</span>
-            <div class="contact-val"><a href="mailto:support@greenmed.ltd">support@greenmed.ltd</a></div>
-          </div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.75rem; text-transform:uppercase; color:var(--c-black); margin-bottom:0.75rem;">Message Sent</div>
+          <p style="font-size:0.9375rem; color:var(--c-dark); max-width:400px; margin:0 auto 2rem; line-height:1.75;">Thank you for reaching out. A member of our team will be in touch within one business day.</p>
+          <a href="/" style="font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:0.875rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gm-500); text-decoration:none;">← Return to Homepage</a>
         </div>
 
-        <div class="contact-item">
-          <div class="contact-icon">
-            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <path d="M4 3.5h3.5L9 7 7 8.5a9 9 0 0 0 4.5 4.5L13 11l3.5 1.5V16a1 1 0 0 1-1 1A14.5 14.5 0 0 1 3 3.5z" stroke="#619A18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div>
-            <span class="contact-label">Phone</span>
-            <div class="contact-val"><a href="tel:+447507516818">+44 7507 516818</a></div>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <div class="contact-icon">
-            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <path d="M10 2a6 6 0 0 1 6 6c0 4-6 10-6 10S4 12 4 8a6 6 0 0 1 6-6z" stroke="#619A18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="10" cy="8" r="2" stroke="#619A18" stroke-width="1.5"/>
-            </svg>
-          </div>
-          <div>
-            <span class="contact-label">Office</span>
-            <div class="contact-val">60 Millmead Business Centre<br>Mill Mead Road, London<br>United Kingdom, N17 9QU</div>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <div class="contact-icon">
-            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <circle cx="10" cy="10" r="7.5" stroke="#619A18" stroke-width="1.5"/>
-              <path d="M10 6v4l2.5 2.5" stroke="#619A18" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div>
-            <span class="contact-label">Response Time</span>
-            <div class="contact-val">Within one business day <span style="color:var(--c-muted); font-size:0.875rem;">(GMT)</span></div>
-          </div>
-        </div>
       </div>
 
-      <!-- Right: Proposal CTA -->
-      <div>
-        <div class="proposal-cta">
-          <div class="proposal-cta-inner">
-            <span class="cta-tag">Laboratory Project Enquiry</span>
+      <!-- Right: Sidebar -->
+      <aside class="sidebar">
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Direct Contact</div>
+
+          <div class="cinfo">
+            <div class="cinfo-icon">
+              <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <rect x="2" y="5" width="16" height="10" rx="1.5" stroke="#619A18" stroke-width="1.5"/>
+                <path d="M2 7l8 5 8-5" stroke="#619A18" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <span class="cinfo-label">Email</span>
+              <div class="cinfo-val"><a href="mailto:support@greenmed.ltd">support@greenmed.ltd</a></div>
+            </div>
+          </div>
+
+          <div class="cinfo">
+            <div class="cinfo-icon">
+              <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 3.5h3.5L9 7 7 8.5a9 9 0 0 0 4.5 4.5L13 11l3.5 1.5V16a1 1 0 0 1-1 1A14.5 14.5 0 0 1 3 3.5z" stroke="#619A18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <span class="cinfo-label">Phone</span>
+              <div class="cinfo-val"><a href="tel:+447507516818">+44 7507 516818</a></div>
+            </div>
+          </div>
+
+          <div class="cinfo">
+            <div class="cinfo-icon">
+              <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M10 2a6 6 0 0 1 6 6c0 4-6 10-6 10S4 12 4 8a6 6 0 0 1 6-6z" stroke="#619A18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="10" cy="8" r="2" stroke="#619A18" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div>
+              <span class="cinfo-label">Office</span>
+              <div class="cinfo-val">60 Millmead Business Centre<br>Mill Mead Road, London<br>N17 9QU, United Kingdom</div>
+            </div>
+          </div>
+
+          <div class="cinfo">
+            <div class="cinfo-icon">
+              <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <circle cx="10" cy="10" r="7.5" stroke="#619A18" stroke-width="1.5"/>
+                <path d="M10 6v4l2.5 2.5" stroke="#619A18" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <span class="cinfo-label">Response Time</span>
+              <div class="cinfo-val">Within one business day <span style="color:var(--c-muted); font-size:0.8125rem;">(GMT)</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proposal CTA -->
+        <div class="sidebar-cta">
+          <div class="sidebar-cta-inner">
+            <span class="cta-tag">Project Enquiry</span>
             <div class="cta-heading">Planning a<br><span>Lab Project?</span></div>
             <p class="cta-body">
-              If you're looking to set up or upgrade a laboratory, request equipment, or need end-to-end project support — fill in our proposal form and a Green Med specialist will be in touch.
+              For laboratory setup, equipment procurement, or end-to-end project support, use our detailed proposal form.
             </p>
             <a href="/proposal.html" class="btn-cta">
               Submit a Proposal
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </a>
-
-            <div class="cta-divider"><span>What to expect</span></div>
-
-            <ul class="cta-checklist">
-              <li>No obligation — free initial consultation</li>
-              <li>Response within one business day</li>
-              <li>All enquiries strictly confidential</li>
-              <li>Specialist assigned to your project</li>
-            </ul>
           </div>
         </div>
-      </div>
 
+      </aside>
     </div>
   </div>
 
@@ -473,6 +602,38 @@
       document.getElementById('mob-nav').classList.toggle('open');
       document.getElementById('ham').classList.toggle('open');
     }
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name    = document.getElementById('fname').value.trim();
+      const email   = document.getElementById('femail').value.trim();
+      const subject = document.getElementById('fsubject').value;
+      const message = document.getElementById('fmessage').value.trim();
+      const consent = document.getElementById('gdpr-consent').checked;
+
+      const missing = [];
+      if (!name)    missing.push('Full Name');
+      if (!email)   missing.push('Email Address');
+      if (!subject) missing.push('Subject');
+      if (!message) missing.push('Message');
+      if (!consent) missing.push('Privacy Policy consent');
+
+      if (missing.length) {
+        alert('Please complete the following required fields:\n\n• ' + missing.join('\n• '));
+        return;
+      }
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+
+      this.style.display = 'none';
+      const success = document.getElementById('success-msg');
+      success.style.display = 'block';
+      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
   </script>
 
 </body>
