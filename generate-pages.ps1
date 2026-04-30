@@ -269,7 +269,7 @@ $specsBlock
     var message = document.getElementById('qMessage').value;
     var product = '$ProductId';
     var body = encodeURIComponent('Product: ' + product + '\nName: ' + name + '\nCompany: ' + company + '\nPhone: ' + phone + '\n\n' + message);
-    window.location.href = 'mailto:support@greenmed.ltd?subject=' + encodeURIComponent('Quote Request — ' + product) + '&body=' + body;
+    window.location.href = 'mailto:support@greenmedltduk.com?subject=' + encodeURIComponent('Quote Request — ' + product) + '&body=' + body;
     document.getElementById('quoteForm').style.display = 'none';
     document.getElementById('quoteSuccess').classList.add('visible');
   }
@@ -400,7 +400,7 @@ foreach ($p in $Products) {
 }
 
 # ── sitemap.xml ────────────────────────────────────────────────────────────
-$base  = 'https://www.greenmed.ltd'
+$base  = 'https://www.greenmedltduk.com'
 $today = (Get-Date).ToString('yyyy-MM-dd')
 
 $staticUrls = @(

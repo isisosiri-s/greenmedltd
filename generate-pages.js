@@ -708,7 +708,7 @@ function buildPage(p, slug) {
       const body = encodeURIComponent(
         'Product: ' + product + '\\nName: ' + name + '\\nCompany: ' + company + '\\nPhone: ' + phone + '\\n\\n' + message
       );
-      window.location.href = 'mailto:support@greenmed.ltd?subject=' + encodeURIComponent('Quote Request — ' + product) + '&body=' + body;
+      window.location.href = 'mailto:support@greenmedltduk.com?subject=' + encodeURIComponent('Quote Request — ' + product) + '&body=' + body;
       document.getElementById('quoteForm').style.display = 'none';
       document.getElementById('quoteSuccess').classList.add('visible');
     }
@@ -747,7 +747,7 @@ for (const p of PRODUCTS) {
 }
 
 // ── sitemap.xml ────────────────────────────────────────────────────────────
-const BASE = 'https://www.greenmed.ltd';
+const BASE = 'https://www.greenmedltduk.com';
 const today = new Date().toISOString().split('T')[0];
 
 const staticPages = [
