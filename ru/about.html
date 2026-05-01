@@ -1,0 +1,548 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){
+          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=108990520', 'ym');
+
+      ym(108990520, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/108990520" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О компании — Green Med Ltd.</title>
+  <meta name="description" content="Green Med Ltd. — глобальный медицинский системный интегратор, создающий лабораторные инфраструктуры под ключ в 18+ странах.">
+
+    <link rel="alternate" hreflang="en" href="https://www.greenmedltduk.com/about.html" />
+  <link rel="alternate" hreflang="ru" href="https://www.greenmedltduk.com/ru/about.html" />
+  <link rel="alternate" hreflang="ru-TM" href="https://www.greenmedltduk.com/ru/about.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.greenmedltduk.com/about.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --c-black:  #1C1C1C;
+      --c-dark:   #4A4A4A;
+      --c-muted:  #8A8A8A;
+      --c-rule:   #E8E8E8;
+      --c-bg:     #F7F8F2;
+      --c-white:  #FFFFFF;
+      --c-footer: #111111;
+      --gm-50:    #F4FBDF;
+      --gm-300:   #A5CC48;
+      --gm-400:   #7EB828;
+      --gm-500:   #619A18;
+      --gm-600:   #487A10;
+      --gm-800:   #193C04;
+      --px: 7vw;
+      --py: 6.5rem;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 300;
+      background: var(--c-bg);
+      color: var(--c-dark);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .anim-in {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .anim-in.visible { opacity: 1; transform: translateY(0); }
+
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 64px; z-index: 100;
+      background: rgba(247,248,242,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(232,232,232,0.8);
+    }
+    .nav-inner {
+      max-width: 1440px; margin: 0 auto;
+      padding: 0 var(--px); height: 100%;
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 2rem;
+    }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-link {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 0.875rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--c-dark); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--gm-500); }
+    .nav-link.active { color: var(--gm-500); }
+    .nav-link:focus-visible { outline: 2px solid var(--gm-400); outline-offset: 3px; }
+    .btn-nav {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 0.875rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      background: var(--gm-500); color: #fff;
+      padding: 0.5rem 1.25rem; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-nav:hover { background: var(--gm-600); }
+    .btn-nav:focus-visible { outline: 2px solid var(--gm-400); outline-offset: 2px; }
+
+    .hamburger {
+      display: none; flex-direction: column; justify-content: space-between;
+      width: 26px; height: 18px;
+      background: none; border: none; cursor: pointer; padding: 0;
+    }
+    .hamburger span { display: block; height: 2px; background: var(--c-black); transition: transform 0.25s, opacity 0.25s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    .mobile-nav {
+      display: none; position: fixed; top: 64px; left: 0; right: 0; z-index: 99;
+      background: rgba(247,248,242,0.98); backdrop-filter: blur(12px);
+      padding: 1.5rem var(--px) 2rem;
+      flex-direction: column; gap: 1.25rem;
+    }
+    .mobile-nav.open { display: flex; }
+
+    .eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6875rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--gm-500);
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.625rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 0.9375rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.8125rem 1.75rem;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn-primary { background: var(--gm-500); color: #fff; }
+    .btn-primary:hover { background: var(--gm-600); }
+    .btn-outline-white {
+      background: transparent; color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.28);
+    }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.55); }
+
+    .val-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; }
+    .val-card {
+      background: var(--c-bg); border: 1px solid var(--c-rule);
+      padding: 2rem 1.75rem;
+      display: flex; flex-direction: column; gap: 1rem;
+      transition: transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.3s;
+    }
+    .val-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(97,154,24,0.1), 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .val-icon {
+      width: 2.625rem; height: 2.625rem;
+      background: var(--gm-50); border: 1px solid #C3DF72;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .val-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1.125rem;
+      text-transform: uppercase; color: var(--c-black); letter-spacing: 0.03em;
+    }
+    .val-desc { font-size: 0.9rem; color: var(--c-dark); line-height: 1.75; }
+
+    .diff-row {
+      display: flex; gap: 2.5rem; align-items: flex-start;
+      padding: 2rem 0; border-bottom: 1px solid var(--c-rule);
+      transition: transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
+      cursor: default;
+    }
+    .diff-row:hover { transform: translateX(6px); }
+    .diff-row:last-child { border-bottom: none; }
+    .diff-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6875rem; letter-spacing: 0.1em;
+      color: var(--gm-400); flex-shrink: 0;
+      padding-top: 0.3rem; min-width: 2.5rem;
+    }
+
+    .footer { background: var(--c-footer); padding: 4rem var(--px) 2.5rem; }
+    .fl {
+      display: block; font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: rgba(255,255,255,0.38);
+      text-decoration: none; margin-bottom: 0.875rem; transition: color 0.2s;
+    }
+    .fl:hover { color: var(--gm-300); }
+
+    @media (max-width: 1024px) {
+      .nav-links { display: none; }
+      .btn-nav   { display: none; }
+      .hamburger { display: flex; }
+      .val-grid  { grid-template-columns: repeat(2,1fr); }
+      .two-col   { grid-template-columns: 1fr !important; gap: 3rem !important; }
+      .diff-layout { grid-template-columns: 1fr !important; gap: 3rem !important; }
+      .cta-inner { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+      .footer-inner { flex-direction: column !important; gap: 3rem !important; }
+    }
+    @media (max-width: 640px) {
+      .val-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" aria-label="Green Med Ltd." style="flex-shrink:0; display:flex; align-items:center;">
+        <img src="../brand_assets/GREENMED LOGO Horz.svg" alt="Green Med Ltd." style="height:69px; width:auto;" loading="eager">
+      </a>
+      <div class="nav-links">
+        <a href="about.html"          class="nav-link active">О НАС</a>
+        <a href="index.html#services" class="nav-link">УСЛУГИ</a>
+        <a href="projects.html"       class="nav-link">ПРОЕКТЫ</a>
+        <a href="products.html"       class="nav-link">ПРОДУКТЫ</a>
+        <a href="contact.html"  class="nav-link">КОНТАКТ</a>
+      </div>
+      <a href="contact.html" class="btn-nav" style="flex-shrink:0;">СВЯЗАТЬСЯ</a>
+      <button class="hamburger" id="ham" aria-label="Открыть меню" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mob-nav">
+    <a href="about.html"          class="nav-link active" onclick="toggleNav()">О НАС</a>
+    <a href="index.html#services" class="nav-link" onclick="toggleNav()">УСЛУГИ</a>
+    <a href="projects.html"       class="nav-link" onclick="toggleNav()">ПРОЕКТЫ</a>
+    <a href="products.html"       class="nav-link" onclick="toggleNav()">ПРОДУКТЫ</a>
+    <a href="contact.html"  class="nav-link" onclick="toggleNav()">КОНТАКТ</a>
+    <a href="contact.html"  class="btn btn-primary" style="width:fit-content; margin-top:0.5rem;" onclick="toggleNav()">СВЯЗАТЬСЯ</a>
+  </div>
+
+  <!-- HERO -->
+  <section style="padding-top:64px; background:var(--c-footer); position:relative; overflow:hidden; min-height:72vh; display:flex; align-items:center;">
+    <div style="position:absolute; inset:0; background:radial-gradient(ellipse 70% 65% at 95% 45%, rgba(97,154,24,0.22) 0%, transparent 65%), radial-gradient(ellipse 45% 70% at 0% 100%, rgba(97,154,24,0.07) 0%, transparent 60%); pointer-events:none;"></div>
+    <div style="position:absolute; right:var(--px); top:0; bottom:0; width:1px; background:rgba(255,255,255,0.04); pointer-events:none;"></div>
+
+    <div style="position:relative; z-index:1; padding:var(--py) var(--px); width:100%; max-width:1440px; margin:0 auto;">
+      <div style="width:2.75rem; height:3px; background:var(--gm-400); margin-bottom:2.25rem;" class="anim-in"></div>
+      <div class="eyebrow anim-in" style="color:rgba(165,204,72,0.65); margin-bottom:1.25rem;">О GREEN MED LTD.</div>
+      <h1 class="anim-in" style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:clamp(3.75rem,8vw,9rem); text-transform:uppercase; color:#fff; line-height:0.9; letter-spacing:-0.01em; margin-bottom:2.5rem;">
+        GLOBAL MEDICAL<br>
+        <span style="color:var(--gm-400);">СИСТЕМНЫЙ</span><br>
+        ИНТЕГРАТОР
+      </h1>
+      <p class="anim-in" style="font-size:1.125rem; color:rgba(255,255,255,0.52); max-width:540px; line-height:1.8; margin-bottom:3.5rem;">
+        Лабораторная инфраструктура под ключ — от первоначального обоснования до ввода в эксплуатацию, валидации и долгосрочной технической поддержки.
+      </p>
+      <div class="anim-in" style="display:flex; gap:4.5rem; flex-wrap:wrap; padding-top:3rem; border-top:1px solid rgba(255,255,255,0.09);">
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:3.75rem; color:var(--gm-400); line-height:1;">147+</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-top:0.375rem;">ЗАВЕРШЁННЫХ ПРОЕКТОВ</div>
+        </div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:3.75rem; color:var(--gm-400); line-height:1;">18+</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-top:0.375rem;">СТРАН ОХВАТА</div>
+        </div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:3.75rem; color:var(--gm-400); line-height:1;">15+</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-top:0.375rem;">ЛЕТ ОПЫТА</div>
+        </div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:3.75rem; color:var(--gm-400); line-height:1;">6</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-top:0.375rem;">ПАРТНЁРОВ ООН</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE ARE -->
+  <section style="background:var(--c-bg); border-top:1px solid var(--c-rule); padding:var(--py) var(--px);">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:start;" class="two-col">
+
+        <div class="anim-in">
+          <div class="eyebrow" style="margin-bottom:1.5rem;">КТО МЫ</div>
+          <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2rem,3.5vw,3.125rem); text-transform:uppercase; color:var(--c-black); line-height:1.02; margin-bottom:2rem;">
+            СПЕЦИАЛИСТЫ В<br>ЛАБОРАТОРНОЙ ИНФРАСТРУКТУРЕ<br>ПОД КЛЮЧ
+          </h2>
+          <p style="font-size:1.0625rem; color:var(--c-dark); line-height:1.85; margin-bottom:1.5rem;">
+            Green Med Ltd. — глобальный медицинский системный интегратор, реализующий комплексные лабораторные решения: от первоначального обоснования и технического задания до закупок, монтажа, ввода в эксплуатацию и долгосрочной технической поддержки.
+          </p>
+          <p style="font-size:1.0625rem; color:var(--c-dark); line-height:1.85; margin-bottom:1.5rem;">
+            Мы работаем с учреждениями здравоохранения, государственными министерствами, научно-исследовательскими институтами и международными организациями в 18+ странах — управляя каждым этапом лабораторных инвестиций по единому контракту с единой точкой ответственности.
+          </p>
+          <p style="font-size:1.0625rem; color:var(--c-dark); line-height:1.85;">
+            Наши клиенты включают ООН, ВОЗ, ФАО, ЮНИСЕФ, ПРООН и ЮНОПС — организации, предъявляющие высочайшие требования к качеству поставок, прозрачности и соответствию нормативам.
+          </p>
+        </div>
+
+        <div class="anim-in" style="transition-delay:0.15s; position:sticky; top:6rem;">
+          <div style="background:var(--gm-800); padding:2.75rem; position:relative; overflow:hidden;">
+            <div style="position:absolute; top:-2.5rem; left:1rem; font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:11rem; color:rgba(126,184,40,0.09); line-height:1; pointer-events:none; user-select:none;">"</div>
+            <p style="font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:1.5rem; color:#fff; line-height:1.35; position:relative; z-index:1; letter-spacing:0.01em;">
+              «Мы не просто поставляем оборудование — мы создаём полноценные функциональные лабораторные среды.»
+            </p>
+            <div style="margin-top:1.5rem; display:flex; align-items:center; gap:0.75rem; position:relative; z-index:1;">
+              <div style="width:2rem; height:2px; background:var(--gm-400);"></div>
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.32);">GREEN MED LTD.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE VALUES -->
+  <section style="background:var(--c-white); border-top:1px solid var(--c-rule); padding:var(--py) var(--px);">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div style="margin-bottom:3.5rem;" class="anim-in">
+        <div class="eyebrow" style="margin-bottom:1.25rem;">НАШИ ПРИНЦИПЫ</div>
+        <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2rem,3.5vw,3.125rem); text-transform:uppercase; color:var(--c-black); line-height:1.02;">КЛЮЧЕВЫЕ ЦЕННОСТИ</h2>
+      </div>
+      <div class="val-grid">
+
+        <div class="val-card anim-in">
+          <div class="val-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <circle cx="10" cy="10" r="7.5" stroke="#619A18" stroke-width="1.5"/>
+              <path d="M6.5 10l2.5 2.5 4.5-4.5" stroke="#619A18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="val-title">Точность</div>
+          <div class="val-desc">Каждый проект реализуется в точном соответствии со спецификацией — строгий контроль качества от закупок до валидации IQ/OQ/PQ.</div>
+        </div>
+
+        <div class="val-card anim-in" style="transition-delay:0.08s;">
+          <div class="val-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M10 2l1.8 5.4H17l-4.5 3.3 1.7 5.3L10 13l-4.2 3 1.7-5.3L3 7.4h5.2z" stroke="#619A18" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="val-title">Честность</div>
+          <div class="val-desc">Прозрачное ценообразование, чёткие сроки, честная коммуникация. Полная ответственность перед клиентами — без сюрпризов и скрытых затрат.</div>
+        </div>
+
+        <div class="val-card anim-in" style="transition-delay:0.16s;">
+          <div class="val-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5.5 10a4.5 4.5 0 0 1 9 0" stroke="#619A18" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="5.5" cy="10" r="1.75" stroke="#619A18" stroke-width="1.5"/>
+              <circle cx="14.5" cy="10" r="1.75" stroke="#619A18" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="val-title">Партнёрство</div>
+          <div class="val-desc">Мы работаем как продолжение вашей команды — согласуя действия с институциональными целями, нормативными требованиями и операционным контекстом на протяжении всего жизненного цикла.</div>
+        </div>
+
+        <div class="val-card anim-in" style="transition-delay:0.24s;">
+          <div class="val-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <circle cx="10" cy="10" r="7.5" stroke="#619A18" stroke-width="1.5"/>
+              <path d="M10 2.5c0 0-4 3.5-4 7.5s4 7.5 4 7.5M2.5 10h15" stroke="#619A18" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="val-title">Глобальное присутствие</div>
+          <div class="val-desc">Работа в 18+ странах с налаженными международными партнёрствами — масштаб и экспертиза для реализации проектов в сложных условиях.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY GREEN MED -->
+  <section style="background:var(--c-bg); border-top:1px solid var(--c-rule); padding:var(--py) var(--px);">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div style="display:grid; grid-template-columns:1fr 1.5fr; gap:6rem; align-items:start;" class="diff-layout">
+
+        <div class="anim-in" style="position:sticky; top:6rem;">
+          <div class="eyebrow" style="margin-bottom:1.5rem;">НАШИ ПРЕИМУЩЕСТВА</div>
+          <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2rem,3.5vw,3.125rem); text-transform:uppercase; color:var(--c-black); line-height:1.02; margin-bottom:2rem;">
+            WHY<br>GREEN MED
+          </h2>
+          <p style="font-size:1rem; color:var(--c-dark); line-height:1.8;">
+            Мы объединяем техническую экспертизу, международные закупочные возможности и сквозное управление проектами в единую модель ответственной реализации.
+          </p>
+        </div>
+
+        <div>
+          <div class="diff-row anim-in">
+            <div class="diff-num">01</div>
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.25rem; text-transform:uppercase; color:var(--c-black); margin-bottom:0.5rem; letter-spacing:0.02em;">Единый контракт, единая ответственность</div>
+              <div style="font-size:0.9375rem; color:var(--c-dark); line-height:1.8;">Единая точка ответственности от обоснования до сдачи объекта. Мы координируем всех поставщиков, логистику, таможню и монтаж, устраняя сложности работы с несколькими подрядчиками.</div>
+            </div>
+          </div>
+
+          <div class="diff-row anim-in" style="transition-delay:0.07s;">
+            <div class="diff-num">02</div>
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.25rem; text-transform:uppercase; color:var(--c-black); margin-bottom:0.5rem; letter-spacing:0.02em;">Международная сеть закупок</div>
+              <div style="font-size:0.9375rem; color:var(--c-dark); line-height:1.8;">Доступ к аккредитованным производителям Европы, Азии и Северной Америки — качественное оборудование по конкурентным ценам с полной прослеживаемостью.</div>
+            </div>
+          </div>
+
+          <div class="diff-row anim-in" style="transition-delay:0.14s;">
+            <div class="diff-num">03</div>
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.25rem; text-transform:uppercase; color:var(--c-black); margin-bottom:0.5rem; letter-spacing:0.02em;">Нормативное соответствие и экспертиза</div>
+              <div style="font-size:0.9375rem; color:var(--c-dark); line-height:1.8;">Глубокое знание требований ISO 15189, руководства ВОЗ и стандартов GLP/GMP — каждая лаборатория соответствует необходимым аккредитационным и нормативным требованиям.</div>
+            </div>
+          </div>
+
+          <div class="diff-row anim-in" style="transition-delay:0.21s;">
+            <div class="diff-num">04</div>
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.25rem; text-transform:uppercase; color:var(--c-black); margin-bottom:0.5rem; letter-spacing:0.02em;">Техническая поддержка после передачи</div>
+              <div style="font-size:0.9375rem; color:var(--c-dark); line-height:1.8;">Долгосрочные сервисные соглашения, программы обучения персонала и текущее техническое обслуживание обеспечивают работу лаборатории на пиковом уровне производительности.</div>
+            </div>
+          </div>
+
+          <div class="diff-row anim-in" style="transition-delay:0.28s;">
+            <div class="diff-num">05</div>
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.25rem; text-transform:uppercase; color:var(--c-black); margin-bottom:0.5rem; letter-spacing:0.02em;">Доверие международных организаций</div>
+              <div style="font-size:0.9375rem; color:var(--c-dark); line-height:1.8;">Наш опыт работы с ООН, ВОЗ, ФАО, ЮНИСЕФ, ПРООН и ЮНОПС свидетельствует о неизменной способности соответствовать строгим требованиям к закупкам, отчётности и поставкам глобальных организаций.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section style="background:var(--c-white); border-top:1px solid var(--c-rule); padding:var(--py) var(--px);">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div style="margin-bottom:3.5rem;" class="anim-in">
+        <div class="eyebrow" style="margin-bottom:1.25rem;">МЕЖДУНАРОДНЫЕ ПАРТНЁРЫ</div>
+        <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2rem,3.5vw,3.125rem); text-transform:uppercase; color:var(--c-black); line-height:1.02; margin-bottom:1rem;">ДОВЕРИЕ ГЛОБАЛЬНЫХ ИНСТИТУТОВ</h2>
+        <p style="font-size:1rem; color:var(--c-dark); max-width:580px; line-height:1.8;">Мы успешно реализовали проекты в партнёрстве с ведущими международными организациями развития и гуманитарной помощи.</p>
+      </div>
+
+      <div class="anim-in" style="display:flex; align-items:center; gap:3rem; flex-wrap:wrap; padding:2.75rem; background:var(--c-bg); border:1px solid var(--c-rule);">
+        <img src="../Photos/UN LOGO/UN_Logo.svg"     loading="lazy" alt="United Nations"                    style="height:54px; width:auto; filter:grayscale(1); opacity:0.42; transition:filter 0.25s, opacity 0.25s;" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1';" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.42';">
+        <img src="../Photos/UN LOGO/WHO_Logo.svg"    loading="lazy" alt="World Health Organization"         style="height:54px; width:auto; filter:grayscale(1); opacity:0.42; transition:filter 0.25s, opacity 0.25s;" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1';" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.42';">
+        <img src="../Photos/UN LOGO/FAO_Logo.svg"    loading="lazy" alt="Food and Agriculture Organization" style="height:54px; width:auto; filter:grayscale(1); opacity:0.42; transition:filter 0.25s, opacity 0.25s;" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1';" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.42';">
+        <img src="../Photos/UN LOGO/Unicef_Logo.svg" loading="lazy" alt="UNICEF"                            style="height:54px; width:auto; filter:grayscale(1); opacity:0.42; transition:filter 0.25s, opacity 0.25s;" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1';" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.42';">
+        <img src="../Photos/UN LOGO/UNDP_Logo.svg"   loading="lazy" alt="UNDP"                              style="height:54px; width:auto; filter:grayscale(1); opacity:0.42; transition:filter 0.25s, opacity 0.25s;" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1';" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.42';">
+        <img src="../Photos/UN LOGO/UNOPS_Logo.svg"  loading="lazy" alt="UNOPS"                             style="height:54px; width:auto; filter:grayscale(1); opacity:0.42; transition:filter 0.25s, opacity 0.25s;" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1';" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.42';">
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:var(--gm-800); padding:var(--py) var(--px); position:relative; overflow:hidden;">
+    <div style="position:absolute; inset:0; background:radial-gradient(ellipse 60% 80% at 100% 50%, rgba(126,184,40,0.18) 0%, transparent 65%); pointer-events:none;"></div>
+    <div style="max-width:1200px; margin:0 auto; position:relative; z-index:1;">
+      <div style="display:grid; grid-template-columns:1fr auto; gap:4rem; align-items:center;" class="cta-inner">
+
+        <div class="anim-in">
+          <div class="eyebrow" style="color:rgba(165,204,72,0.6); margin-bottom:1.25rem;">НАЧАТЬ ПРОЕКТ</div>
+          <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:clamp(2.75rem,5.5vw,5.5rem); text-transform:uppercase; color:#fff; line-height:0.92; letter-spacing:-0.01em; margin-bottom:1.5rem;">
+            READY TO BUILD<br>
+            <span style="color:var(--gm-400);">СВОЮ ЛАБОРАТОРИЮ?</span>
+          </h2>
+          <p style="font-size:1rem; color:rgba(255,255,255,0.5); max-width:480px; line-height:1.8;">
+            Поделитесь кратким описанием проекта — мы подготовим подробное предложение с объёмом работ, сроками и инвестициями.
+          </p>
+        </div>
+
+        <div class="anim-in" style="display:flex; flex-direction:column; gap:1rem; flex-shrink:0; transition-delay:0.15s;">
+          <a href="proposal.html" class="btn btn-primary">
+            REQUEST A PROPOSAL
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="contact.html" class="btn btn-outline-white">СВЯЗАТЬСЯ</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div style="display:flex; justify-content:space-between; gap:4rem; margin-bottom:3rem; flex-wrap:wrap;" class="footer-inner">
+        <div style="max-width:280px;">
+          <img src="../brand_assets/GREENMED LOGO Vert.svg" alt="Green Med Ltd." style="height:100px; width:auto; margin-bottom:1.25rem; display:block;" loading="lazy">
+          <p style="font-size:0.875rem; color:rgba(255,255,255,0.38); line-height:1.75;">Global Medical Systems Integrator. Turnkey laboratory infrastructure, delivered end-to-end.</p>
+        </div>
+        <div style="display:flex; gap:4rem; flex-wrap:wrap;">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.25); margin-bottom:1.25rem;">COMPANY</div>
+            <a href="about.html"          class="fl">О НАС</a>
+            <a href="index.html#services" class="fl">УСЛУГИ</a>
+            <a href="index.html#process"  class="fl">ПРОЦЕСС</a>
+            <a href="contact.html"  class="fl">КОНТАКТ</a>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.25); margin-bottom:1.25rem;">SECTORS</div>
+            <span class="fl" style="cursor:default;">HEALTHCARE</span>
+            <span class="fl" style="cursor:default;">GOVERNMENT</span>
+            <span class="fl" style="cursor:default;">RESEARCH</span>
+            <span class="fl" style="cursor:default;">INT'L ORGS</span>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.25); margin-bottom:1.25rem;">SERVICES</div>
+            <span class="fl" style="cursor:default;">LABORATORY SETUP</span>
+            <span class="fl" style="cursor:default;">INSTRUMENTATION</span>
+            <span class="fl" style="cursor:default;">COMPLIANCE</span>
+            <span class="fl" style="cursor:default;">TECHNICAL SUPPORT</span>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.25); margin-bottom:1.25rem;">LEGAL</div>
+            <a href="../privacy_policy/privacy-policy.html" class="fl">PRIVACY POLICY</a>
+          </div>
+        </div>
+      </div>
+      <div style="padding-top:2rem; border-top:1px solid rgba(255,255,255,0.07); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+        <p style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; color:rgba(255,255,255,0.28);">© 2025 Green Med Ltd. · Registered in England &amp; Wales No. 13350293 · All rights reserved.</p>
+        <p style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; color:rgba(255,255,255,0.18); font-style:italic;">"From Concept to Completion."</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('mob-nav').classList.toggle('open');
+      document.getElementById('ham').classList.toggle('open');
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const delay = parseFloat(el.style.transitionDelay) || 0;
+          setTimeout(() => el.classList.add('visible'), delay * 1000);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.anim-in').forEach(el => observer.observe(el));
+
+    // Reveal hero immediately on load
+    const heroEls = document.querySelectorAll('section:first-of-type .anim-in');
+    heroEls.forEach((el, i) => setTimeout(() => el.classList.add('visible'), 100 + i * 160));
+  </script>
+</body>
+</html>
