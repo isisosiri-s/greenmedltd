@@ -459,6 +459,8 @@
         </div>
 
         <form id="proposal-form" novalidate>
+          <input type="hidden" name="_form" value="proposal">
+          <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;" aria-hidden="true">
 
           <!-- Section 1 — Services ───────────────────────────── -->
           <div class="form-section">
@@ -467,31 +469,31 @@
             <p style="font-size:0.875rem; color:var(--c-muted); margin-bottom:1.5rem;">Выберите всё, что относится к вашему проекту.</p>
             <div class="check-grid">
               <div class="check-card">
-                <input type="checkbox" id="s1" name="services" value="Turnkey Laboratory Setup">
+                <input type="checkbox" id="s1" name="services[]" value="Turnkey Laboratory Setup">
                 <label for="s1">Оснащение лаборатории под ключ</label>
               </div>
               <div class="check-card">
-                <input type="checkbox" id="s2" name="services" value="Analytical Instrumentation">
+                <input type="checkbox" id="s2" name="services[]" value="Analytical Instrumentation">
                 <label for="s2">Аналитическое оборудование</label>
               </div>
               <div class="check-card">
-                <input type="checkbox" id="s3" name="services" value="Quality & Compliance (ISO 15189)">
+                <input type="checkbox" id="s3" name="services[]" value="Quality & Compliance (ISO 15189)">
                 <label for="s3">Качество и соответствие (ISO 15189)</label>
               </div>
               <div class="check-card">
-                <input type="checkbox" id="s4" name="services" value="Cold Chain & Biosafety Infrastructure">
+                <input type="checkbox" id="s4" name="services[]" value="Cold Chain & Biosafety Infrastructure">
                 <label for="s4">Холодовая цепь и биобезопасность</label>
               </div>
               <div class="check-card">
-                <input type="checkbox" id="s5" name="services" value="Technical Support & Maintenance">
+                <input type="checkbox" id="s5" name="services[]" value="Technical Support & Maintenance">
                 <label for="s5">Техническая поддержка и обслуживание</label>
               </div>
               <div class="check-card">
-                <input type="checkbox" id="s6" name="services" value="Training & Capacity Building">
+                <input type="checkbox" id="s6" name="services[]" value="Training & Capacity Building">
                 <label for="s6">Обучение и развитие кадров</label>
               </div>
               <div class="check-card" style="grid-column:1/-1;">
-                <input type="checkbox" id="s7" name="services" value="Not sure yet">
+                <input type="checkbox" id="s7" name="services[]" value="Not sure yet">
                 <label for="s7">Пока не уверен — нужна консультация</label>
               </div>
             </div>
@@ -821,10 +823,26 @@
         return;
       }
 
-      this.style.display = 'none';
-      const success = document.getElementById('success-msg');
-      success.style.display = 'block';
-      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      const form = this;
+      const submitBtn = form.querySelector('.btn-submit');
+      const originalLabel = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'ОТПРАВКА…';
+
+      fetch('/form-handler.php', { method: 'POST', body: new FormData(form) })
+        .then(res => res.json().catch(() => ({ ok: false })))
+        .then(data => {
+          if (!data.ok) throw new Error(data.error || 'Send failed');
+          form.style.display = 'none';
+          const success = document.getElementById('success-msg');
+          success.style.display = 'block';
+          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        })
+        .catch(() => {
+          alert('Извините — не удалось отправить сообщение. Пожалуйста, напишите нам напрямую на support@greenmedltduk.com.');
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalLabel;
+        });
     });
   </script>
 

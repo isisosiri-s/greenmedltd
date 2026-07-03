@@ -408,6 +408,8 @@
         <p class="form-subtitle">Заполните форму ниже и расскажите, как мы можем помочь.</p>
 
         <form id="contact-form" novalidate>
+          <input type="hidden" name="_form" value="contact">
+          <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;" aria-hidden="true">
 
           <div class="input-row">
             <div class="f-group">
@@ -634,10 +636,26 @@
         return;
       }
 
-      this.style.display = 'none';
-      const success = document.getElementById('success-msg');
-      success.style.display = 'block';
-      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      const form = this;
+      const submitBtn = form.querySelector('.btn-submit');
+      const originalLabel = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'ОТПРАВКА…';
+
+      fetch('/form-handler.php', { method: 'POST', body: new FormData(form) })
+        .then(res => res.json().catch(() => ({ ok: false })))
+        .then(data => {
+          if (!data.ok) throw new Error(data.error || 'Send failed');
+          form.style.display = 'none';
+          const success = document.getElementById('success-msg');
+          success.style.display = 'block';
+          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        })
+        .catch(() => {
+          alert('Извините — не удалось отправить сообщение. Пожалуйста, напишите нам напрямую на support@greenmedltduk.com.');
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalLabel;
+        });
     });
   </script>
 
