@@ -201,6 +201,8 @@
       <p class="quote-card-title">Запросить предложение</p>
       <div class="qform-success" id="quoteSuccess">Спасибо — ваш запрос получен. Наша команда свяжется с вами в ближайшее время.</div>
       <form class="qform" id="quoteForm" onsubmit="submitQuote(event)">
+        <input type="hidden" name="_form" value="quote">
+        <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;" aria-hidden="true">
         <div><label for="qName">Полное имя *</label><input type="text" id="qName" name="name" placeholder="Ваше имя" required></div>
         <div><label for="qEmail">Электронная почта *</label><input type="email" id="qEmail" name="email" placeholder="your@email.com" required></div>
         <div><label for="qCompany">Организация</label><input type="text" id="qCompany" name="company" placeholder="Лаборатория / Учреждение"></div>
@@ -231,16 +233,23 @@
 <script>
   function submitQuote(e) {
     e.preventDefault();
-    var name    = document.getElementById('qName').value;
-    var email   = document.getElementById('qEmail').value;
-    var company = document.getElementById('qCompany').value;
-    var phone   = document.getElementById('qPhone').value;
-    var message = document.getElementById('qMessage').value;
-    var product = 'GREENMED4243JP9104 — Filament Assembly for GC/MS 7890';
-    var body = encodeURIComponent('Product: ' + product + '\nName: ' + name + '\nCompany: ' + company + '\nPhone: ' + phone + '\n\n' + message);
-    window.location.href = 'mailto:support@greenmed.ltd?subject=' + encodeURIComponent('Запрос предложения — ' + product) + '&body=' + body;
-    document.getElementById('quoteForm').style.display = 'none';
-    document.getElementById('quoteSuccess').classList.add('visible');
+    var form = document.getElementById('quoteForm');
+    var btn = form.querySelector('.qform-submit');
+    var originalLabel = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'ОТПРАВКА…';
+    fetch('/form-handler.php', { method: 'POST', body: new FormData(form) })
+      .then(function(res) { return res.json().catch(function () { return { ok: false }; }); })
+      .then(function(data) {
+        if (!data.ok) throw new Error(data.error || 'Send failed');
+        document.getElementById('quoteForm').style.display = 'none';
+        document.getElementById('quoteSuccess').classList.add('visible');
+      })
+      .catch(function() {
+        alert('Извините — не удалось отправить запрос. Пожалуйста, напишите нам напрямую на support@greenmedltduk.com.');
+        btn.disabled = false;
+        btn.textContent = originalLabel;
+      });
   }
   function toggleNav() {
     document.getElementById('mob-nav').classList.toggle('open');

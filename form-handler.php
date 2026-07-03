@@ -1,7 +1,8 @@
 <?php
 /**
- * Receives POST submissions from the Contact and Proposal forms (English
- * and Russian versions) and emails them to the GREEN MED inbox.
+ * Receives POST submissions from the Contact, Proposal, and per-product
+ * quote-request forms (English and Russian versions) and emails them to
+ * the GREEN MED inbox.
  */
 
 header('Content-Type: application/json; charset=UTF-8');
@@ -39,8 +40,13 @@ function fieldMulti(string $key): string {
     return implode(', ', array_filter($clean, fn($v) => $v !== ''));
 }
 
+$formTypes = [
+    'proposal' => 'Proposal Form',
+    'quote'    => 'Product Quote Request',
+];
+
 $to       = 'support@greenmedltduk.com';
-$formType = field('_form') === 'proposal' ? 'Proposal Form' : 'Contact Form';
+$formType = $formTypes[field('_form')] ?? 'Contact Form';
 $name     = field('name');
 $email    = field('email');
 
