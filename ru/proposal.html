@@ -346,6 +346,37 @@
     .trust-text { font-size: 0.8125rem; color: var(--c-dark); line-height: 1.6; }
     .trust-text strong { display: block; font-weight: 400; color: var(--c-black); margin-bottom: 0.1rem; }
 
+    /* ── Consent checkbox (custom-drawn, immune to native-checkbox rendering bugs) ── */
+    .consent-check { position: relative; margin-bottom: 1.5rem; }
+    .consent-check input[type="checkbox"] {
+      position: absolute; left: 0; top: 2px;
+      width: 16px; height: 16px; margin: 0;
+      opacity: 0; cursor: pointer; z-index: 1;
+    }
+    .consent-check label {
+      position: relative; display: block;
+      padding-left: 26px; cursor: pointer;
+    }
+    .consent-check label::before {
+      content: ''; position: absolute; left: 0; top: 1px;
+      width: 16px; height: 16px;
+      border: 1.5px solid var(--c-muted); border-radius: 3px;
+      background: #fff;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .consent-check input:checked + label::before {
+      background: var(--gm-400); border-color: var(--gm-400);
+    }
+    .consent-check input:checked + label::after {
+      content: ''; position: absolute; left: 5px; top: 5px;
+      width: 5px; height: 9px;
+      border: solid #fff; border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+    .consent-check input:focus-visible + label::before {
+      outline: 2px solid var(--gm-400); outline-offset: 2px;
+    }
+
     /* ── Footer ────────────────────────────────────────────── */
     .footer { background: var(--c-footer); padding: 4rem var(--px) 2.5rem; }
     .fl {
@@ -633,10 +664,9 @@
           </div>
 
           <!-- Consent ────────────────────────────────────────── -->
-          <div style="display:flex; align-items:flex-start; gap:0.75rem; margin-bottom:1.5rem;">
-            <input type="checkbox" id="gdpr-consent" name="gdpr_consent" required
-              style="margin-top:3px; width:16px; height:16px; accent-color:var(--gm-500); flex-shrink:0; cursor:pointer;">
-            <label for="gdpr-consent" style="font-size:0.8125rem; color:var(--c-muted); line-height:1.6; cursor:pointer;">
+          <div class="consent-check">
+            <input type="checkbox" id="gdpr-consent" name="gdpr_consent" required>
+            <label for="gdpr-consent" style="font-size:0.8125rem; color:var(--c-muted); line-height:1.6;">
               Я соглашаюсь на связь со стороны Green Med Ltd. и на обработку моих персональных данных в соответствии с
               <a href="../privacy_policy/privacy-policy.html" target="_blank" style="color:var(--gm-500); text-decoration:underline;">Политика конфиденциальности</a>.
               Я понимаю, что могу отозвать своё согласие в любое время. *
