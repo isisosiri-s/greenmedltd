@@ -124,12 +124,13 @@
       display: flex; align-items: center;
       justify-content: space-between; gap: 2rem;
     }
-    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; }
     .nav-link {
       font-family: 'Bebas Neue', sans-serif;
       font-weight: 600; font-size: 0.875rem;
       letter-spacing: 0.1em; text-transform: uppercase;
       color: var(--c-dark); text-decoration: none;
+      white-space: nowrap;
       transition: color 0.2s;
     }
     .nav-link:hover { color: var(--gm-500); }
@@ -563,6 +564,101 @@
       .svc-modal-footer { padding: 1.25rem 1.25rem; }
       .svc-modal-highlights { padding: 0.625rem 1.25rem; }
     }
+
+    /* ── Certification cards ─────────────────────────────────── */
+    .cert-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid var(--c-rule);
+      border-left: 1px solid var(--c-rule);
+      margin-bottom: 2.5rem;
+    }
+    .cert-card {
+      position: relative; overflow: hidden;
+      padding: 2.5rem 2.25rem;
+      background: var(--c-white);
+      border-right: 1px solid var(--c-rule);
+      border-bottom: 1px solid var(--c-rule);
+      transition: background 0.2s;
+    }
+    .cert-card::after {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 2px; background: var(--gm-400);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .cert-card:hover::after { transform: scaleX(1); }
+    .cert-card:hover { background: #F4FBDF; }
+    .cert-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem; color: var(--gm-500);
+      letter-spacing: 0.1em;
+      margin-bottom: 1.25rem; display: block;
+    }
+    .cert-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1.375rem;
+      text-transform: uppercase; color: var(--c-black);
+      line-height: 1.15; margin-bottom: 0.75rem;
+    }
+    .cert-desc {
+      font-size: 0.9rem; color: var(--c-dark);
+      line-height: 1.75; margin-bottom: 1.5rem;
+    }
+    .cert-meta {
+      display: flex; flex-direction: column; gap: 0.625rem;
+      padding: 1.25rem 0; margin-bottom: 1.5rem;
+      border-top: 1px solid var(--c-rule);
+      border-bottom: 1px solid var(--c-rule);
+    }
+    .cert-meta-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      gap: 1rem; flex-wrap: wrap;
+    }
+    .cert-meta-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6875rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--c-muted);
+      flex-shrink: 0;
+    }
+    .cert-meta-val {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8125rem; color: var(--c-dark);
+      text-align: right;
+    }
+    .cert-meta-val[data-todo] {
+      color: var(--gm-600); background: #F4FBDF;
+      padding: 0.0625rem 0.5rem; border: 1px dashed var(--gm-300);
+    }
+    .cert-doc-btn {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 0.75rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      color: var(--gm-500); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .cert-doc-btn:hover { color: var(--gm-600); }
+    .cert-doc-btn:focus-visible { outline: 2px solid var(--gm-400); outline-offset: 3px; }
+    .cert-statement {
+      border-left: 2px solid var(--gm-400);
+      padding: 1.75rem 2.25rem;
+      background: var(--c-white);
+    }
+    .cert-statement-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 400; font-size: 0.8125rem; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--gm-600);
+      display: block; margin-bottom: 0.5rem;
+    }
+    .cert-statement p {
+      font-size: 1rem; color: var(--c-dark); line-height: 1.8;
+    }
+    @media (max-width: 768px) {
+      .cert-grid { grid-template-columns: 1fr !important; }
+      .cert-meta-row { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+      .cert-meta-val { text-align: left; }
+    }
   </style>
 </head>
 <body>
@@ -579,6 +675,7 @@
       <div class="nav-links">
         <a href="about.html"    class="nav-link">О НАС</a>
         <a href="#manufacturer"  class="nav-link">ПРОИЗВОДСТВО</a>
+        <a href="#certifications" class="nav-link">СЕРТИФИКАЦИЯ</a>
         <a href="#services"      class="nav-link">УСЛУГИ</a>
         <a href="projects.html" class="nav-link">ПРОЕКТЫ</a>
         <a href="products.html" class="nav-link">ПРОДУКТЫ</a>
@@ -596,6 +693,7 @@
   <div class="mobile-nav" id="mob-nav">
     <a href="about.html"    class="nav-link" onclick="toggleNav()">О НАС</a>
     <a href="#manufacturer"  class="nav-link" onclick="toggleNav()">ПРОИЗВОДСТВО</a>
+    <a href="#certifications" class="nav-link" onclick="toggleNav()">СЕРТИФИКАЦИЯ</a>
     <a href="#services"      class="nav-link" onclick="toggleNav()">УСЛУГИ</a>
     <a href="projects.html" class="nav-link" onclick="toggleNav()">ПРОЕКТЫ</a>
     <a href="products.html" class="nav-link" onclick="toggleNav()">ПРОДУКТЫ</a>
@@ -828,6 +926,84 @@
           <div class="proc-title">Субпроизводители и наша модель партнёрства</div>
           <p class="proc-desc">Наши субпроизводители — авторизованные партнёры, которые производят продукцию в соответствии с техническими спецификациями и критериями качества, определёнными Green Med Ltd. Спецификация продукта и система качества устанавливаются централизованно; наши производственные партнёры осуществляют производство в рамках этой системы. Это обеспечивает неизменный уровень качества во всей широкой производственной сети.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       QUALITY & CERTIFICATIONS
+  ════════════════════════════════════════════════════════════ -->
+  <section id="certifications" class="section" style="background:var(--c-bg); border-top:1px solid var(--c-rule);">
+    <div class="container">
+      <div style="margin-bottom:3.5rem;" class="anim-in">
+        <div class="eyebrow" style="margin-bottom:1.375rem;">СЕРТИФИЦИРОВАННАЯ СИСТЕМА КАЧЕСТВА</div>
+        <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2.25rem,4vw,3.5rem); text-transform:uppercase; color:var(--c-black); line-height:1; margin-bottom:1.25rem;">
+          КАЧЕСТВО И СЕРТИФИКАЦИЯ
+        </h2>
+        <p style="font-size:1.0625rem; color:var(--c-dark); max-width:680px; line-height:1.8;">
+          Являясь официальным производителем собственной линейки продукции, Green Med Ltd. разрабатывает, документирует и выпускает свою продукцию в рамках сертифицированной системы менеджмента качества.
+        </p>
+      </div>
+
+      <div class="cert-grid anim-in">
+        <!-- ISO 13485 -->
+        <div class="cert-card">
+          <span class="cert-tag">ISO 13485</span>
+          <div class="cert-title">Система менеджмента качества медицинских изделий</div>
+          <p class="cert-desc">Green Med Ltd. использует сертифицированную систему менеджмента качества ISO 13485, охватывающую разработку и производство своей линейки продукции.</p>
+
+          <!-- TODO: when the ISO 13485 certificate arrives, fill in the real certificate number, issuing body and dates below, then unhide this block
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span class="cert-meta-label">Certificate No.</span>
+              <span class="cert-meta-val">{{ISO_13485_CERT_NUMBER}}</span>
+            </div>
+            <div class="cert-meta-row">
+              <span class="cert-meta-label">Issuing Body</span>
+              <span class="cert-meta-val">{{ISSUING_BODY}}</span>
+            </div>
+            <div class="cert-meta-row">
+              <span class="cert-meta-label">Issued / Expires</span>
+              <span class="cert-meta-val">{{ISSUE_DATE}} – {{EXPIRY_DATE}}</span>
+            </div>
+          </div>
+          -->
+
+          <a href="contact.html" class="cert-doc-btn">
+            ДОКУМЕНТАЦИЯ ПРЕДОСТАВЛЯЕТСЯ ПО ЗАПРОСУ
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <!-- CE Declaration of Conformity -->
+        <div class="cert-card">
+          <span class="cert-tag">МАРКИРОВКА CE</span>
+          <div class="cert-title">Декларация соответствия CE</div>
+          <p class="cert-desc">Продукция с маркировкой CE выпускается на рынок компанией Green Med Ltd. в качестве официального производителя, подтверждённого Декларацией соответствия.</p>
+
+          <!-- TODO: when the CE Declaration of Conformity arrives, fill in the real reference number and issue date below, then unhide this block
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span class="cert-meta-label">DoC Reference</span>
+              <span class="cert-meta-val">{{CE_DOC_REFERENCE}}</span>
+            </div>
+            <div class="cert-meta-row">
+              <span class="cert-meta-label">Issued</span>
+              <span class="cert-meta-val">{{ISSUE_DATE}}</span>
+            </div>
+          </div>
+          -->
+
+          <a href="contact.html" class="cert-doc-btn">
+            ДОКУМЕНТАЦИЯ ПРЕДОСТАВЛЯЕТСЯ ПО ЗАПРОСУ
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="cert-statement anim-in">
+        <span class="cert-statement-label">Официальный производитель: Green Med Ltd.</span>
+        <p>Green Med Ltd. является официально зарегистрированным производителем своей линейки продукции. Регуляторная документация, включая сертификат ISO 13485 и Декларацию соответствия CE, предоставляется по запросу.</p>
       </div>
     </div>
   </section>
@@ -1112,6 +1288,7 @@ United Kingdom, N17 9QU</div>
             <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.25); margin-bottom:1.25rem;">КОМПАНИЯ</div>
             <a href="#about"        class="fl">О НАС</a>
             <a href="#manufacturer" class="fl">ПРОИЗВОДСТВО</a>
+            <a href="#certifications" class="fl">СЕРТИФИКАЦИЯ</a>
             <a href="#services"     class="fl">УСЛУГИ</a>
             <a href="#process"      class="fl">ПРОЦЕСС</a>
             <a href="contact.html"  class="fl">КОНТАКТ</a>
