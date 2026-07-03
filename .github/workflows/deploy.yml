@@ -30,5 +30,4 @@ jobs:
             serve.mjs
             generate-pages.js
             generate-pages.ps1
-            form-handler.php
             Info/**

@@ -12,6 +12,3 @@ node_modules/
 
 # Excel working file (not needed in repo)
 products/Morfology Lab Product List Moby.xlsx
-
-# Server-side form handler — uploaded to hosting manually, never via git/CI
-form-handler.php
