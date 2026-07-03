@@ -106,6 +106,13 @@
     .qform-submit:focus-visible{outline:2px solid var(--gm-400);outline-offset:2px}
     .qform-success{display:none;padding:1.25rem 1.5rem;background:rgba(126,184,40,.08);border-left:3px solid var(--gm-400);font-size:.9375rem;color:var(--c-dark);line-height:1.6}
     .qform-success.visible{display:block}
+    .consent-check{position:relative}
+    .consent-check input[type="checkbox"]{position:absolute;left:0;top:2px;width:16px;height:16px;margin:0;opacity:0;cursor:pointer;z-index:1}
+    .consent-check label{position:relative;display:block;padding-left:26px;cursor:pointer}
+    .consent-check label::before{content:'';position:absolute;left:0;top:1px;width:16px;height:16px;border:1.5px solid var(--c-muted);border-radius:3px;background:#fff;transition:background .15s,border-color .15s}
+    .consent-check input:checked+label::before{background:var(--gm-400);border-color:var(--gm-400)}
+    .consent-check input:checked+label::after{content:'';position:absolute;left:5px;top:5px;width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+    .consent-check input:focus-visible+label::before{outline:2px solid var(--gm-400);outline-offset:2px}
     footer{background:var(--c-footer);padding:2.5rem var(--px)}
     .footer-inner{max-width:1440px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
     .footer-copy{font-size:.8125rem;color:rgba(255,255,255,.35)}
@@ -223,9 +230,9 @@
         <div><label for="qPhone">Phone</label><input type="tel" id="qPhone" name="phone" placeholder="+44 ..."></div>
         <div><label for="qMessage">Message</label><textarea id="qMessage" name="message" placeholder="Additional requirements, quantity, delivery info&hellip;"></textarea></div>
         <input type="hidden" name="product" value="GREENMED7901JB2961 — Conditioning Reagent for 3500 Genetic Analyzer">
-        <div style="display:flex;align-items:flex-start;gap:.75rem;">
-          <input type="checkbox" id="gdpr-consent" name="gdpr_consent" required style="margin-top:3px;width:16px;height:16px;accent-color:var(--gm-500);flex-shrink:0;cursor:pointer;">
-          <label for="gdpr-consent" style="font-size:.8125rem;color:var(--c-muted);line-height:1.6;cursor:pointer;text-transform:none;letter-spacing:0;">
+        <div class="consent-check">
+          <input type="checkbox" id="gdpr-consent" name="gdpr_consent" required>
+          <label for="gdpr-consent" style="font-size:.8125rem;color:var(--c-muted);line-height:1.6;text-transform:none;letter-spacing:0;">
             I agree to be contacted by Green Med Ltd. and for my personal data to be processed in accordance with the
             <a href="../privacy_policy/privacy-policy.html" style="color:var(--gm-500);text-decoration:underline;">Privacy Policy</a>. *
           </label>
