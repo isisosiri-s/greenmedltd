@@ -6,6 +6,22 @@
 
 header('Content-Type: application/json; charset=UTF-8');
 
+// TEMPORARY diagnostic shutdown handler — remove once the 500 is root-caused.
+register_shutdown_function(function () {
+    $err = error_get_last();
+    if ($err && in_array($err['type'], [E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR], true)) {
+        if (!headers_sent()) {
+            http_response_code(500);
+            header('Content-Type: application/json; charset=UTF-8');
+        }
+        echo json_encode([
+            'ok'    => false,
+            'error' => 'Fatal error',
+            'debug' => $err['message'] . ' @ line ' . $err['line'],
+        ]);
+    }
+});
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     echo json_encode(['ok' => false, 'error' => 'Method not allowed']);
