@@ -6,21 +6,15 @@
 
 header('Content-Type: application/json; charset=UTF-8');
 
-// TEMPORARY diagnostic shutdown handler — remove once the 500 is root-caused.
-register_shutdown_function(function () {
-    $err = error_get_last();
-    if ($err && in_array($err['type'], [E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR], true)) {
-        if (!headers_sent()) {
-            http_response_code(500);
-            header('Content-Type: application/json; charset=UTF-8');
-        }
-        echo json_encode([
-            'ok'    => false,
-            'error' => 'Fatal error',
-            'debug' => $err['message'] . ' @ line ' . $err['line'],
-        ]);
-    }
-});
+require __DIR__ . '/smtp-mailer.php';
+
+$smtpConfigFile = __DIR__ . '/smtp-config.php';
+if (!file_exists($smtpConfigFile)) {
+    http_response_code(500);
+    echo json_encode(['ok' => false, 'error' => 'SMTP not configured']);
+    exit;
+}
+$smtpConfig = require $smtpConfigFile;
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -70,11 +64,15 @@ foreach ($_POST as $key => $value) {
 $body = implode("\n", $lines);
 $subjectLine = '=?UTF-8?B?' . base64_encode('[GREEN MED Website] ' . $formType . ' - ' . $name) . '?=';
 
-$headers  = "From: Website <no-reply@greenmedltduk.com>\r\n";
-$headers .= "Reply-To: " . $name . " <" . $email . ">\r\n";
-$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-
-$sent = @mail($to, $subjectLine, $body, $headers);
+[$sent, $err] = smtp_send(
+    $smtpConfig,
+    $to,
+    $smtpConfig['username'],
+    'GREEN MED Website',
+    $name . ' <' . $email . '>',
+    $subjectLine,
+    $body
+);
 
 if (!$sent) {
     http_response_code(500);

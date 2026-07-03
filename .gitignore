@@ -12,3 +12,6 @@ node_modules/
 
 # Excel working file (not needed in repo)
 products/Morfology Lab Product List Moby.xlsx
+
+# SMTP credentials — real secret, uploaded to hosting manually via FTP only
+smtp-config.php
