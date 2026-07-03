@@ -9,3 +9,6 @@ temporary screenshots/
 
 # Node modules (if ever added)
 node_modules/
+
+# Excel working file (not needed in repo)
+products/Morfology Lab Product List Moby.xlsx
