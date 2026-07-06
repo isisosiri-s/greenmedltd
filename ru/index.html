@@ -71,6 +71,29 @@
 
   <style>
     /* ── CSS Variables ──────────────────────────────────────── */
+    /* ── Skip link (a11y) ───────────────────────────────────── */
+    .skip-link {
+      position: fixed;
+      left: 8px;
+      top: 8px;
+      z-index: 2000;
+      transform: translateY(-160%);
+      background: var(--gm-600);
+      color: #fff;
+      padding: 0.75rem 1.25rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8125rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-radius: 6px;
+      transition: transform 0.18s ease;
+    }
+    .skip-link:focus {
+      transform: translateY(0);
+      outline: 3px solid var(--gm-300);
+      outline-offset: 2px;
+    }
+
     :root {
       --c-black:  #1C1C1C;
       --c-anthra: #2B2B2B;
@@ -678,6 +701,8 @@
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">Перейти к основному содержанию</a>
+
   <!-- ═══════════════════════════════════════════════════════════
        NAV
   ════════════════════════════════════════════════════════════ -->
@@ -715,6 +740,8 @@
     <a href="contact.html"  class="nav-link" onclick="toggleNav()">КОНТАКТ</a>
     <a href="contact.html"  class="btn btn-primary" style="width:fit-content; margin-top:0.5rem;" onclick="toggleNav()">СВЯЗАТЬСЯ</a>
   </div>
+
+  <main id="main-content">
 
   <!-- ═══════════════════════════════════════════════════════════
        HERO
@@ -1287,6 +1314,8 @@ United Kingdom, N17 9QU</div>
   <!-- ═══════════════════════════════════════════════════════════
        FOOTER
   ════════════════════════════════════════════════════════════ -->
+  </main>
+
   <footer class="footer">
     <div style="max-width:1440px; margin:0 auto;">
       <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:3rem; margin-bottom:3rem;" class="footer-inner">

@@ -41,9 +41,31 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@300;400&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
+    /* ── Skip link (a11y) ───────────────────────────────────── */
+    .skip-link {
+      position: fixed;
+      left: 8px;
+      top: 8px;
+      z-index: 2000;
+      transform: translateY(-160%);
+      background: var(--gm-600);
+      color: #fff;
+      padding: 0.75rem 1.25rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8125rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-radius: 6px;
+      transition: transform 0.18s ease;
+    }
+    .skip-link:focus {
+      transform: translateY(0);
+      outline: 3px solid var(--gm-300);
+      outline-offset: 2px;
+    }
+
     :root {
       --c-black:  #1C1C1C;
       --c-dark:   #4A4A4A;
@@ -531,6 +553,8 @@
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">Перейти к основному содержанию</a>
+
   <!-- NAV -->
   <nav class="nav">
     <div class="nav-inner">
@@ -559,6 +583,8 @@
     <a href="contact.html"  class="nav-link" onclick="toggleNav()">КОНТАКТ</a>
     <a href="contact.html"  class="btn btn-primary" style="width:fit-content; margin-top:0.5rem;" onclick="toggleNav()">СВЯЗАТЬСЯ</a>
   </div>
+
+  <main id="main-content">
 
   <!-- HERO -->
   <section style="padding-top:64px; background:var(--c-footer); position:relative; overflow:hidden; min-height:48vh; display:flex; align-items:center;">
@@ -1124,6 +1150,8 @@
   </section>
 
   <!-- FOOTER -->
+  </main>
+
   <footer class="footer">
     <div style="max-width:1200px; margin:0 auto;">
       <div style="display:flex; justify-content:space-between; gap:4rem; margin-bottom:3rem; flex-wrap:wrap;" class="footer-inner">

@@ -25,6 +25,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
+    /* ── Skip link (a11y) ───────────────────────────────────── */
+    .skip-link {
+      position: fixed;
+      left: 8px;
+      top: 8px;
+      z-index: 2000;
+      transform: translateY(-160%);
+      background: var(--gm-600);
+      color: #fff;
+      padding: 0.75rem 1.25rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8125rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-radius: 6px;
+      transition: transform 0.18s ease;
+    }
+    .skip-link:focus {
+      transform: translateY(0);
+      outline: 3px solid var(--gm-300);
+      outline-offset: 2px;
+    }
+
     :root {
       --c-dark:   #4A4A4A;
       --c-bg:     #F7F8F2;
@@ -234,6 +257,8 @@
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <nav class="nav">
     <div class="nav-inner">
       <a href="/" aria-label="Green Med Ltd.">
@@ -243,7 +268,7 @@
     </div>
   </nav>
 
-  <main>
+  <main id="main-content">
     <div class="bg-404" aria-hidden="true">404</div>
 
     <div class="content">

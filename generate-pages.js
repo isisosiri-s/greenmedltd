@@ -21,32 +21,32 @@ const RU = require('./translations.ru.json');
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 const CAT_PREFIX = {
-  "Genomik & Sekanslama": "GRN01",
-  "Biyokimya":            "GRN03",
-  "Pipetleme":            "GRN05",
-  "Su Arıtma":            "GRN07",
-  "Genel Sarf":           "GRN10",
+  "genomics": "GRN01",
+  "biochemistry":            "GRN03",
+  "pipetting":            "GRN05",
+  "water-purification":            "GRN07",
+  "general":           "GRN10",
 };
 const CAT_LABEL = {
-  "Genomik & Sekanslama": "Genomics",
-  "Biyokimya":            "Biochemistry",
-  "Genel Sarf":           "General",
-  "Pipetleme":            "Pipetting",
-  "Su Arıtma":            "Water Purif.",
+  "genomics": "Genomics",
+  "biochemistry":            "Biochemistry",
+  "general":           "General",
+  "pipetting":            "Pipetting",
+  "water-purification":            "Water Purif.",
 };
 const CAT_LABEL_RU = {
-  "Genomik & Sekanslama": "Геномика",
-  "Biyokimya":            "Биохимия",
-  "Genel Sarf":           "Общий",
-  "Pipetleme":            "Пипетирование",
-  "Su Arıtma":            "Водоочистка",
+  "genomics": "Геномика",
+  "biochemistry":            "Биохимия",
+  "general":           "Общий",
+  "pipetting":            "Пипетирование",
+  "water-purification":            "Водоочистка",
 };
 const BADGE_CLASS = {
-  "Genomik & Sekanslama": "badge-genomics",
-  "Biyokimya":            "badge-biochem",
-  "Genel Sarf":           "badge-general",
-  "Pipetleme":            "badge-pipetting",
-  "Su Arıtma":            "badge-water",
+  "genomics": "badge-genomics",
+  "biochemistry":            "badge-biochem",
+  "general":           "badge-general",
+  "pipetting":            "badge-pipetting",
+  "water-purification":            "badge-water",
 };
 
 // One product's live URL slug doesn't match slugify(name) because the name
@@ -102,14 +102,35 @@ function descPlain(specs) {
   return specs.replace(/\n\n/g, ' ').replace(/\n/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
+const META_MAX = 160;
+
+// Truncate on a word boundary (never mid-word), trimming any dangling
+// punctuation/whitespace and appending an ellipsis.
+function truncateWords(str, max) {
+  if (str.length <= max) return str;
+  const cut = str.slice(0, max - 1);
+  const lastSpace = cut.lastIndexOf(' ');
+  const body = (lastSpace > 0 ? cut.slice(0, lastSpace) : cut).replace(/[\s—–,.;:-]+$/, '');
+  return body + '…';
+}
+
+// Build a meta description that keeps the boilerplate tail whole: include it
+// only if the full string fits, otherwise drop it (and word-truncate the lead
+// as a last resort) so snippets never end mid-word.
+function composeMeta(lead, tail) {
+  if ((lead + tail).length <= META_MAX) return lead + tail;
+  if (lead.length <= META_MAX) return lead;
+  return truncateWords(lead, META_MAX);
+}
+
 function metaDesc(p) {
-  const base = `${p.name} — ${p.sub}. Catalog: ${fullCatalog(p)}. Brand: ${p.brand}. Laboratory supply from Green Med Ltd.`;
-  return base.substring(0, 160);
+  const lead = `${p.name} — ${p.sub}. Catalog: ${fullCatalog(p)}. Brand: ${p.brand}.`;
+  return composeMeta(lead, ' Laboratory supply from Green Med Ltd.');
 }
 
 function metaDescRu(ru, catLabelRu, refNo) {
-  const base = `${ru.name} — ${catLabelRu}. Артикул: ${refNo}. Лабораторные реагенты и оборудование от Green Med Ltd.`;
-  return base.substring(0, 160);
+  const lead = `${ru.name} — ${catLabelRu}. Артикул: ${refNo}.`;
+  return composeMeta(lead, ' Лабораторные реагенты и оборудование от Green Med Ltd.');
 }
 
 // Shared <head> block: Yandex Metrika, favicon, canonical/OG/Twitter, hreflang.
@@ -157,6 +178,29 @@ function headExtras({ canonicalUrl, altUrl, lang, title, desc }) {
 
 // Shared CSS shared between EN/RU product pages (identical either way).
 const PAGE_STYLE = `  <style>
+    /* ── Skip link (a11y) ───────────────────────────────────── */
+    .skip-link {
+      position: fixed;
+      left: 8px;
+      top: 8px;
+      z-index: 2000;
+      transform: translateY(-160%);
+      background: var(--gm-600);
+      color: #fff;
+      padding: 0.75rem 1.25rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8125rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-radius: 6px;
+      transition: transform 0.18s ease;
+    }
+    .skip-link:focus {
+      transform: translateY(0);
+      outline: 3px solid var(--gm-300);
+      outline-offset: 2px;
+    }
+
     :root {
       --c-black:  #1C1C1C;
       --c-anthra: #2B2B2B;
@@ -524,6 +568,8 @@ ${jsonLd({ name: p.name, descriptionPlain: descPlain(p.specs), catLabel, refNo, 
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="../index.html" style="display:flex; align-items:center; flex-shrink:0; text-decoration:none;">
@@ -551,6 +597,8 @@ ${jsonLd({ name: p.name, descriptionPlain: descPlain(p.specs), catLabel, refNo, 
   <a href="../index.html#contact"  class="nav-link" onclick="toggleNav()">CONTACT</a>
   <a href="../index.html#contact"  class="btn-nav" style="width:fit-content; margin-top:0.5rem;" onclick="toggleNav()">GET IN TOUCH</a>
 </div>
+
+<main id="main-content">
 
 <header class="page-header">
   <div class="page-header-inner">
@@ -608,6 +656,8 @@ ${hasSpecs ? `      <div class="specs-section">
     </div>
   </div>
 </div>
+
+</main>
 
 <footer>
   <div class="footer-inner">
@@ -683,6 +733,8 @@ ${jsonLd({ name: ru.name, descriptionPlain: descPlain(ru.specs), catLabel, refNo
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Перейти к основному содержанию</a>
+
 <nav class="nav" role="navigation" aria-label="Основная навигация">
   <div class="nav-inner">
     <a href="../../../index.html" style="display:flex; align-items:center; flex-shrink:0; text-decoration:none;">
@@ -710,6 +762,8 @@ ${jsonLd({ name: ru.name, descriptionPlain: descPlain(ru.specs), catLabel, refNo
   <a href="../../../index.html#contact"  class="nav-link" onclick="toggleNav()">КОНТАКТ</a>
   <a href="../../../index.html#contact"  class="btn-nav" style="width:fit-content; margin-top:0.5rem;" onclick="toggleNav()">СВЯЗАТЬСЯ</a>
 </div>
+
+<main id="main-content">
 
 <header class="page-header">
   <div class="page-header-inner">
@@ -767,6 +821,8 @@ ${hasSpecs ? `      <div class="specs-section">
     </div>
   </div>
 </div>
+
+</main>
 
 <footer>
   <div class="footer-inner">
