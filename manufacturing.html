@@ -27,20 +27,20 @@
   <link rel="icon" type="image/svg+xml" href="/brand_assets/fav_icon-02.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manufacturing — Green Med Ltd.</title>
-  <meta name="description" content="Inside Green Med Ltd. manufacturing: as the UK-based principal manufacturer we design, produce, quality-control and release our own product line across a multi-site production network under one ISO 13485 standard.">
+  <meta name="description" content="Inside Green Med Ltd. manufacturing: as the UK-based legal manufacturer of record we design, produce, quality-control and centrally release our own product line across a governed multi-site manufacturing network under one ISO 13485 standard.">
   <link rel="canonical" href="https://www.greenmedltduk.com/manufacturing.html">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Green Med Ltd.">
   <meta property="og:locale" content="en_GB">
   <meta property="og:title" content="Manufacturing — Green Med Ltd.">
-  <meta property="og:description" content="As the UK-based principal manufacturer, Green Med Ltd. designs, produces, quality-controls and releases its own product line across a multi-site production network.">
+  <meta property="og:description" content="As the UK-based legal manufacturer of record, Green Med Ltd. designs, produces, quality-controls and centrally releases its own product line across a governed multi-site manufacturing network.">
   <meta property="og:image" content="https://www.greenmedltduk.com/Photos/og-image.jpg">
   <meta property="og:url" content="https://www.greenmedltduk.com/manufacturing.html">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Manufacturing — Green Med Ltd.">
-  <meta name="twitter:description" content="As the UK-based principal manufacturer, Green Med Ltd. designs, produces, quality-controls and releases its own product line across a multi-site production network.">
+  <meta name="twitter:description" content="As the UK-based legal manufacturer of record, Green Med Ltd. designs, produces, quality-controls and centrally releases its own product line across a governed multi-site manufacturing network.">
   <meta name="twitter:image" content="https://www.greenmedltduk.com/Photos/og-image.jpg">
 
   <link rel="alternate" hreflang="en" href="https://www.greenmedltduk.com/manufacturing.html" />
@@ -334,6 +334,63 @@
     }
     .cap-desc { font-size: 0.9rem; color: var(--c-dark); line-height: 1.75; }
 
+    /* ── Network tiers (hub-and-network model) ── */
+    .tier-stack { display: flex; flex-direction: column; gap: 1.5rem; }
+    .tier {
+      background: var(--c-white); border: 1px solid var(--c-rule);
+      border-left: 4px solid var(--gm-400);
+      padding: 2.25rem 2.5rem;
+      display: grid; grid-template-columns: 300px 1fr; gap: 3rem; align-items: start;
+      transition: transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.3s;
+    }
+    .tier:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(97,154,24,0.1), 0 2px 8px rgba(0,0,0,0.04); }
+    .tier-badge {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.625rem;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--gm-500);
+      margin-bottom: 0.85rem;
+    }
+    .tier-name {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+      font-size: 1.5rem; text-transform: uppercase; color: var(--c-black);
+      letter-spacing: 0.02em; line-height: 1.05; margin-bottom: 0.65rem;
+    }
+    .tier-role {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6875rem;
+      letter-spacing: 0.06em; text-transform: uppercase; color: var(--c-muted); line-height: 1.7;
+    }
+    .tier-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem 2rem; }
+    .tier-list li {
+      position: relative; padding-left: 1.4rem;
+      font-size: 0.9375rem; color: var(--c-dark); line-height: 1.6;
+    }
+    .tier-list li::before {
+      content: ''; position: absolute; left: 0; top: 0.5em;
+      width: 0.5rem; height: 0.5rem; background: var(--gm-400); border-radius: 1px; transform: rotate(45deg);
+    }
+
+    /* ── Network governance (control mechanisms) ── */
+    .gov-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 3.5rem; }
+    .gov-item {
+      display: grid; grid-template-columns: auto 1fr; gap: 1.25rem;
+      padding: 1.5rem 0; border-bottom: 1px solid var(--c-rule);
+    }
+    .gov-num {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem;
+      color: var(--gm-500); letter-spacing: 0.08em; padding-top: 0.2rem;
+    }
+    .gov-title {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+      font-size: 1.125rem; text-transform: uppercase; color: var(--c-black);
+      letter-spacing: 0.02em; margin-bottom: 0.35rem;
+    }
+    .gov-desc { font-size: 0.9rem; color: var(--c-dark); line-height: 1.7; }
+
+    @media (max-width: 768px) {
+      .tier { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.75rem 1.5rem; }
+      .tier-list { grid-template-columns: 1fr; }
+      .gov-grid { grid-template-columns: 1fr; }
+    }
+
     .footer { background: var(--c-footer); padding: 4rem var(--px) 2.5rem; }
     .fl {
       display: block; font-family: 'IBM Plex Mono', monospace;
@@ -424,8 +481,8 @@
         FROM DESIGN<br>
         <span style="color:var(--gm-400);">TO DEVICE.</span>
       </h1>
-      <p class="anim-in" style="font-size:1.125rem; color:rgba(255,255,255,0.52); max-width:560px; line-height:1.8; margin-bottom:3.5rem;">
-        Green Med Ltd. is the UK-based principal manufacturer of its own product line. We hold the design, the technical files and the quality standard — and we produce, inspect and release across a controlled multi-site manufacturing network.
+      <p class="anim-in" style="font-size:1.125rem; color:rgba(255,255,255,0.52); max-width:600px; line-height:1.8; margin-bottom:3.5rem;">
+        Green Med Ltd. is the UK-based legal manufacturer of its own product line. We hold the design, the technical files and the quality standard — and we design, produce, inspect and <strong style="color:rgba(255,255,255,0.75); font-weight:400;">release</strong> across a controlled, centrally governed multi-site manufacturing network.
       </p>
       <div class="anim-in" style="display:flex; gap:4rem; flex-wrap:wrap; padding-top:3rem; border-top:1px solid rgba(255,255,255,0.09);">
         <div>
@@ -437,18 +494,18 @@
           <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-top:0.5rem;">QUALITY SYSTEM</div>
         </div>
         <div>
-          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.75rem; color:var(--gm-400); line-height:1;">MULTI-SITE</div>
-          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-top:0.5rem;">PRODUCTION NETWORK</div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.75rem; color:var(--gm-400); line-height:1;">HUB&nbsp;&amp;&nbsp;NETWORK</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-top:0.5rem;">GOVERNED MULTI-SITE MODEL</div>
         </div>
         <div>
-          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.75rem; color:var(--gm-400); line-height:1;">CE</div>
-          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-top:0.5rem;">LEGAL MANUFACTURER</div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.75rem; color:var(--gm-400); line-height:1;">FINAL&nbsp;RELEASE</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-top:0.5rem;">HELD BY THE CENTRE</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- POSITION / PRINCIPAL MANUFACTURER -->
+  <!-- POSITION / LEGAL MANUFACTURER -->
   <section style="background:var(--c-bg); border-top:1px solid var(--c-rule); padding:var(--py) var(--px);">
     <div style="max-width:1200px; margin:0 auto;">
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:start;" class="two-col">
@@ -456,13 +513,13 @@
         <div class="anim-in">
           <div class="eyebrow" style="margin-bottom:1.5rem;">OUR POSITION</div>
           <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2rem,3.5vw,3.125rem); text-transform:uppercase; color:var(--c-black); line-height:1.02; margin-bottom:2rem;">
-            WE ARE THE PRINCIPAL<br>MANUFACTURER OF<br>OUR PRODUCT LINE
+            WE ARE THE LEGAL<br>MANUFACTURER OF<br>OUR PRODUCT LINE
           </h2>
           <p style="font-size:1.0625rem; color:var(--c-dark); line-height:1.85; margin-bottom:1.5rem;">
-            Green Med Ltd. operates as a UK-based principal manufacturer. The design, technical files, brand rights and quality standards of our products rest with us. Although production takes place across multiple locations, the centre that defines the identity and the standard of every product is Green Med Ltd.
+            Green Med Ltd. is the UK-based legal manufacturer of record for its own product line. The design, technical files, brand rights and quality standards rest centrally with us. Production takes place across a governed multi-site network, but the Centre that defines the identity and the standard of every product is Green Med Ltd. The sites are manufacturing locations — not the manufacturer.
           </p>
           <p style="font-size:1.0625rem; color:var(--c-dark); line-height:1.85;">
-            As the legal manufacturer of record, we design, document, inspect and release our products under a certified ISO 13485 quality management system — and place CE-marked devices on the market under our own Declaration of Conformity.
+            We design, document, inspect and release our products under a certified ISO 13485 quality management system, and carry the regulatory responsibility — registrations and the Declaration of Conformity. Wherever a product is made, <strong style="color:var(--c-black); font-weight:400;">final batch release is centralised at Green Med Ltd.</strong>
           </p>
         </div>
 
@@ -483,6 +540,182 @@
     </div>
   </section>
 
+  <!-- PRODUCT SCOPE — WHAT WE MANUFACTURE -->
+  <section style="background:var(--c-white); border-top:1px solid var(--c-rule); padding:var(--py) var(--px);">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div style="margin-bottom:3rem; max-width:680px;" class="anim-in">
+        <div class="eyebrow" style="margin-bottom:1.25rem;">PRODUCT SCOPE</div>
+        <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2rem,3.5vw,3.125rem); text-transform:uppercase; color:var(--c-black); line-height:1.02; margin-bottom:1rem;">WHAT WE MANUFACTURE</h2>
+        <p style="font-size:1rem; color:var(--c-dark); line-height:1.8;">
+          Our own product line spans four categories — all designed, specified and released under the Green Med standard.
+        </p>
+      </div>
+
+      <div style="display:flex; flex-wrap:wrap; gap:1.5rem;" class="anim-in">
+        <div class="cap-card" style="flex:1 1 220px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--gm-500);">01</div>
+          <div class="cap-title">IVD Reagents &amp; Test Kits</div>
+          <p class="cap-desc">In-vitro diagnostic reagents and test kits developed and manufactured to our specifications.</p>
+        </div>
+        <div class="cap-card" style="flex:1 1 220px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--gm-500);">02</div>
+          <div class="cap-title">Medical Devices &amp; Equipment</div>
+          <p class="cap-desc">Medical devices and medical equipment placed on the market under Green Med as the legal manufacturer.</p>
+        </div>
+        <div class="cap-card" style="flex:1 1 220px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--gm-500);">03</div>
+          <div class="cap-title">Laboratory Equipment</div>
+          <p class="cap-desc">Non-medical laboratory equipment engineered and built to defined performance and safety criteria.</p>
+        </div>
+        <div class="cap-card" style="flex:1 1 220px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--gm-500);">04</div>
+          <div class="cap-title">Consumables &amp; Chemicals</div>
+          <p class="cap-desc">Laboratory consumables and chemicals produced under the same controlled quality framework.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:1.75rem; border:1px solid var(--c-rule); border-left:4px solid var(--gm-400); background:var(--c-bg); padding:1.5rem 1.75rem;" class="anim-in">
+        <p style="font-size:0.95rem; color:var(--c-dark); line-height:1.75;">
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--gm-600); display:block; margin-bottom:0.4rem;">Manufactured vs. integrated</span>
+          OEM and third-party products are <strong style="color:var(--c-black); font-weight:400;">integrated or distributed — not manufactured</strong> by Green Med, and sit outside our manufacturing scope.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE MANUFACTURING NETWORK — 3-TIER STRUCTURE -->
+  <section style="background:var(--c-bg); border-top:1px solid var(--c-rule); padding:var(--py) var(--px);">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div style="margin-bottom:3.5rem; max-width:700px;" class="anim-in">
+        <div class="eyebrow" style="margin-bottom:1.25rem;">THE MANUFACTURING NETWORK</div>
+        <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2rem,3.5vw,3.125rem); text-transform:uppercase; color:var(--c-black); line-height:1.02; margin-bottom:1rem;">ONE CENTRE,<br>A GOVERNED NETWORK</h2>
+        <p style="font-size:1rem; color:var(--c-dark); line-height:1.8;">
+          Green Med operates a centrally governed hub-and-network model. The Centre in the UK holds design authority and the quality system; manufacturing hubs and authorised subcontractors produce strictly to Green Med's specifications and under its control. Wherever a product is physically made, Green Med Ltd. remains the legal manufacturer.
+        </p>
+      </div>
+
+      <div class="tier-stack anim-in">
+        <div class="tier">
+          <div>
+            <div class="tier-badge">TIER 01 · THE CENTRE</div>
+            <div class="tier-name">Green Med Ltd.<br>United Kingdom</div>
+            <div class="tier-role">Design authority · QMS owner · Legal manufacturer</div>
+          </div>
+          <ul class="tier-list">
+            <li>Holds design authority, technical documentation and brand rights</li>
+            <li>Owns the ISO 13485 quality management system</li>
+            <li>Carries regulatory responsibility — registrations &amp; Declaration of Conformity</li>
+            <li>Performs in-house manufacturing and quality control</li>
+            <li>Provides network oversight and site qualification</li>
+            <li>Holds exclusive final batch-release authority across the network</li>
+          </ul>
+        </div>
+        <div class="tier">
+          <div>
+            <div class="tier-badge">TIER 02 · MANUFACTURING HUBS</div>
+            <div class="tier-name">Türkiye&nbsp;×2<br>Germany</div>
+            <div class="tier-role">Audited sites · Manufacture to Green Med spec &amp; control</div>
+          </div>
+          <ul class="tier-list">
+            <li>Perform final manufacture — including higher-class products — to Green Med specifications</li>
+            <li>Operate strictly under Green Med's control and quality framework</li>
+            <li>Qualified and audited sites (announced &amp; unannounced)</li>
+            <li>Submit batches to the Centre for final release</li>
+          </ul>
+        </div>
+        <div class="tier">
+          <div>
+            <div class="tier-badge">TIER 03 · EXTENDED NETWORK</div>
+            <div class="tier-name">Authorised<br>Subcontractors</div>
+            <div class="tier-role">Thailand · Component &amp; lower-class production</div>
+          </div>
+          <ul class="tier-list">
+            <li>Qualified production of components and lower-class items</li>
+            <li>Feed the manufacturing hubs within the governed framework</li>
+            <li>Work to Green Med specifications and acceptance criteria</li>
+            <li>Presented by country and role only</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="margin-top:1.75rem; font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--c-muted); line-height:1.7;" class="anim-in">
+        Sites are shown by country and role. Regardless of manufacturing location, Green Med Ltd. is the legal manufacturer of record; final batch release is held exclusively by the Centre.
+      </p>
+    </div>
+  </section>
+
+  <!-- NETWORK GOVERNANCE -->
+  <section style="background:var(--c-white); border-top:1px solid var(--c-rule); padding:var(--py) var(--px);">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div style="margin-bottom:3rem; max-width:700px;" class="anim-in">
+        <div class="eyebrow" style="margin-bottom:1.25rem;">NETWORK GOVERNANCE</div>
+        <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2rem,3.5vw,3.125rem); text-transform:uppercase; color:var(--c-black); line-height:1.02; margin-bottom:1rem;">HOW THE CENTRE KEEPS ONE STANDARD</h2>
+        <p style="font-size:1rem; color:var(--c-dark); line-height:1.8;">
+          Every site operates inside the same control framework. These are the mechanisms the Centre uses to hold one standard across the whole network.
+        </p>
+      </div>
+
+      <div class="gov-grid anim-in">
+        <div class="gov-item">
+          <div class="gov-num">01</div>
+          <div>
+            <div class="gov-title">Central Design &amp; Specifications</div>
+            <p class="gov-desc">All products are designed and specified by the Centre; sites build to controlled technical documentation, never their own.</p>
+          </div>
+        </div>
+        <div class="gov-item">
+          <div class="gov-num">02</div>
+          <div>
+            <div class="gov-title">Site Qualification</div>
+            <p class="gov-desc">Every manufacturing hub and subcontractor is qualified against defined criteria before it may produce.</p>
+          </div>
+        </div>
+        <div class="gov-item">
+          <div class="gov-num">03</div>
+          <div>
+            <div class="gov-title">Signed Quality Agreements (QAA)</div>
+            <p class="gov-desc">A Quality Agreement with each site defines responsibilities, controls and reporting obligations.</p>
+          </div>
+        </div>
+        <div class="gov-item">
+          <div class="gov-num">04</div>
+          <div>
+            <div class="gov-title">Embedded On-Site Oversight</div>
+            <p class="gov-desc">Green Med personnel and on-site oversight keep production continuously aligned with the standard.</p>
+          </div>
+        </div>
+        <div class="gov-item">
+          <div class="gov-num">05</div>
+          <div>
+            <div class="gov-title">Green Med-Owned Critical Tooling</div>
+            <p class="gov-desc">Critical tooling is Green Med-owned where applicable, keeping process control with the Centre.</p>
+          </div>
+        </div>
+        <div class="gov-item">
+          <div class="gov-num">06</div>
+          <div>
+            <div class="gov-title">Test Protocols &amp; Quality Gates</div>
+            <p class="gov-desc">Defined test protocols and quality gates govern what may pass each stage of production.</p>
+          </div>
+        </div>
+        <div class="gov-item">
+          <div class="gov-num">07</div>
+          <div>
+            <div class="gov-title">Announced &amp; Unannounced Audits</div>
+            <p class="gov-desc">Regular and unannounced audits verify continued conformity at every site in the network.</p>
+          </div>
+        </div>
+        <div class="gov-item">
+          <div class="gov-num">08</div>
+          <div>
+            <div class="gov-title">Multi-Sourcing for Continuity</div>
+            <p class="gov-desc">Multiple qualified sources protect supply continuity without compromising the standard.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══════════════════════════════════════════════════════════
        FULL-BLEED PRODUCTION BAND  (#1)
        Illustrative production-line imagery. To swap, replace the
@@ -495,17 +728,14 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════════════
-       SPEC METRICS  (#3)  — replace every XX placeholder with a
-       verified figure. Delete a cell if a metric doesn't apply.
-  ════════════════════════════════════════════════════════════ -->
+  <!-- SPEC METRICS -->
   <section class="spec-band">
     <div style="position:relative; z-index:1; max-width:1440px; margin:0 auto; padding:3.5rem var(--px) 3.75rem;">
-      <div class="eyebrow anim-in" style="color:rgba(165,204,72,0.65); margin-bottom:2.25rem;">BY THE NUMBERS · PRODUCTION FACILITY</div>
+      <div class="eyebrow anim-in" style="color:rgba(165,204,72,0.65); margin-bottom:2.25rem;">BY THE NUMBERS · MANUFACTURING NETWORK</div>
       <div class="spec-grid anim-in">
         <div class="spec-cell">
           <div class="spec-num">3,851<span class="spec-unit"> m²</span></div>
-          <div class="spec-label">Total production area</div>
+          <div class="spec-label">Combined network floor area</div>
         </div>
         <div class="spec-cell">
           <div class="spec-num">ISO&nbsp;7</div>
@@ -513,16 +743,13 @@
         </div>
         <div class="spec-cell">
           <div class="spec-num">6<span class="spec-unit">+</span></div>
-          <div class="spec-label">Own product lines produced</div>
+          <div class="spec-label">Own product lines in production</div>
         </div>
         <div class="spec-cell">
           <div class="spec-num">7,580<span class="spec-unit"> /mo</span></div>
           <div class="spec-label">Monthly output capacity</div>
         </div>
       </div>
-      <p class="anim-in" style="margin-top:2rem; font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.3);">
-        // Replace XX placeholders with verified figures
-      </p>
     </div>
   </section>
 
@@ -571,7 +798,7 @@
           <div class="flow-num">01</div>
           <div>
             <div class="flow-title">Design &amp; R&amp;D</div>
-            <p class="flow-desc">Every product begins as a Green Med design. Our engineering and R&amp;D define the specification, materials and performance criteria — the intellectual property that makes us the principal manufacturer.</p>
+            <p class="flow-desc">Every product begins as a Green Med design. Our engineering and R&amp;D define the specification, materials and performance criteria — the intellectual property that makes us the legal manufacturer.</p>
           </div>
         </div>
         <div class="flow-step anim-in">
@@ -592,118 +819,104 @@
           <div class="flow-num">04</div>
           <div>
             <div class="flow-title">Production</div>
-            <p class="flow-desc">Manufacturing runs at our branch production facilities and authorised sub-manufacturers — always to the specification and quality criteria set by the centre. Producing close to demand shortens lead times and simplifies logistics.</p>
+            <p class="flow-desc">Manufacturing runs at Green Med's own facility, its manufacturing hubs (Türkiye ×2, Germany) and authorised subcontractors — always to the specification, controls and quality criteria set by the Centre. Producing close to demand shortens lead times and simplifies logistics.</p>
           </div>
         </div>
         <div class="flow-step anim-in">
           <div class="flow-num">05</div>
           <div>
             <div class="flow-title">Quality Control &amp; Testing</div>
-            <p class="flow-desc">In-process and final quality control verify that each batch meets the Green Med standard. Nothing moves forward until it conforms.</p>
+            <p class="flow-desc">In-process and final quality control verify that each batch meets the Green Med standard. For equipment this includes installation, operational and performance qualification (IQ/OQ/PQ), instrument calibration and — where relevant — cold-chain validation. Nothing moves forward until it conforms.</p>
           </div>
         </div>
         <div class="flow-step anim-in">
           <div class="flow-num">06</div>
           <div>
-            <div class="flow-title">Packaging, Labelling &amp; Release</div>
-            <p class="flow-desc">Products are packaged and labelled with the Green Med identity — including the legal manufacturer, batch and reference information — and released to market under our Declaration of Conformity.</p>
+            <div class="flow-title">Packaging &amp; Labelling</div>
+            <p class="flow-desc">Products are packaged and labelled with the Green Med identity — including the legal manufacturer, batch and reference information — and prepared for release.</p>
+          </div>
+        </div>
+        <div class="flow-step anim-in">
+          <div class="flow-num">07</div>
+          <div>
+            <div class="flow-title">Final Batch Release — Authorised by the Centre</div>
+            <p class="flow-desc">Regardless of where a batch is manufactured, final batch release is authorised exclusively by Green Med Ltd. (the Centre) and products are placed on the market under our Declaration of Conformity. Manufacturing hubs submit batches for release — they never release independently.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CAPABILITIES / NETWORK -->
-  <section style="background:var(--c-white); border-top:1px solid var(--c-rule); padding:var(--py) var(--px);">
-    <div style="max-width:1200px; margin:0 auto;">
-      <div style="margin-bottom:3.5rem; max-width:640px;" class="anim-in">
-        <div class="eyebrow" style="margin-bottom:1.25rem;">CAPABILITIES</div>
-        <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2rem,3.5vw,3.125rem); text-transform:uppercase; color:var(--c-black); line-height:1.02;">OUR MANUFACTURING NETWORK</h2>
-      </div>
-
-      <div class="cap-grid">
-        <div class="cap-card anim-in">
-          <div class="cap-icon">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="7.5" stroke="#619A18" stroke-width="1.5"/><path d="M10 5v5l3 2" stroke="#619A18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="cap-title">Multi-Site Production</div>
-          <p class="cap-desc">Branch production facilities in different countries let us produce close to where demand arises — shorter lead times, simpler logistics, faster response to local needs.</p>
-        </div>
-        <div class="cap-card anim-in" style="transition-delay:0.08s;">
-          <div class="cap-icon">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 16V7l6-3 6 3v9M4 16h12M8 16v-4h4v4" stroke="#619A18" stroke-width="1.5" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="cap-title">Authorised Sub-Manufacturers</div>
-          <p class="cap-desc">Our partners produce strictly to the technical specifications and quality criteria defined by Green Med Ltd. The centre sets the standard; partners execute within that framework.</p>
-        </div>
-        <div class="cap-card anim-in" style="transition-delay:0.16s;">
-          <div class="cap-icon">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2.5l2 4.5 5 .5-3.75 3.3L14.5 16 10 13.3 5.5 16l1.25-4.7L3 8l5-.5 2-4.5z" stroke="#619A18" stroke-width="1.4" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="cap-title">One Governed Standard</div>
-          <p class="cap-desc">Regardless of where a product is made, its specification and quality framework are centrally governed — keeping a consistent level of quality across the whole network.</p>
-        </div>
-        <div class="cap-card anim-in">
-          <div class="cap-icon">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="7.5" stroke="#619A18" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" stroke="#619A18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="cap-title">ISO 13485 Quality System</div>
-          <p class="cap-desc">Design and manufacture of our product line operate under a certified ISO 13485 medical-device quality management system.</p>
-        </div>
-        <div class="cap-card anim-in" style="transition-delay:0.08s;">
-          <div class="cap-icon">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2.5L4 5v5c0 3.5 2.6 6 6 7.5 3.4-1.5 6-4 6-7.5V5l-6-2.5z" stroke="#619A18" stroke-width="1.4" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="cap-title">Legal Manufacturer of Record</div>
-          <p class="cap-desc">CE-marked devices are placed on the market under Green Med Ltd. as the legal manufacturer, supported by a Declaration of Conformity.</p>
-        </div>
-        <div class="cap-card anim-in" style="transition-delay:0.16s;">
-          <div class="cap-icon">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 10h14M10 3v14" stroke="#619A18" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="10" r="7.5" stroke="#619A18" stroke-width="1.5"/></svg>
-          </div>
-          <div class="cap-title">Traceability</div>
-          <p class="cap-desc">Batch and reference information travels with every product, linking each unit back to its technical file and quality records.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- QUALITY STRIP -->
+  <!-- QUALITY & REGULATORY FRAMEWORK -->
   <section style="background:var(--c-bg); border-top:1px solid var(--c-rule); padding:var(--py) var(--px);">
-    <div style="max-width:1000px; margin:0 auto;">
+    <div style="max-width:1100px; margin:0 auto;">
 
-      <!-- ─────────────────────────────────────────────────────────
-           CERTIFICATION / ACCREDITATION LOGO STRIP  (#5)
-           Swap each placeholder for the real mark, e.g.:
-             <div class="cert-logo"><img src="brand_assets/certs/iso-13485.svg" alt="ISO 13485"></div>
-           Keep them monochrome-friendly; they de-saturate until hover.
-      ────────────────────────────────────────────────────────── -->
-      <div style="margin-bottom:3rem;" class="anim-in">
-        <div class="eyebrow" style="margin-bottom:1.5rem;">STANDARDS &amp; MARKS</div>
+      <div style="margin-bottom:3rem; max-width:700px;" class="anim-in">
+        <div class="eyebrow" style="margin-bottom:1.25rem;">QUALITY &amp; REGULATORY FRAMEWORK</div>
+        <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2rem,3.5vw,3.125rem); text-transform:uppercase; color:var(--c-black); line-height:1.02; margin-bottom:1rem;">STANDARDS, MARKETS &amp; CONFORMITY</h2>
+        <p style="font-size:1rem; color:var(--c-dark); line-height:1.8;">
+          Design and manufacture operate to recognised international standards, and products are placed on regulated markets under the appropriate framework for each region and product risk class.
+        </p>
+      </div>
+
+      <!-- Standards -->
+      <div class="anim-in">
+        <div class="eyebrow" style="margin-bottom:1.25rem; color:var(--c-muted);">STANDARDS WE WORK TO</div>
         <div class="cert-logos">
           <div class="cert-logo">
             <span class="cert-logo-name">ISO&nbsp;13485</span>
-            <span class="cert-logo-sub">Medical Devices QMS</span>
+            <span class="cert-logo-sub">Design &amp; Manufacture QMS</span>
           </div>
           <div class="cert-logo">
-            <span class="cert-logo-name" style="font-size:1.6rem;">CE</span>
-            <span class="cert-logo-sub">Declaration of Conformity</span>
+            <span class="cert-logo-name">ISO&nbsp;14971</span>
+            <span class="cert-logo-sub">Risk Management</span>
+          </div>
+          <div class="cert-logo">
+            <span class="cert-logo-name">ISO&nbsp;15223</span>
+            <span class="cert-logo-sub">Labelling &amp; Symbols</span>
+          </div>
+          <div class="cert-logo">
+            <span class="cert-logo-name">IEC&nbsp;61010</span>
+            <span class="cert-logo-sub">Lab-Equipment Safety</span>
           </div>
           <div class="cert-logo">
             <span class="cert-logo-name">ISO&nbsp;9001</span>
             <span class="cert-logo-sub">Quality Management</span>
           </div>
-          <div class="cert-logo">
-            <span class="cert-logo-name" style="opacity:0.5;">+ LOGO</span>
-            <span class="cert-logo-sub">Add certificate mark</span>
+        </div>
+      </div>
+
+      <!-- Market frameworks -->
+      <div style="margin-top:3rem;" class="anim-in">
+        <div class="eyebrow" style="margin-bottom:1.25rem; color:var(--c-muted);">MARKET FRAMEWORKS</div>
+        <div class="cap-grid">
+          <div class="cap-card">
+            <div class="cap-title">Great Britain</div>
+            <p class="cap-desc">UKCA marking under the UK MDR 2002, supported by MHRA registration.</p>
+          </div>
+          <div class="cap-card" style="transition-delay:0.08s;">
+            <div class="cap-title">European Union</div>
+            <p class="cap-desc">EU MDR (2017/745) and IVDR (2017/746), placed via an EU Authorised Representative with CE marking.</p>
+          </div>
+          <div class="cap-card" style="transition-delay:0.16s;">
+            <div class="cap-title">Türkiye</div>
+            <p class="cap-desc">ÜTS (Product Tracking System) registration for the Turkish market.</p>
           </div>
         </div>
+      </div>
+
+      <!-- Conformity assessment -->
+      <div style="margin:1.75rem 0 3rem; border:1px solid var(--c-rule); border-left:4px solid var(--gm-400); background:var(--c-white); padding:1.5rem 1.75rem;" class="anim-in">
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--gm-600); display:block; margin-bottom:0.4rem;">Conformity assessment</span>
+        <p style="font-size:0.95rem; color:var(--c-dark); line-height:1.75;">
+          Conformity assessment is routed by product risk class. Higher-class medical devices and IVDs are assessed by a UK Approved Body / EU Notified Body; lower-risk products are self-declared under Green Med's Declaration of Conformity.
+        </p>
       </div>
 
       <div style="border:1px solid var(--c-rule); background:var(--c-white); padding:3rem 3rem;" class="anim-in">
         <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--gm-500); margin-bottom:1rem;">Legal Manufacturer: Green Med Ltd.</div>
         <p style="font-size:1.0625rem; color:var(--c-dark); line-height:1.85; margin-bottom:2rem; max-width:720px;">
-          Green Med Ltd. is the legal manufacturer of record for its own product line. Regulatory documentation, including our ISO 13485 certificate and CE Declaration of Conformity, is available on request.
+          Green Med Ltd. is the legal manufacturer of record for its own product line. Regulatory documentation, including our ISO 13485 certificate and UKCA/CE Declaration of Conformity, is available on request.
         </p>
         <div style="display:flex; gap:1rem; flex-wrap:wrap;">
           <a href="index.html#certifications" class="btn btn-primary">
@@ -755,7 +968,7 @@
       <div style="display:flex; justify-content:space-between; gap:4rem; margin-bottom:3rem; flex-wrap:wrap;" class="footer-inner">
         <div style="max-width:280px;">
           <img src="brand_assets/GREENMED LOGO Vert.svg" alt="Green Med Ltd." style="height:100px; width:auto; margin-bottom:1.25rem; display:block;" loading="lazy">
-          <p style="font-size:0.875rem; color:rgba(255,255,255,0.38); line-height:1.75;">Principal Manufacturer, Systems Integrator &amp; Turnkey Laboratory Solutions Provider.</p>
+          <p style="font-size:0.875rem; color:rgba(255,255,255,0.38); line-height:1.75;">Legal Manufacturer, Systems Integrator &amp; Turnkey Laboratory Solutions Provider.</p>
         </div>
         <div style="display:flex; gap:4rem; flex-wrap:wrap;">
           <div>
