@@ -784,7 +784,7 @@
       <!-- Mini stats -->
       <div class="hero-mini-stats" style="display:flex; gap:2.75rem; padding-top:1.5rem; border-top:1px solid var(--c-rule); flex-wrap:wrap;">
         <div>
-          <div class="hero-counter" data-counter="147" data-suffix="+" style="font-family:'Bebas Neue',sans-serif; font-weight:800; font-size:2.625rem; color:var(--gm-500); line-height:1;">147+</div>
+          <div class="hero-counter" data-counter="57" data-suffix="+" style="font-family:'Bebas Neue',sans-serif; font-weight:800; font-size:2.625rem; color:var(--gm-500); line-height:1;">57+</div>
           <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--c-muted); margin-top:0.25rem;">ЗАВЕРШЁННЫХ ПРОЕКТОВ</div>
         </div>
         <div>
@@ -792,7 +792,7 @@
           <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--c-muted); margin-top:0.25rem;">СТРАН ОХВАТА</div>
         </div>
         <div>
-          <div class="hero-counter" data-counter="15" data-suffix="+" style="font-family:'Bebas Neue',sans-serif; font-weight:800; font-size:2.625rem; color:var(--gm-500); line-height:1;">15+</div>
+          <div class="hero-counter" data-counter="5" data-suffix="+" style="font-family:'Bebas Neue',sans-serif; font-weight:800; font-size:2.625rem; color:var(--gm-500); line-height:1;">5+</div>
           <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--c-muted); margin-top:0.25rem;">ЛЕТ ОПЫТА</div>
         </div>
       </div>
@@ -822,7 +822,7 @@
   <section class="stats-section">
     <div class="stats-grid container">
       <div class="stat-cell anim-in">
-        <div class="stat-num" data-counter="147" data-suffix="+">147+</div>
+        <div class="stat-num" data-counter="57" data-suffix="+">57+</div>
         <div class="stat-label">ЗАВЕРШЁННЫХ ПРОЕКТОВ</div>
       </div>
       <div class="stat-cell anim-in" style="transition-delay:0.1s;">
@@ -834,7 +834,7 @@
         <div class="stat-label">УСТАНОВЛЕННЫХ ПРИБОРОВ</div>
       </div>
       <div class="stat-cell anim-in" style="transition-delay:0.3s;">
-        <div class="stat-num" data-counter="15" data-suffix="+">15+</div>
+        <div class="stat-num" data-counter="5" data-suffix="+">5+</div>
         <div class="stat-label">ЛЕТ ОПЫТА</div>
       </div>
     </div>
@@ -999,26 +999,16 @@
       <div class="cert-grid anim-in">
         <!-- ISO 13485 -->
         <div class="cert-card">
-          <span class="cert-tag">ISO 13485</span>
+          <span class="cert-tag">ISO 13485:2016</span>
           <div class="cert-title">Система менеджмента качества медицинских изделий</div>
-          <p class="cert-desc">Green Med Ltd. использует сертифицированную систему менеджмента качества ISO 13485, охватывающую разработку и производство своей линейки продукции.</p>
+          <p class="cert-desc">Green Med Ltd. использует сертифицированную систему менеджмента качества ISO 13485:2016, охватывающую разработку и производство своей линейки продукции — основу для маркировки CE согласно EU MDR и IVDR.</p>
 
-          <!-- TODO: when the ISO 13485 certificate arrives, fill in the real certificate number, issuing body and dates below, then unhide this block
           <div class="cert-meta">
             <div class="cert-meta-row">
-              <span class="cert-meta-label">Certificate No.</span>
-              <span class="cert-meta-val">{{ISO_13485_CERT_NUMBER}}</span>
-            </div>
-            <div class="cert-meta-row">
-              <span class="cert-meta-label">Issuing Body</span>
-              <span class="cert-meta-val">{{ISSUING_BODY}}</span>
-            </div>
-            <div class="cert-meta-row">
-              <span class="cert-meta-label">Issued / Expires</span>
-              <span class="cert-meta-val">{{ISSUE_DATE}} – {{EXPIRY_DATE}}</span>
+              <span class="cert-meta-label">Область</span>
+              <span class="cert-meta-val">EN ISO 13485 · EU MDR · IVDR</span>
             </div>
           </div>
-          -->
 
           <a href="contact.html" class="cert-doc-btn">
             ДОКУМЕНТАЦИЯ ПРЕДОСТАВЛЯЕТСЯ ПО ЗАПРОСУ
@@ -1026,24 +1016,35 @@
           </a>
         </div>
 
-        <!-- CE Declaration of Conformity -->
+        <!-- ISO 9001 -->
         <div class="cert-card">
-          <span class="cert-tag">МАРКИРОВКА CE</span>
-          <div class="cert-title">Декларация соответствия CE</div>
-          <p class="cert-desc">Продукция с маркировкой CE выпускается на рынок компанией Green Med Ltd. в качестве официального производителя, подтверждённого Декларацией соответствия.</p>
+          <span class="cert-tag">ISO 9001:2015</span>
+          <div class="cert-title">Система менеджмента качества</div>
+          <p class="cert-desc">Сертифицированная система менеджмента качества ISO 9001:2015 обеспечивает бизнес- и операционные процессы Green Med наряду с системой для медицинских изделий.</p>
 
-          <!-- TODO: when the CE Declaration of Conformity arrives, fill in the real reference number and issue date below, then unhide this block
-          <div class="cert-meta">
-            <div class="cert-meta-row">
-              <span class="cert-meta-label">DoC Reference</span>
-              <span class="cert-meta-val">{{CE_DOC_REFERENCE}}</span>
-            </div>
-            <div class="cert-meta-row">
-              <span class="cert-meta-label">Issued</span>
-              <span class="cert-meta-val">{{ISSUE_DATE}}</span>
-            </div>
-          </div>
-          -->
+          <a href="contact.html" class="cert-doc-btn">
+            ДОКУМЕНТАЦИЯ ПРЕДОСТАВЛЯЕТСЯ ПО ЗАПРОСУ
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <!-- UKCA / CE Declaration of Conformity -->
+        <div class="cert-card">
+          <span class="cert-tag">МАРКИРОВКА UKCA / CE</span>
+          <div class="cert-title">Декларация соответствия</div>
+          <p class="cert-desc">Продукция выпускается на рынок компанией Green Med Ltd. в качестве официального производителя и подтверждается Декларациями соответствия UKCA и CE.</p>
+
+          <a href="contact.html" class="cert-doc-btn">
+            ДОКУМЕНТАЦИЯ ПРЕДОСТАВЛЯЕТСЯ ПО ЗАПРОСУ
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <!-- MHRA Manufacturer Registration -->
+        <div class="cert-card">
+          <span class="cert-tag">РЕГИСТРАЦИЯ MHRA</span>
+          <div class="cert-title">Регистрация производителя в Великобритании</div>
+          <p class="cert-desc">Green Med Ltd. зарегистрирована в Агентстве по регулированию лекарственных средств и медицинских изделий Великобритании (MHRA) как производитель медицинских изделий.</p>
 
           <a href="contact.html" class="cert-doc-btn">
             ДОКУМЕНТАЦИЯ ПРЕДОСТАВЛЯЕТСЯ ПО ЗАПРОСУ
@@ -1054,7 +1055,7 @@
 
       <div class="cert-statement anim-in">
         <span class="cert-statement-label">Официальный производитель: Green Med Ltd.</span>
-        <p>Green Med Ltd. является официально зарегистрированным производителем своей линейки продукции. Регуляторная документация, включая сертификат ISO 13485 и Декларацию соответствия CE, предоставляется по запросу.</p>
+        <p>Green Med Ltd. является официально зарегистрированным производителем своей линейки продукции. Регуляторная документация — включая сертификаты ISO 13485:2016 и ISO 9001:2015 и Декларацию соответствия UKCA/CE — предоставляется по запросу.</p>
       </div>
     </div>
   </section>
@@ -1399,7 +1400,7 @@ United Kingdom, N17 9QU</div>
       <div class="svc-modal-highlights">
         <span class="svc-highlight">КОМПЛЕКСНО</span><span class="svc-highlight-sep">·</span>
         <span class="svc-highlight">ЕДИНЫЙ КОНТРАКТ</span><span class="svc-highlight-sep">·</span>
-        <span class="svc-highlight">28+ СТРАН</span>
+        <span class="svc-highlight">18+ СТРАН</span>
       </div>
       <div class="svc-modal-body">
         <p class="svc-modal-intro">Комплексная лабораторная инфраструктура: от обоснования до ввода в эксплуатацию и официальной сдачи — один контракт, одна точка ответственности.</p>

@@ -290,6 +290,13 @@
     .detail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
     .detail-grid .photo-frame { aspect-ratio: 16 / 9; }
 
+    /* ── Facility gallery (large 2-col tiles) ── */
+    .fac-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .fac-grid .photo-frame { aspect-ratio: 16 / 9; }
+    @media (max-width: 768px) {
+      .fac-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── Production process (vertical numbered flow) ── */
     .flow-step {
       display: grid; grid-template-columns: auto 1fr; gap: 1.75rem;
@@ -471,6 +478,8 @@
 
   <!-- HERO -->
   <section style="padding-top:64px; background:var(--c-footer); position:relative; overflow:hidden; min-height:72vh; display:flex; align-items:center;">
+    <img src="Photos/manufacturing/Resim2.jpg" alt="" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:right center; opacity:0.32;">
+    <div style="position:absolute; inset:0; background:linear-gradient(90deg, rgba(17,17,17,0.94) 0%, rgba(17,17,17,0.82) 48%, rgba(17,17,17,0.5) 100%); pointer-events:none;"></div>
     <div style="position:absolute; inset:0; background:radial-gradient(ellipse 70% 65% at 95% 45%, rgba(97,154,24,0.22) 0%, transparent 65%), radial-gradient(ellipse 45% 70% at 0% 100%, rgba(97,154,24,0.07) 0%, transparent 60%); pointer-events:none;"></div>
     <div style="position:absolute; right:var(--px); top:0; bottom:0; width:1px; background:rgba(255,255,255,0.04); pointer-events:none;"></div>
 
@@ -537,6 +546,133 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       OUR FACILITY — PLYMOUTH MANUFACTURING SITE
+       Reserved image areas use placehold.co placeholders; swap the
+       <img> src with the real file in Photos/manufacturing/ later.
+  ════════════════════════════════════════════════════════════ -->
+  <section id="facility" style="background:var(--c-white); border-top:1px solid var(--c-rule); padding:var(--py) var(--px);">
+    <div style="max-width:1200px; margin:0 auto;">
+
+      <!-- Lead -->
+      <div style="margin-bottom:3rem; max-width:780px;" class="anim-in">
+        <div class="eyebrow" style="margin-bottom:1.25rem;">OUR FACILITY</div>
+        <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2rem,3.5vw,3.125rem); text-transform:uppercase; color:var(--c-black); line-height:1.02; margin-bottom:1rem;">THE PLYMOUTH MANUFACTURING FACILITY</h2>
+        <p style="font-size:1.0625rem; color:var(--c-dark); line-height:1.85;">
+          Green Med Ltd. is a UK legal manufacturer operating its own facility in Plymouth. Here we design, manufacture, quality-control and give <strong style="color:var(--c-black); font-weight:400;">final batch release</strong> to our product line in-house, under a single certified ISO&nbsp;13485 quality management system.
+        </p>
+      </div>
+
+      <!-- (a) Facility exterior image -->
+      <div class="photo-frame anim-in" style="aspect-ratio:21/9; margin-bottom:3.5rem;">
+        <span class="photo-tag">FACILITY EXTERIOR</span>
+        <img src="Photos/manufacturing/Resim2.jpg" alt="Exterior of the Green Med Ltd. manufacturing facility at Langage Science Park, Plymouth" loading="lazy">
+      </div>
+
+      <!-- Facility at a glance -->
+      <div class="anim-in" style="margin-bottom:3.5rem;">
+        <h3 class="eyebrow" style="margin:0 0 1.5rem; color:var(--c-muted);">FACILITY AT A GLANCE</h3>
+        <div style="display:flex; flex-wrap:wrap; gap:1px; background:var(--c-rule); border:1px solid var(--c-rule);">
+          <div style="flex:1 1 280px; background:var(--c-bg); padding:1.6rem 1.6rem;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-muted); margin-bottom:0.7rem;">Total facility area</div>
+            <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.25rem; color:var(--gm-500); line-height:1;">2,740<span style="font-size:1rem; color:var(--c-dark); font-weight:600;"> m²</span></div>
+          </div>
+          <div style="flex:1 1 280px; background:var(--c-bg); padding:1.6rem 1.6rem;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-muted); margin-bottom:0.7rem;">Production area</div>
+            <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.25rem; color:var(--gm-500); line-height:1;">1,150<span style="font-size:1rem; color:var(--c-dark); font-weight:600;"> m²</span></div>
+          </div>
+          <div style="flex:1 1 280px; background:var(--c-bg); padding:1.6rem 1.6rem;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-muted); margin-bottom:0.7rem;">Clean room area</div>
+            <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.25rem; color:var(--gm-500); line-height:1;">400<span style="font-size:1rem; color:var(--c-dark); font-weight:600;"> m²</span></div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.06em; color:var(--c-muted); margin-top:0.5rem;">ISO 7 classification</div>
+          </div>
+          <div style="flex:1 1 280px; background:var(--c-bg); padding:1.6rem 1.6rem;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-muted); margin-bottom:0.7rem;">Warehouse area</div>
+            <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.25rem; color:var(--gm-500); line-height:1;">560<span style="font-size:1rem; color:var(--c-dark); font-weight:600;"> m²</span></div>
+          </div>
+          <div style="flex:1 1 280px; background:var(--c-bg); padding:1.6rem 1.6rem;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-muted); margin-bottom:0.7rem;">Production lines</div>
+            <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.25rem; color:var(--gm-500); line-height:1;">6</div>
+          </div>
+          <div style="flex:1 1 280px; background:var(--c-bg); padding:1.6rem 1.6rem;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-muted); margin-bottom:0.7rem;">Annual capacity</div>
+            <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.25rem; color:var(--gm-500); line-height:1;">≈1,988,172</div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.06em; color:var(--c-muted); margin-top:0.5rem;">Finished units / year · all product lines</div>
+          </div>
+          <div style="flex:1 1 280px; background:var(--c-bg); padding:1.6rem 1.6rem;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-muted); margin-bottom:0.7rem;">Workforce</div>
+            <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.25rem; color:var(--gm-500); line-height:1;">86</div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.06em; color:var(--c-muted); margin-top:0.5rem;">Employees · all in-house</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Location -->
+      <p class="anim-in" style="margin:0 0 3.5rem; font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--c-muted); line-height:1.7;">
+        <span style="color:var(--gm-600);">Location</span> · Western Wood Way, Langage Science Park, Plympton, Plymouth, Devon, PL7&nbsp;5BG, United Kingdom
+      </p>
+
+      <!-- Quality & regulatory strip -->
+      <div class="anim-in" style="margin-bottom:3.5rem;">
+        <h3 class="eyebrow" style="margin:0 0 1.5rem; color:var(--c-muted);">QUALITY &amp; REGULATORY</h3>
+        <div class="cert-logos">
+          <div class="cert-logo">
+            <span class="cert-logo-name">ISO&nbsp;13485:2016</span>
+            <span class="cert-logo-sub">Medical-device QMS</span>
+          </div>
+          <div class="cert-logo">
+            <span class="cert-logo-name">ISO&nbsp;9001:2015</span>
+            <span class="cert-logo-sub">Quality Management</span>
+          </div>
+          <div class="cert-logo">
+            <span class="cert-logo-name">EN ISO 13485</span>
+            <span class="cert-logo-sub">EU MDR / IVDR conformity</span>
+          </div>
+          <div class="cert-logo">
+            <span class="cert-logo-name">UKCA / CE</span>
+            <span class="cert-logo-sub">Declaration of Conformity</span>
+          </div>
+          <div class="cert-logo">
+            <span class="cert-logo-name">MHRA</span>
+            <span class="cert-logo-sub">UK Manufacturer Registration</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- (b) Interior gallery -->
+      <div class="anim-in">
+        <h3 class="eyebrow" style="margin:0 0 1.5rem; color:var(--c-muted);">INSIDE THE FACILITY</h3>
+        <div class="fac-grid">
+          <div class="photo-frame">
+            <span class="photo-tag">PRODUCTION &amp; ASSEMBLY</span>
+            <img src="Photos/manufacturing/Resim3.png" alt="Production and assembly floor with operators at workstations" loading="lazy">
+          </div>
+          <div class="photo-frame">
+            <span class="photo-tag">AUTOMATED ASSEMBLY LINE</span>
+            <img src="Photos/manufacturing/Resim4.png" alt="Automated assembly line with guarded production machinery" loading="lazy">
+          </div>
+          <div class="photo-frame">
+            <span class="photo-tag">QC LABORATORY</span>
+            <img src="Photos/manufacturing/Resim5.png" alt="Quality control laboratory with analytical instruments" loading="lazy">
+          </div>
+          <div class="photo-frame">
+            <span class="photo-tag">AUTOMATED PRODUCTION CELL</span>
+            <img src="Photos/manufacturing/Resim6.png" alt="Enclosed automated production cell on the manufacturing line" loading="lazy">
+          </div>
+          <div class="photo-frame">
+            <span class="photo-tag">WAREHOUSE</span>
+            <img src="Photos/manufacturing/Resim7.jpg" alt="Warehouse with high-bay racking and a forklift" loading="lazy">
+          </div>
+          <div class="photo-frame">
+            <span class="photo-tag">PRODUCTION &amp; PACKAGING HALL</span>
+            <img src="Photos/manufacturing/Resim8.jpg" alt="Overview of the production and packaging hall with conveyor lines" loading="lazy">
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -725,63 +861,6 @@
     <div class="photo-frame">
       <span class="photo-tag">PRODUCTION LINE</span>
       <img src="Photos/manufacturing/packaging-line.webp" alt="Automated packaging and coding line" loading="lazy">
-    </div>
-  </section>
-
-  <!-- SPEC METRICS -->
-  <section class="spec-band">
-    <div style="position:relative; z-index:1; max-width:1440px; margin:0 auto; padding:3.5rem var(--px) 3.75rem;">
-      <div class="eyebrow anim-in" style="color:rgba(165,204,72,0.65); margin-bottom:2.25rem;">BY THE NUMBERS · MANUFACTURING NETWORK</div>
-      <div class="spec-grid anim-in">
-        <div class="spec-cell">
-          <div class="spec-num">6,510<span class="spec-unit"> m²</span></div>
-          <div class="spec-label">Combined network floor area</div>
-        </div>
-        <div class="spec-cell">
-          <div class="spec-num">ISO&nbsp;7</div>
-          <div class="spec-label">Cleanroom classification</div>
-        </div>
-        <div class="spec-cell">
-          <div class="spec-num">6<span class="spec-unit">+</span></div>
-          <div class="spec-label">Own product lines in production</div>
-        </div>
-        <div class="spec-cell">
-          <div class="spec-num">7,580<span class="spec-unit"> /mo</span></div>
-          <div class="spec-label">Monthly output capacity</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════
-       PRODUCTION DETAIL GALLERY  (#1)
-       Real machinery close-ups. Swap any tile by replacing its
-       <img> src with another file in Photos/manufacturing/.
-  ════════════════════════════════════════════════════════════ -->
-  <section style="background:var(--c-white); border-top:1px solid var(--c-rule); padding:var(--py) var(--px);">
-    <div style="max-width:1200px; margin:0 auto;">
-      <div style="margin-bottom:3.5rem; max-width:640px;" class="anim-in">
-        <div class="eyebrow" style="margin-bottom:1.25rem;">INSIDE PRODUCTION</div>
-        <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2rem,3.5vw,3.125rem); text-transform:uppercase; color:var(--c-black); line-height:1.02; margin-bottom:1rem;">HOW OUR PRODUCTS ARE MADE</h2>
-        <p style="font-size:1rem; color:var(--c-dark); line-height:1.8;">
-          Filling, capping, labelling and packaging — automated production and packaging lines operating under a single quality standard.
-        </p>
-      </div>
-
-      <div class="detail-grid anim-in">
-        <div class="photo-frame">
-          <span class="photo-tag">FILLING &amp; CAPPING</span>
-          <img src="Photos/manufacturing/filling-capping.webp" alt="Automated filling and capping station" loading="lazy">
-        </div>
-        <div class="photo-frame">
-          <span class="photo-tag">PRECISION DOSING</span>
-          <img src="Photos/manufacturing/precision-dosing.webp" alt="Precision dosing into a container on the line" loading="lazy">
-        </div>
-        <div class="photo-frame">
-          <span class="photo-tag">LABELLING LINE</span>
-          <img src="Photos/manufacturing/labelling-line.webp" alt="Automated labelling line" loading="lazy">
-        </div>
-      </div>
     </div>
   </section>
 
