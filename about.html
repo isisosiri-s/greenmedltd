@@ -248,6 +248,21 @@
       .val-grid { grid-template-columns: 1fr; }
     }
 
+    /* ── Founder message ── */
+    .founder-grid {
+      display: grid; grid-template-columns: minmax(260px, 340px) 1fr;
+      gap: 3.5rem 4.5rem; align-items: start; margin-bottom: 4.5rem;
+    }
+    .founder-portrait {
+      aspect-ratio: 4 / 5; background: var(--gm-800); position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .founder-portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    @media (max-width: 860px) {
+      .founder-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .founder-portrait { max-width: 340px; }
+    }
+
   </style>
 </head>
 <body>
@@ -293,6 +308,43 @@
         <div>
           <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:3.75rem; color:var(--gm-400); line-height:1;">6</div>
           <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-top:0.375rem;">UN AGENCY PARTNERS</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER MESSAGE -->
+  <section id="founder" style="background:var(--c-white); border-top:1px solid var(--c-rule); padding:var(--py) var(--px);">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div class="founder-grid anim-in" style="margin-bottom:0;">
+        <div class="founder-portrait">
+          <!-- Replace this placeholder with: <img src="Photos/founder.jpg" alt="Kazim Altinok, Founder of Green Med Ltd."> -->
+          <div aria-hidden="true" style="position:absolute; inset:0; background:radial-gradient(ellipse 80% 60% at 20% 0%, rgba(165,204,72,0.18) 0%, transparent 60%), radial-gradient(ellipse 70% 50% at 100% 100%, rgba(97,154,24,0.22) 0%, transparent 65%);"></div>
+          <div style="position:relative; text-align:center;">
+            <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:5.5rem; color:rgba(165,204,72,0.85); line-height:1;">KA</div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-top:0.75rem;">Kazim Altinok · Founder</div>
+          </div>
+        </div>
+        <div>
+          <h2 class="eyebrow" style="margin:0 0 1.5rem;">A MESSAGE FROM THE FOUNDER</h2>
+          <p style="font-size:1.1875rem; color:var(--c-black); line-height:1.7; margin:0 0 1.5rem;">
+            We believe that reliable healthcare solutions are built on strong manufacturing capabilities, technical expertise and a commitment to quality.
+          </p>
+          <p style="font-size:1rem; color:var(--c-dark); line-height:1.8; margin:0 0 1.5rem;">
+            At Green Med Ltd, we design, develop and manufacture medical devices and laboratory products. In addition, we provide biomedical engineering services, turnkey laboratory projects, technical support and after-sales services, delivering comprehensive solutions to healthcare institutions.
+          </p>
+          <p style="font-size:1rem; color:var(--c-dark); line-height:1.8; margin:0 0 1.5rem;">
+            For us, quality is not something achieved only at the final inspection. It is a principle that guides every stage of our work, from product design and manufacturing to project delivery and technical support. This approach has enabled us to build long-term partnerships and earn the trust of our customers.
+          </p>
+          <p style="font-size:1rem; color:var(--c-dark); line-height:1.8; margin:0 0 1.5rem;">
+            As healthcare continues to evolve, we remain committed to strengthening our manufacturing capabilities, advancing our engineering expertise and maintaining high quality standards across all our activities.
+          </p>
+          <p style="font-size:1rem; color:var(--c-dark); line-height:1.8; margin:0 0 2.25rem;">
+            We believe that lasting success is built not only on the quality of the products we manufacture, but also on the trust we earn and the long-term relationships we build.
+          </p>
+          <div style="border-top:3px solid var(--gm-400); width:2.75rem; margin-bottom:1.25rem;"></div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:1.5rem; text-transform:uppercase; color:var(--c-black); line-height:1.05;">Kazim Altinok</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--c-muted); margin-top:0.5rem;">Founder · Green Med Ltd</div>
         </div>
       </div>
     </div>
