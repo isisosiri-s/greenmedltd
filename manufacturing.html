@@ -225,12 +225,6 @@
     }
 
     /* ── Full-bleed facility establishing shot ── */
-    .fullbleed { width: 100%; }
-    .fullbleed .photo-frame {
-      width: 100%; min-height: 68vh; aspect-ratio: auto;
-      border-left: none; border-right: none;
-    }
-
     /* ── Spec metrics band (dark, green grid) ── */
     .spec-band { background: #1e2219; position: relative; overflow: hidden; }
     .spec-band::before {
@@ -315,7 +309,19 @@
       font-weight: 700; font-size: 1.375rem; text-transform: uppercase;
       color: var(--c-black); letter-spacing: 0.02em; margin-bottom: 0.5rem;
     }
-    .flow-desc { font-size: 0.95rem; color: var(--c-dark); line-height: 1.8; max-width: 640px; }
+    .flow-desc {
+      font-size: 0.95rem; color: var(--c-dark); line-height: 1.8; max-width: 640px;
+      overflow: hidden; max-height: 0; opacity: 0; transform: translateY(-6px);
+      transition: opacity 0.9s ease-in-out, transform 1s cubic-bezier(0.22,1,0.36,1), max-height 1.1s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .flow-step:hover .flow-desc,
+    .flow-step:focus-within .flow-desc {
+      max-height: 16rem; opacity: 1; transform: translateY(0);
+    }
+    /* Touch devices have no hover — keep descriptions visible */
+    @media (hover: none) {
+      .flow-desc { max-height: none; opacity: 1; transform: none; }
+    }
 
     /* ── Capability cards ── */
     .cap-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
@@ -621,24 +627,8 @@
             <img src="Photos/manufacturing/Resim3.png" alt="Production and assembly floor with operators at workstations" loading="lazy">
           </div>
           <div class="photo-frame">
-            <span class="photo-tag">AUTOMATED ASSEMBLY LINE</span>
-            <img src="Photos/manufacturing/Resim4.png" alt="Automated assembly line with guarded production machinery" loading="lazy">
-          </div>
-          <div class="photo-frame">
             <span class="photo-tag">QC LABORATORY</span>
             <img src="Photos/manufacturing/Resim5.png" alt="Quality control laboratory with analytical instruments" loading="lazy">
-          </div>
-          <div class="photo-frame">
-            <span class="photo-tag">AUTOMATED PRODUCTION CELL</span>
-            <img src="Photos/manufacturing/Resim6.png" alt="Enclosed automated production cell on the manufacturing line" loading="lazy">
-          </div>
-          <div class="photo-frame">
-            <span class="photo-tag">WAREHOUSE</span>
-            <img src="Photos/manufacturing/Resim7.jpg" alt="Warehouse with high-bay racking and a forklift" loading="lazy">
-          </div>
-          <div class="photo-frame">
-            <span class="photo-tag">PRODUCTION &amp; PACKAGING HALL</span>
-            <img src="Photos/manufacturing/Resim8.jpg" alt="Overview of the production and packaging hall with conveyor lines" loading="lazy">
           </div>
         </div>
       </div>
@@ -685,6 +675,11 @@
           <span style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--gm-600); display:block; margin-bottom:0.4rem;">Manufactured vs. integrated</span>
           OEM and third-party products are <strong style="color:var(--c-black); font-weight:400;">integrated or distributed — not manufactured</strong> by Green Med, and sit outside our manufacturing scope.
         </p>
+      </div>
+
+      <div class="photo-frame anim-in" style="aspect-ratio:21/9; margin-top:3.5rem;">
+        <span class="photo-tag">AUTOMATED ASSEMBLY LINE</span>
+        <img src="Photos/manufacturing/Resim4.png" alt="Automated assembly line with guarded production machinery" loading="lazy">
       </div>
     </div>
   </section>
@@ -747,6 +742,11 @@
       <p style="margin-top:1.75rem; font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--c-muted); line-height:1.7;" class="anim-in">
         Sites are shown by country and role. Regardless of manufacturing location, Green Med Ltd. is the legal manufacturer of record; final batch release is held exclusively by the Centre.
       </p>
+
+      <div class="photo-frame anim-in" style="aspect-ratio:21/9; margin-top:3.5rem;">
+        <span class="photo-tag">PRODUCTION &amp; PACKAGING HALL</span>
+        <img src="Photos/manufacturing/Resim8.jpg" alt="Overview of the production and packaging hall with conveyor lines" loading="lazy">
+      </div>
     </div>
   </section>
 
@@ -759,6 +759,11 @@
         <p style="font-size:1rem; color:var(--c-dark); line-height:1.8;">
           Every site operates inside the same control framework. These are the mechanisms the Centre uses to hold one standard across the whole network.
         </p>
+      </div>
+
+      <div class="photo-frame anim-in" style="aspect-ratio:21/9; margin-bottom:3rem;">
+        <span class="photo-tag">AUTOMATED PRODUCTION CELL</span>
+        <img src="Photos/manufacturing/Resim6.png" alt="Enclosed automated production cell on the manufacturing line" loading="lazy">
       </div>
 
       <div class="gov-grid anim-in">
@@ -822,24 +827,17 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════════════
-       FULL-BLEED PRODUCTION BAND  (#1)
-       Illustrative production-line imagery. To swap, replace the
-       <img> src with another file in Photos/manufacturing/.
-  ════════════════════════════════════════════════════════════ -->
-  <section class="fullbleed">
-    <div class="photo-frame">
-      <span class="photo-tag">PRODUCTION LINE</span>
-      <img src="Photos/manufacturing/packaging-line.webp" alt="Automated packaging and coding line" loading="lazy">
-    </div>
-  </section>
-
   <!-- PRODUCTION PROCESS -->
   <section style="background:var(--c-bg); border-top:1px solid var(--c-rule); padding:var(--py) var(--px);">
     <div style="max-width:1000px; margin:0 auto;">
       <div style="margin-bottom:3rem;" class="anim-in">
         <div class="eyebrow" style="margin-bottom:1.25rem;">HOW WE PRODUCE</div>
         <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2rem,3.5vw,3.125rem); text-transform:uppercase; color:var(--c-black); line-height:1.02;">THE PRODUCTION PROCESS</h2>
+      </div>
+
+      <div class="photo-frame anim-in" style="aspect-ratio:21/9; margin-bottom:3rem;">
+        <span class="photo-tag">PRODUCTION LINE</span>
+        <img src="Photos/manufacturing/packaging-line.webp" alt="Automated packaging and coding line" loading="lazy">
       </div>
 
       <div>
@@ -892,6 +890,11 @@
             <p class="flow-desc">Regardless of where a batch is manufactured, final batch release is authorised exclusively by Green Med Ltd. (the Centre) and products are placed on the market under our Declaration of Conformity. Manufacturing hubs submit batches for release — they never release independently.</p>
           </div>
         </div>
+      </div>
+
+      <div class="photo-frame anim-in" style="aspect-ratio:21/9; margin-top:3.5rem;">
+        <span class="photo-tag">WAREHOUSE &amp; LOGISTICS</span>
+        <img src="Photos/manufacturing/Resim7.jpg" alt="Warehouse with high-bay racking and a forklift" loading="lazy">
       </div>
     </div>
   </section>
