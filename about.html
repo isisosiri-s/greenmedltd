@@ -264,6 +264,45 @@
     .ctx-photo { margin: 0; border: 1px solid var(--c-rule); background: var(--c-white); }
     .ctx-photo img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
 
+    /* ── World map (Where We Work) ── */
+    .map-wrap { background: var(--c-white); border: 1px solid var(--c-rule); padding: clamp(1rem, 3vw, 2.5rem); }
+    .map-inner { position: relative; }
+    .map-inner > img { width: 100%; height: auto; display: block; }
+    .mm { position: absolute; width: 16px; height: 16px; margin: -8px 0 0 -8px; }
+    .mm .dot { position: absolute; inset: 3.5px; border-radius: 50%; background: var(--gm-500); }
+    .mm .ring {
+      position: absolute; inset: 0; border-radius: 50%;
+      border: 2px solid rgba(97,154,24,0.55);
+      animation: mm-pulse 2.8s ease-out infinite;
+    }
+    @keyframes mm-pulse {
+      0%   { transform: scale(0.55); opacity: 1; }
+      70%  { transform: scale(2.1);  opacity: 0; }
+      100% { transform: scale(2.1);  opacity: 0; }
+    }
+    .mm-hq .dot { background: var(--gm-800); }
+    .mm-proj .dot { background: var(--c-white); border: 3px solid var(--gm-500); inset: 2px; }
+    .mm-partner { width: 12px; height: 12px; margin: -6px 0 0 -6px; }
+    .mm-partner .dot { background: var(--gm-300); inset: 2.5px; }
+    .mm-partner .ring { border-color: rgba(165,204,72,0.5); }
+    .mm:hover { z-index: 4; }
+    .mm .lbl {
+      position: absolute; top: 100%; left: 50%; transform: translate(-50%, 8px);
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.5625rem; letter-spacing: 0.1em;
+      text-transform: uppercase; white-space: nowrap;
+      background: var(--c-black); color: #fff; padding: 0.35rem 0.6rem;
+      opacity: 0; pointer-events: none; z-index: 3;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .mm:hover .lbl { opacity: 1; transform: translate(-50%, 4px); }
+    .map-legend {
+      display: flex; flex-wrap: wrap; gap: 1rem 2.25rem; margin-top: 1.75rem;
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.625rem;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-dark);
+    }
+    .map-legend span { display: inline-flex; align-items: center; gap: 0.55rem; }
+    .map-legend i { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
     /* ── Founder message ── */
     .founder-grid {
       display: grid; grid-template-columns: minmax(260px, 340px) 1fr;
@@ -715,6 +754,57 @@
           <a href="index.html#certifications" style="color:var(--gm-500); text-decoration:underline;">View certification details →</a>
         </p>
       </div>
+    </div>
+  </section>
+
+  <!-- WHERE WE WORK -->
+  <section id="where-we-work" style="background:var(--c-bg); border-top:1px solid var(--c-rule); padding:var(--py) var(--px);">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div style="margin-bottom:3.5rem; max-width:640px;" class="anim-in">
+        <div class="eyebrow" style="margin-bottom:1.25rem;">WHERE WE WORK</div>
+        <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2rem,3.5vw,3.125rem); text-transform:uppercase; color:var(--c-black); line-height:1.02; margin-bottom:1rem;">A GLOBAL FOOTPRINT</h2>
+        <p style="font-size:1rem; color:var(--c-dark); line-height:1.8;">A UK-headquartered manufacturing network with R&amp;D collaborations and partnerships across Europe, Asia and the Americas — and 57+ projects delivered to healthcare institutions in 18+ countries.</p>
+      </div>
+
+      <div class="map-wrap anim-in">
+        <div class="map-inner">
+          <img src="brand_assets/world-map.svg" alt="World map showing Green Med's manufacturing network and project locations">
+          <div class="mm mm-hq" style="left:49.57%; top:17.61%;"><span class="ring"></span><span class="dot"></span><span class="lbl">United Kingdom · HQ &amp; Manufacturing</span></div>
+          <div class="mm" style="left:52.03%; top:21.03%;"><span class="ring"></span><span class="dot"></span><span class="lbl">Switzerland</span></div>
+          <div class="mm" style="left:59.01%; top:25.81%;"><span class="ring"></span><span class="dot"></span><span class="lbl">Türkiye</span></div>
+          <div class="mm" style="left:77.6%; top:40.41%;"><span class="ring"></span><span class="dot"></span><span class="lbl">Thailand</span></div>
+          <div class="mm mm-proj" style="left:65.03%; top:25.81%;"><span class="ring"></span><span class="dot"></span><span class="lbl">Turkmenistan</span></div>
+          <div class="mm mm-proj" style="left:52.33%; top:17.69%;"><span class="ring"></span><span class="dot"></span><span class="lbl">Germany</span></div>
+          <div class="mm mm-proj" style="left:83.51%; top:27.75%;"><span class="ring"></span><span class="dot"></span><span class="lbl">South Korea</span></div>
+          <div class="mm mm-partner" style="left:55.97%; top:16.33%;"><span class="ring"></span><span class="dot"></span><span class="lbl">Lithuania</span></div>
+          <div class="mm mm-partner" style="left:31.93%; top:38.58%;"><span class="ring"></span><span class="dot"></span><span class="lbl">Puerto Rico</span></div>
+          <div class="mm mm-partner" style="left:67.64%; top:24.39%;"><span class="ring"></span><span class="dot"></span><span class="lbl">Uzbekistan</span></div>
+          <div class="mm mm-partner" style="left:49.05%; top:24.93%;"><span class="ring"></span><span class="dot"></span><span class="lbl">Spain</span></div>
+          <div class="mm mm-partner" style="left:31.98%; top:23.73%;"><span class="ring"></span><span class="dot"></span><span class="lbl">Boston–Cambridge · USA</span></div>
+          <div class="mm mm-partner" style="left:19.05%; top:29.1%;"><span class="ring"></span><span class="dot"></span><span class="lbl">Orange County · USA</span></div>
+          <div class="mm mm-partner" style="left:18.4%; top:26.83%;"><span class="ring"></span><span class="dot"></span><span class="lbl">Silicon Valley · USA</span></div>
+          <div class="mm mm-partner" style="left:29.45%; top:27.73%;"><span class="ring"></span><span class="dot"></span><span class="lbl">Research Triangle Park · USA</span></div>
+          <div class="mm mm-partner" style="left:27.9%; top:25.33%;"><span class="ring"></span><span class="dot"></span><span class="lbl">Indianapolis · USA</span></div>
+          <div class="mm mm-partner" style="left:24.62%; top:31.55%;"><span class="ring"></span><span class="dot"></span><span class="lbl">Houston · USA</span></div>
+          <div class="mm mm-partner" style="left:47.84%; top:17.16%;"><span class="ring"></span><span class="dot"></span><span class="lbl">Galway · Ireland</span></div>
+          <div class="mm mm-partner" style="left:51.32%; top:18.24%;"><span class="ring"></span><span class="dot"></span><span class="lbl">Eindhoven · Netherlands</span></div>
+          <div class="mm mm-partner" style="left:52.95%; top:15.75%;"><span class="ring"></span><span class="dot"></span><span class="lbl">Medicon Valley · Denmark–Sweden</span></div>
+          <div class="mm mm-partner" style="left:52.29%; top:21.84%;"><span class="ring"></span><span class="dot"></span><span class="lbl">Milan · Italy</span></div>
+          <div class="mm mm-partner" style="left:50.58%; top:19.78%;"><span class="ring"></span><span class="dot"></span><span class="lbl">Paris · France</span></div>
+          <div class="mm mm-partner" style="left:51.21%; top:21.66%;"><span class="ring"></span><span class="dot"></span><span class="lbl">Lyon · France</span></div>
+          <div class="mm mm-partner" style="left:51.05%; top:18.59%;"><span class="ring"></span><span class="dot"></span><span class="lbl">Belgium</span></div>
+        </div>
+        <div class="map-legend">
+          <span><i style="background:var(--gm-800);"></i>Headquarters &amp; Manufacturing — UK</span>
+          <span><i style="background:var(--gm-500);"></i>Manufacturing Network</span>
+          <span><i style="background:var(--c-white); border:2.5px solid var(--gm-500);"></i>Projects Delivered</span>
+          <span><i style="background:var(--gm-300);"></i>R&amp;D &amp; Partnerships</span>
+        </div>
+      </div>
+
+      <p class="anim-in" style="margin-top:1.75rem; font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--c-muted); line-height:1.7;">
+        Markers show the manufacturing network, named project locations, and R&amp;D &amp; partnership locations · deliveries span 18+ countries worldwide.
+      </p>
     </div>
   </section>
 
