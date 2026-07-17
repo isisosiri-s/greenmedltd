@@ -644,6 +644,7 @@ ${hasSpecs ? `      <div class="specs-section">
 </main>
 
 <script src="/footer.js"><\/script>
+<script src="/image-protect.js"><\/script>
 
 <script>
   function submitQuote(e) {

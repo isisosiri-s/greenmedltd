@@ -248,6 +248,22 @@
       .val-grid { grid-template-columns: 1fr; }
     }
 
+    /* ── Key people ── */
+    .team-people { display: flex; flex-wrap: wrap; gap: 3rem 4.5rem; margin-bottom: 3rem; }
+    .team-person { text-align: center; }
+    .team-avatar {
+      width: 176px; height: 176px; border-radius: 50%; overflow: hidden;
+      border: 3px solid var(--gm-400); background: var(--c-white);
+    }
+    .team-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .team-name {
+      margin-top: 1rem;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.125rem;
+      text-transform: uppercase; color: var(--c-black); line-height: 1.1;
+    }
+    .ctx-photo { margin: 0; border: 1px solid var(--c-rule); background: var(--c-white); }
+    .ctx-photo img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+
     /* ── Founder message ── */
     .founder-grid {
       display: grid; grid-template-columns: minmax(260px, 340px) 1fr;
@@ -382,6 +398,9 @@
               <span style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.32);">GREEN MED LTD.</span>
             </div>
           </div>
+          <figure class="ctx-photo" style="margin-top:1.5rem;">
+            <img src="Photos/Persons/team-office.png" alt="Green Med team at the office" style="object-position:60% 50%;" loading="lazy">
+          </figure>
         </div>
 
       </div>
@@ -489,6 +508,21 @@
         </p>
       </div>
 
+      <!-- Key people -->
+      <div class="anim-in" style="margin-top:3.5rem;">
+        <h3 class="eyebrow" style="margin:0 0 1.5rem;">KEY PEOPLE</h3>
+        <div class="team-people">
+          <div class="team-person">
+            <div class="team-avatar"><img src="Photos/Persons/alan-thompson.png" alt="Dr. Alan Thompson" loading="lazy"></div>
+            <div class="team-name">Dr. Alan Thompson</div>
+          </div>
+          <div class="team-person">
+            <div class="team-avatar"><img src="Photos/Persons/olivia-adebayo.png" alt="Olivia Adebayo" loading="lazy"></div>
+            <div class="team-name">Olivia Adebayo</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -562,6 +596,9 @@
           <p style="font-size:1rem; color:var(--c-dark); line-height:1.8;">
             We combine our own manufacturing capability, international procurement expertise, and end-to-end project management into a single, accountable delivery model.
           </p>
+          <figure class="ctx-photo" style="margin-top:2rem;">
+            <img src="Photos/Persons/engineering-work.png" alt="Instrument assembly in the Green Med workshop" style="object-position:75% 50%;" loading="lazy">
+          </figure>
         </div>
 
         <div>
@@ -736,6 +773,7 @@
   </main>
 
   <script src="/footer.js"></script>
+<script src="/image-protect.js"></script>
 
   <script>
     function toggleNav() {

@@ -1,1 +1,9 @@
 ErrorDocument 404 /404.html
+
+# Hotlink protection: block other websites from embedding our images
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?greenmedltduk\.com [NC]
+RewriteRule \.(png|jpe?g|gif|webp|svg)$ - [F,NC]
+</IfModule>
