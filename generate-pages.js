@@ -643,13 +643,7 @@ ${hasSpecs ? `      <div class="specs-section">
 
 </main>
 
-<footer>
-  <div class="footer-inner">
-    <img src="../brand_assets/GREENMED LOGO Vert.svg" alt="Green Med Ltd." style="height:60px; width:auto; opacity:0.55;" loading="lazy">
-    <p class="footer-copy">&copy; 2025 Green Med Ltd. &middot; Registered in England &amp; Wales No. 13350293 &middot; All rights reserved.</p>
-    <a href="../privacy_policy/privacy-policy.html" style="font-family:'IBM Plex Mono',monospace; font-size:0.75rem; color:rgba(255,255,255,0.35); text-decoration:none; letter-spacing:0.06em; transition:color 0.2s;" onmouseover="this.style.color='rgba(165,204,72,0.8)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Privacy Policy</a>
-  </div>
-</footer>
+<script src="/footer.js"><\/script>
 
 <script>
   function submitQuote(e) {
