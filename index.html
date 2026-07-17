@@ -317,6 +317,47 @@
     }
     .svc-cta:hover { color: var(--gm-600); }
 
+    /* ── Featured manufacturing tier ─────────────────────────── */
+    .svc-featured {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid var(--c-rule);
+      border-left: 1px solid var(--c-rule);
+    }
+    .svc-feature {
+      position: relative; overflow: hidden; display: block;
+      background: var(--gm-800); text-decoration: none;
+      padding: 2.75rem 2.5rem;
+      border-right: 1px solid var(--c-rule);
+      transition: background 0.2s;
+    }
+    .svc-feature::after {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; background: var(--gm-400);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .svc-feature:hover::after { transform: scaleX(1); }
+    .svc-feature:hover { background: #1E4705; }
+    .svc-feature .svc-num { color: var(--gm-300); }
+    .svc-feature-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-size: clamp(1.5rem, 2.2vw, 2rem);
+      text-transform: uppercase; color: #fff;
+      line-height: 1.05; margin-bottom: 0.75rem;
+    }
+    .svc-feature-desc {
+      font-size: 0.9375rem; color: rgba(255,255,255,0.55);
+      line-height: 1.75; margin-bottom: 1.5rem; max-width: 520px;
+    }
+    .svc-feature-cta {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 0.8125rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gm-300); transition: color 0.2s;
+    }
+    .svc-feature:hover .svc-feature-cta { color: #fff; }
+
     /* ── Process steps ───────────────────────────────────────── */
     .process-grid {
       display: grid;
@@ -458,6 +499,7 @@
       .about-grid  { grid-template-columns: 1fr !important; }
       .contact-grid{ grid-template-columns: 1fr !important; }
       .services-grid{ grid-template-columns: 1fr !important; }
+      .svc-featured { grid-template-columns: 1fr !important; }
       .process-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
       .footer-inner { flex-direction: column !important; gap: 3rem !important; }
       .stats-grid  { grid-template-columns: repeat(2, 1fr); }
@@ -1017,56 +1059,72 @@
   <section id="services" style="background:var(--c-white); border-top:1px solid var(--c-rule);">
     <div class="section container" style="padding-bottom:3rem;">
       <div style="margin-bottom:3.5rem;" class="anim-in">
-        <div class="eyebrow" style="margin-bottom:1.375rem;">WHAT WE DELIVER</div>
-        <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2.25rem,4vw,3.5rem); text-transform:uppercase; color:var(--c-black); line-height:1;">OUR SERVICES</h2>
+        <div class="eyebrow" style="margin-bottom:1.375rem;">MANUFACTURING &amp; SERVICES</div>
+        <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2.25rem,4vw,3.5rem); text-transform:uppercase; color:var(--c-black); line-height:1;">WHAT WE DO</h2>
         <p style="font-size:1.0625rem; color:var(--c-dark); max-width:640px; line-height:1.8; margin-top:1.25rem;">
-          Beyond our own manufactured product line, we integrate equipment from world-leading OEM partners and deliver complete laboratory environments — complementary capabilities under one accountable brand.
+          A manufacturer first: we design, develop and produce our own medical devices and laboratory products — then back them with engineering expertise, turnkey project delivery, and lifecycle support. One brand, one standard, one point of accountability.
         </p>
       </div>
     </div>
 
+    <div class="svc-featured">
+      <a href="manufacturing.html" class="svc-feature anim-in">
+        <span class="svc-num">01</span>
+        <div class="svc-feature-title">Medical Device Manufacturing</div>
+        <p class="svc-feature-desc">As legal manufacturer, we design, develop and manufacture medical devices under an ISO 13485-certified quality system — UKCA/CE-marked and produced across our centrally governed manufacturing network.</p>
+        <span class="svc-feature-cta">EXPLORE MANUFACTURING →</span>
+      </a>
+      <a href="products.html" class="svc-feature anim-in" style="transition-delay:0.08s;">
+        <span class="svc-num">02</span>
+        <div class="svc-feature-title">IVD &amp; Laboratory Products Manufacturing</div>
+        <p class="svc-feature-desc">Our own line of IVD reagents and laboratory products — 95+ items spanning genomics, biochemistry, toxicology and laboratory consumables, manufactured under one brand and one standard.</p>
+        <span class="svc-feature-cta">PRODUCT CATALOGUE →</span>
+      </a>
+    </div>
+
     <div class="services-grid">
       <div class="svc-card anim-in">
-        <span class="svc-num">01</span>
-        <div class="svc-title">Turnkey Laboratory Setup</div>
-        <p class="svc-desc">End-to-end laboratory infrastructure design and commissioning, from initial feasibility study through to final handover and staff training.</p>
-        <a href="#" class="svc-cta" onclick="openServiceModal('svc-01');return false;">FULL SCOPE →</a>
+        <span class="svc-num">03</span>
+        <div class="svc-title">Biomedical Engineering Solutions</div>
+        <p class="svc-desc">Biomedical engineering services for healthcare institutions — equipment specification, systems integration, and engineering support across the equipment lifecycle.</p>
       </div>
 
       <div class="svc-card anim-in" style="transition-delay:0.08s;">
-        <span class="svc-num">02</span>
-        <div class="svc-title">Analytical Instrumentation</div>
-        <p class="svc-desc">Supply and calibration of precision analytical equipment from world-leading manufacturers, including installation and performance validation.</p>
-        <a href="#" class="svc-cta" onclick="openServiceModal('svc-02');return false;">EQUIPMENT →</a>
+        <span class="svc-num">04</span>
+        <div class="svc-title">Laboratory Design &amp; Turnkey Projects</div>
+        <p class="svc-desc">End-to-end laboratory infrastructure design and commissioning, from initial feasibility study through to final handover and staff training.</p>
       </div>
 
       <div class="svc-card anim-in" style="transition-delay:0.16s;">
-        <span class="svc-num">03</span>
-        <div class="svc-title">Quality &amp; Compliance</div>
-        <p class="svc-desc">ISO-compliant laboratory setup, quality management documentation systems, SOP development, and regulatory framework implementation.</p>
-        <a href="#" class="svc-cta" onclick="openServiceModal('svc-03');return false;">STANDARDS →</a>
+        <span class="svc-num">05</span>
+        <div class="svc-title">Installation, Commissioning &amp; Technical Services</div>
+        <p class="svc-desc">Professional installation by certified engineers, equipment calibration, IQ/OQ/PQ validation, and performance verification.</p>
       </div>
 
       <div class="svc-card anim-in" style="transition-delay:0.24s;">
-        <span class="svc-num">04</span>
-        <div class="svc-title">Cold Chain &amp; Biosafety</div>
-        <p class="svc-desc">Temperature-controlled storage infrastructure, biosafety cabinet installation, and containment systems for sensitive biological materials.</p>
-        <a href="#" class="svc-cta" onclick="openServiceModal('svc-04');return false;">SYSTEMS →</a>
+        <span class="svc-num">06</span>
+        <div class="svc-title">Maintenance, Calibration &amp; Validation</div>
+        <p class="svc-desc">Preventive maintenance programmes, scheduled calibration, and revalidation that keep laboratories accurate, compliant, and audit-ready.</p>
       </div>
 
       <div class="svc-card anim-in" style="transition-delay:0.32s;">
-        <span class="svc-num">05</span>
-        <div class="svc-title">Technical Support</div>
-        <p class="svc-desc">Preventive maintenance contracts, emergency repair services, original spare parts supply, and remote technical assistance programmes.</p>
-        <a href="#" class="svc-cta" onclick="openServiceModal('svc-05');return false;">SUPPORT →</a>
+        <span class="svc-num">07</span>
+        <div class="svc-title">Spare Parts &amp; Technical Support</div>
+        <p class="svc-desc">Original spare parts supply, emergency repair services, and remote technical assistance programmes — long after commissioning.</p>
       </div>
 
       <div class="svc-card anim-in" style="transition-delay:0.40s;">
-        <span class="svc-num">06</span>
-        <div class="svc-title">Training &amp; Capacity Building</div>
-        <p class="svc-desc">On-site and remote training programmes for laboratory staff, biomedical technicians, and laboratory management teams.</p>
-        <a href="#" class="svc-cta" onclick="openServiceModal('svc-06');return false;">TRAINING →</a>
+        <span class="svc-num">08</span>
+        <div class="svc-title">Quality Assurance &amp; Regulatory Compliance</div>
+        <p class="svc-desc">ISO-compliant quality management, documentation systems, SOP development, and regulatory framework implementation.</p>
       </div>
+    </div>
+
+    <div class="anim-in" style="background:var(--gm-800); padding:2.5rem var(--px); text-align:center;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(165,204,72,0.65); margin-bottom:0.75rem;">GLOBAL HEALTHCARE SOLUTIONS</div>
+      <p style="font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:clamp(1.25rem,2vw,1.625rem); text-transform:uppercase; color:#fff; line-height:1.3; max-width:900px; margin:0 auto;">
+        Manufacturing, engineering and lifecycle support — delivered to healthcare institutions in 18+ countries.
+      </p>
     </div>
 
   </section>

@@ -46,12 +46,17 @@
       { label: 'PROJECTS',      href: '/projects.html' },
       { label: 'CONTACT',       href: '/contact.html' }
     ]) +
-    col('SECTORS', [
-      { label: 'HEALTHCARE' }, { label: 'GOVERNMENT' }, { label: 'RESEARCH' }, { label: "INT'L ORGS" }
+    col('MANUFACTURING', [
+      { label: 'MEDICAL DEVICES',           href: '/manufacturing.html' },
+      { label: 'IVD & LABORATORY PRODUCTS', href: '/products.html' },
+      { label: 'QUALITY & REGULATORY COMPLIANCE' }
     ]) +
     col('SERVICES', [
-      { label: 'MANUFACTURING' }, { label: 'LABORATORY SETUP' }, { label: 'INSTRUMENTATION' },
-      { label: 'COMPLIANCE' }, { label: 'TECHNICAL SUPPORT' }
+      { label: 'BIOMEDICAL ENGINEERING' },
+      { label: 'LAB DESIGN & TURNKEY PROJECTS' },
+      { label: 'INSTALLATION & COMMISSIONING' },
+      { label: 'MAINTENANCE, CALIBRATION & VALIDATION' },
+      { label: 'SPARE PARTS & TECHNICAL SUPPORT' }
     ]) +
     col('LEGAL', [
       { label: 'PRIVACY POLICY', href: '/privacy_policy/privacy-policy.html' }
