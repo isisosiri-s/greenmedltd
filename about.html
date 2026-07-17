@@ -248,63 +248,6 @@
       .val-grid { grid-template-columns: 1fr; }
     }
 
-    /* ── Organisation chart (lightweight, no JS) ── */
-    .org-top-wrap { display: flex; flex-direction: column; align-items: center; }
-    .org-node {
-      background: var(--c-white); border: 1px solid var(--c-rule);
-      border-top: 3px solid var(--gm-400); padding: 1.1rem 1.5rem; text-align: center;
-    }
-    .org-node .org-role {
-      font-family: 'IBM Plex Mono', monospace; font-size: 0.5625rem; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--c-muted); margin-bottom: 0.35rem;
-    }
-    .org-node .org-name {
-      font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.25rem;
-      text-transform: uppercase; color: var(--c-black); line-height: 1.05;
-    }
-    .org-top { width: 100%; max-width: 340px; }
-    .org-stem { width: 2px; height: 2rem; background: var(--c-rule); }
-    .org-branches {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-      width: 100%; position: relative;
-    }
-    .org-branches::before {
-      content: ''; position: absolute; top: -1rem; left: 16.66%; right: 16.66%;
-      height: 2px; background: var(--c-rule);
-    }
-    .org-branch { position: relative; display: flex; flex-direction: column; }
-    .org-branch::before {
-      content: ''; position: absolute; top: -1rem; left: 50%; transform: translateX(-50%);
-      width: 2px; height: 1rem; background: var(--c-rule);
-    }
-    .org-group {
-      background: var(--gm-800); color: #fff; padding: 0.9rem 1.1rem;
-      min-height: 3.5rem; display: flex; flex-direction: column; justify-content: center;
-    }
-    .org-group-name {
-      font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.0625rem;
-      text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.1;
-    }
-    .org-group-note {
-      font-family: 'IBM Plex Mono', monospace; font-size: 0.5625rem; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--gm-300); margin-top: 0.3rem;
-    }
-    .org-dept-list { list-style: none; margin: 0; padding: 0; border: 1px solid var(--c-rule); border-top: none; }
-    .org-dept-list li {
-      display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
-      padding: 0.6rem 1rem; border-bottom: 1px solid var(--c-rule);
-      font-size: 0.8125rem; color: var(--c-dark); background: var(--c-white);
-    }
-    .org-dept-list li:last-child { border-bottom: none; }
-    .org-dept-list li .org-n {
-      font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1rem; color: var(--gm-500);
-    }
-    @media (max-width: 760px) {
-      .org-branches { grid-template-columns: 1fr; gap: 2rem; }
-      .org-branches::before { display: none; }
-      .org-branch::before { display: none; }
-      .org-stem { height: 1.5rem; }
-    }
   </style>
 </head>
 <body>
@@ -348,6 +291,8 @@
 
   <!-- HERO -->
   <section style="padding-top:64px; background:var(--c-footer); position:relative; overflow:hidden; min-height:72vh; display:flex; align-items:center;">
+    <img src="Photos/manufacturing/Resim1.jpg" alt="" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:right center; opacity:0.32;">
+    <div style="position:absolute; inset:0; background:linear-gradient(90deg, rgba(17,17,17,0.94) 0%, rgba(17,17,17,0.82) 48%, rgba(17,17,17,0.5) 100%); pointer-events:none;"></div>
     <div style="position:absolute; inset:0; background:radial-gradient(ellipse 70% 65% at 95% 45%, rgba(97,154,24,0.22) 0%, transparent 65%), radial-gradient(ellipse 45% 70% at 0% 100%, rgba(97,154,24,0.07) 0%, transparent 60%); pointer-events:none;"></div>
     <div style="position:absolute; right:var(--px); top:0; bottom:0; width:1px; background:rgba(255,255,255,0.04); pointer-events:none;"></div>
 
@@ -515,51 +460,8 @@
         </div>
       </div>
 
-      <!-- Organisation structure (CSS org chart) -->
+      <!-- Organisation note -->
       <div class="anim-in">
-        <h3 class="eyebrow" style="margin:0 0 1.5rem;">ORGANISATION STRUCTURE</h3>
-        <div class="org-top-wrap">
-          <div class="org-node org-top">
-            <div class="org-role">Managing Director</div>
-            <div class="org-name">Management</div>
-          </div>
-          <div class="org-stem" aria-hidden="true"></div>
-          <div class="org-branches">
-            <div class="org-branch">
-              <div class="org-group">
-                <div class="org-group-name">Quality &amp; Regulatory</div>
-                <div class="org-group-note">Independent of production</div>
-              </div>
-              <ul class="org-dept-list">
-                <li><span>Quality Assurance / Quality Management</span><span class="org-n">12</span></li>
-                <li><span>Regulatory Affairs</span><span class="org-n">2</span></li>
-              </ul>
-            </div>
-            <div class="org-branch">
-              <div class="org-group">
-                <div class="org-group-name">Production / Operations</div>
-              </div>
-              <ul class="org-dept-list">
-                <li><span>Production &amp; Assembly</span><span class="org-n">40</span></li>
-                <li><span>Warehouse &amp; Logistics</span><span class="org-n">8</span></li>
-                <li><span>Engineering &amp; Maintenance</span><span class="org-n">6</span></li>
-                <li><span>Production Planning &amp; Administration</span><span class="org-n">4</span></li>
-                <li><span>Packaging &amp; Labelling</span><span class="org-n">4</span></li>
-                <li><span>Procurement &amp; Supply Chain</span><span class="org-n">2</span></li>
-              </ul>
-            </div>
-            <div class="org-branch">
-              <div class="org-group">
-                <div class="org-group-name">Commercial &amp; Support</div>
-              </div>
-              <ul class="org-dept-list">
-                <li><span>Sales &amp; Business Development</span><span class="org-n">3</span></li>
-                <li><span>Finance &amp; Administration</span><span class="org-n">2</span></li>
-                <li><span>Customer Service &amp; Logistics</span><span class="org-n">2</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
         <p style="margin-top:1.75rem; max-width:780px; font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--c-muted); line-height:1.7;">
           Quality Assurance operates independently of Production and reports directly to the Managing Director. Figures show headcount by department; total workforce 86.
         </p>
