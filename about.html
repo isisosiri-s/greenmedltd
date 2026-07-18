@@ -249,6 +249,43 @@
     }
 
     /* ── Key people ── */
+    .team-quotes {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr));
+      gap: 1.5rem; margin-bottom: 3.5rem; align-items: start;
+    }
+    .team-quote { background: var(--c-white); border: 1px solid var(--c-rule); padding: 2.25rem 2rem; }
+    .team-quote.wide { grid-column: 1 / -1; }
+    .team-quote-head { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.5rem; }
+    .team-quote-head .mono-avatar {
+      width: 64px; height: 64px; border-radius: 50%; flex-shrink: 0;
+      background: var(--gm-800); border: 3px solid var(--gm-400);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+      font-size: 1.375rem; color: rgba(165,204,72,0.85);
+    }
+    .team-quote-head img {
+      width: 64px; height: 64px; border-radius: 50%; flex-shrink: 0;
+      border: 3px solid var(--gm-400); object-fit: cover; display: block;
+    }
+    .team-quote-name {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.25rem;
+      text-transform: uppercase; color: var(--c-black); line-height: 1.1;
+    }
+    .team-quote p { font-size: 0.9375rem; color: var(--c-dark); line-height: 1.8; margin: 0 0 1.1rem; }
+    .team-quote p:last-child { margin-bottom: 0; }
+    .team-quote-head { margin-bottom: 0; }
+    .team-quote-body {
+      overflow: hidden; max-height: 0; opacity: 0; transform: translateY(-6px);
+      padding-top: 1.5rem;
+      transition: opacity 0.9s ease-in-out, transform 1s cubic-bezier(0.22,1,0.36,1), max-height 1.1s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .team-quote:hover .team-quote-body,
+    .team-quote:focus-within .team-quote-body {
+      max-height: 44rem; opacity: 1; transform: translateY(0);
+    }
+    @media (hover: none) {
+      .team-quote-body { max-height: none; opacity: 1; transform: none; }
+    }
     .team-people { display: flex; flex-wrap: wrap; gap: 3rem 4.5rem; margin-bottom: 3rem; }
     .team-person { text-align: center; }
     .team-avatar {
@@ -556,14 +593,61 @@
       <!-- Key people -->
       <div class="anim-in" style="margin-top:3.5rem;">
         <h3 class="eyebrow" style="margin:0 0 1.5rem;">KEY PEOPLE</h3>
-        <div class="team-people">
-          <div class="team-person">
-            <!-- Replace this placeholder with: <img src="Photos/Persons/cem-gozener.png" alt="Cem Gözener" loading="lazy"> -->
-            <div class="team-avatar" style="display:flex; align-items:center; justify-content:center; background:var(--gm-800);">
-              <span style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:3rem; color:rgba(165,204,72,0.85); line-height:1;">CG</span>
+
+        <div class="team-quotes">
+          <div class="team-quote wide">
+            <div class="team-quote-head">
+              <!-- Replace the monogram with: <img src="Photos/Persons/cem-gozener.png" alt="Cem Gözener" loading="lazy"> -->
+              <div class="mono-avatar">CG</div>
+              <div class="team-quote-name">Cem Gözener</div>
             </div>
-            <div class="team-name">Cem Gözener</div>
+            <div class="team-quote-body">
+              <p>Healthcare is built on trust, collaboration and long-term commitment. We believe that strong partnerships are essential to delivering sustainable healthcare solutions that create lasting value.</p>
+              <p>At Green Med Ltd, we work closely with healthcare institutions, distributors and business partners to understand their needs and provide practical, reliable and efficient solutions. Our objective is not only to supply products, but to establish long-term relationships based on mutual trust and shared success.</p>
+              <p>As we continue to expand internationally, we remain committed to building strong partnerships, supporting healthcare professionals and contributing to the development of modern healthcare systems around the world.</p>
+              <p>We believe that lasting partnerships are created through integrity, consistency and a genuine commitment to those we serve.</p>
+            </div>
           </div>
+          <div class="team-quote">
+            <div class="team-quote-head">
+              <div class="mono-avatar">R</div>
+              <div class="team-quote-name">Rovshen</div>
+            </div>
+            <div class="team-quote-body">
+              <p>Every successful project begins with careful planning, technical expertise and attention to detail.</p>
+              <p>At Green Med Ltd, we are committed to developing practical solutions that meet the evolving needs of healthcare institutions. By combining engineering knowledge with reliable products, we aim to deliver projects that create long-term value for our customers.</p>
+            </div>
+          </div>
+          <div class="team-quote">
+            <div class="team-quote-head">
+              <div class="mono-avatar">A</div>
+              <div class="team-quote-name">Atajan</div>
+            </div>
+            <div class="team-quote-body">
+              <p>Successful projects depend on effective coordination, timely execution and responsive communication. We are committed to ensuring that every project is delivered efficiently, on schedule and in line with our customers' expectations.</p>
+            </div>
+          </div>
+          <div class="team-quote">
+            <div class="team-quote-head">
+              <div class="mono-avatar">T</div>
+              <div class="team-quote-name">Timur</div>
+            </div>
+            <div class="team-quote-body">
+              <p>Trust and integrity are the foundation of every successful partnership. We are committed to building long-term relationships through honesty, transparency and a consistent commitment to our customers.</p>
+            </div>
+          </div>
+          <div class="team-quote">
+            <div class="team-quote-head">
+              <div class="mono-avatar">M</div>
+              <div class="team-quote-name">Muhammet</div>
+            </div>
+            <div class="team-quote-body">
+              <p>Reliable technical support is an essential part of every successful healthcare solution. From installation and technical support to after-sales service, we ensure that every system we deliver operates reliably, efficiently and without interruption.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-people">
           <div class="team-person">
             <div class="team-avatar"><img src="Photos/Persons/alan-thompson.png" alt="Dr. Alan Thompson" loading="lazy"></div>
             <div class="team-name">Dr. Alan Thompson</div>
