@@ -13,7 +13,8 @@
     '.gmf-head { font-family:"IBM Plex Mono",monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.25); margin-bottom:1.25rem; }\n' +
     '.gmf-link, .gmf-item { font-family:"Barlow Condensed",sans-serif; font-weight:600; font-size:0.9375rem; letter-spacing:0.05em; text-transform:uppercase; color:rgba(255,255,255,0.55); text-decoration:none; transition:color 0.2s; display:block; margin-bottom:0.75rem; }\n' +
     '.gmf-item { cursor:default; }\n' +
-    'a.gmf-link:hover, a.gmf-link:focus-visible { color:#A5CC48; }\n' +
+    'button.gmf-link { background:none; border:none; padding:0; font:inherit; letter-spacing:inherit; text-align:left; cursor:pointer; }\n' +
+    'a.gmf-link:hover, a.gmf-link:focus-visible, button.gmf-link:hover, button.gmf-link:focus-visible { color:#A5CC48; }\n' +
     '.gmf-bottom { padding-top:2rem; border-top:1px solid rgba(255,255,255,0.07); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }\n' +
     '.gmf-bottom p { font-family:"IBM Plex Mono",monospace; font-size:0.6875rem; color:rgba(255,255,255,0.28); margin:0; }\n' +
     '.gmf-tag { font-style:italic; color:rgba(255,255,255,0.18) !important; }\n' +
@@ -23,9 +24,13 @@
     var out = '<div><div class="gmf-head">' + head + '</div>';
     for (var i = 0; i < items.length; i++) {
       var it = items[i];
-      out += it.href
-        ? '<a class="gmf-link" href="' + it.href + '">' + it.label + '</a>'
-        : '<span class="gmf-item">' + it.label + '</span>';
+      if (it.href) {
+        out += '<a class="gmf-link" href="' + it.href + '">' + it.label + '</a>';
+      } else if (it.id) {
+        out += '<button type="button" class="gmf-link" id="' + it.id + '">' + it.label + '</button>';
+      } else {
+        out += '<span class="gmf-item">' + it.label + '</span>';
+      }
     }
     return out + '</div>';
   }
@@ -59,7 +64,8 @@
       { label: 'SPARE PARTS & TECHNICAL SUPPORT' }
     ]) +
     col('LEGAL', [
-      { label: 'PRIVACY POLICY', href: '/privacy_policy/privacy-policy.html' }
+      { label: 'PRIVACY POLICY', href: '/privacy_policy/privacy-policy.html' },
+      { label: 'COOKIE PREFERENCES', id: 'gmf-cookie-prefs' }
     ]) +
     '</div>' +
     '</div>' +
@@ -75,4 +81,11 @@
   document.head.appendChild(style);
 
   document.currentScript.insertAdjacentHTML('beforebegin', html);
+
+  var cookiePrefsBtn = document.getElementById('gmf-cookie-prefs');
+  if (cookiePrefsBtn) {
+    cookiePrefsBtn.addEventListener('click', function () {
+      if (typeof window.gmOpenConsentBanner === 'function') { window.gmOpenConsentBanner(); }
+    });
+  }
 })();
