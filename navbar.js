@@ -4,7 +4,7 @@
   var PAGES = [
     { label: 'PRODUCTS',      href: '/products.html' },
     { label: 'MANUFACTURING', href: '/manufacturing.html' },
-    { label: 'ABOUT',         href: '/about.html' },
+    { label: 'ABOUT US',      href: '/about.html' },
     { label: 'PROJECTS',      href: '/projects.html' },
     { label: 'CONTACT',       href: '/contact.html' }
   ];

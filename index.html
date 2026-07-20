@@ -437,7 +437,6 @@
 
     /* ── Responsive ──────────────────────────────────────────── */
     @media (max-width: 1024px) {
-      .hero-mini-stats { display: none; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .stat-cell:nth-child(2) { border-right: none; }
       .stat-cell:nth-child(3) { border-right: none; border-top: 1px solid rgba(255,255,255,0.07); }
@@ -605,6 +604,15 @@
     }
 
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.greenmedltduk.com/" }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -644,18 +652,6 @@
           </svg>
         </a>
         <a href="#services" class="btn btn-outline">EXPLORE SERVICES</a>
-      </div>
-
-      <!-- Mini stats — hidden below 1024px where the full stats-section is visible -->
-      <div class="hero-mini-stats" style="display:flex; gap:2.75rem; padding-top:1.5rem; border-top:1px solid var(--c-rule); flex-wrap:wrap;">
-        <div>
-          <div class="hero-counter" data-counter="57" data-suffix="+" style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.625rem; color:var(--gm-500); line-height:1;">57+</div>
-          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--c-muted); margin-top:0.25rem;">PROJECTS DELIVERED</div>
-        </div>
-        <div>
-          <div class="hero-counter" data-counter="18" data-suffix="+" style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.625rem; color:var(--gm-500); line-height:1;">18+</div>
-          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--c-muted); margin-top:0.25rem;">COUNTRIES SERVED</div>
-        </div>
       </div>
 
     </div>
@@ -1461,13 +1457,6 @@
 
     const statsSection = document.querySelector('.stats-section');
     if (statsSection) statsObserver.observe(statsSection);
-
-    /* Hero mini-counters — fire shortly after page load */
-    window.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.hero-counter').forEach((el, i) => {
-        setTimeout(() => animateCounter(el, +el.dataset.counter, el.dataset.suffix || '', 1600), 700 + i * 150);
-      });
-    });
   </script>
 </body>
 </html>
