@@ -70,7 +70,7 @@
     '</div>' +
     '</div>' +
     '<div class="gmf-bottom">' +
-    '<p>© 2025 Green Med Ltd. · Registered in England &amp; Wales No. 13350293 · All rights reserved.</p>' +
+    '<p>© ' + new Date().getFullYear() + ' Green Med Ltd. · Registered in England &amp; Wales No. 13350293 · All rights reserved.</p>' +
     '<p class="gmf-tag">"From Concept to Completion."</p>' +
     '</div>' +
     '</div>' +

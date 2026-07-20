@@ -1,5 +1,13 @@
 ErrorDocument 404 /404.html
 
+AddDefaultCharset UTF-8
+
+<IfModule mod_headers.c>
+<FilesMatch "\.html$">
+  Header set Cache-Control "no-cache, must-revalidate"
+</FilesMatch>
+</IfModule>
+
 # Temporarily disable the Russian (/ru) section — return 404 for all pages under it
 <IfModule mod_rewrite.c>
 RewriteEngine On
