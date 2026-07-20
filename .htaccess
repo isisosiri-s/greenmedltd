@@ -1,5 +1,11 @@
 ErrorDocument 404 /404.html
 
+# Temporarily disable the Russian (/ru) section — return 404 for all pages under it
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^ru(/.*)?$ - [R=404,NC,L]
+</IfModule>
+
 # Hotlink protection: block other websites from embedding our images
 <IfModule mod_rewrite.c>
 RewriteEngine On
