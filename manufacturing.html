@@ -261,36 +261,81 @@
       .fac-grid { grid-template-columns: 1fr; }
     }
 
-    /* ── Production process (vertical numbered flow) ── */
-    .flow-step {
-      display: grid; grid-template-columns: auto 1fr; gap: 1.75rem;
-      padding: 2rem 0; border-bottom: 1px solid var(--c-rule);
+    /* ── Production process (phased vertical) ── */
+    .process-phase { margin-bottom: 2.75rem; }
+    .process-phase:last-child { margin-bottom: 0; }
+    .process-phase-label {
+      display: flex; align-items: baseline; gap: 0.75rem;
+      padding-bottom: 0.85rem; margin-bottom: 0.25rem;
+      border-bottom: 1px solid var(--c-rule);
     }
-    .flow-step:last-child { border-bottom: none; }
-    .flow-num {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 800; font-size: 1.75rem; line-height: 1;
+    .process-phase-name {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6875rem;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--gm-600);
+    }
+    .process-phase-range {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6875rem;
+      letter-spacing: 0.1em; color: var(--c-muted);
+    }
+    .process-phase-connector {
+      display: flex; justify-content: center; padding: 0.5rem 0 0.25rem;
       color: var(--gm-400);
-      border-top: 3px solid var(--gm-400);
-      padding-top: 0.5rem; min-width: 3.25rem;
     }
-    .flow-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700; font-size: 1.375rem; text-transform: uppercase;
-      color: var(--c-black); letter-spacing: 0.02em; margin-bottom: 0.5rem;
+
+    .process-steps { position: relative; }
+    .process-steps::before {
+      content: ''; position: absolute; left: 1.375rem; top: 0.4rem; bottom: 0.4rem;
+      width: 1px; background: var(--c-rule);
     }
-    .flow-desc {
-      font-size: 0.95rem; color: var(--c-dark); line-height: 1.8; max-width: 640px;
-      overflow: hidden; max-height: 0; opacity: 0; transform: translateY(-6px);
-      transition: opacity 0.9s ease-in-out, transform 1s cubic-bezier(0.22,1,0.36,1), max-height 1.1s cubic-bezier(0.25,0.46,0.45,0.94);
+    .process-step {
+      position: relative; display: grid; grid-template-columns: 2.75rem 1fr;
+      gap: 1.5rem; padding: 1.35rem 0; align-items: start;
     }
-    .flow-step:hover .flow-desc,
-    .flow-step:focus-within .flow-desc {
-      max-height: 16rem; opacity: 1; transform: translateY(0);
+    .process-node {
+      position: relative; z-index: 1;
+      width: 2.75rem; height: 2.75rem; border-radius: 50%; flex-shrink: 0;
+      background: var(--c-bg); border: 1.5px solid var(--gm-400);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.0625rem; color: var(--gm-600);
     }
-    /* Touch devices have no hover — keep descriptions visible */
-    @media (hover: none) {
-      .flow-desc { max-height: none; opacity: 1; transform: none; }
+    .process-gate-dot {
+      position: absolute; top: -2px; right: -2px;
+      width: 0.6rem; height: 0.6rem; background: var(--gm-500);
+      border: 2px solid var(--c-white); transform: rotate(45deg);
+    }
+    .process-step-title {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.1875rem;
+      text-transform: uppercase; color: var(--c-black); letter-spacing: 0.02em; margin-bottom: 0.35rem;
+    }
+    .process-step-desc { font-size: 0.9rem; color: var(--c-dark); line-height: 1.7; max-width: 560px; }
+
+    /* Release phase — visually isolated */
+    .process-phase-release .process-phase-label { border-bottom-color: rgba(126,184,40,0.3); }
+    .process-release-card {
+      background: var(--gm-800); padding: 2.25rem 2.5rem;
+      display: grid; grid-template-columns: auto 1fr; gap: 1.75rem; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    .process-release-num {
+      position: relative; z-index: 1;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.75rem;
+      color: var(--gm-400); line-height: 1;
+      border: 1.5px solid var(--gm-400); border-radius: 50%;
+      width: 4rem; height: 4rem; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .process-release-num .process-gate-dot { border-color: var(--gm-800); }
+    .process-release-title {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.375rem;
+      text-transform: uppercase; color: #fff; letter-spacing: 0.02em; margin-bottom: 0.5rem;
+    }
+    .process-release-desc { font-size: 0.95rem; color: rgba(255,255,255,0.65); line-height: 1.75; max-width: 620px; }
+
+    @media (max-width: 640px) {
+      .process-step { grid-template-columns: 2.25rem 1fr; gap: 1rem; }
+      .process-node { width: 2.25rem; height: 2.25rem; font-size: 0.9375rem; }
+      .process-steps::before { left: 1.125rem; }
+      .process-release-card { grid-template-columns: 1fr; }
     }
 
     /* ── Capability cards ── */
@@ -405,7 +450,9 @@
       .gallery-grid .g-tall,
       .gallery-grid .g-third { grid-column: span 12; }
       .detail-grid { grid-template-columns: 1fr; }
-      .flow-step { grid-template-columns: 1fr; gap: 0.75rem; }
+      .flow-edge-fade { width: 3rem; }
+      .flow-track { gap: 1.5rem; }
+      .flow-card:not(:last-child)::after { right: -1.15rem; }
       .spec-grid { grid-template-columns: 1fr; }
       .spec-cell { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 1.75rem 0; }
       .spec-cell:last-child { border-bottom: none; }
@@ -595,64 +642,97 @@
 
   <!-- PRODUCTION PROCESS -->
   <section style="background:var(--c-bg); border-top:1px solid var(--c-rule); padding:var(--py) var(--px);">
-    <div style="max-width:1000px; margin:0 auto;">
-      <div style="margin-bottom:3rem;" class="anim-in">
+    <div style="max-width:900px; margin:0 auto;">
+      <div style="margin-bottom:3.5rem;" class="anim-in">
         <div class="eyebrow" style="margin-bottom:1.25rem;">HOW WE PRODUCE</div>
-        <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2rem,3.5vw,3.125rem); text-transform:uppercase; color:var(--c-black); line-height:1.02;">THE PRODUCTION PROCESS</h2>
+        <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2rem,3.5vw,3.125rem); text-transform:uppercase; color:var(--c-black); line-height:1.02; margin-bottom:1.25rem;">THE PRODUCTION PROCESS</h2>
+        <div style="display:flex; align-items:center; gap:0.6rem;">
+          <span style="width:0.55rem; height:0.55rem; background:var(--gm-500); transform:rotate(45deg); flex-shrink:0;" aria-hidden="true"></span>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6875rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--c-muted);">Quality gate — a batch is held here until it conforms</span>
+        </div>
       </div>
 
-      <div class="photo-frame anim-in" style="aspect-ratio:21/9; margin-bottom:3rem;">
-        <img src="Photos/manufacturing/packaging-line.webp" alt="Automated packaging and coding line" loading="lazy">
+      <!-- Phase 1: Before Production -->
+      <div class="process-phase anim-in">
+        <div class="process-phase-label">
+          <span class="process-phase-name">Before Production</span>
+          <span class="process-phase-range">01–02</span>
+        </div>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="process-node">01</div>
+            <div>
+              <div class="process-step-title">Design &amp; R&amp;D</div>
+              <p class="process-step-desc">Every product begins as a Green Med design — engineering and R&amp;D define the specification, materials and performance criteria.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-node">02</div>
+            <div>
+              <div class="process-step-title">Technical File &amp; Documentation</div>
+              <p class="process-step-desc">Documented under our ISO 13485 system — technical file, risk management and validation records — before production is authorised.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div>
-        <div class="flow-step anim-in">
-          <div class="flow-num">01</div>
-          <div>
-            <div class="flow-title">Design &amp; R&amp;D</div>
-            <p class="flow-desc">Every product begins as a Green Med design. Our engineering and R&amp;D define the specification, materials and performance criteria — the intellectual property that makes us the legal manufacturer.</p>
+      <div class="process-phase-connector anim-in" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 9l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+
+      <!-- Phase 2: Production -->
+      <div class="process-phase anim-in">
+        <div class="process-phase-label">
+          <span class="process-phase-name">Production</span>
+          <span class="process-phase-range">03–06</span>
+        </div>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="process-node">03<span class="process-gate-dot" aria-hidden="true"></span></div>
+            <div>
+              <div class="process-step-title">Sourcing &amp; Incoming Inspection</div>
+              <p class="process-step-desc">Raw materials and components come from qualified, agreement-bound suppliers and are inspected against defined criteria on arrival.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-node">04</div>
+            <div>
+              <div class="process-step-title">Production</div>
+              <p class="process-step-desc">Manufacturing runs at our own UK facility, to the specification and controls set by our engineering and quality teams.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-node">05<span class="process-gate-dot" aria-hidden="true"></span></div>
+            <div>
+              <div class="process-step-title">Quality Control &amp; Testing</div>
+              <p class="process-step-desc">In-process and final quality control verify every batch against the Green Med standard, including IQ/OQ/PQ and cold-chain validation. Nothing moves forward until it conforms.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-node">06</div>
+            <div>
+              <div class="process-step-title">Packaging &amp; Labelling</div>
+              <p class="process-step-desc">Packaged and labelled with the Green Med identity — including the legal manufacturer, batch and reference information — ready for release.</p>
+            </div>
           </div>
         </div>
-        <div class="flow-step anim-in">
-          <div class="flow-num">02</div>
-          <div>
-            <div class="flow-title">Technical File &amp; Documentation</div>
-            <p class="flow-desc">Each device is documented under our ISO 13485 quality management system — technical file, risk management, verification and validation records — before any production is authorised.</p>
-          </div>
+      </div>
+
+      <div class="process-phase-connector anim-in" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 9l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+
+      <!-- Phase 3: Release -->
+      <div class="process-phase process-phase-release anim-in">
+        <div class="process-phase-label">
+          <span class="process-phase-name">Release</span>
+          <span class="process-phase-range">07</span>
         </div>
-        <div class="flow-step anim-in">
-          <div class="flow-num">03</div>
+        <div class="process-release-card">
+          <div class="process-release-num">07<span class="process-gate-dot" aria-hidden="true"></span></div>
           <div>
-            <div class="flow-title">Sourcing &amp; Incoming Inspection</div>
-            <p class="flow-desc">Raw materials and components are procured from qualified, agreement-bound suppliers and inspected against defined acceptance criteria on arrival, so production starts from a controlled baseline.</p>
-          </div>
-        </div>
-        <div class="flow-step anim-in">
-          <div class="flow-num">04</div>
-          <div>
-            <div class="flow-title">Production</div>
-            <p class="flow-desc">Manufacturing runs at Green Med's own UK facility, to the specification, controls and quality criteria defined by our engineering and quality teams — nothing is built to an outside or uncontrolled process.</p>
-          </div>
-        </div>
-        <div class="flow-step anim-in">
-          <div class="flow-num">05</div>
-          <div>
-            <div class="flow-title">Quality Control &amp; Testing</div>
-            <p class="flow-desc">In-process and final quality control verify that each batch meets the Green Med standard. For equipment this includes installation, operational and performance qualification (IQ/OQ/PQ) and — where relevant — cold-chain validation. Nothing moves forward until it conforms.</p>
-          </div>
-        </div>
-        <div class="flow-step anim-in">
-          <div class="flow-num">06</div>
-          <div>
-            <div class="flow-title">Packaging &amp; Labelling</div>
-            <p class="flow-desc">Products are packaged and labelled with the Green Med identity — including the legal manufacturer, batch and reference information — and prepared for release.</p>
-          </div>
-        </div>
-        <div class="flow-step anim-in">
-          <div class="flow-num">07</div>
-          <div>
-            <div class="flow-title">Final Batch Release</div>
-            <p class="flow-desc">Every batch is reviewed and released in-house by Green Med Ltd., and placed on the market under our own Declaration of Conformity. Nothing ships without our release sign-off.</p>
+            <div class="process-release-title">Final Batch Release</div>
+            <p class="process-release-desc">Every batch is reviewed and released in-house by Green Med Ltd., placed on the market under our own Declaration of Conformity. Nothing ships without our sign-off.</p>
           </div>
         </div>
       </div>
@@ -896,6 +976,7 @@
     // Reveal hero immediately on load
     const heroEls = document.querySelectorAll('section:first-of-type .anim-in');
     heroEls.forEach((el, i) => setTimeout(() => el.classList.add('visible'), 100 + i * 160));
+
   </script>
 </body>
 </html>
