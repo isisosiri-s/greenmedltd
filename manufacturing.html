@@ -261,6 +261,45 @@
       .fac-grid { grid-template-columns: 1fr; }
     }
 
+    /* ── Photo caption overlay (visible alt text) ── */
+    .photo-caption-overlay {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 1;
+      padding: 2.5rem 1.25rem 0.9rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.35) 55%, transparent 100%);
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6875rem;
+      letter-spacing: 0.08em; text-transform: uppercase; color: #fff;
+    }
+
+    /* ── Facility area composition (proportional bar, emphasis form) ── */
+    .facility-bar { display: flex; gap: 2px; height: 6.75rem; }
+    .facility-seg {
+      flex: 0 0 auto; display: flex; flex-direction: column; justify-content: center;
+      padding: 0.75rem 1rem; position: relative; min-width: 0;
+    }
+    .facility-seg:first-child { border-radius: 4px 0 0 4px; }
+    .facility-seg:last-child { border-radius: 0 4px 4px 0; }
+    .facility-seg-context { background: var(--c-dark); }
+    .facility-seg-accent { background: var(--gm-800); }
+    .facility-seg-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.625rem;
+      letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.7);
+      line-height: 1.35;
+    }
+    .facility-seg-value {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.375rem;
+      color: #fff; line-height: 1; margin-top: 0.3rem;
+    }
+    .facility-seg-tag {
+      display: inline-block; margin-top: 0.35rem;
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.5625rem;
+      letter-spacing: 0.08em; color: var(--gm-300);
+    }
+    @media (max-width: 640px) {
+      .facility-bar { flex-direction: column; height: 22rem; }
+      .facility-seg:first-child { border-radius: 4px 4px 0 0; }
+      .facility-seg:last-child { border-radius: 0 0 4px 4px; }
+    }
+
     /* ── Production process (phased vertical) ── */
     .process-phase { margin-bottom: 2.75rem; }
     .process-phase:last-child { margin-bottom: 0; }
@@ -525,13 +564,72 @@
     <div style="max-width:1200px; margin:0 auto;">
 
       <!-- Lead -->
-      <div style="margin-bottom:3rem; max-width:780px;" class="anim-in">
+      <div style="margin-bottom:3.5rem; max-width:780px;" class="anim-in">
         <div class="eyebrow" style="margin-bottom:1.25rem;">OUR FACILITY</div>
         <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2rem,3.5vw,3.125rem); text-transform:uppercase; color:var(--c-black); line-height:1.02; margin-bottom:1rem;">THE MANUFACTURING FACILITY</h2>
         <p style="font-size:1.0625rem; color:var(--c-dark); line-height:1.85;">
           Green Med Ltd. is a UK legal manufacturer operating its own facility. Here we design, manufacture, quality-control and give <strong style="color:var(--c-black); font-weight:400;">final batch release</strong> to our product line in-house, under a single certified quality management system.
         </p>
-        <ul class="tier-list" style="margin-top:1.75rem;">
+      </div>
+
+      <!-- Block 1: THE FACILITY — proportional area composition -->
+      <div class="anim-in" style="margin-bottom:3.5rem;">
+        <h3 class="eyebrow" style="margin:0 0 1.5rem; color:var(--c-muted);">THE FACILITY · 2,740 M² TOTAL</h3>
+        <div class="facility-bar">
+          <div class="facility-seg facility-seg-context" style="flex-basis:41.97%;">
+            <div class="facility-seg-label">Production</div>
+            <div class="facility-seg-value">1,150 m²</div>
+          </div>
+          <div class="facility-seg facility-seg-accent" style="flex-basis:14.6%;">
+            <div class="facility-seg-label">Cleanroom</div>
+            <div class="facility-seg-value">400 m²</div>
+            <div class="facility-seg-tag">ISO 7</div>
+          </div>
+          <div class="facility-seg facility-seg-context" style="flex-basis:20.44%;">
+            <div class="facility-seg-label">Warehouse</div>
+            <div class="facility-seg-value">560 m²</div>
+          </div>
+          <div class="facility-seg facility-seg-context" style="flex-basis:22.99%;">
+            <div class="facility-seg-label">Support &amp; circulation</div>
+            <div class="facility-seg-value">630 m²</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Block 2: CAPACITY & PEOPLE -->
+      <div class="anim-in" style="margin-bottom:3.5rem;">
+        <h3 class="eyebrow" style="margin:0 0 1.5rem; color:var(--c-muted);">CAPACITY &amp; PEOPLE</h3>
+        <div style="display:flex; flex-wrap:wrap; gap:1px; background:var(--c-rule); border:1px solid var(--c-rule);">
+          <div style="flex:1 1 220px; background:var(--c-bg); padding:1.6rem 1.6rem;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-muted); margin-bottom:0.7rem;">Production lines</div>
+            <div style="display:flex; align-items:center; gap:0.6rem;">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--gm-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21h18"/><path d="M5 21v-12l5 4v-4l5 4h4"/><path d="M19 21v-8l-1.436 -9.574a.5 .5 0 0 0 -.495 -.426h-1.145a.5 .5 0 0 0 -.494 .418l-1.43 8.582"/><path d="M9 17h1"/><path d="M14 17h1"/></svg>
+              <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.25rem; color:var(--gm-500); line-height:1;">6</div>
+            </div>
+          </div>
+          <div style="flex:1 1 220px; background:var(--c-bg); padding:1.6rem 1.6rem;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-muted); margin-bottom:0.7rem;">Annual capacity</div>
+            <div style="display:flex; align-items:center; gap:0.6rem;">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--gm-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3l8 4.5l0 9l-8 4.5l-8 -4.5l0 -9l8 -4.5"/><path d="M12 12l8 -4.5"/><path d="M12 12l0 9"/><path d="M12 12l-8 -4.5"/></svg>
+              <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.25rem; color:var(--gm-500); line-height:1;">1,988,172</div>
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.06em; color:var(--c-muted); margin-top:0.5rem;">Finished units / year · all product lines</div>
+          </div>
+          <div style="flex:1 1 220px; background:var(--c-bg); padding:1.6rem 1.6rem;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-muted); margin-bottom:0.7rem;">Workforce</div>
+            <div style="display:flex; align-items:center; gap:0.6rem;">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--gm-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"/><path d="M16 19h6"/><path d="M19 16v6"/><path d="M6 21v-2a4 4 0 0 1 4 -4h4"/></svg>
+              <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.25rem; color:var(--gm-500); line-height:1;">86</div>
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.06em; color:var(--c-muted); margin-top:0.5rem;">Employees · all in-house</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Block 3: WHAT WE HOLD -->
+      <div class="anim-in" style="margin-bottom:3.5rem;">
+        <h3 class="eyebrow" style="margin:0 0 1.5rem; color:var(--c-muted);">WHAT WE HOLD</h3>
+        <ul class="tier-list">
           <li>Holds design authority, technical documentation and brand rights</li>
           <li>Carries regulatory responsibility — registrations &amp; Declaration of Conformity</li>
           <li>Owns the ISO 13485 quality management system</li>
@@ -539,53 +637,17 @@
         </ul>
       </div>
 
-      <!-- Facility at a glance -->
-      <div class="anim-in" style="margin-bottom:3.5rem;">
-        <h3 class="eyebrow" style="margin:0 0 1.5rem; color:var(--c-muted);">FACILITY AT A GLANCE</h3>
-        <div style="display:flex; flex-wrap:wrap; gap:1px; background:var(--c-rule); border:1px solid var(--c-rule);">
-          <div style="flex:1 1 280px; background:var(--c-bg); padding:1.6rem 1.6rem;">
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-muted); margin-bottom:0.7rem;">Total facility area</div>
-            <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.25rem; color:var(--gm-500); line-height:1;">2,740<span style="font-size:1rem; color:var(--c-dark); font-weight:600;"> m²</span></div>
-          </div>
-          <div style="flex:1 1 280px; background:var(--c-bg); padding:1.6rem 1.6rem;">
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-muted); margin-bottom:0.7rem;">Production area</div>
-            <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.25rem; color:var(--gm-500); line-height:1;">1,150<span style="font-size:1rem; color:var(--c-dark); font-weight:600;"> m²</span></div>
-          </div>
-          <div style="flex:1 1 280px; background:var(--c-bg); padding:1.6rem 1.6rem;">
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-muted); margin-bottom:0.7rem;">Clean room area</div>
-            <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.25rem; color:var(--gm-500); line-height:1;">400<span style="font-size:1rem; color:var(--c-dark); font-weight:600;"> m²</span></div>
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.06em; color:var(--c-muted); margin-top:0.5rem;">ISO 7 classification</div>
-          </div>
-          <div style="flex:1 1 280px; background:var(--c-bg); padding:1.6rem 1.6rem;">
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-muted); margin-bottom:0.7rem;">Warehouse area</div>
-            <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.25rem; color:var(--gm-500); line-height:1;">560<span style="font-size:1rem; color:var(--c-dark); font-weight:600;"> m²</span></div>
-          </div>
-          <div style="flex:1 1 280px; background:var(--c-bg); padding:1.6rem 1.6rem;">
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-muted); margin-bottom:0.7rem;">Production lines</div>
-            <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.25rem; color:var(--gm-500); line-height:1;">6</div>
-          </div>
-          <div style="flex:1 1 280px; background:var(--c-bg); padding:1.6rem 1.6rem;">
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-muted); margin-bottom:0.7rem;">Annual capacity</div>
-            <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.25rem; color:var(--gm-500); line-height:1;">1,988,172</div>
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.06em; color:var(--c-muted); margin-top:0.5rem;">Finished units / year · all product lines</div>
-          </div>
-          <div style="flex:1 1 280px; background:var(--c-bg); padding:1.6rem 1.6rem;">
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-muted); margin-bottom:0.7rem;">Workforce</div>
-            <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:2.25rem; color:var(--gm-500); line-height:1;">86</div>
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:0.625rem; letter-spacing:0.06em; color:var(--c-muted); margin-top:0.5rem;">Employees · all in-house</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- (b) Interior gallery -->
+      <!-- Block 4: INSIDE THE FACILITY -->
       <div class="anim-in">
         <h3 class="eyebrow" style="margin:0 0 1.5rem; color:var(--c-muted);">INSIDE THE FACILITY</h3>
         <div class="fac-grid">
           <div class="photo-frame">
             <img src="Photos/manufacturing/Resim3.png" alt="Production and assembly floor with operators at workstations" loading="lazy">
+            <div class="photo-caption-overlay">Production floor · 1,150 m² · 6 lines</div>
           </div>
           <div class="photo-frame">
             <img src="Photos/manufacturing/Resim5.png" alt="Quality control laboratory with analytical instruments" loading="lazy">
+            <div class="photo-caption-overlay">Quality control laboratory</div>
           </div>
         </div>
       </div>
