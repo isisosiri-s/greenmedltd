@@ -6,19 +6,18 @@
   var ADDRESS = {
     street: '39 Charing Cross Road',
     city: 'London',
-    region: 'England',
     postalCode: 'WC2H 0AR',
     country: 'United Kingdom'
   };
 
   function inline() {
-    return ADDRESS.street + ', ' + ADDRESS.city + ', ' + ADDRESS.region + ', ' +
+    return ADDRESS.street + ', ' + ADDRESS.city + ', ' +
       ADDRESS.postalCode + ', ' + ADDRESS.country;
   }
 
   function multiline() {
-    return ADDRESS.street + '<br>' + ADDRESS.city + ', ' + ADDRESS.region +
-      '<br>' + ADDRESS.postalCode + ', ' + ADDRESS.country;
+    return ADDRESS.street + '<br>' + ADDRESS.city + ', ' + ADDRESS.postalCode +
+      '<br>' + ADDRESS.country;
   }
 
   function fill() {

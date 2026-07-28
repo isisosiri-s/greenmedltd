@@ -347,6 +347,36 @@
     .btn-cta:hover  { background: var(--gm-600); }
     .btn-cta:active { transform: scale(0.99); }
 
+    /* ── Map card ───────────────────────────────────────────── */
+    .map-frame {
+      position: relative; overflow: hidden;
+      aspect-ratio: 4 / 3;
+      background: var(--c-bg);
+      box-shadow: inset 0 0 0 1px var(--c-rule);
+    }
+    .map-frame iframe {
+      position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+      filter: grayscale(1) contrast(1.05) brightness(0.97);
+      transition: filter 0.5s ease;
+    }
+    .map-frame:hover iframe,
+    .map-frame:focus-within iframe { filter: grayscale(0); }
+    .map-directions {
+      position: absolute; right: 0.75rem; bottom: 0.75rem; z-index: 1;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 0.75rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      background: var(--gm-500); color: #fff;
+      padding: 0.55rem 0.9rem;
+      text-decoration: none; pointer-events: auto;
+      box-shadow: 0 10px 22px rgba(97,154,24,0.32), 0 2px 6px rgba(0,0,0,0.14);
+      transition: background 0.2s, transform 0.15s;
+    }
+    .map-directions:hover  { background: var(--gm-600); transform: translateY(-2px); }
+    .map-directions:active { transform: scale(0.97); }
+    .map-directions:focus-visible { outline: 2px solid var(--gm-400); outline-offset: 2px; }
+
     /* ── Success state ──────────────────────────────────────── */
     #success-msg {
       display: none; padding: 3.5rem 2rem;
@@ -603,6 +633,21 @@
             </div>
           </div>
 
+        </div>
+
+        <!-- Head office map -->
+        <div class="sidebar-card" style="padding:0; overflow:hidden;">
+          <div style="padding:2rem 2rem 1.25rem;">
+            <div class="sidebar-title" style="margin-bottom:0.4rem;">Head Office — Find Us</div>
+            <p style="font-size:0.8125rem; color:var(--c-muted); line-height:1.6;" data-company-address="inline"></p>
+          </div>
+          <div class="map-frame">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2551.0156964632038!2d-0.13119102349198744!3d51.51105221043663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487605006e3822f7%3A0x914e7aa1f920cf40!2sGREEN%20MED%20LTD.!5e1!3m2!1sen!2sgb!4v1785234669173!5m2!1sen!2sgb" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Map showing Green Med Ltd. head office location in London" allowfullscreen></iframe>
+            <a class="map-directions" href="https://www.google.com/maps/dir/?api=1&destination=51.51105221043663,-0.13119102349198744" target="_blank" rel="noopener">
+              Directions
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
         </div>
 
         <!-- Proposal CTA -->
