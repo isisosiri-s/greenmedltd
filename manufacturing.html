@@ -80,9 +80,7 @@
       color: var(--c-dark);
       line-height: 1.8;
       -webkit-font-smoothing: antialiased;
-      transition: opacity 0.26s ease;
     }
-    body.page-transitioning { opacity: 0; }
 
     .anim-in {
       opacity: 0;
@@ -502,13 +500,6 @@
       letter-spacing: 0.02em; margin-bottom: 0.35rem;
     }
     .gov-desc { font-size: 0.9rem; color: var(--c-dark); line-height: 1.7; }
-    .gov-item.anim-in:nth-child(1) { transition-delay: 0s; }
-    .gov-item.anim-in:nth-child(2) { transition-delay: 0.06s; }
-    .gov-item.anim-in:nth-child(3) { transition-delay: 0.12s; }
-    .gov-item.anim-in:nth-child(4) { transition-delay: 0.18s; }
-    .gov-item.anim-in:nth-child(5) { transition-delay: 0.24s; }
-    .gov-item.anim-in:nth-child(6) { transition-delay: 0.30s; }
-    .gov-item.anim-in:nth-child(7) { transition-delay: 0.36s; }
 
     @media (max-width: 768px) {
       .tier { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.75rem 1.5rem; }
@@ -904,49 +895,49 @@
       </div>
 
       <div class="gov-grid anim-in">
-        <div class="gov-item anim-in">
+        <div class="gov-item">
           <div class="gov-num">01</div>
           <div>
             <div class="gov-title">External Audits &amp; Inspections</div>
             <p class="gov-desc">Our quality system is subject to periodic surveillance audits by BSI. Green Med Ltd. is registered with the MHRA and subject to its regulatory oversight.</p>
           </div>
         </div>
-        <div class="gov-item anim-in">
+        <div class="gov-item">
           <div class="gov-num">02</div>
           <div>
             <div class="gov-title">Lot &amp; Batch Traceability</div>
             <p class="gov-desc">Every batch is traceable from incoming raw material to the finished, released unit — full genealogy is maintained for every product we ship.</p>
           </div>
         </div>
-        <div class="gov-item anim-in">
+        <div class="gov-item">
           <div class="gov-num">03</div>
           <div>
             <div class="gov-title">CAPA — Corrective &amp; Preventive Action</div>
             <p class="gov-desc">Non-conformities, complaints and audit findings feed a formal CAPA system — root cause is investigated and corrective action verified before a case is closed.</p>
           </div>
         </div>
-        <div class="gov-item anim-in">
+        <div class="gov-item">
           <div class="gov-num">04</div>
           <div>
             <div class="gov-title">Environmental &amp; Cleanroom Monitoring</div>
             <p class="gov-desc">Our ISO 7 cleanroom is continuously monitored — particle counts, viable environmental monitoring and controlled gowning procedures keep production within defined limits.</p>
           </div>
         </div>
-        <div class="gov-item anim-in">
+        <div class="gov-item">
           <div class="gov-num">05</div>
           <div>
             <div class="gov-title">Risk Management (ISO 14971)</div>
             <p class="gov-desc">Risk management runs throughout the product lifecycle — from design through production to post-market feedback — not a one-time exercise at launch.</p>
           </div>
         </div>
-        <div class="gov-item anim-in">
+        <div class="gov-item">
           <div class="gov-num">06</div>
           <div>
             <div class="gov-title">Calibration Programme</div>
             <p class="gov-desc">Measurement and test equipment is calibrated on a defined schedule, with full calibration records maintained and traceable to national standards.</p>
           </div>
         </div>
-        <div class="gov-item anim-in" style="grid-column:1 / -1; border-bottom:none;">
+        <div class="gov-item" style="grid-column:1 / -1; border-bottom:none;">
           <div class="gov-num">07</div>
           <div>
             <div class="gov-title">Safety Stock for Critical Materials</div>
@@ -1098,7 +1089,6 @@
   <!-- FOOTER -->
   <script src="/footer.js"></script>
 <script src="/image-protect.js"></script>
-<script src="/transitions.js"></script>
 
   <script>
     function toggleNav() {

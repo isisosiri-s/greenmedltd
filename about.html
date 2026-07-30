@@ -81,9 +81,7 @@
       color: var(--c-dark);
       line-height: 1.8;
       -webkit-font-smoothing: antialiased;
-      transition: opacity 0.26s ease;
     }
-    body.page-transitioning { opacity: 0; }
 
     .anim-in {
       opacity: 0;
@@ -267,11 +265,6 @@
       -webkit-tap-highlight-color: transparent;
     }
     .team-person:focus-visible { outline: 3px solid var(--gm-300); outline-offset: 5px; border-radius: 50%; }
-    .team-person.anim-in:nth-child(1) { transition-delay: 0s; }
-    .team-person.anim-in:nth-child(2) { transition-delay: 0.06s; }
-    .team-person.anim-in:nth-child(3) { transition-delay: 0.12s; }
-    .team-person.anim-in:nth-child(4) { transition-delay: 0.18s; }
-    .team-person.anim-in:nth-child(5) { transition-delay: 0.24s; }
     .team-avatar {
       width: 176px; height: 176px; border-radius: 50%; overflow: hidden;
       border: 3px solid var(--gm-400); background: var(--c-white);
@@ -445,7 +438,7 @@
 
   <!-- HERO -->
   <section style="padding-top:64px; background:var(--c-footer); position:relative; overflow:hidden; min-height:72vh; display:flex; align-items:center;">
-    <img id="hero-parallax-img" src="Photos/manufacturing/Resim1.jpg" alt="" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:right center; opacity:0.32; transform:scale(1.08); will-change:transform;">
+    <img src="Photos/manufacturing/Resim1.jpg" alt="" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:right center; opacity:0.32;">
     <div style="position:absolute; inset:0; background:linear-gradient(90deg, rgba(17,17,17,0.94) 0%, rgba(17,17,17,0.82) 48%, rgba(17,17,17,0.5) 100%); pointer-events:none;"></div>
     <div style="position:absolute; inset:0; background:radial-gradient(ellipse 70% 65% at 95% 45%, rgba(97,154,24,0.22) 0%, transparent 65%), radial-gradient(ellipse 45% 70% at 0% 100%, rgba(97,154,24,0.07) 0%, transparent 60%); pointer-events:none;"></div>
     <div style="position:absolute; right:var(--px); top:0; bottom:0; width:1px; background:rgba(255,255,255,0.04); pointer-events:none;"></div>
@@ -708,24 +701,24 @@
 
         <div class="team-people-wrap" id="teamPeopleWrap">
           <div class="team-people" id="keyPeopleRow">
-            <button type="button" class="team-person active anim-in" data-name="Cem Gözener" data-quote-template="quote-cem" aria-pressed="true">
+            <button type="button" class="team-person active" data-name="Cem Gözener" data-quote-template="quote-cem" aria-pressed="true">
               <!-- Replace the monogram with: <img src="Photos/Persons/cem-gozener.png" alt="Cem Gözener" loading="lazy"> -->
               <div class="team-avatar"><span class="mono-avatar">CG</span></div>
               <div class="team-name">Cem Gözener</div>
             </button>
-            <button type="button" class="team-person anim-in" data-name="Rovshen" data-quote-template="quote-rovshen" aria-pressed="false">
+            <button type="button" class="team-person" data-name="Rovshen" data-quote-template="quote-rovshen" aria-pressed="false">
               <div class="team-avatar"><img src="Photos/Persons/rovshen.png" alt="Rovshen" loading="lazy"></div>
               <div class="team-name">Rovshen</div>
             </button>
-            <button type="button" class="team-person anim-in" data-name="Dr. Alan Thompson" data-quote-template="quote-alan" aria-pressed="false">
+            <button type="button" class="team-person" data-name="Dr. Alan Thompson" data-quote-template="quote-alan" aria-pressed="false">
               <div class="team-avatar"><img src="Photos/Persons/alan-thompson.png" alt="Dr. Alan Thompson" loading="lazy"></div>
               <div class="team-name">Dr. Alan Thompson</div>
             </button>
-            <button type="button" class="team-person anim-in" data-name="Dr. Anna Nowak" data-quote-template="quote-anna" aria-pressed="false">
+            <button type="button" class="team-person" data-name="Dr. Anna Nowak" data-quote-template="quote-anna" aria-pressed="false">
               <div class="team-avatar"><img src="Photos/Persons/anna-nowak.png" alt="Dr. Anna Nowak" loading="lazy"></div>
               <div class="team-name">Dr. Anna Nowak</div>
             </button>
-            <button type="button" class="team-person anim-in" data-name="Can Yılmaz" data-quote-template="quote-can" aria-pressed="false">
+            <button type="button" class="team-person" data-name="Can Yılmaz" data-quote-template="quote-can" aria-pressed="false">
               <div class="team-avatar"><img src="Photos/Persons/can-yilmaz.png" alt="Can Yılmaz" loading="lazy"></div>
               <div class="team-name">Can Yılmaz</div>
             </button>
@@ -1132,7 +1125,6 @@
 
   <script src="/footer.js"></script>
 <script src="/image-protect.js"></script>
-<script src="/transitions.js"></script>
 <script src="/address.js"></script>
 
   <script>
@@ -1157,25 +1149,6 @@
     // Reveal hero immediately on load
     const heroEls = document.querySelectorAll('section:first-of-type .anim-in');
     heroEls.forEach((el, i) => setTimeout(() => el.classList.add('visible'), 100 + i * 160));
-
-    /* Hero image parallax — subtle drift on scroll, transform-only */
-    (function () {
-      const img = document.getElementById('hero-parallax-img');
-      if (!img || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      let ticking = false;
-      function update() {
-        const rect = img.parentElement.getBoundingClientRect();
-        if (rect.bottom > 0 && rect.top < window.innerHeight) {
-          const offset = Math.min(window.scrollY * 0.08, 60);
-          img.style.transform = 'scale(1.08) translateY(' + offset + 'px)';
-        }
-        ticking = false;
-      }
-      window.addEventListener('scroll', () => {
-        if (!ticking) { requestAnimationFrame(update); ticking = true; }
-      }, { passive: true });
-      update();
-    })();
   </script>
 </body>
 </html>
