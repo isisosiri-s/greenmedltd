@@ -84,7 +84,9 @@
       color: var(--c-dark);
       line-height: 1.8;
       -webkit-font-smoothing: antialiased;
+      transition: opacity 0.26s ease;
     }
+    body.page-transitioning { opacity: 0; }
 
     /* ── Keyframes ──────────────────────────────────────────── */
     @keyframes fadeUp {
@@ -691,7 +693,7 @@
 
     <!-- Right: Visual panel -->
     <div class="hero-right" style="position:relative; overflow:hidden;">
-      <img src="Photos/manufacturing/Resim1.jpg" alt="Green Med Ltd head office building" style="width:100%; height:100%; object-fit:cover; display:block;" loading="eager">
+      <img id="hero-parallax-img" src="Photos/manufacturing/Resim1.jpg" alt="Green Med Ltd head office building" style="position:absolute; top:-9%; left:0; width:100%; height:118%; object-fit:cover; display:block; will-change:transform;" loading="eager">
       <!-- Anthra overlay -->
       <div style="position:absolute; inset:0; background:rgba(43,43,43,0.45);"></div>
       <!-- gm-800 tint layer -->
@@ -760,7 +762,7 @@
         <div class="anim-in" style="transition-delay:0.15s;">
           <div class="eyebrow" style="margin-bottom:1.5rem;">MARKETS WE SERVE</div>
           <div>
-            <div class="mkt-row">
+            <div class="mkt-row anim-in" style="transition-delay:0.22s;">
               <div class="mkt-icon">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                   <path d="M10 3a4 4 0 1 1 0 8 4 4 0 0 1 0-8z" stroke="#619A18" stroke-width="1.5"/>
@@ -773,7 +775,7 @@
               </div>
             </div>
 
-            <div class="mkt-row">
+            <div class="mkt-row anim-in" style="transition-delay:0.30s;">
               <div class="mkt-icon">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                   <rect x="2" y="7" width="16" height="10" rx="1" stroke="#619A18" stroke-width="1.5"/>
@@ -787,7 +789,7 @@
               </div>
             </div>
 
-            <div class="mkt-row">
+            <div class="mkt-row anim-in" style="transition-delay:0.38s;">
               <div class="mkt-icon">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                   <path d="M3 17h14M5 17V8l5-5 5 5v9" stroke="#619A18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -800,7 +802,7 @@
               </div>
             </div>
 
-            <div class="mkt-row">
+            <div class="mkt-row anim-in" style="transition-delay:0.46s;">
               <div class="mkt-icon">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                   <circle cx="10" cy="10" r="7.5" stroke="#619A18" stroke-width="1.5"/>
@@ -1477,6 +1479,26 @@
 
     const statsSection = document.querySelector('.stats-section');
     if (statsSection) statsObserver.observe(statsSection);
+
+    /* Hero image parallax — subtle drift on scroll, transform-only */
+    (function () {
+      const img = document.getElementById('hero-parallax-img');
+      if (!img || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      let ticking = false;
+      function update() {
+        const rect = img.parentElement.getBoundingClientRect();
+        if (rect.bottom > 0 && rect.top < window.innerHeight) {
+          const offset = Math.min(window.scrollY * 0.12, 90);
+          img.style.transform = 'translateY(' + offset + 'px)';
+        }
+        ticking = false;
+      }
+      window.addEventListener('scroll', () => {
+        if (!ticking) { requestAnimationFrame(update); ticking = true; }
+      }, { passive: true });
+      update();
+    })();
   </script>
+  <script src="/transitions.js"></script>
 </body>
 </html>
